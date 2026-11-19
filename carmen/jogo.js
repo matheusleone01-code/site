@@ -1,7 +1,7 @@
 /* Motor do jogo. Não precisa mexer aqui: as cenas ficam em cenas.js. */
 (function () {
   var J = window.JOGO;
-  var CHAVE = "carmen-jogo-v1";
+  var CHAVE = J.chave || "carmen-jogo-v1";
   var palco = document.getElementById("palco");
   var rotuloArco = document.getElementById("rotulo-arco");
   var botaoFichas = document.getElementById("botao-fichas");
@@ -93,7 +93,9 @@
     } else {
       html += '<button class="botao principal" data-acao="comecar">Começar</button>';
     }
-    html += "</div></section>";
+    html += "</div>";
+    if (J.outraVersao) html += '<p class="outra-versao"><a href="' + esc(J.outraVersao.link) + '">' + esc(J.outraVersao.texto) + "</a></p>";
+    html += "</section>";
     mostrar(html, "h1");
   }
 
@@ -145,6 +147,8 @@
   function escolher(i, k) {
     var a = J.arcos[estado.arco], c = a.cenas[i], o = c.opcoes[k];
     if (o.certa) {
+      abrirFichas(o.desbloqueia);
+      salvar();
       var ultima = i === a.cenas.length - 1;
       mostrar(
         '<section class="tela resultado">' +
@@ -193,7 +197,7 @@
       '<section class="tela vitoria">' +
       '<p class="rotulo">Vitória</p>' +
       '<p class="ornamento" aria-hidden="true">❦</p>' +
-      "<h2>Carmen chegou ao Palácio Real</h2>" +
+      "<h2>" + esc(J.tituloVitoria || "Carmen chegou ao Palácio Real") + "</h2>" +
       '<div class="texto">' + paragrafos(J.vitoria) + "</div>" +
       '<div class="premio">';
     if (temCodigo) {
