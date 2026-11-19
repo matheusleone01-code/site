@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Conferir código</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../estilo.css">
+<link rel="stylesheet" href="jogo.css">
+<style>
+  .caixa { max-width: 26rem; margin: 0 auto; padding: 3rem 16px; position: relative; z-index: 1; }
+  .caixa h1 { font-size: 1.75rem; margin-bottom: .5rem; }
+  .campo { display: grid; gap: .35rem; margin-top: 1rem; }
+  .campo label { font: 600 .75rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--acento); }
+  .campo input { font: 400 1.125rem/1 var(--texto); padding: .7rem .75rem; border: 1.5px solid var(--tinta); border-radius: 3px; background: var(--papel); color: var(--tinta); }
+  .veredito { margin-top: 1.5rem; padding: 1rem; border-radius: 4px; border: 2px solid; font: 600 1.125rem/1.4 var(--display); text-align: center; }
+  .ok { border-color: #3D6B2F; color: #3D6B2F; }
+  .nao { border-color: var(--verde); color: var(--verde); }
+</style>
+</head>
+<body>
+<div class="pergaminho" aria-hidden="true"></div>
+<main class="caixa">
+  <h1>Conferir código do jogo</h1>
+  <p>Página só sua. Digite o @ de quem mandou o print e o código que aparece na tela.</p>
+  <form id="f">
+    <div class="campo"><label for="a">@ do Instagram</label><input id="a" autocapitalize="none" spellcheck="false" required></div>
+    <div class="campo"><label for="c">Código</label><input id="c" autocapitalize="characters" spellcheck="false" required placeholder="ABCD-EFGH"></div>
+    <div class="acoes"><button class="botao principal" type="submit">Conferir</button></div>
+  </form>
+  <div id="r" aria-live="polite"></div>
+</main>
+<script src="codigo.js"></script>
+<script>
+document.getElementById("f").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var a = document.getElementById("a").value, c = document.getElementById("c").value.trim().toUpperCase().replace(/\s/g, "");
+  if (c.length === 8) c = c.slice(0, 4) + "-" + c.slice(4);
+  var certo = CODIGO.gerar(a);
+  var ok = CODIGO.valido(a) && c === certo;
+  document.getElementById("r").innerHTML = ok
+    ? '<div class="veredito ok">Código válido para @' + CODIGO.normalizar(a) + '</div>'
+    : '<div class="veredito nao">Não confere. O código de @' + CODIGO.normalizar(a).replace(/[<>&"]/g, "") + ' seria outro.</div>';
+});
+</script>
+</body>
+</html>
