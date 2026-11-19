@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matheus Leone</title>
+<meta name="description" content="Clube do livro, ebooks e links do Matheus Leone (@omatheusleone).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<!--CONTEUDO-->
+<div class="pergaminho" aria-hidden="true"></div>
+<nav class="nav" aria-label="Seções">
+  <ul>
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#clube">Clube do livro</a></li>
+    <li><a href="#ebooks-secao">Meus ebooks</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<header class="topo" id="inicio">
+  <div class="topo-fundo" id="topo-fundo"></div>
+  <div class="topo-conteudo">
+    <div id="avatar"></div>
+    <h1 id="nome"></h1>
+    <p class="bio" id="bio"></p>
+    <div class="redes" id="redes"></div>
+  </div>
+</header>
+
+<main class="pagina">
+  <section class="secao" id="clube">
+    <p class="rotulo">Clube do livro · leitura atual</p>
+    <h2>O que estamos lendo</h2>
+    <p class="intro" id="clube-intro"></p>
+    <div class="livro" id="livro"></div>
+
+    <p class="rotulo" style="margin-top:2.5rem">Cronograma</p>
+    <h2>Encontros</h2>
+    <ol class="cronograma" id="cronograma"></ol>
+
+    <div class="lidos">
+      <h3>Livros que já lemos</h3>
+      <div id="lidos"></div>
+    </div>
+  </section>
+
+  <section class="secao" id="ebooks-secao">
+    <p class="rotulo">Escritos por mim</p>
+    <h2>Meus ebooks</h2>
+    <div class="ebooks" id="ebooks"></div>
+    <div class="cta-amazon" id="amazon"></div>
+  </section>
+
+  <section class="secao" id="contato">
+    <p class="rotulo">Fale comigo</p>
+    <h2>Contato</h2>
+    <div class="contato" id="contato-conteudo"></div>
+  </section>
+
+  <footer>© <span id="ano"></span> Matheus Leone · @omatheusleone</footer>
+</main>
+<!--/CONTEUDO-->
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
