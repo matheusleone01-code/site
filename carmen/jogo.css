@@ -195,3 +195,13 @@ img.retrato, .retrato-grande { background: #EADBBE; }
 .atributo-valor { font: 700 1.25rem/1 var(--display); color: var(--verde); min-width: 2rem; text-align: right; }
 .atributo p { margin: .25rem 0 0; font-size: .9375rem; line-height: 1.45; color: var(--tinta-suave); }
 .subtitulo-painel { font: 600 .75rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--acento); margin: 1rem 0 .6rem; }
+
+/* Apresentação das personagens na tela do arco */
+.apresenta { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.25rem 2rem; margin: 1.5rem 0 .5rem; }
+.apresenta-pessoa { display: flex; flex-direction: column; align-items: center; gap: .3rem; background: none; border: 0; padding: .25rem; cursor: pointer; color: inherit; font: inherit; border-radius: 6px; }
+.apresenta-pessoa .retrato { width: 4.5rem; height: 4.5rem; font-size: 1.6rem; transition: transform .15s ease; }
+.apresenta-pessoa:hover .retrato, .apresenta-pessoa:focus-visible .retrato { transform: scale(1.06); }
+.apresenta-pessoa:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+.apresenta-nome { font: 600 1.05rem/1.2 var(--display); }
+.apresenta-ver { font: 600 .7rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--acento); }
+.ficha { scroll-margin-top: 5rem; }

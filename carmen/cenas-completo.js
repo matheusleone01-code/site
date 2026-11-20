@@ -251,10 +251,6 @@ window.JOGO = {
       "cenas": [
         {
           "titulo": "O camarim",
-          "imagem": {
-            "arquivo": "img/espelho-cor.jpg",
-            "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
-          },
           "texto": [
             "Madalena escovava meus cabelos diante do espelho, como fazia quando eu era criança. Eu tinha acabado de pedir mais alguns meses antes de ter que trabalhar no bordel. Quem sabe, assim, conquistaria um Ilustre nesse meio-tempo.",
             "— Só de dizer uma coisa dessas, já mostra como você é infantil — respondeu Madalena. — Ilustres nunca se casarão com uma plebeia; no máximo, eles te farão uma concubina. É por isso que fará o que digo. E acabou a discussão.",
@@ -630,7 +626,15 @@ window.JOGO = {
         "No horizonte, o sol nascia e tingia o céu de dourado. Desde pequena, eu me imaginava uma princesa resgatada por um príncipe num cavalo branco.",
         "Nem nos meus dias mais criativos imaginei que sairia de Serra Verde numa loja itinerante, puxada por burros e conduzida por um cinquentão. Mas eu não podia reclamar."
       ],
-      "cenario": "serra-verde"
+      "cenario": "serra-verde",
+      "imagem": {
+        "arquivo": "img/espelho-cor.jpg",
+        "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
+      },
+      "apresenta": [
+        "carmen",
+        "madalena"
+      ]
     },
     {
       "titulo": "A estrada",

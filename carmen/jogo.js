@@ -84,8 +84,15 @@
         return '<li class="ficha bloqueada"><div class="ficha-topo"><span class="retrato medalhao" aria-hidden="true">?</span><div><h3>???</h3><p class="papel">Ainda não apareceu na história.</p></div></div></li>';
       }
       var nova = estado.novas.indexOf(id) >= 0 ? ' <span class="selo-nova">nova</span>' : "";
-      return '<li class="ficha"><details' + (nova ? " open" : "") + '><summary><div class="ficha-topo">' + retrato(f) + "<div><h3>" + esc(f.nome) + nova + '</h3><p class="papel">' + esc(f.papel) + "</p></div></div></summary>" + retrato(f, true) + campos(f.texto) + "</details></li>";
+      return '<li class="ficha" data-id="' + esc(id) + '"><details' + (nova ? " open" : "") + '><summary><div class="ficha-topo">' + retrato(f) + "<div><h3>" + esc(f.nome) + nova + '</h3><p class="papel">' + esc(f.papel) + "</p></div></div></summary>" + retrato(f, true) + campos(f.texto) + "</details></li>";
     }).join("");
+  }
+  function verFicha(id) {
+    abrirFichas([id]); desenharFichas();
+    var li = listaFichas.querySelector('li[data-id="' + id + '"]');
+    if (li) { var d = li.querySelector("details"); if (d) d.open = true; }
+    if (typeof painel.showModal === "function") painel.showModal(); else painel.setAttribute("open", "");
+    if (li) li.scrollIntoView({ block: "start" });
   }
   botaoFichas.addEventListener("click", function () {
     desenharFichas();
@@ -225,7 +232,12 @@
       '<section class="tela arco">' +
       '<p class="rotulo">Arco ' + numeral(estado.arco) + " de " + numeral(J.arcos.length - 1) + "</p>" +
       "<h2>" + esc(a.titulo) + "</h2>" +
+      (a.imagem ? '<figure class="ilustracao"><img src="' + esc(a.imagem.arquivo) + '" alt="' + esc(a.imagem.descricao || "") + '" decoding="async"></figure>' : "") +
       '<div class="texto epigrafe">' + paragrafos(a.abertura) + "</div>" +
+      (a.apresenta ? '<div class="apresenta">' + a.apresenta.filter(function (id) { return J.fichas[id]; }).map(function (id) {
+        var f = J.fichas[id];
+        return '<button class="apresenta-pessoa" data-acao="ficha" data-ficha="' + esc(id) + '">' + retrato(f) + '<span class="apresenta-nome">' + esc(f.nome) + '</span><span class="apresenta-ver">Ver ficha</span></button>';
+      }).join("") + "</div>" : "") +
       '<div class="acoes"><button class="botao principal" data-acao="cena" data-cena="0">Começar o arco</button></div>' +
       "</section>"
     );
@@ -371,6 +383,7 @@
     else if (acao === "continuar") { telaArco(); }
     else if (acao === "zerar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaArco(); }
     else if (acao === "arco") { telaArco(); }
+    else if (acao === "ficha") { verFicha(b.getAttribute("data-ficha")); }
     else if (acao === "cena") { telaCena(+b.getAttribute("data-cena")); }
     else if (acao === "escolher") { escolher(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }
     else if (acao === "fecho") { telaFecho(); }
