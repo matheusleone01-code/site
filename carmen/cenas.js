@@ -34,7 +34,7 @@ window.JOGO = {
   "abertura": [
     "No reino dos Burgos, quem nasce plebeu morre plebeu. Os nobres, chamados de Ilustres, casam-se entre si; às plebeias bonitas, no máximo, oferecem o posto de concubina.",
     "Carmen cresceu em Serra Verde, uma cidadezinha no sul da província central, dentro do bordel onde a mãe dela, Madalena, é a cortesã mais disputada. De manhã, Carmen varre o salão; à noite, conversa com os clientes. Só conversa.",
-    "Faltam sete dias para Carmen atingir a maioridade. E Madalena já decidiu como a filha vai ganhar a vida a partir desse dia.",
+    "Faltam sete dias para Carmen atingir a maioridade. E Madalena já decidiu como a filha vai ganhar a vida quando adulta.",
     "Você vai guiar Carmen pelas encruzilhadas do caminho. Escolha bem as palavras: algumas falas erradas têm conserto, outras acabam com a história ali. Em certos momentos, Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras mais adiante. Se precisar, consulte as fichas dos personagens. Elas guardam as pistas."
   ],
 
