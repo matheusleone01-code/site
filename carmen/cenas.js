@@ -64,12 +64,13 @@ window.JOGO = {
       "papel": "A protagonista",
       "inicial": true,
       "texto": [
-        "Quase maior de idade. Loira, cabelos ondulados e cheios, olhos azuis. Nasceu e cresceu no bordel de Serra Verde e nunca saiu da cidade.",
-        "Mente bem, e sabe que as melhores desculpas são as que têm um fundo de verdade.",
-        "Seu talento é lidar com gente: conquista as pessoas fazendo-as falar de si mesmas, com elogios na medida certa.",
-        "Quando é preciso, finge submissão. Quando alguém a trata com deboche, inverte os papéis.",
-        "Jurou a si mesma uma única coisa: não seria puta.",
-        "Sonha com um casamento por amor, uma família de verdade e um mundo maior do que Serra Verde. Não bebe vinho, porque resseca a voz: canta escondido quando ninguém está olhando."
+        "Idade: 17 para 18 anos.",
+        "Descrição: Loira, cabelos ondulados e cheios, olhos azuis.",
+        "Histórico: Nasceu e cresceu no bordel de Serra Verde. Nunca saiu da cidade.",
+        "Características: Mente bem. Sabe conquistar as pessoas. Finge submissão quando é preciso, impõe-se quando pode.",
+        "Juramento: “Não serei puta”",
+        "Sonho: Casamento por amor. Uma família de verdade. Um mundo maior do que Serra Verde.",
+        "Talentos secretos: Gosta de cantar, mas só quando ninguém está olhando."
       ],
       "retrato": "img/retratos/carmen.png"
     },
@@ -78,11 +79,12 @@ window.JOGO = {
       "papel": "A mãe",
       "inicial": true,
       "texto": [
-        "Quarenta e dois anos (diz trinta e dois aos clientes). A cortesã mais requisitada de Serra Verde. O cafetão, Gasparo, praticamente a deixa controlar tudo.",
-        "Cabelos loiros na altura dos ombros, perfume de especiarias, cremes de chocolate e baunilha. Chama a filha de “minha pequena canção”.",
-        "Acredita que o melhor futuro para Carmen é seguir seus passos. “Igual, não. Melhor.”",
-        "Não suporta desobediência aberta: quando a filha bate de frente, ela aperta o cerco. Quando a filha cede, ela relaxa.",
-        "Conhece Carmen como a palma da mão. Inclusive o calendário dela."
+        "Idade: 42 anos (diz 32 aos clientes).",
+        "Descrição: Cabelos loiros na altura dos ombros. Perfume de especiarias, cremes de chocolate e baunilha.",
+        "Histórico: A cortesã mais requisitada de Serra Verde. Gasparo, o cafetão, deixa quase tudo nas mãos dela.",
+        "Características: Não suporta ser desafiada: quando a filha bate de frente, aperta o cerco; quando a filha cede, relaxa. Conhece Carmen como a palma da mão. Sabe de cor até o ciclo dela.",
+        "Sonho: Que Carmen siga os passos dela. “Igual, não. Melhor.”",
+        "Apelido: Chama a filha de “minha pequena canção”."
       ],
       "retrato": "img/retratos/madalena.png"
     },
@@ -101,55 +103,61 @@ window.JOGO = {
       "nome": "Armando",
       "papel": "O mascate",
       "texto": [
-        "Cinquentão de barba aparada e cabelos grisalhos penteados para trás. Perfume amadeirado.",
-        "Viaja de vila em vila numa loja-carruagem puxada por dois burros, vendendo roupas e acessórios femininos. Este ano, a temporada de vendas vai mal.",
-        "É um dos clientes favoritos de Madalena e enxerga Carmen como uma garotinha.",
-        "Adora contar histórias das viagens e do reino. Nunca diz palavrões na frente de Carmen.",
-        "Desconfia de quem só se aproxima por interesse. Tem bom coração, mas não gosta de ser encurralado."
+        "Idade: Cinquentão.",
+        "Descrição: Barba aparada, cabelos grisalhos penteados para trás. Perfume amadeirado.",
+        "Histórico: Viaja de vila em vila numa loja-carruagem puxada por dois burros, vendendo roupas e acessórios femininos. Este ano, a temporada de vendas vai mal. É um dos clientes favoritos de Madalena e ainda vê Carmen como uma garotinha.",
+        "Características: Adora contar histórias das viagens e do reino. Nunca diz palavrões na frente de Carmen. Tem bom coração, mas não gosta de ser pressionado.",
+        "Ponto fraco: Desconfia de quem só se aproxima por interesse."
       ]
     },
     "jaime": {
       "nome": "Jaime Barbosa",
       "papel": "O Ilustre de Serra Verde",
       "texto": [
-        "O nobre local, dono do castelo no alto do morro. Cliente assíduo de Madalena, banca o luxo do bordel.",
-        "Gosta de ser o centro das atenções. Anda sempre com dois guardas, que ficam postados na porta enquanto ele se diverte."
+        "Descrição: Anda sempre com dois guardas, que ficam postados na porta enquanto ele se diverte.",
+        "Histórico: O nobre local, dono do castelo no alto do morro. Cliente assíduo de Madalena, banca o luxo do bordel.",
+        "Características: Gosta de ser o centro das atenções."
       ]
     },
     "alexandro": {
       "nome": "Alexandro Barbosa",
       "papel": "O filho do Ilustre",
       "texto": [
-        "Filho de Jaime, a cara do pai, só que menos alto e menos roliço. Tímido e nervoso: foi levado ao bordel pelo pai, contra a vontade.",
-        "Quer perder a virgindade com alguém que ame de verdade.",
-        "Fala muito da família: da mãe, que só não perdoaria Jaime se ele se deitasse com outra Ilustre, e da irmã caçula, Vivian, que mal tem vida entre aulas de costura, postura, dança e línguas, e quase nunca sai do castelo."
+        "Descrição: A cara do pai, só que mais baixo e menos roliço.",
+        "Histórico: Filho de Jaime. Foi levado ao bordel pelo pai, contra a vontade.",
+        "Características: Tímido e nervoso. Fala muito da família.",
+        "Sonho: Perder a virgindade com alguém que ame de verdade.",
+        "Família: A mãe perdoa as escapadas de Jaime, desde que não sejam com outra Ilustre. A irmã caçula, Vivian, vive entre aulas de costura, postura, dança e línguas, e quase nunca sai do castelo."
       ]
     },
     "isolina": {
       "nome": "Dona Isolina",
       "papel": "A joalheira",
       "texto": [
-        "Senhorinha de cabelos brancos e óculos de corrente. Cheira a sabonete de ervas. Tem uma joalheria de semijoias em Pacentro há décadas e nunca precisou de funcionária.",
-        "Casca dura, coração mole. Diz que bajulação não funciona com ela, mas sabe que funciona com as clientes.",
-        "Vende há tempo suficiente para saber que, em Pacentro, ninguém gosta de receber conselho de uma moça do interior."
+        "Descrição: Senhorinha de cabelos brancos e óculos de corrente. Cheira a sabonete de ervas.",
+        "Histórico: Vende semijoias em Pacentro há décadas e nunca precisou de funcionária.",
+        "Características: Casca dura, coração mole. Diz que bajulação não funciona com ela, mas sabe que funciona com as clientes.",
+        "Experiência: Depois de décadas de balcão, sabe que ninguém em Pacentro gosta de receber conselho de uma moça do interior."
       ]
     },
     "rosa": {
       "nome": "A Ilustre de rosa",
       "papel": "Uma cliente",
       "texto": [
-        "Magricela, toda de rosa: chapéu com penas de flamingo, vestido de frufrus, joias de morganita. Perfume doce demais.",
-        "Tem sotaque do norte, a região mais caipira do reino. Entre os Ilustres, deve ser de terceira classe, por isso contava vantagem para cima da plebe.",
-        "Destrata quem considera inferior. Mas adora plateia: com bajulação suficiente, fala mais do que deveria."
+        "Descrição: Magricela, toda de rosa: chapéu com penas de flamingo, vestido de frufrus, joias de morganita. Perfume doce demais.",
+        "Histórico: Tem sotaque do norte, a região mais caipira do reino. Entre os Ilustres, deve ser de terceira classe. Por isso conta vantagem para cima da plebe.",
+        "Características: Destrata quem considera inferior.",
+        "Ponto fraco: Adora plateia. Com bajulação suficiente, fala mais do que deveria."
       ]
     },
     "empregadas": {
       "nome": "As Empregadas Reais",
       "papel": "Na entrada do palácio",
       "texto": [
-        "Uniformes sóbrios, tons escuros, fala mansa e miúda.",
-        "Passaram a vida inteira entre castelos e palácios. Sabem lidar com Ilustres, mas não com gente que fala grosso e alto.",
-        "Acima delas está a governanta, Sebastiana. Ninguém quer ser repreendida por ela."
+        "Descrição: Uniformes sóbrios, tons escuros, voz baixa e mansa.",
+        "Histórico: Passaram a vida inteira entre castelos e palácios.",
+        "Características: Sabem lidar com Ilustres, mas não com quem levanta a voz.",
+        "Medo: Acima delas está a governanta, Sebastiana. Nenhuma quer levar uma bronca dela."
       ]
     }
   },

@@ -38,6 +38,12 @@
       return '<p class="' + (classe || "") + (fala ? " fala" : "") + '">' + fmt(p) + "</p>";
     }).join("");
   }
+  function campos(lista) {
+    return (lista || []).map(function (p) {
+      var m = /^([^:—“*]{2,24}):\s(.*)$/.exec(p);
+      return '<p class="campo">' + (m ? "<strong>" + esc(m[1]) + ":</strong> " + fmt(m[2]) : fmt(p)) + "</p>";
+    }).join("");
+  }
   function embaralhar(a) {
     a = a.slice();
     for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
@@ -78,7 +84,7 @@
         return '<li class="ficha bloqueada"><div class="ficha-topo"><span class="retrato medalhao" aria-hidden="true">?</span><div><h3>???</h3><p class="papel">Ainda não apareceu na história.</p></div></div></li>';
       }
       var nova = estado.novas.indexOf(id) >= 0 ? ' <span class="selo-nova">nova</span>' : "";
-      return '<li class="ficha"><details' + (nova ? " open" : "") + '><summary><div class="ficha-topo">' + retrato(f) + "<div><h3>" + esc(f.nome) + nova + '</h3><p class="papel">' + esc(f.papel) + "</p></div></div></summary>" + retrato(f, true) + paragrafos(f.texto) + "</details></li>";
+      return '<li class="ficha"><details' + (nova ? " open" : "") + '><summary><div class="ficha-topo">' + retrato(f) + "<div><h3>" + esc(f.nome) + nova + '</h3><p class="papel">' + esc(f.papel) + "</p></div></div></summary>" + retrato(f, true) + campos(f.texto) + "</details></li>";
     }).join("");
   }
   botaoFichas.addEventListener("click", function () {
