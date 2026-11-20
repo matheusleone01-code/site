@@ -676,11 +676,7 @@ window.JOGO = {
       "imagem": {
         "arquivo": "img/espelho-cor.jpg",
         "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
-      },
-      "apresenta": [
-        "carmen",
-        "madalena"
-      ]
+      }
     },
     {
       "titulo": "A estrada",
