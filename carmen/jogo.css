@@ -142,3 +142,38 @@ button.botao { font-family: var(--display); }
 /* Ilustrações do livro */
 .ilustracao { margin: 0 0 1.5rem; }
 .ilustracao img { display: block; width: auto; max-width: 100%; height: auto; max-height: 70vh; margin: 0 auto; border-radius: 4px; border: 1px solid var(--linha); box-shadow: 0 10px 30px -18px rgba(0,0,0,.6); }
+
+/* Como jogar */
+.como-jogar { margin: 1.5rem 0 0; padding: .875rem 1rem; border: 1px solid var(--linha); border-left: 3px solid var(--acento); border-radius: 3px; background: color-mix(in srgb, var(--papel-2) 70%, transparent); }
+.como-jogar .rotulo { margin: 0 0 .4rem; }
+.como-jogar ul { margin: 0; padding-left: 1.1rem; }
+.como-jogar li { margin: 0 0 .3rem; font-size: 1rem; line-height: 1.5; }
+
+/* Fundo de cada arco: silhueta a bico de pena no pé da página */
+body.jogo .pergaminho::after {
+  content: ""; position: fixed; left: 0; right: 0; bottom: 0; height: 42vh; z-index: 0; pointer-events: none;
+  background: no-repeat center bottom / cover; opacity: 0; transition: opacity .6s ease;
+  -webkit-mask-image: linear-gradient(to top, #000 55%, transparent); mask-image: linear-gradient(to top, #000 55%, transparent);
+}
+body.jogo[data-cenario] .pergaminho::after { opacity: .1; }
+body[data-cenario="serra-verde"] .pergaminho::after { background-image: url("img/cenarios/serra-verde.svg"); }
+body[data-cenario="estrada"] .pergaminho::after { background-image: url("img/cenarios/estrada.svg"); }
+body[data-cenario="pacentro"] .pergaminho::after { background-image: url("img/cenarios/pacentro.svg"); }
+body[data-cenario="palacio"] .pergaminho::after { background-image: url("img/cenarios/palacio.svg"); }
+body[data-cenario="empregada"] .pergaminho::after { background-image: url("img/cenarios/empregada.svg"); }
+body[data-cenario="duelo"] .pergaminho::after { background-image: url("img/cenarios/duelo.svg"); }
+body[data-cenario="confissoes"] .pergaminho::after { background-image: url("img/cenarios/confissoes.svg"); }
+body[data-cenario="farsa"] .pergaminho::after { background-image: url("img/cenarios/farsa.svg"); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body.jogo .pergaminho::after { filter: invert(1) sepia(.6); } }
+:root[data-theme="dark"] body.jogo .pergaminho::after { filter: invert(1) sepia(.6); }
+@media (prefers-reduced-motion: reduce) { body.jogo .pergaminho::after { transition: none; } }
+
+/* Retratos nas fichas */
+.ficha-topo { display: flex; align-items: center; gap: .75rem; }
+.ficha-topo > div { flex: 1; min-width: 0; }
+.retrato { flex: none; width: 3.25rem; height: 3.25rem; border-radius: 50%; object-fit: cover; object-position: 50% 20%;
+  border: 2px solid var(--acento); outline: 1px solid var(--acento); outline-offset: 2px; background: var(--papel-2); }
+.medalhao { display: grid; place-items: center; font: 700 1.25rem/1 var(--display); color: var(--acento);
+  background: radial-gradient(circle, var(--papel) 0 55%, var(--papel-2) 100%); }
+.retrato-grande { display: block; width: 100%; max-width: 16rem; margin: 0 auto .9rem; border-radius: 4px; border: 1px solid var(--linha); background: var(--papel); }
+img.retrato, .retrato-grande { background: #EADBBE; }

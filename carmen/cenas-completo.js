@@ -10,10 +10,18 @@ window.JOGO = {
   "subtitulo": "Versão completa, para quem já leu",
   "aviso": "Contém spoilers do livro inteiro: é só para quem já terminou Carmen. Também tem linguagem e temas adultos (maiores de 16 anos).",
   "abertura": [
-    "No reino dos Burgos, quem nasce plebeu morre plebeu. Os nobres, chamados de Ilustres, casam-se entre si; às plebeias bonitas, no máximo, oferecem o posto de concubina.",
-    "Carmen cresceu em Serra Verde, uma cidadezinha no sul da província central, dentro do bordel onde a mãe, Madalena, é a cortesã mais disputada. Ali, ela varre o salão de manhã e conversa com os clientes à noite. Só conversa.",
-    "Faltam sete dias para a maioridade de Carmen. E Madalena já decidiu o que a filha fará com ela.",
-    "Nesta versão, a fala certa é sempre a que Carmen escolheu no livro, mesmo quando não foi a mais sensata. Você lembra o que ela fez? Algumas falas erradas têm conserto; outras acabam com a história ali. E a bolsa guarda uns desvios que o livro não tem. As fichas guardam pistas, e agora contam tudo."
+    "No Reino dos Burgos, a plebe sempre será plebe. Os nobres, chamados de Ilustres, casam-se entre si. As plebeias bonitas, no máximo, tornam-se concubinas.",
+    "Carmen cresceu em Serra Verde, uma cidade pequena. Madalena, mãe dela, é a cortesã mais disputada do bordel onde moram. De manhã, Carmen varre o salão; à noite, conversa com os clientes. Só conversa, por enquanto.",
+    "Faltam 7 dias para Carmen atingir a maioridade. E Madalena já decidiu o destino da filha.",
+    "Carmen prefere morrer a se prostituir. Você irá guiá-la para uma vida melhor.",
+    "Minta. Engane. Oculte. Faça o que for necessário para que Carmen suba de vida.",
+    "Mas não se esqueça que, por trás até mesmo de uma farsante, bate um coração."
+  ],
+  "comoJogar": [
+    "A fala certa é sempre a que Carmen escolheu no livro, mesmo quando não foi a mais sensata.",
+    "Algumas falas erradas têm conserto; outras acabam com a história ali, e você recomeça do início do arco.",
+    "Em certos momentos, Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras mais adiante.",
+    "As fichas guardam pistas, e nesta versão contam tudo."
   ],
   "premio": {
     "valor": "R$ 10 de desconto",
@@ -24,6 +32,7 @@ window.JOGO = {
   "fichas": {
     "carmen": {
       "nome": "Carmen",
+      "retrato": "img/retratos/carmen.png",
       "papel": "A protagonista",
       "inicial": true,
       "texto": [
@@ -37,6 +46,7 @@ window.JOGO = {
     },
     "madalena": {
       "nome": "Madalena",
+      "retrato": "img/retratos/madalena.png",
       "papel": "A mãe",
       "inicial": true,
       "texto": [
@@ -132,6 +142,7 @@ window.JOGO = {
     },
     "humberto": {
       "nome": "Humberto Macedo",
+      "retrato": "img/retratos/humberto.png",
       "papel": "O Conselheiro Real",
       "texto": [
         "Ruivo, sardento, de bigode e olhos verdes. Alto, musculoso, perfume amadeirado de sândalo e cedro. Irmão da rainha Úrsula.",
@@ -209,12 +220,14 @@ window.JOGO = {
   "arcos": [
     {
       "titulo": "Serra Verde",
+      "cenario": "serra-verde",
       "abertura": [
         "Trancada no camarim do prostíbulo, Carmen só tinha uma certeza na vida: que não ia ser puta."
       ],
       "cenas": [
         {
           "titulo": "O camarim",
+          "imagem": { "arquivo": "img/espelho-cor.jpg", "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira." },
           "texto": [
             "Madalena escovava meus cabelos diante do espelho, como fazia quando eu era criança. Eu tinha acabado de pedir mais alguns meses: sair, circular pelas ruas, quem sabe conquistar um bom partido. Quem sabe até um Ilustre.",
             "— Só de dizer uma coisa dessas, já mostra como você é infantil — interrompeu ela. — Ilustres nunca se casarão com uma plebeia; no máximo, eles te farão uma concubina. É por isso que, por bem ou por mal, você fará o que digo. E acabou a discussão.",
@@ -531,6 +544,7 @@ window.JOGO = {
     },
     {
       "titulo": "A estrada",
+      "cenario": "estrada",
       "abertura": [
         "Agora, Carmen era a assistente de um mascate. Restava provar que valia a viagem."
       ],
@@ -676,6 +690,7 @@ window.JOGO = {
     },
     {
       "titulo": "Pacentro",
+      "cenario": "pacentro",
       "abertura": [
         "A Capital era maior, mais rápida e mais cara do que Carmen sonhava. Ao longe, um borrão branco: o Palácio Real."
       ],
@@ -916,6 +931,7 @@ window.JOGO = {
     },
     {
       "titulo": "O Palácio Real",
+      "cenario": "palacio",
       "abertura": [
         "Domingo. Meio-dia. Uma plebeia de Serra Verde contra a nobreza inteira do reino."
       ],
@@ -1181,6 +1197,7 @@ window.JOGO = {
     },
     {
       "titulo": "Empregada Real",
+      "cenario": "empregada",
       "abertura": [
         "Décima segunda colocada, Vivian Barbosa. Uma plebeia de Serra Verde agora servia no Palácio Real."
       ],
@@ -1262,6 +1279,7 @@ window.JOGO = {
         },
         {
           "titulo": "Os elogios",
+          "imagem": { "arquivo": "img/biblioteca-cor.jpg", "descricao": "Na biblioteca do palácio, Humberto beija a mão de Carmen, vestida de empregada." },
           "texto": [
             "Humberto beijou minha mão e inspirou meu perfume.",
             "— Se à distância você já era deslumbrante, de perto é a mais linda que há. É difícil não me perder nos mares dos seus olhos, e seus cabelos dourados são mais valiosos do que qualquer ouro que me pertence.",
@@ -1401,6 +1419,7 @@ window.JOGO = {
     },
     {
       "titulo": "O duelo",
+      "cenario": "duelo",
       "abertura": [
         "No dia de folga, Humberto bateu à porta. Não disse aonde iriam."
       ],
@@ -1552,6 +1571,7 @@ window.JOGO = {
     },
     {
       "titulo": "Confissões",
+      "cenario": "confissoes",
       "abertura": [
         "Um piquenique no pomar, cada um com o seu exemplar de “Confissões”. E, à noite, um jantar à luz da lua."
       ],
@@ -1765,6 +1785,7 @@ window.JOGO = {
     },
     {
       "titulo": "A farsa",
+      "cenario": "farsa",
       "abertura": [
         "Lá embaixo, no pátio, Paloma entregou a um mensageiro um envelope com lacre vermelho. Uma carta qualquer, disse a mim mesma."
       ],

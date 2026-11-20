@@ -50,6 +50,14 @@
   }
   function numeral(n) { return ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"][n] || String(n + 1); }
   function rotulo(texto) { rotuloArco.textContent = texto || ""; }
+  function cenario(id) { if (id) document.body.setAttribute("data-cenario", id); else document.body.removeAttribute("data-cenario"); }
+  function cenarioDoArco() { cenario(J.arcos[estado.arco] && J.arcos[estado.arco].cenario); }
+  function retrato(f, grande) {
+    if (f.retrato) return '<img class="' + (grande ? "retrato-grande" : "retrato") + '" src="' + esc(f.retrato) + '" alt="Retrato de ' + esc(f.nome) + '" loading="lazy">';
+    if (grande) return "";
+    var ini = String(f.nome).replace(/^(A|As|O|Os|Dona)\s+/, "").charAt(0);
+    return '<span class="retrato medalhao" aria-hidden="true">' + esc(ini) + "</span>";
+  }
 
   /* ---------- fichas ---------- */
   function abrirFichas(ids) {
@@ -66,10 +74,10 @@
     listaFichas.innerHTML = Object.keys(J.fichas).map(function (id) {
       var f = J.fichas[id];
       if (estado.fichas.indexOf(id) < 0) {
-        return '<li class="ficha bloqueada"><h3>???</h3><p class="papel">Ainda não apareceu na história.</p></li>';
+        return '<li class="ficha bloqueada"><div class="ficha-topo"><span class="retrato medalhao" aria-hidden="true">?</span><div><h3>???</h3><p class="papel">Ainda não apareceu na história.</p></div></div></li>';
       }
       var nova = estado.novas.indexOf(id) >= 0 ? ' <span class="selo-nova">nova</span>' : "";
-      return '<li class="ficha"><details' + (nova ? " open" : "") + "><summary><h3>" + esc(f.nome) + nova + '</h3><p class="papel">' + esc(f.papel) + "</p></summary>" + paragrafos(f.texto) + "</details></li>";
+      return '<li class="ficha"><details' + (nova ? " open" : "") + '><summary><div class="ficha-topo">' + retrato(f) + "<div><h3>" + esc(f.nome) + nova + '</h3><p class="papel">' + esc(f.papel) + "</p></div></div></summary>" + retrato(f, true) + paragrafos(f.texto) + "</details></li>";
     }).join("");
   }
   botaoFichas.addEventListener("click", function () {
@@ -135,7 +143,7 @@
 
   /* ---------- telas ---------- */
   function telaInicio() {
-    rotulo("");
+    rotulo(""); cenario(null);
     var temProgresso = estado.iniciado && !estado.venceu;
     var html =
       '<section class="tela inicio">' +
@@ -160,11 +168,12 @@
   }
 
   function telaAbertura() {
-    rotulo("Prólogo");
+    rotulo("Prólogo"); cenario(J.arcos[0].cenario);
     mostrar(
       '<section class="tela">' +
       '<p class="rotulo">Prólogo</p><h2>Antes de começar</h2>' +
       '<div class="texto">' + paragrafos(J.abertura) + "</div>" +
+      (J.comoJogar ? '<aside class="como-jogar"><p class="rotulo">Como jogar</p><ul>' + J.comoJogar.map(function (t) { return "<li>" + fmt(t) + "</li>"; }).join("") + "</ul></aside>" : "") +
       '<div class="acoes"><button class="botao principal" data-acao="arco">Entrar em Serra Verde</button></div>' +
       "</section>"
     );
@@ -179,7 +188,7 @@
     } else {
       estado.marco = { arco: estado.arco, itens: estado.itens.slice(), desvios: estado.desvios };
     }
-    salvar(); atualizarBotaoBolsa();
+    salvar(); atualizarBotaoBolsa(); cenarioDoArco();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
     mostrar(
       '<section class="tela arco">' +
@@ -194,7 +203,7 @@
   function telaCena(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i];
     abrirFichas(c.desbloqueia);
-    salvar();
+    salvar(); cenarioDoArco();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
     var novas = (c.desbloqueia || []).map(function (id) { return J.fichas[id] ? J.fichas[id].nome : ""; }).filter(Boolean);
     var opcoes = embaralhar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return !x.o.requer || temItem(x.o.requer); }));
@@ -282,7 +291,7 @@
   }
 
   function telaVitoria() {
-    rotulo("Vitória");
+    rotulo("Vitória"); cenarioDoArco();
     var temCodigo = estado.arroba && window.CODIGO.valido(estado.arroba);
     var html =
       '<section class="tela vitoria">' +

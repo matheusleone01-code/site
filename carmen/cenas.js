@@ -32,10 +32,19 @@ window.JOGO = {
   "aviso": "Este jogo se passa num bordel e tem linguagem e temas adultos. Recomendado para maiores de 16 anos.",
 
   "abertura": [
-    "No reino dos Burgos, quem nasce plebeu morre plebeu. Os nobres, chamados de Ilustres, casam-se entre si; às plebeias bonitas, no máximo, oferecem o posto de concubina.",
-    "Carmen cresceu em Serra Verde, uma cidadezinha no sul da província central, dentro do bordel onde a mãe dela, Madalena, é a cortesã mais disputada. De manhã, Carmen varre o salão; à noite, conversa com os clientes. Só conversa.",
-    "Faltam sete dias para Carmen atingir a maioridade. E Madalena já decidiu como a filha vai ganhar a vida quando adulta.",
-    "Você vai guiar Carmen pelas encruzilhadas do caminho. Escolha bem as palavras: algumas falas erradas têm conserto, outras acabam com a história ali. Em certos momentos, Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras mais adiante. Se precisar, consulte as fichas dos personagens. Elas guardam as pistas."
+    "No Reino dos Burgos, a plebe sempre será plebe. Os nobres, chamados de Ilustres, casam-se entre si. As plebeias bonitas, no máximo, tornam-se concubinas.",
+    "Carmen cresceu em Serra Verde, uma cidade pequena. Madalena, mãe dela, é a cortesã mais disputada do bordel onde moram. De manhã, Carmen varre o salão; à noite, conversa com os clientes. Só conversa, por enquanto.",
+    "Faltam 7 dias para Carmen atingir a maioridade. E Madalena já decidiu o destino da filha.",
+    "Carmen prefere morrer a se prostituir. Você irá guiá-la para uma vida melhor.",
+    "Minta. Engane. Oculte. Faça o que for necessário para que Carmen suba de vida.",
+    "Mas não se esqueça que, por trás até mesmo de uma farsante, bate um coração."
+  ],
+
+  // Caixa "Como jogar", abaixo da introdução
+  "comoJogar": [
+    "Algumas falas erradas têm conserto; outras acabam com a história ali, e você recomeça do início do arco.",
+    "Em certos momentos, Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras mais adiante.",
+    "As fichas dos personagens guardam pistas."
   ],
 
   // Prêmio para quem chega ao Palácio Real
@@ -52,6 +61,7 @@ window.JOGO = {
   "fichas": {
     "carmen": {
       "nome": "Carmen",
+      "retrato": "img/retratos/carmen.png",
       "papel": "A protagonista",
       "inicial": true,
       "texto": [
@@ -65,6 +75,7 @@ window.JOGO = {
     },
     "madalena": {
       "nome": "Madalena",
+      "retrato": "img/retratos/madalena.png",
       "papel": "A mãe",
       "inicial": true,
       "texto": [
@@ -172,8 +183,9 @@ window.JOGO = {
   "arcos": [
     {
       "titulo": "Serra Verde",
+      "cenario": "serra-verde",
       "abertura": [
-        "Trancada no camarim do prostíbulo, eu só tinha uma certeza na vida: que eu não ia ser puta."
+        "Trancada no camarim do prostíbulo, Carmen só tinha uma certeza na vida: que não ia ser puta."
       ],
       "cenas": [
         {
@@ -495,6 +507,7 @@ window.JOGO = {
     },
     {
       "titulo": "A estrada",
+      "cenario": "estrada",
       "abertura": [
         "Agora, Carmen era a assistente de um mascate. Restava provar que valia a viagem."
       ],
@@ -594,6 +607,7 @@ window.JOGO = {
     },
     {
       "titulo": "Pacentro",
+      "cenario": "pacentro",
       "abertura": [
         "A Capital era maior, mais rápida e mais cara do que Carmen sonhava. Ao longe, um borrão branco: o Palácio Real."
       ],
@@ -757,6 +771,7 @@ window.JOGO = {
     },
     {
       "titulo": "O Palácio Real",
+      "cenario": "palacio",
       "abertura": [
         "Domingo. Meio-dia. Uma plebeia de Serra Verde contra a nobreza inteira do reino."
       ],
