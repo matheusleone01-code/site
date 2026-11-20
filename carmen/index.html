@@ -3,31 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Carmen · O jogo (em breve)</title>
-<meta name="description" content="Jogo de escolhas baseado no livro Carmen, de Matheus Leone. Em breve.">
+<title>Carmen · O jogo</title>
+<meta name="description" content="Um jogo de escolhas baseado no livro Carmen, de Matheus Leone. Leve Carmen até o Palácio Real e ganhe desconto no livro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <link rel="stylesheet" href="../estilo.css">
+<link rel="stylesheet" href="jogo.css">
 <style>
-  .embreve { position: relative; z-index: 1; max-width: 34rem; margin: 0 auto; text-align: center;
-    padding: 18vh max(16px, env(safe-area-inset-right, 0px)) 4rem max(16px, env(safe-area-inset-left, 0px)); }
-  .embreve h1 { font-size: clamp(3rem, 14vw, 4.75rem); line-height: 1; margin: .25rem 0 0; }
-  .embreve .sub { font: 500 1.25rem/1.3 var(--display); color: var(--tinta-suave); margin: .75rem 0 1.5rem; }
-  .embreve .acoes { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin-top: 2rem; }
+  .beta { width: calc(100% - 2rem); max-width: 42rem; margin: 1rem auto 0; box-sizing: border-box; padding: .6rem 1rem; border: 1px dashed var(--linha); border-radius: 4px; text-align: center; font-style: italic; font-size: .9375rem; color: var(--tinta-suave); background: color-mix(in srgb, var(--papel-2) 70%, transparent); }
+  .beta strong { font: 600 .75rem/1 var(--display); letter-spacing: .12em; text-transform: uppercase; font-style: normal; color: var(--acento); margin-right: .4rem; }
+  .outra-versao { display: none; } /* versão completa ainda não publicada */
 </style>
 </head>
-<body>
+<body class="jogo">
 <div class="pergaminho" aria-hidden="true"></div>
-<main class="embreve">
-  <p class="rotulo">Um jogo de escolhas</p>
-  <h1>Carmen</h1>
-  <p class="sub">Em breve</p>
-  <p>O jogo de escolhas baseado no livro <em>Carmen</em> está sendo preparado e será lançado em breve. Acompanhe as novidades no Instagram.</p>
-  <div class="acoes">
-    <a class="botao principal" href="https://www.instagram.com/omatheusleone/" target="_blank" rel="noopener">@omatheusleone</a>
-    <a class="botao" href="../">Voltar ao site</a>
+<header class="barra">
+  <div class="barra-dentro">
+    <a class="voltar" href="../">← Site</a>
+    <span class="rotulo-arco" id="rotulo-arco" aria-live="polite"></span>
+    <button class="botao-fichas" id="botao-bolsa" type="button" hidden>Bolsa</button>
+    <button class="botao-fichas" id="botao-fichas" type="button">Fichas</button>
   </div>
-</main>
+</header>
+
+<p class="beta" role="note"><strong>Beta</strong> O jogo ainda está em testes. Achou algum erro? Me conte no Instagram <a href="https://instagram.com/omatheusleone">@omatheusleone</a>.</p>
+
+<main class="palco" id="palco"></main>
+
+<dialog class="painel" id="painel-fichas" aria-labelledby="titulo-fichas">
+  <div class="painel-dentro">
+    <div class="painel-topo">
+      <h2 id="titulo-fichas">Fichas</h2>
+      <button class="botao" id="fechar-fichas" type="button">Fechar</button>
+    </div>
+    <p class="painel-dica">Novos personagens ganham ficha quando cruzam o caminho de Carmen. Leia com atenção: as pistas estão aqui.</p>
+    <ul class="lista-fichas" id="lista-fichas"></ul>
+  </div>
+</dialog>
+
+<dialog class="painel" id="painel-bolsa" aria-labelledby="titulo-bolsa">
+  <div class="painel-dentro">
+    <div class="painel-topo">
+      <h2 id="titulo-bolsa">Bolsa</h2>
+      <button class="botao" id="fechar-bolsa" type="button">Fechar</button>
+    </div>
+    <p class="painel-dica">O que Carmen leva consigo. Alguns itens abrem escolhas extras mais adiante; elas aparecem marcadas com “Da bolsa”.</p>
+    <ul class="lista-fichas" id="lista-bolsa"></ul>
+  </div>
+</dialog>
+
+<script src="cenas.js"></script>
+<script src="codigo.js"></script>
+<script src="jogo.js"></script>
 </body>
 </html>
