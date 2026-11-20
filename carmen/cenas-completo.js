@@ -335,7 +335,7 @@ window.JOGO = {
           "pergunta": "Que desculpa me livraria do salão sem levantar suspeitas?",
           "opcoes": [
             {
-              "texto": "Levar a mão à boca do estômago: “Estou meio indisposta. Enjoo. Acho que é do nervosismo.”",
+              "texto": "Levar a mão à boca do estômago: “Estou enjoada. Acho que é do nervosismo.”",
               "certa": true,
               "resultado": [
                 "A suspeita sumiu do rosto de Madalena.",
