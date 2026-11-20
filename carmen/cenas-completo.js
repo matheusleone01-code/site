@@ -302,7 +302,8 @@ window.JOGO = {
                 "honestidade": 1
               }
             }
-          ]
+          ],
+          "quando": "7 dias antes do aniversário"
         },
         {
           "titulo": "A desculpa",
@@ -351,7 +352,8 @@ window.JOGO = {
                 "Elogio na medida certa. Foi ela mesma quem me ensinou."
               ]
             }
-          ]
+          ],
+          "quando": "6 dias antes do aniversário"
         },
         {
           "titulo": "A janela",
@@ -399,7 +401,8 @@ window.JOGO = {
                 "E entrou no bordel atrás de Madalena. Ganhei um vestido dias depois, mas nunca mais tive a atenção dele. Para Armando, eu continuava sendo só a menina que pedia presentes."
               ]
             }
-          ]
+          ],
+          "quando": "4 dias antes do aniversário"
         },
         {
           "titulo": "A proposta",
@@ -438,7 +441,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Contar a verdade: — Daqui a sete dias, minha mãe vai me vender para o primeiro Ilustre que pagar. Me leva. Eu trabalho para você de graça até pagar a viagem.",
+              "texto": "Contar a verdade: — Daqui a quatro dias, minha mãe vai me vender para o primeiro Ilustre que pagar. Me leva. Eu trabalho para você de graça até pagar a viagem.",
               "certa": true,
               "requerAtributo": {
                 "honestidade": 1
@@ -449,7 +452,8 @@ window.JOGO = {
                 "— Fico onde você quiser. — Respirei fundo. — E então? Quando podemos partir?"
               ]
             }
-          ]
+          ],
+          "quando": "4 dias antes, fim de tarde"
         },
         {
           "titulo": "O segredo",
@@ -487,7 +491,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "quando": "4 dias antes, ao anoitecer"
         },
         {
           "titulo": "O pretendente",
@@ -534,7 +539,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "quando": "2 dias antes do aniversário"
         },
         {
           "titulo": "O quarto de Madalena",
@@ -583,7 +589,8 @@ window.JOGO = {
                 "Recolhi o botão do chão e o girei entre os dedos: prata de verdade, com o brasão dos Barbosa. Alexandro tinha outros dez iguais. Eu tinha um pressentimento."
               ]
             }
-          ]
+          ],
+          "quando": "Véspera do aniversário, madrugada"
         },
         {
           "titulo": "O balde",
@@ -622,7 +629,8 @@ window.JOGO = {
                 "Ele me acompanhou até o rio. E, do rio, viu muito bem a loja de Armando parada na outra margem, esperando por mim."
               ]
             }
-          ]
+          ],
+          "quando": "Véspera do aniversário, amanhecer"
         }
       ],
       "fecho": [

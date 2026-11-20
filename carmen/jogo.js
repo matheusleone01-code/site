@@ -239,7 +239,7 @@
     mostrar(
       '<section class="tela cena">' +
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
-      "<h2>" + esc(c.titulo) + "</h2>" +
+      "<h2>" + esc(c.quando || c.titulo) + "</h2>" +
       (novas.length ? '<p class="aviso-ficha">Nova ficha: ' + esc(novas.join(", ")) + ". Abra em <em>Fichas</em>, lá em cima.</p>" : "") +
       (c.imagem ? '<figure class="ilustracao"><img src="' + esc(c.imagem.arquivo) + '" alt="' + esc(c.imagem.descricao || "") + '" loading="lazy" decoding="async"></figure>' : "") +
       '<div class="texto">' + paragrafos(c.texto) + "</div>" +
@@ -268,7 +268,7 @@
         var novosD = ganhar(certa.ganha), forD = perder(certa.perde);
         var ganhosDesvio = somar(o.pontos), ganhosD = somar(certa.pontos);
         corpo =
-          '<p class="rotulo">Desvio · ' + esc(c.titulo) + "</p>" +
+          '<p class="rotulo">Desvio · ' + esc(c.quando || c.titulo) + "</p>" +
           '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
           '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
           avisos(null, null, ganhosDesvio) +
@@ -280,7 +280,7 @@
         abrirFichas(o.desbloqueia);
         var novos = ganhar(o.ganha), foram = perder(o.perde), ganhos = somar(o.pontos);
         corpo =
-          '<p class="rotulo">' + esc(c.titulo) + "</p>" +
+          '<p class="rotulo">' + esc(c.quando || c.titulo) + "</p>" +
           '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
           avisos(novos, foram, ganhos) +
           '<div class="texto">' + paragrafos(o.resultado) + "</div>";
