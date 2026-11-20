@@ -21,6 +21,7 @@ window.JOGO = {
     "A fala certa é sempre a que Carmen escolheu no livro, mesmo quando não foi a mais sensata.",
     "Algumas falas erradas têm conserto; outras acabam com a história ali, e você recomeça do início do arco.",
     "Em certos momentos, Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras mais adiante.",
+    "Algumas escolhas dão pontos de Persuasão, Honestidade ou Astúcia. Com pontos suficientes, aparecem falas extras com certos personagens.",
     "As fichas guardam pistas, e nesta versão contam tudo."
   ],
   "premio": {
@@ -32,7 +33,6 @@ window.JOGO = {
   "fichas": {
     "carmen": {
       "nome": "Carmen",
-      "retrato": "img/retratos/carmen.png",
       "papel": "A protagonista",
       "inicial": true,
       "texto": [
@@ -42,11 +42,11 @@ window.JOGO = {
         "Quando é preciso, finge submissão. Quando alguém a trata com deboche, inverte os papéis.",
         "Jurou a si mesma uma única coisa: não seria puta.",
         "Sonha com um casamento por amor, uma família de verdade e um mundo maior do que Serra Verde. Não bebe vinho, porque resseca a voz: canta escondido quando ninguém está olhando."
-      ]
+      ],
+      "retrato": "img/retratos/carmen.png"
     },
     "madalena": {
       "nome": "Madalena",
-      "retrato": "img/retratos/madalena.png",
       "papel": "A mãe",
       "inicial": true,
       "texto": [
@@ -55,7 +55,8 @@ window.JOGO = {
         "Acredita que o melhor futuro para Carmen é seguir seus passos. “Igual, não. Melhor.”",
         "Não suporta desobediência aberta: quando a filha bate de frente, ela aperta o cerco. Quando a filha cede, ela relaxa.",
         "Conhece Carmen como a palma da mão. Inclusive o calendário dela."
-      ]
+      ],
+      "retrato": "img/retratos/madalena.png"
     },
     "mundo": {
       "nome": "O reino dos Burgos",
@@ -142,7 +143,6 @@ window.JOGO = {
     },
     "humberto": {
       "nome": "Humberto Macedo",
-      "retrato": "img/retratos/humberto.png",
       "papel": "O Conselheiro Real",
       "texto": [
         "Ruivo, sardento, de bigode e olhos verdes. Alto, musculoso, perfume amadeirado de sândalo e cedro. Irmão da rainha Úrsula.",
@@ -150,7 +150,8 @@ window.JOGO = {
         "Foi o rosto da Facção Real nas batalhas pelo trono. Dizem que matou o próprio pai, Octávio.",
         "Livro favorito: “Confissões”, de Martino Aurélio, o general que matou o pai e virou o Paladino da Alvorada. Lê e relê.",
         "Bebe vinho de taça cheia quando ninguém está olhando. Por trás das frases prontas, quer ser levado a sério."
-      ]
+      ],
+      "retrato": "img/retratos/humberto.png"
     },
     "ursula": {
       "nome": "Úrsula",
@@ -217,17 +218,33 @@ window.JOGO = {
       ]
     }
   },
+  "atributos": {
+    "persuasao": {
+      "nome": "Persuasão",
+      "texto": "Elogios na medida certa, argumentos na hora certa. Funciona com quem gosta de ouvir o que quer, como Madalena."
+    },
+    "honestidade": {
+      "nome": "Honestidade",
+      "texto": "Dizer a verdade, mesmo quando custa. Funciona com quem valoriza sinceridade, como Armando."
+    },
+    "astucia": {
+      "nome": "Astúcia",
+      "texto": "Mentir bem, enganar, ocultar. Toda farsa precisa dela."
+    }
+  },
   "arcos": [
     {
       "titulo": "Serra Verde",
-      "cenario": "serra-verde",
       "abertura": [
         "Trancada no camarim do prostíbulo, Carmen só tinha uma certeza na vida: que não ia ser puta."
       ],
       "cenas": [
         {
           "titulo": "O camarim",
-          "imagem": { "arquivo": "img/espelho-cor.jpg", "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira." },
+          "imagem": {
+            "arquivo": "img/espelho-cor.jpg",
+            "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
+          },
           "texto": [
             "Madalena escovava meus cabelos diante do espelho, como fazia quando eu era criança. Eu tinha acabado de pedir mais alguns meses: sair, circular pelas ruas, quem sabe conquistar um bom partido. Quem sabe até um Ilustre.",
             "— Só de dizer uma coisa dessas, já mostra como você é infantil — interrompeu ela. — Ilustres nunca se casarão com uma plebeia; no máximo, eles te farão uma concubina. É por isso que, por bem ou por mal, você fará o que digo. E acabou a discussão.",
@@ -244,7 +261,10 @@ window.JOGO = {
                 "Deixei os ombros caírem um centímetro, simulando derrota. O espelho não mentia: a expressão sisuda dela se aliviou em um sorriso largo.",
                 "— Boa menina…",
                 "Eu não precisava que Madalena concordasse comigo. Livre desse peso, fingir uma submissão relutante foi fácil."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— Prefiro morrer a virar o que você é.",
@@ -260,7 +280,10 @@ window.JOGO = {
                 "Madalena riu, mas os olhos dela não riram. — Vai, é? Pois vá. A estrada está ali, e a fome também.",
                 "Ela voltou a escovar meu cabelo, esperando. Engoli o orgulho. Ameaçar Madalena era o jeito mais rápido de ter Gasparo vigiando a minha porta. Eu precisava que ela baixasse a guarda, não que a erguesse."
               ],
-              "desvio": true
+              "desvio": true,
+              "pontos": {
+                "honestidade": 1
+              }
             }
           ]
         },
@@ -279,7 +302,10 @@ window.JOGO = {
                 "A suspeita sumiu do rosto de Madalena.",
                 "— De gravidez é que não é. — Ela riu alto. — Está bem, pode ir para o seu quarto. Mas, se esse tal enjoo ficar se repetindo, decidirei tudo por você.",
                 "As melhores desculpas eram aquelas que tinham um fundo de verdade. Meu estômago estava mesmo embrulhado."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "Levar a mão ao ventre: “Estou com cólica.”",
@@ -294,6 +320,18 @@ window.JOGO = {
               "resultado": [
                 "Passei a noite inteira no salão, sob os olhos de Madalena, sorrindo para homens que eu não queria e sem um minuto para pensar.",
                 "Quando o único cliente que poderia me tirar dali chegou, minha mãe foi direto até ele. Eu nunca tive a chance de falar com ele a sós."
+              ]
+            },
+            {
+              "texto": "Elogiar a mãe: — Hoje a noite é sua, mãe. Se eu descer, ninguém vai saber para quem olhar, e eu ainda nem sei sorrir como a senhora.",
+              "certa": true,
+              "requerAtributo": {
+                "persuasao": 1
+              },
+              "resultado": [
+                "Madalena parou a escova no ar. Por um instante, achei que tinha exagerado.",
+                "— Puxa-saco — disse ela, mas o canto da boca já subia. — Está bem. Vá dormir cedo e treine esse sorriso no espelho. Na próxima, você desce.",
+                "Elogio na medida certa. Foi ela mesma quem me ensinou."
               ]
             }
           ]
@@ -321,7 +359,10 @@ window.JOGO = {
                 "— É, eu percebi. Você costuma aparecer no meio do mês nono, não no final do sétimo.",
                 "Ele sorriu e corou. — Você reparou nisso?",
                 "Claro que eu tinha reparado. E Armando falou, falou, falou: das estradas, do jovem rei, da Capital. Até que a conversa chegou exatamente onde eu queria."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— Quero que me leve com você quando for embora.",
@@ -329,7 +370,10 @@ window.JOGO = {
                 "Armando soltou uma gargalhada. — E eu quero ser o rei dos Burgos. — Ele balançou a cabeça. — Vou fingir que não ouvi isso.",
                 "Ele já se virava para a porta do bordel. Tola: ninguém faz um favor desses a quem começa pelo fim. Segurei a manga dele, com o meu sorriso mais inocente. — Era brincadeira. Fica um pouco."
               ],
-              "desvio": true
+              "desvio": true,
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "— Um vestido, claro. Aquele de renda que você trouxe da última vez.",
@@ -356,7 +400,10 @@ window.JOGO = {
                 "Agora, sim, ele sorriu.",
                 "— Essa é uma ótima ideia. Pode muito bem funcionar.",
                 "— E então? Quando podemos partir?"
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— Eu pago a viagem. Tenho umas economias guardadas.",
@@ -371,6 +418,18 @@ window.JOGO = {
               "resultado": [
                 "— Menina, eu acabei de dizer que não tenho nem para mim.",
                 "Ele suspirou, cansado, e entrou no bordel. Eu tinha pedido dinheiro a um homem que tinha acabado de dizer que estava sem nenhum."
+              ]
+            },
+            {
+              "texto": "Contar a verdade: — Daqui a sete dias, minha mãe vai me vender para o primeiro Ilustre que pagar. Me leva. Eu trabalho para você de graça até pagar a viagem.",
+              "certa": true,
+              "requerAtributo": {
+                "honestidade": 1
+              },
+              "resultado": [
+                "Armando ficou um bom tempo calado, olhando para a porta do bordel.",
+                "— De graça, não. Ninguém trabalha de graça na minha loja. — Ele coçou a nuca. — Mas uma moça bonita lá em cima da loja talvez atraia mais freguesas do que as minhas rendas. Você ficaria em pé na boleia, como um manequim?",
+                "— Fico onde você quiser. — Respirei fundo. — E então? Quando podemos partir?"
               ]
             }
           ]
@@ -390,7 +449,10 @@ window.JOGO = {
                 "— Eu queria argumentar que não, mas uma filha conhece melhor a mãe do que eu.",
                 "— Você é um homem bom. Não tem opção além de me ajudar.",
                 "— Não sou um homem bom, mas também não sou um homem péssimo. Então, sim, eu te ajudarei a fugir. Sairemos na véspera do seu aniversário, pela manhã."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "— Tudo bem, fale com ela. Mas fale com jeito.",
@@ -434,7 +496,10 @@ window.JOGO = {
                 "Meu sorriso se alargou. — Não me ofendeu nem um pouco. Minha primeira vez tem que ser mágica, com o amor da minha vida.",
                 "Passamos horas conversando sobre passado, presente e futuro. Ele me contou tudo sobre a rotina de um jovem Ilustre, sobre a mãe, sobre a irmã caçula. Quando já eram altas horas, ele adormeceu roncando baixinho.",
                 "No final de tudo, dormimos juntos. Só não da forma que Madalena e Jaime queriam."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "Seguir as instruções da mãe. Uma noite só, e amanhã estaria livre.",
@@ -474,7 +539,10 @@ window.JOGO = {
               "resultado": [
                 "A caixinha ficava na segunda gaveta, embaixo das meias, como sempre. Contei as moedas no escuro e enfiei a bolsinha no decote.",
                 "Não era roubo, disse a mim mesma. Eram dezessete anos de salão varrido. A consciência não concordou, mas a consciência não ia pagar meu pão na estrada."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "Entrar no quarto da mãe e pegar o lenço bordado que ela usava quando cantava para Carmen dormir.",
@@ -517,7 +585,10 @@ window.JOGO = {
                 "Desci os degraus. Uma brisa matinal balançou a saia do meu vestido, e um arrepio libertador percorreu meus braços.",
                 "Na esquina, Armando cochilava na boleia. Antes que a loja se afastasse, ergui o braço e lhe estendi o dedo do meio. Assim, os guardas achariam que eu o tinha mandado pastar, em vez de estar mancomunada com o mascate.",
                 "Minutos depois, do outro lado da ponte do rio, subi na boleia ao lado dele. Serra Verde ficou para trás."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— É que… derramei vinho no meu vestido. Preciso lavar antes que manche.",
@@ -540,11 +611,11 @@ window.JOGO = {
       "fecho": [
         "No horizonte, o sol nascia e tingia o céu de dourado. Desde pequena, eu me imaginava uma princesa resgatada por um príncipe num cavalo branco.",
         "Nem nos meus dias mais criativos imaginei que sairia de Serra Verde numa loja itinerante, puxada por burros e conduzida por um cinquentão. Mas eu não podia reclamar."
-      ]
+      ],
+      "cenario": "serra-verde"
     },
     {
       "titulo": "A estrada",
-      "cenario": "estrada",
       "abertura": [
         "Agora, Carmen era a assistente de um mascate. Restava provar que valia a viagem."
       ],
@@ -569,7 +640,10 @@ window.JOGO = {
                 "— N-não — disse a rechonchuda. — Obrigada, mas…",
                 "— Que nada, não precisa ter vergonha.",
                 "Puxei a nariguda pelo braço. Sem olhar para trás, eu sabia que as outras duas nos seguiam."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— Mulher da vida é a senhora sua mãe.",
@@ -616,7 +690,10 @@ window.JOGO = {
                 "Escolhi um amarelo-claro, com bordado florido no busto. Quando ela finalmente tirou as mãos da frente do decote, perguntei:",
                 "— Uau… Quem é essa peituda que entrou na minha loja?",
                 "Ela gargalhou tanto que deixou escapar um ronco. A transformação dela atraiu as amigas, e as amigas atraíram a feira inteira. De vendedor principal, Armando foi rebaixado a segurança de grife na porta da cabine, sem reclamar."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— Você tem razão. Temos uns mais discretos ali naquela caixa, mais o seu estilo.",
@@ -653,7 +730,10 @@ window.JOGO = {
                 "Terminei de olhos fechados. Nada de aplausos. Armando encarava as chamas em silêncio e parecia limpar um olho que eu não conseguia enxergar.",
                 "— Você pode cantar de novo?",
                 "Cantei. Depois, ao erguer o copo, vi meu reflexo no suco escuro, iluminado pelo fogo, e entendi o que havia de familiar no perfil dele. Larguei o pão e toquei meu nariz."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "Uma das cantigas obscenas que aprendeu no bordel, para fazê-lo rir.",
@@ -686,11 +766,11 @@ window.JOGO = {
       ],
       "fecho": [
         "Juntos, viajamos de vilarejos a cidades maiores, coletando mais moedas do que cobradores de impostos. Na manhã seguinte à fogueira, avistamos Pacentro."
-      ]
+      ],
+      "cenario": "estrada"
     },
     {
       "titulo": "Pacentro",
-      "cenario": "pacentro",
       "abertura": [
         "A Capital era maior, mais rápida e mais cara do que Carmen sonhava. Ao longe, um borrão branco: o Palácio Real."
       ],
@@ -716,7 +796,10 @@ window.JOGO = {
                 "— Sei, sim. E posso provar.",
                 "Acertei quase tudo o que ela me perguntou sobre pedras e banhos. Uma vida inteira de bordel ensina muita coisa.",
                 "— Você sabe menos do que acredita saber, mas mais do que eu esperava. Contratada. Por um dia teste."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— Por favor, Dona Isolina. Eu acabei de chegar e não tenho para onde ir.",
@@ -732,6 +815,19 @@ window.JOGO = {
                 "Armando me lançou um olhar que dizia tudo: eu tinha soado como a menina convencida que ela achava que eu era. Antes que ela se sentasse, olhei para a loja de verdade, prateleira por prateleira."
               ],
               "desvio": true
+            },
+            {
+              "texto": "Pegar um brinco da vitrine e prendê-lo na orelha de Dona Isolina: — Olhe no espelho. Agora imagine uma moça dizendo isso a cada cliente que entra.",
+              "certa": true,
+              "requerAtributo": {
+                "persuasao": 3
+              },
+              "resultado": [
+                "Isolina se olhou no espelho do balcão. Virou o rosto para a esquerda, para a direita. A pedra combinava com os olhos dela, e ela sabia disso.",
+                "— Bajulações não funcionam comigo, menina — disse, sem tirar o brinco. — Mas reconheço que podem funcionar com certas clientes.",
+                "Ela me fez meia dúzia de perguntas sobre pedras e banhos. Acertei quase todas.",
+                "— Contratada. Por um dia teste."
+              ]
             }
           ]
         },
@@ -794,7 +890,10 @@ window.JOGO = {
                 "Disparei as perguntas no ritmo dos pacentrenses. Ela ficou meio zonza.",
                 "— Não faço ideia. O convite só falou em me convidar pela minha maioridade, e… o resto não te interessa.",
                 "Bastava. Se uma Ilustre de terceira classe como ela tinha sido convidada, todas as Ilustres que acabavam de fazer a maioridade deviam ter sido também. Muitas candidatas, uma sem saber das outras. Dava para entrar no meio."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Que interessante. E como uma moça faz para participar dessa avaliação?",
@@ -827,7 +926,10 @@ window.JOGO = {
                 "Colocar a Resplandecente no meio foi golpe baixo, mas eu precisava de uma resposta sincera.",
                 "— No domingo, ao meio-dia.",
                 "Dei tchauzinhos para ela. Seis dias: tempo para os ajustes finais do plano e para a Ilustre esquecer os detalhes do meu rosto."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Vossa Ilustreza me deixaria assistir à avaliação? Seria a maior honra da minha vida.",
@@ -865,7 +967,10 @@ window.JOGO = {
                 "— Eu não mereço ser chamado de pai. Eu não tirei sua mãe do bordel.",
                 "— Quando eu mais precisava, você esteve lá por mim. É por isso que eu te perdoo, pai.",
                 "Ele me esmagou num abraço, repetindo “obrigado” uma centena de vezes."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "Guardar a suspeita e se despedir com um “boa viagem”.",
@@ -905,7 +1010,10 @@ window.JOGO = {
                 "— Adeus, Armando.",
                 "— … Adeus, filha.",
                 "Foi assim que me despedi dele. Decidida a nunca mais vê-lo."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "— Eu entendo, pai. Também teria vergonha.",
@@ -927,11 +1035,11 @@ window.JOGO = {
       "fecho": [
         "Cheguei à joalheria atrasada, pingando de suor, e varri a loja enxugando lágrimas tímidas.",
         "Por que ele não mentiu para mim? Tinha sido bom imaginar que meu pai fosse uma boa pessoa."
-      ]
+      ],
+      "cenario": "pacentro"
     },
     {
       "titulo": "O Palácio Real",
-      "cenario": "palacio",
       "abertura": [
         "Domingo. Meio-dia. Uma plebeia de Serra Verde contra a nobreza inteira do reino."
       ],
@@ -951,7 +1059,10 @@ window.JOGO = {
                 "O cabeleireiro perguntou se eu tinha certeza. Engoli em seco e disse “sim”.",
                 "Para minha surpresa, sorri diante do resultado. A nuca exposta arrepiou com o ar. Cabelos curtos tinham muita personalidade. E, uma hora, cresceriam de novo.",
                 "Depois, perfume de jasmim e almíscar, vestido azul-ciano, luvas bordadas e pérolas cultivadas idênticas às verdadeiras. Dona Isolina, sem saber de nada, me fez preço de custo."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "Usar um chapéu de aba enorme com véu, cobrindo o rosto.",
@@ -985,7 +1096,10 @@ window.JOGO = {
               "resultado": [
                 "O rosto dele corou profundamente. Fui até a porta da carruagem como quem nunca tinha ouvido um não na vida.",
                 "— Entendido, Vossa Ilustreza. — Ele enfiou a garça no bolso. — Por sinal, como devo anunciá-la na entrada do Palácio Real?"
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Bom dia, senhor. Quanto custaria uma corrida até o Palácio Real?",
@@ -1031,7 +1145,10 @@ window.JOGO = {
               "resultado": [
                 "A irmã caçula de Alexandro, que quase nunca saía do castelo de Serra Verde. Ele tinha me contado tudo sobre a família naquela noite.",
                 "No ritmo acelerado dos alazões, avançamos rumo ao palácio."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Carmen. Só Carmen.",
@@ -1075,7 +1192,10 @@ window.JOGO = {
                 "— Vivian Barbosa.",
                 "Ela passou o dedo em cada nome iniciado por V. Então levantou o rosto.",
                 "— Não está aqui. Desculpe-me, senhorita, mas sem isso não posso te deixar entrar."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "Abrir o saquinho e deslizar uma moeda pela mesa: — Talvez isso ajude a resolver o mal-entendido.",
@@ -1123,7 +1243,10 @@ window.JOGO = {
                 "— Calma, não precisamos piorar a situação — sussurrou a “minha” empregada. — Se você não disser a ninguém a questão do nome, não diremos a ninguém a questão do convite. Estamos combinadas?",
                 "Tive vontade de concordar na hora. Contei dois segundos inteiros antes de assentir.",
                 "Ela pegou o bico de pena e acrescentou meu nome no fim da lista, com um visto de presença."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— Será que não estou como Maria Vivian? Ou Ana Vivian? Às vezes erram meu nome.",
@@ -1138,6 +1261,19 @@ window.JOGO = {
               "resultado": [
                 "— Claro, senhorita. Mandaremos avisar a sua casa.",
                 "Saí pelo tapete vermelho sabendo que nenhum aviso chegaria. E que, se chegasse, iria parar nas mãos da verdadeira Vivian Barbosa."
+              ]
+            },
+            {
+              "texto": "Apontar a lista com o leque: — Vivian com V? Que engraçado. Mamãe sempre escreve com W. Procure no W, querida.",
+              "certa": true,
+              "requerAtributo": {
+                "astucia": 4
+              },
+              "resultado": [
+                "A empregada piscou e foi, obediente, até o fim da lista. Não havia nenhum W.",
+                "— Também não está aqui, Vossa Ilustreza… — sussurrou, já sem cor no rosto. Atrás de mim, a fila crescia, e ela sabia que a culpa ia cair nela.",
+                "— Então acrescente, antes que alguém perceba que vocês perderam o meu nome — sussurrei de volta, com o meu sorriso mais doce.",
+                "Ela pegou o bico de pena e escreveu meu nome no fim da lista, com um visto de presença."
               ]
             }
           ]
@@ -1160,7 +1296,10 @@ window.JOGO = {
                 "A menina me analisou por alguns instantes. Então olhou em volta, como se de repente percebesse quão estranha estava parecendo para as outras.",
                 "— Perdão, acho que te confundi.",
                 "E foi se posicionar bem longe de mim."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Não. Duvido muito.",
@@ -1193,11 +1332,11 @@ window.JOGO = {
       "fecho": [
         "A entrada no palácio estava garantida.",
         "Agora, só faltava passar na avaliação."
-      ]
+      ],
+      "cenario": "palacio"
     },
     {
       "titulo": "Empregada Real",
-      "cenario": "empregada",
       "abertura": [
         "Décima segunda colocada, Vivian Barbosa. Uma plebeia de Serra Verde agora servia no Palácio Real."
       ],
@@ -1221,7 +1360,10 @@ window.JOGO = {
                 "— É o que veremos.",
                 "Ao me virar, sorri. Mas uma frase dela não saía da minha cabeça: “Se fosse por mim, você nem teria sido aprovada.” A decisão não deveria ser só dela?",
                 "Só havia uma explicação: alguém queria que eu entrasse no Palácio Real."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— A senhora sabe com quem está falando? Sou uma Barbosa.",
@@ -1259,7 +1401,10 @@ window.JOGO = {
                 "Droga. Eu estava de costas e nunca tinha ouvido a voz dele.",
                 "— Não sabia. Só usei o título mais alto que eu conhecia; a governanta diz que é melhor pecar pelo excesso de formalidades.",
                 "Desci e me virei: peitoral marcando a camisa, cabelos ruivos, olhos verdes penetrantes. Humberto Macedo. E foi ele, descobri, quem garantiu minha aprovação. “Assim que te vislumbrei por uma janela, decidi que você entraria no palácio.”"
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— Pode deixar, senhor, tomo cuidado.",
@@ -1279,7 +1424,10 @@ window.JOGO = {
         },
         {
           "titulo": "Os elogios",
-          "imagem": { "arquivo": "img/biblioteca-cor.jpg", "descricao": "Na biblioteca do palácio, Humberto beija a mão de Carmen, vestida de empregada." },
+          "imagem": {
+            "arquivo": "img/biblioteca-cor.jpg",
+            "descricao": "Na biblioteca do palácio, Humberto beija a mão de Carmen, vestida de empregada."
+          },
           "texto": [
             "Humberto beijou minha mão e inspirou meu perfume.",
             "— Se à distância você já era deslumbrante, de perto é a mais linda que há. É difícil não me perder nos mares dos seus olhos, e seus cabelos dourados são mais valiosos do que qualquer ouro que me pertence.",
@@ -1294,7 +1442,10 @@ window.JOGO = {
                 "Ele ficou sem reação. Para equilibrar a mordida com um sopro, quando ele se inclinou para a estante, eu disse:",
                 "— A vida de uma mulher também melhora quando há figuras belas ao redor. E, se me permite dizer, seu traseiro é uma bela figura.",
                 "Humberto deixou o livro cair, vermelho do pescoço à testa."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "Corar e agradecer: — Vossa Arqui-ilustreza é gentil demais.",
@@ -1328,7 +1479,10 @@ window.JOGO = {
               "resultado": [
                 "— Quem sabe em uma próxima ocasião, então.",
                 "Fiz uma reverência e saí, guardando o título na memória. Da próxima vez que nos encontrássemos, eu teria lido aquela obra quantas vezes fosse preciso."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "Abaixar e pegar o livro junto com ele.",
@@ -1361,7 +1515,10 @@ window.JOGO = {
                 "Valéria arquejou. — Você não tem medo dessas pessoas?",
                 "— Pobreza de recursos não é o mesmo que pobreza de caráter.",
                 "Ela engoliu mais essa camada da mentira. E pediu que eu a ajudasse a arranjar um homem também. Ter uma amiga não era tão ruim assim."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Com a minha mãe.",
@@ -1394,7 +1551,10 @@ window.JOGO = {
               "resultado": [
                 "Ele abriu um sorriso atrevido. — Se emoção é o que quer, emoção é o que terá.",
                 "Naquela noite, abri “Confissões”. Virei a madrugada sem perceber."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "Aceitar e improvisar sobre o livro na hora.",
@@ -1408,18 +1568,21 @@ window.JOGO = {
                 "— Então por que o pegou? — A pergunta ficou no ar.",
                 "Humberto não era burro. Eu precisava de tempo para ler, e de um motivo para ele esperar. Sorri como quem guarda um segredo."
               ],
-              "desvio": true
+              "desvio": true,
+              "pontos": {
+                "honestidade": 1
+              }
             }
           ]
         }
       ],
       "fecho": [
         "“Se emoção é o que quer, emoção é o que terá.” Remoí a frase por dias."
-      ]
+      ],
+      "cenario": "empregada"
     },
     {
       "titulo": "O duelo",
-      "cenario": "duelo",
       "abertura": [
         "No dia de folga, Humberto bateu à porta. Não disse aonde iriam."
       ],
@@ -1439,7 +1602,10 @@ window.JOGO = {
                 "— Sem problemas, quanto mais, melhor.",
                 "Ergui uma sobrancelha. Ele se enrolou todo para explicar que não era nada daquilo. Ri e toquei a bochecha dele: — Às vezes você é uma gracinha, sabia?",
                 "O destino era o pátio de entrada, onde Guardas Reais treinavam. Ele não tinha me trazido para vê-los, e sim para vê-lo duelar com eles."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Sem saber o destino, eu não vou.",
@@ -1475,7 +1641,10 @@ window.JOGO = {
                 "— Engraçado, comigo foi justamente o contrário. Mas cada família é de um jeito.",
                 "E Valéria contou tudo: o golpe da maioridade, a facção arqui-ilustral de Octávio Macedo contra a facção real de Humberto. Pai contra filho. E que Humberto, dizem, matou o pai com as próprias mãos.",
                 "Depois apontou, discretamente, o tipo ideal dela: Ramiro, o guarda de cicatriz na bochecha."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Contou, sim. Papai adora falar disso.",
@@ -1489,6 +1658,19 @@ window.JOGO = {
               "texto": "— Os Barbosa? Na facção real? Tem certeza?",
               "resultado": [
                 "Valéria me olhou estranho. Uma Barbosa que não sabia de que lado a própria família lutou. Ela não esqueceu."
+              ]
+            },
+            {
+              "texto": "Devolver a pergunta: — Papai prefere que eu ouça a versão de quem esteve lá. Como o seu pai conta essas batalhas?",
+              "certa": true,
+              "requerAtributo": {
+                "astucia": 6
+              },
+              "resultado": [
+                "Valéria se iluminou. Ninguém nunca perguntava a ela sobre o pai.",
+                "E contou tudo: o golpe da maioridade, a facção arqui-ilustral de Octávio Macedo contra a facção real de Humberto. Pai contra filho. E que Humberto, dizem, matou o pai com as próprias mãos.",
+                "Eu não tinha dito uma única mentira. Só tinha feito uma pergunta no lugar certo.",
+                "Depois ela apontou, discretamente, o tipo ideal dela: Ramiro, o guarda de cicatriz na bochecha."
               ]
             }
           ]
@@ -1513,7 +1695,10 @@ window.JOGO = {
                 "— Cobrarei sua promessa!",
                 "O Guarda-Mor interrompeu: empate. E, com as espadas já abaixadas, Ramiro socou Humberto. O nariz estalou.",
                 "Na enfermaria, o Iluminado Eusébio colocou o nariz no lugar com um crec, e ainda brigou comigo pelas “propostas indecentes”. Logo depois chegou a rainha Úrsula, e com ela uma empregada pessoal de cara amarrada: Paloma Torres."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "Correr até o Guarda-Mor e pedir que pare a luta.",
@@ -1546,7 +1731,10 @@ window.JOGO = {
                 "Era verdade: Alexandro tinha me contado. Paloma estreitou os olhos e sorriu de canto.",
                 "— Ciúmes fazem mulheres bonitas agirem como loucas por homens não tão… belos assim.",
                 "Valéria a enfrentou. Paloma foi embora. Mas agora tinha um assunto para escrever à prima."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Estive no baile de verão, sim. Você deve ter esquecido.",
@@ -1567,11 +1755,11 @@ window.JOGO = {
       ],
       "fecho": [
         "Se eu já irritava Paloma sem nenhum esforço, agora lhe dera um assunto para escrever à prima."
-      ]
+      ],
+      "cenario": "duelo"
     },
     {
       "titulo": "Confissões",
-      "cenario": "confissoes",
       "abertura": [
         "Um piquenique no pomar, cada um com o seu exemplar de “Confissões”. E, à noite, um jantar à luz da lua."
       ],
@@ -1590,7 +1778,10 @@ window.JOGO = {
               "resultado": [
                 "— Nada mais justo.",
                 "Era tentador mandá-las me servir uvas na boca. Mas, no dia seguinte, eu voltaria ao meu grau normal, e elas não esqueceriam."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "Mandar as duas abanarem e servirem uvas na boca, uma a uma.",
@@ -1604,7 +1795,10 @@ window.JOGO = {
                 "Humberto pareceu decepcionado. — Que pena. Pensei que você fosse diferente.",
                 "Quem se põe abaixo das outras não vira esposa de Conselheiro Real. Mas quem pisa nelas também não. Pensei melhor."
               ],
-              "desvio": true
+              "desvio": true,
+              "pontos": {
+                "honestidade": 1
+              }
             }
           ]
         },
@@ -1623,7 +1817,10 @@ window.JOGO = {
                 "Ele assentiu, o olhar fixo na minha boca. Umedeci os lábios só para provocá-lo.",
                 "— Quero ouvir suas confissões. Suas opiniões sobre “Confissões”, digo.",
                 "— Ah, sim… é que ouvi errado."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "Beijá-lo ali mesmo, sob a macieira.",
@@ -1656,7 +1853,10 @@ window.JOGO = {
               "resultado": [
                 "Humberto concordou, com um “o que eu fiz de errado?” estampado no rosto. Dei as costas sem olhar para trás.",
                 "No quarto, Valéria perguntou: — E você não coloca uma máscara também? — E eu fiquei sem chão."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "Sorrir e deixar a frase passar.",
@@ -1689,7 +1889,10 @@ window.JOGO = {
               "resultado": [
                 "Pelo sorriso pueril, era tudo o que ele queria ouvir. Cor, aroma, gole. De olhos fechados, adivinhei uva, madeira, terra molhada e trufas.",
                 "— Você tem o nariz melhor do que o meu."
-              ]
+              ],
+              "pontos": {
+                "astucia": 1
+              }
             },
             {
               "texto": "— Não. Nunca me ensinaram.",
@@ -1727,7 +1930,10 @@ window.JOGO = {
                 "— Eu acho que sim. E gosto de ouvir a pessoa antes de julgar.",
                 "Ele contou tudo: Úrsula aos treze anos enxergando a farsa de Ferdinando, o casamento que ele exigiu, a invasão ao castelo da própria família. E as últimas palavras do pai: “Eu sei, filho. Estou orgulhoso de você.”",
                 "Pela primeira vez, me senti suja por esconder tanto."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "— Quantas mulheres você já trouxe a este salão?",
@@ -1760,7 +1966,10 @@ window.JOGO = {
                 "— Por você, eu espero.",
                 "Manter a postura de donzela era só uma desculpa. Era Vivian que ele queria beijar, não Carmen.",
                 "No dia em que matasse Carmen, eu finalmente estaria livre para viver como Vivian."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "Beijá-lo.",
@@ -1781,11 +1990,11 @@ window.JOGO = {
       ],
       "fecho": [
         "As semanas seguintes foram ótimas. Trabalho, amizade, amor. Só faltava Paloma sumir do mapa."
-      ]
+      ],
+      "cenario": "confissoes"
     },
     {
       "titulo": "A farsa",
-      "cenario": "farsa",
       "abertura": [
         "Lá embaixo, no pátio, Paloma entregou a um mensageiro um envelope com lacre vermelho. Uma carta qualquer, disse a mim mesma."
       ],
@@ -1806,7 +2015,10 @@ window.JOGO = {
                 "— Não é verdade, Vivi?… Vivi? — Valéria me defendia no meio do salão.",
                 "— Sinto muito, Val.",
                 "Corri pelos corredores até a Câmara. Paloma veio atrás, gritando pelos guardas. As portas se abriram: Humberto, a rainha Úrsula e o rei Ferdinando."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "Negar tudo e exigir que provem.",
@@ -1839,7 +2051,10 @@ window.JOGO = {
                 "— Você cometeu uma fraude para entrar no palácio e seduzir meu irmão — disse Úrsula. — Nos livramos de uma interesseira.",
                 "— Eu quero escutá-la — disse Humberto.",
                 "— A vida do seu irmão não é a sua, amor — disse Ferdinando, com a mão no ombro da esposa. — Deixe-o fazer como bem entender."
-              ]
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
             },
             {
               "texto": "— É mentira! Paloma forjou esse papel por ciúmes.",
@@ -1872,7 +2087,10 @@ window.JOGO = {
                 "— É um belo nome. Em Celestial, significa canção.",
                 "— Não combina nada comigo. Canções estão na boca do povo e são tocadas pelos dedos de estranhos.",
                 "Contei da minha mãe, do bordel, de tudo que aprendi sobre Ilustres pelas noites dela com Jaime."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "— Sou Vivian. Para você, sempre fui.",
@@ -1902,7 +2120,10 @@ window.JOGO = {
               "certa": true,
               "resultado": [
                 "— Tudo bem, não precisamos perder tempo com isso. Falemos de nós dois. Conte-me sobre o que você planejou."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "Esbofeteá-lo.",
@@ -1938,7 +2159,10 @@ window.JOGO = {
                 "— Então você acredita em mim?",
                 "— Se tolice for, considere-me um tolo. Pois estou tolamente, estupidamente, perdidamente apaixonado por você.",
                 "E nossos lábios se encontraram."
-              ]
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
             },
             {
               "texto": "— Nada disso foi plano. Foi amor desde o primeiro dia.",
@@ -1962,7 +2186,8 @@ window.JOGO = {
         "— Sim, por favor. Prefiro reiniciar minha vida como Vivian Barbosa.",
         "— O único problema é que Vivian Barbosa já existe. Então que tal Vivian Macedo?",
         "Sorri tão radiante quanto o sol da manhã."
-      ]
+      ],
+      "cenario": "farsa"
     }
   ],
   "vitoria": [

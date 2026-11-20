@@ -11,16 +11,17 @@
   var painelBolsa = document.getElementById("painel-bolsa");
   var listaBolsa = document.getElementById("lista-bolsa");
   J.itens = J.itens || {};
+  J.atributos = J.atributos || {};
 
   /* ---------- estado (checkpoint) ---------- */
   var estado = carregar() || novoEstado();
   function novoEstado() {
     var abertas = Object.keys(J.fichas).filter(function (k) { return J.fichas[k].inicial; });
-    return { arco: 0, fichas: abertas, novas: [], itens: [], itensNovos: [], desvios: 0, marco: null, venceu: false, arroba: "", data: "", iniciado: false };
+    return { arco: 0, fichas: abertas, novas: [], itens: [], itensNovos: [], atributos: {}, desvios: 0, marco: null, venceu: false, arroba: "", data: "", iniciado: false };
   }
   function completar(s) {
     if (!s) return s;
-    s.itens = s.itens || []; s.itensNovos = s.itensNovos || []; s.desvios = s.desvios || 0;
+    s.itens = s.itens || []; s.itensNovos = s.itensNovos || []; s.desvios = s.desvios || 0; s.atributos = s.atributos || {};
     return s;
   }
   function carregar() {
@@ -117,6 +118,11 @@
     botaoBolsa.innerHTML = "Bolsa" + (n ? ' <span class="selo-nova" aria-label="' + n + ' novo(s)">' + n + "</span>" : "");
   }
   function desenharBolsa() {
+    var at = document.getElementById("lista-atributos");
+    if (at) at.innerHTML = Object.keys(J.atributos).map(function (k) {
+      var a = J.atributos[k], n = pontosDe(k);
+      return '<li class="atributo"><div class="atributo-topo"><h3>' + esc(a.nome) + '</h3><span class="atributo-valor">' + n + "</span></div><p>" + esc(a.texto) + "</p></li>";
+    }).join("");
     listaBolsa.innerHTML = estado.itens.length ? estado.itens.map(function (id) {
       var it = J.itens[id];
       var novo = estado.itensNovos.indexOf(id) >= 0 ? ' <span class="selo-nova">novo</span>' : "";
@@ -134,8 +140,24 @@
     });
     painelBolsa.addEventListener("click", function (e) { if (e.target === painelBolsa && painelBolsa.close) painelBolsa.close(); });
   }
-  function avisos(novos, foram) {
+  /* ---------- atributos ---------- */
+  function pontosDe(k) { return estado.atributos[k] || 0; }
+  function temAtributo(req) { return Object.keys(req || {}).every(function (k) { return pontosDe(k) >= req[k]; }); }
+  function somar(p) {
+    var ganhos = [];
+    Object.keys(p || {}).forEach(function (k) {
+      if (!J.atributos[k]) return;
+      estado.atributos[k] = pontosDe(k) + p[k];
+      ganhos.push("+" + p[k] + " " + J.atributos[k].nome);
+    });
+    return ganhos;
+  }
+  function placarAtributos() {
+    return Object.keys(J.atributos).map(function (k) { return J.atributos[k].nome + " " + pontosDe(k); }).join(" · ");
+  }
+  function avisos(novos, foram, ganhos) {
     var h = "";
+    if (ganhos && ganhos.length) h += '<p class="aviso-ponto">' + esc(ganhos.join(" · ")) + "</p>";
     if (novos && novos.length) h += '<p class="aviso-ficha">Na bolsa: ' + esc(novos.join(", ")) + ". Abra em <em>Bolsa</em>, lá em cima.</p>";
     if (foram && foram.length) h += '<p class="aviso-ficha">Saiu da bolsa: ' + esc(foram.join(", ")) + ".</p>";
     return h;
@@ -184,9 +206,10 @@
     // checkpoint: ao (re)começar um arco, a bolsa e os desvios voltam ao que eram no início dele
     if (estado.marco && estado.marco.arco === estado.arco) {
       estado.itens = estado.marco.itens.slice(); estado.desvios = estado.marco.desvios;
+      estado.atributos = JSON.parse(JSON.stringify(estado.marco.atributos || {}));
       estado.itensNovos = estado.itensNovos.filter(temItem);
     } else {
-      estado.marco = { arco: estado.arco, itens: estado.itens.slice(), desvios: estado.desvios };
+      estado.marco = { arco: estado.arco, itens: estado.itens.slice(), desvios: estado.desvios, atributos: JSON.parse(JSON.stringify(estado.atributos)) };
     }
     salvar(); atualizarBotaoBolsa(); cenarioDoArco();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
@@ -206,7 +229,7 @@
     salvar(); cenarioDoArco();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
     var novas = (c.desbloqueia || []).map(function (id) { return J.fichas[id] ? J.fichas[id].nome : ""; }).filter(Boolean);
-    var opcoes = embaralhar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return !x.o.requer || temItem(x.o.requer); }));
+    var opcoes = embaralhar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return (!x.o.requer || temItem(x.o.requer)) && temAtributo(x.o.requerAtributo); }));
     mostrar(
       '<section class="tela cena">' +
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
@@ -217,8 +240,10 @@
       '<fieldset class="escolha"><legend>' + esc(c.pergunta) + "</legend>" +
       opcoes.map(function (x) {
         var item = x.o.requer && J.itens[x.o.requer];
-        return '<button class="opcao' + (item ? " opcao-item" : "") + '" data-acao="escolher" data-cena="' + i + '" data-opcao="' + x.k + '">' +
-          (item ? '<span class="marca-item">Da bolsa: ' + esc(item.nome) + "</span>" : "") + fmt(x.o.texto) + "</button>";
+        var req = x.o.requerAtributo ? Object.keys(x.o.requerAtributo).map(function (k) { return (J.atributos[k] ? J.atributos[k].nome : k) + " " + x.o.requerAtributo[k]; }).join(", ") : "";
+        return '<button class="opcao' + (item ? " opcao-item" : "") + (req ? " opcao-atributo" : "") + '" data-acao="escolher" data-cena="' + i + '" data-opcao="' + x.k + '">' +
+          (item ? '<span class="marca-item">Da bolsa: ' + esc(item.nome) + "</span>" : "") +
+          (req ? '<span class="marca-item">' + esc(req) + "</span>" : "") + fmt(x.o.texto) + "</button>";
       }).join("") +
       "</fieldset></section>"
     );
@@ -231,25 +256,27 @@
       var corpo;
       if (o.desvio) {
         // erro com conserto: mostra a consequência e depois a fala certa, e a história segue
-        var certa = c.opcoes.filter(function (x) { return x.certa && !x.requer; })[0];
+        var certa = c.opcoes.filter(function (x) { return x.certa && !x.requer && !x.requerAtributo; })[0];
         estado.desvios += 1;
         abrirFichas(certa.desbloqueia);
         var novosD = ganhar(certa.ganha), forD = perder(certa.perde);
+        var ganhosDesvio = somar(o.pontos), ganhosD = somar(certa.pontos);
         corpo =
           '<p class="rotulo">Desvio · ' + esc(c.titulo) + "</p>" +
           '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
           '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
+          avisos(null, null, ganhosDesvio) +
           '<p class="conserto">' + esc(J.textoConserto || "Carmen respirou fundo e consertou o rumo:") + "</p>" +
           '<blockquote class="escolhida">' + fmt(certa.texto) + "</blockquote>" +
-          avisos(novosD, forD) +
+          avisos(novosD, forD, ganhosD) +
           '<div class="texto">' + paragrafos(certa.resultado) + "</div>";
       } else {
         abrirFichas(o.desbloqueia);
-        var novos = ganhar(o.ganha), foram = perder(o.perde);
+        var novos = ganhar(o.ganha), foram = perder(o.perde), ganhos = somar(o.pontos);
         corpo =
           '<p class="rotulo">' + esc(c.titulo) + "</p>" +
           '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
-          avisos(novos, foram) +
+          avisos(novos, foram, ganhos) +
           '<div class="texto">' + paragrafos(o.resultado) + "</div>";
       }
       salvar();
@@ -300,6 +327,7 @@
       "<h2>" + esc(J.tituloVitoria || "Carmen chegou ao Palácio Real") + "</h2>" +
       '<div class="texto">' + paragrafos(J.vitoria) + "</div>" +
       '<p class="placar">' + (estado.desvios ? "Você chegou com " + estado.desvios + (estado.desvios === 1 ? " desvio" : " desvios") + " no caminho." : "Você chegou sem nenhum desvio. Caminho limpo.") + "</p>" +
+      (Object.keys(J.atributos).length ? '<p class="placar">' + esc(placarAtributos()) + "</p>" : "") +
       '<div class="premio">';
     if (temCodigo) {
       html +=
