@@ -296,9 +296,10 @@ window.JOGO = {
               "texto": "Mentira: — Está bem… Me dói admitir, mas tem razão. Quando a hora chegar, farei o que diz.",
               "certa": true,
               "resultado": [
+                "Eu não precisava que Madalena concordasse comigo. Livre desse peso, fingir uma submissão relutante foi fácil.",
+                "— Está bem… Me dói admitir, mas tem razão. Quando a hora chegar, farei o que diz.",
                 "Deixei os ombros caírem um centímetro, simulando derrota. O espelho não mentia: a expressão sisuda dela se aliviou em um sorriso largo.",
-                "— Boa menina…",
-                "Eu não precisava que Madalena concordasse comigo. Livre desse peso, fingir uma submissão relutante foi fácil."
+                "— Boa menina…"
               ],
               "pontos": {
                 "persuasao": 1
