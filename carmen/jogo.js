@@ -85,6 +85,42 @@
   function carregar() {
     try { var s = JSON.parse(localStorage.getItem(CHAVE)); return s && typeof s.arco === "number" ? completar(s) : null; } catch (e) { return null; }
   }
+  var CHAVE_DESCONTO = CHAVE + "-desconto";
+  function desconto() { try { return JSON.parse(localStorage.getItem(CHAVE_DESCONTO)) || { valor: 0 }; } catch (e) { return { valor: 0 }; } }
+  function guardarDesconto(d) { try { localStorage.setItem(CHAVE_DESCONTO, JSON.stringify(d)); } catch (e) {} }
+  function conquistar(arco) {
+    var v = (J.descontos || [])[arco] || 0, d = desconto();
+    if (v > (d.valor || 0)) { d.valor = v; d.data = new Date().toLocaleDateString("pt-BR"); guardarDesconto(d); }
+    return d;
+  }
+  var redesenharPremio = null;
+  function premioHtml() {
+    var d = desconto(), arroba = d.arroba || estado.arroba;
+    if (!d.valor) return "";
+    var h = '<div class="premio"><p class="premio-titulo">Seu desconto até aqui</p><p class="premio-valor">R$ ' + d.valor + " de desconto</p>";
+    if (arroba && window.CODIGO.valido(arroba)) {
+      h += '<p class="premio-de">no livro <em>Carmen</em> para <strong>@' + esc(arroba) + "</strong></p>" +
+        '<p class="codigo">' + esc(window.CODIGO.gerar(arroba, d.valor)) + "</p>" +
+        '<p class="premio-data">Conquistado em ' + esc(d.data || "") + "</p>" +
+        (proximoDesconto() ? '<p class="premio-dica">Siga jogando: no fim do próximo arco, o desconto sobe para R$ ' + proximoDesconto() + ".</p>" : "") +
+        '<p class="premio-instrucao">' + esc(proximoDesconto() ? "Vale um desconto por perfil. Quando parar de jogar, mande por direct para @omatheusleone o print do maior desconto que conseguir." : J.premio.instrucao) + "</p>" +
+        '<div class="acoes"><a class="botao" href="' + esc(J.premio.instagram) + '" target="_blank" rel="noopener">Abrir o Instagram</a></div>';
+    } else {
+      h += '<p>Digite o seu @ do Instagram para gerar o seu código. Ele vale só para o seu perfil, e o código muda quando o desconto sobe.</p>' +
+        '<form class="form-arroba" data-acao="arroba">' +
+        '<label for="arroba">Seu @ no Instagram</label>' +
+        '<div class="linha-arroba"><span aria-hidden="true">@</span><input id="arroba" name="arroba" autocomplete="username" autocapitalize="none" spellcheck="false" required maxlength="31" placeholder="seuperfil"></div>' +
+        '<p class="erro" id="erro-arroba" hidden>Use só letras, números, ponto e sublinhado.</p>' +
+        '<button class="botao" type="submit">Gerar meu código</button>' +
+        "</form>";
+    }
+    return h + "</div>";
+  }
+  function proximoDesconto() {
+    var d = desconto(), lista = J.descontos || [];
+    for (var i = 0; i < lista.length; i++) if (lista[i] > d.valor && i >= estado.arco) return lista[i];
+    return 0;
+  }
   var CHAVE_FINAIS = CHAVE + "-finais";
   function finaisVistos() { try { return JSON.parse(localStorage.getItem(CHAVE_FINAIS) || "[]"); } catch (e) { return []; } }
   function marcarFinal(id) { var v = finaisVistos(); if (v.indexOf(id) < 0) { v.push(id); try { localStorage.setItem(CHAVE_FINAIS, JSON.stringify(v)); } catch (e) {} } }
@@ -128,7 +164,7 @@
     var alvo = palco.querySelector(foco || "h2, h1");
     if (alvo) { alvo.setAttribute("tabindex", "-1"); alvo.focus({ preventScroll: true }); }
   }
-  function numeral(n) { return ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"][n] || String(n + 1); }
+  function numeral(n) { return ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"][n] || String(n + 1); }
   function rotulo(texto) { rotuloArco.textContent = texto || ""; }
   function cenario(id) { if (id) document.body.setAttribute("data-cenario", id); else document.body.removeAttribute("data-cenario"); }
   function cenarioDoArco() { cenario(J.arcos[estado.arco] && J.arcos[estado.arco].cenario); }
@@ -315,6 +351,7 @@
     } else {
       html += '<button class="botao principal" data-acao="comecar">Começar</button>';
     }
+    if (desconto().valor) html += '<button class="botao" data-acao="desconto">Meu desconto: R$ ' + desconto().valor + "</button>";
     html += "</div>";
     if (J.outraVersao) html += '<p class="outra-versao"><a href="' + esc(J.outraVersao.link) + '">' + esc(J.outraVersao.texto) + "</a></p>";
     html += "</section>";
@@ -559,52 +596,48 @@
   function telaFecho() {
     var a = J.arcos[estado.arco];
     var ultimo = estado.arco === J.arcos.length - 1;
+    if (ultimo) { telaVitoriaComDesconto(); return; }
+    conquistar(estado.arco);
+    redesenharPremio = telaFecho;
     mostrar(
       '<section class="tela fecho">' +
       '<p class="rotulo">Fim do arco ' + numeral(estado.arco) + "</p>" +
       "<h2>" + esc(a.titulo) + "</h2>" +
       '<div class="texto">' + paragrafos(a.fecho) + "</div>" +
+      premioHtml() +
       '<div class="acoes"><button class="botao principal" data-acao="' + (ultimo ? "vencer" : "proximo") + '">' +
       (ultimo ? "Ver o final" : "Seguir para o arco " + numeral(estado.arco + 1)) + "</button></div>" +
       "</section>"
     );
   }
 
+  // último arco: o fecho vira a própria tela de vitória
+  function telaVitoriaComDesconto() {
+    estado.venceu = true; marcarFinal("palacio"); conquistar(estado.arco); salvar(); telaVitoria();
+  }
   function telaVitoria() {
     rotulo("Vitória"); cenarioDoArco(); somPara(somTema());
-    var temCodigo = estado.arroba && window.CODIGO.valido(estado.arroba);
+    redesenharPremio = telaVitoria;
+    var a = J.arcos[J.arcos.length - 1];
     var html =
       '<section class="tela vitoria">' +
       '<p class="rotulo">Vitória</p>' +
       '<p class="ornamento" aria-hidden="true">❦</p>' +
       "<h2>" + esc(J.tituloVitoria || "Carmen chegou ao Palácio Real") + "</h2>" +
+      (a.fecho && a.fecho.length ? '<div class="texto">' + paragrafos(a.fecho) + "</div>" : "") +
       '<div class="texto">' + paragrafos(J.vitoria) + "</div>" +
       '<p class="placar">' + (estado.desvios ? "Você chegou com " + estado.desvios + (estado.desvios === 1 ? " desvio" : " desvios") + " no caminho." : "Você chegou sem nenhum desvio. Caminho limpo.") + "</p>" +
       (Object.keys(J.atributos).length ? '<p class="placar">' + esc(placarAtributos()) + "</p>" : "") +
-      '<div class="premio">';
-    if (temCodigo) {
-      html +=
-        '<p class="premio-valor">' + esc(J.premio.valor) + "</p>" +
-        '<p class="premio-de">no livro <em>Carmen</em> para <strong>@' + esc(estado.arroba) + "</strong></p>" +
-        '<p class="codigo">' + esc(window.CODIGO.gerar(estado.arroba)) + "</p>" +
-        '<p class="premio-data">Concluído em ' + esc(estado.data) + "</p>" +
-        '<p class="premio-instrucao">' + esc(J.premio.instrucao) + "</p>" +
-        '<div class="acoes"><a class="botao principal" href="' + esc(J.premio.instagram) + '" target="_blank" rel="noopener">Abrir o Instagram</a></div>';
-    } else {
-      html +=
-        '<p class="premio-valor">' + esc(J.premio.valor) + "</p>" +
-        '<p>Digite o seu @ do Instagram para gerar o seu código de desconto. Ele vale só para o seu perfil.</p>' +
-        '<form class="form-arroba" data-acao="arroba">' +
-        '<label for="arroba">Seu @ no Instagram</label>' +
-        '<div class="linha-arroba"><span aria-hidden="true">@</span><input id="arroba" name="arroba" autocomplete="username" autocapitalize="none" spellcheck="false" required maxlength="31" placeholder="seuperfil"></div>' +
-        '<p class="erro" id="erro-arroba" hidden>Use só letras, números, ponto e sublinhado.</p>' +
-        '<button class="botao principal" type="submit">Gerar meu código</button>' +
-        "</form>";
-    }
-    html += "</div>" +
-      '<div class="acoes"><a class="botao" href="' + esc(J.linkLivro) + '" target="_blank" rel="noopener">Continuar a história no livro</a></div>' +
+      premioHtml() +
+      '<div class="acoes"><a class="botao principal" href="' + esc(J.linkLivro) + '" target="_blank" rel="noopener">Continuar a história no livro</a></div>' +
       "</section>";
     mostrar(html);
+  }
+  function telaDesconto() {
+    rotulo("Desconto"); cenario(null); somPara(somTema());
+    redesenharPremio = telaDesconto;
+    mostrar('<section class="tela vitoria"><p class="rotulo">Desconto no livro</p><h2>Seu desconto</h2>' + premioHtml() +
+      '<div class="acoes"><button class="botao" data-acao="inicio">Voltar ao início</button></div></section>');
   }
 
   /* ---------- ações ---------- */
@@ -624,7 +657,9 @@
     else if (acao === "fecho") { telaFecho(); }
     else if (acao === "final-sim") { telaFinal(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }
     else if (acao === "proximo") { estado.arco += 1; salvar(); telaArco(); }
-    else if (acao === "vencer") { estado.venceu = true; marcarFinal("palacio"); salvar(); telaVitoria(); }
+    else if (acao === "vencer") { telaVitoriaComDesconto(); }
+    else if (acao === "desconto") { telaDesconto(); }
+    else if (acao === "inicio") { telaInicio(); }
     else if (acao === "vitoria") { telaVitoria(); }
   });
   palco.addEventListener("submit", function (e) {
@@ -633,9 +668,9 @@
     var erro = palco.querySelector("#erro-arroba");
     if (!window.CODIGO.valido(campo.value)) { erro.hidden = false; campo.focus(); return; }
     estado.arroba = window.CODIGO.normalizar(campo.value);
-    estado.data = new Date().toLocaleDateString("pt-BR");
+    var d = desconto(); d.arroba = estado.arroba; guardarDesconto(d);
     salvar();
-    telaVitoria();
+    (redesenharPremio || telaVitoria)();
   });
 
   /* ---------- tema (mesmo do site) ---------- */

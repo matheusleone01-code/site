@@ -260,3 +260,6 @@ button.interlocutor:hover .retrato, button.interlocutor:focus-visible .retrato {
   .botao-fichas + .botao-fichas { margin-left: 0; }
   .botao-som[aria-pressed="false"] { opacity: .55; }
 }
+.premio-titulo { font: 600 .75rem/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--acento); }
+.premio-dica { font-size: .9375rem; }
+.fecho .premio { margin: 1.5rem 0; }

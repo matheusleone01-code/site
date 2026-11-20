@@ -19,8 +19,9 @@
     }
     return h >>> 0;
   }
-  function codigo(arroba) {
-    var base = "carmen|" + normalizar(arroba) + "|" + SEGREDO;
+  // valor = desconto em reais; sem valor, é o código antigo (R$ 10 fixo)
+  function codigo(arroba, valor) {
+    var base = "carmen|" + normalizar(arroba) + "|" + SEGREDO + (valor ? "|" + valor : "");
     var a = fnv(base, 2166136261), b = fnv(base + "#", 3735928559);
     var s = "";
     for (var i = 0; i < 4; i++) { s += ALFABETO[a % 32]; a = Math.floor(a / 32); }
@@ -28,5 +29,10 @@
     for (var j = 0; j < 4; j++) { s += ALFABETO[b % 32]; b = Math.floor(b / 32); }
     return s;
   }
-  window.CODIGO = { normalizar: normalizar, valido: valido, gerar: codigo };
+  // descobre de quanto é o desconto de um código (0 se não confere)
+  function valorDe(arroba, cod) {
+    for (var v = 1; v <= 60; v++) if (codigo(arroba, v) === cod) return v;
+    return codigo(arroba) === cod ? 10 : 0;
+  }
+  window.CODIGO = { normalizar: normalizar, valido: valido, gerar: codigo, valorDe: valorDe };
 })();

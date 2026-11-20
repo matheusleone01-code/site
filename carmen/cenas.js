@@ -38,15 +38,24 @@ window.JOGO = {
     "Carmen pode guardar objetos no inventário, e eles abrem caminhos extras.",
     "Algumas escolhas dão pontos de bônus em Persuasão, Sagacidade, Performance, Honestidade ou Humor.",
     "Algumas escolhas levam a finais alternativos, fora da história do livro. O jogo avisa antes.",
+    "Cada arco concluído vale desconto no livro. Quanto mais longe Carmen chegar, maior o desconto.",
     "Na dúvida, consulte as fichas dos personagens."
   ],
 
-  // Prêmio para quem chega ao Palácio Real
+  // Prêmio: desconto no livro
   "premio": {
-    "valor": "R$ 10 de desconto",
     "instrucao": "Tire um print desta tela e mande por direct para @omatheusleone.",
     "instagram": "https://www.instagram.com/omatheusleone/"
   },
+
+  // Desconto em reais ao concluir cada arco (o 1º número é o arco I). Vale o maior que a pessoa alcançou.
+  "descontos": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
 
   // Link para comprar o livro (aparece na vitória e na derrota)
   "linkLivro": "https://a.co/d/0dUY5sYb",
@@ -588,7 +597,23 @@ window.JOGO = {
           ],
           "quando": "4 dias antes, ao anoitecer",
           "com": "armando"
-        },
+        }
+      ],
+      "fecho": [
+        "Armando tinha dito sim. Faltavam quatro dias para o meu aniversário, três para a fuga, e eu tinha que passar por todos eles como se nada tivesse mudado."
+      ],
+      "cenario": "serra-verde",
+      "imagem": {
+        "arquivo": "img/espelho-cor.jpg",
+        "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
+      }
+    },
+    {
+      "titulo": "A véspera",
+      "abertura": [
+        "Dois dias antes do aniversário, Serra Verde acordou como em qualquer outra manhã. Só Carmen sabia que era uma das últimas."
+      ],
+      "cenas": [
         {
           "titulo": "A vassoura",
           "texto": [
@@ -875,10 +900,7 @@ window.JOGO = {
         "Nem nos meus dias mais criativos imaginei que sairia de Serra Verde numa loja itinerante, puxada por burros e conduzida por um cinquentão. Mas eu não podia reclamar."
       ],
       "cenario": "serra-verde",
-      "imagem": {
-        "arquivo": "img/espelho-cor.jpg",
-        "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
-      }
+      "metadeDe": "Serra Verde"
     },
     {
       "titulo": "A estrada",

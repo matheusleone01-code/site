@@ -23,7 +23,7 @@
 <div class="pergaminho" aria-hidden="true"></div>
 <main class="caixa">
   <h1>Conferir código do jogo</h1>
-  <p>Página só sua. Digite o @ de quem mandou o print e o código que aparece na tela.</p>
+  <p>Página só sua. Digite o @ de quem mandou o print e o código que aparece na tela. Ela mostra de quanto é o desconto. Vale um desconto por @: o maior que a pessoa mandar.</p>
   <form id="f">
     <div class="campo"><label for="a">@ do Instagram</label><input id="a" autocapitalize="none" spellcheck="false" required></div>
     <div class="campo"><label for="c">Código</label><input id="c" autocapitalize="characters" spellcheck="false" required placeholder="ABCD-EFGH"></div>
@@ -37,10 +37,10 @@ document.getElementById("f").addEventListener("submit", function (e) {
   e.preventDefault();
   var a = document.getElementById("a").value, c = document.getElementById("c").value.trim().toUpperCase().replace(/\s/g, "");
   if (c.length === 8) c = c.slice(0, 4) + "-" + c.slice(4);
-  var certo = CODIGO.gerar(a);
-  var ok = CODIGO.valido(a) && c === certo;
+  var v = CODIGO.valido(a) ? CODIGO.valorDe(a, c) : 0;
+  var ok = v > 0;
   document.getElementById("r").innerHTML = ok
-    ? '<div class="veredito ok">Código válido para @' + CODIGO.normalizar(a) + '</div>'
+    ? '<div class="veredito ok">Código válido para @' + CODIGO.normalizar(a) + '<br>Desconto de R$ ' + v + '</div>'
     : '<div class="veredito nao">Não confere. O código de @' + CODIGO.normalizar(a).replace(/[<>&"]/g, "") + ' seria outro.</div>';
 });
 </script>
