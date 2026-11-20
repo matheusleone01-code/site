@@ -1471,11 +1471,96 @@ window.JOGO = {
           "com": {
             "nome": "O empresário"
           }
+        },
+        {
+          "titulo": "A despedida",
+          "texto": [
+            "Na véspera do grande dia, Armando apareceu à minha porta todo arrumado e me entregou um saquinho de couro.",
+            "— Você tem trabalhado duro e economizado bastante. Aqui está o seu dinheiro.",
+            "Ele estava indo embora. Avancei e o abracei forte. Apoiei o rosto no peito dele, inspirando o cheiro de loção pós-barba. Não havia segundas intenções naquele abraço; eu me sentia segura, como imaginava que uma filha se sentiria nos braços do pai.",
+            "Desde a noite da fogueira, eu guardava uma suspeita a sete chaves. Agora não restavam dúvidas."
+          ],
+          "pergunta": "Dizer em voz alta, ou guardar para mim?",
+          "opcoes": [
+            {
+              "texto": "Verdade: Erguer o queixo: — Obrigada por tudo, pai.",
+              "certa": true,
+              "resultado": [
+                "Ele empalideceu, e os braços dele afrouxaram.",
+                "— Está tudo bem — continuei. — Não exigirei que você fique, nem te cobrarei nada por ser meu pai.",
+                "— Eu não mereço ser chamado de pai. Eu não tirei sua mãe do bordel.",
+                "— Quando eu mais precisava, você esteve lá por mim. É por isso que eu te perdoo, pai.",
+                "Ele me esmagou num abraço, repetindo “obrigado” uma centena de vezes."
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
+            },
+            {
+              "texto": "Meia-verdade: — Boa viagem. — E guardar a suspeita só para mim.",
+              "resultado": [
+                "— Boa viagem — eu disse. Ele assentiu e se virou para a porta.",
+                "As costas dele, o andar, o nariz de perfil contra a luz do corredor. Se ele saísse agora, eu passaria a vida inteira me perguntando. — Armando. Espera."
+              ],
+              "desvio": true
+            },
+            {
+              "texto": "Mentira: — Não precisa voltar para me ver. Eu nunca precisei de ninguém.",
+              "resultado": [
+                "Armando saiu de cabeça baixa. Cedo demais: no livro, Carmen primeiro o perdoou. A raiva só veio quando ele contou por que nunca voltou."
+              ]
+            }
+          ],
+          "com": "armando"
+        },
+        {
+          "titulo": "A verdade de Armando",
+          "texto": [
+            "— Por que você não cumpriu sua promessa para Madalena? — perguntei, quando ele já segurava a maçaneta.",
+            "Ele falou do sonho de abrir uma loja em Pacentro, do roubo, da falência do reino. E então admitiu o verdadeiro motivo, em um murmúrio:",
+            "— Você faz ideia de como é torturante saber que centenas de outros homens dormiram com sua mulher? Que usaram ela como se fosse… como se fosse…",
+            "— Uma puta.",
+            "— … Uma puta.",
+            "Ele ergueu para mim olhos esperançosos, em busca de compreensão."
+          ],
+          "pergunta": "Dar a ele o perdão que buscava?",
+          "opcoes": [
+            {
+              "texto": "Verdade: — Você tem razão sobre o que me disse naquela noite. Você não é um homem bom.",
+              "certa": true,
+              "resultado": [
+                "As pernas de Armando bambearam. Ele caiu de joelhos, chorando, implorando perdão.",
+                "— Agradeço por tudo o que me fez nas últimas semanas. Agora vá embora, que eu já estou atrasada.",
+                "— Antes de eu partir, só me diga: você ainda me considera como pai?",
+                "— Adeus, Armando.",
+                "— … Adeus, filha.",
+                "Foi assim que me despedi dele. Decidida a nunca mais vê-lo."
+              ],
+              "pontos": {
+                "honestidade": 1
+              }
+            },
+            {
+              "texto": "Mentira: — Eu entendo, pai. Também teria vergonha.",
+              "resultado": [
+                "Carmen jamais diria isso. Entre o pai e a mãe, ela ficou do lado de Madalena. E foi essa briga que, meses depois, mandou Armando de volta a Serra Verde."
+              ]
+            },
+            {
+              "texto": "Meia-verdade: — Talvez ela ainda espere por você. Volte para Serra Verde e peça a mão dela.",
+              "resultado": [
+                "— Pedir a mão dela? — Armando riu sem alegria. — Depois de dezoito anos e de todos aqueles homens?",
+                "E ali estava de novo, no rosto dele, o nojo. Não de si mesmo. Dela. De nós duas. A raiva subiu antes que eu pudesse engolir."
+              ],
+              "desvio": true
+            }
+          ],
+          "com": "armando"
         }
       ],
       "fecho": [
-        "Na véspera do grande dia, Armando partiu. Deixou comigo minha parte dos lucros, e a nossa despedida foi mais difícil do que eu imaginava.",
-        "O que aconteceu naquele quarto de pousada fica para quem ler o livro."
+        "Cheguei à joalheria atrasada, pingando de suor, e varri a loja enxugando lágrimas tímidas.",
+        "Por que ele não mentiu para mim? Tinha sido bom imaginar que meu pai fosse uma boa pessoa."
       ],
       "cenario": "pacentro"
     },
@@ -1499,8 +1584,7 @@ window.JOGO = {
             "valor": 8,
             "valorItem": 2,
             "texto": [
-              "Na véspera da avaliação, Armando passou na joalheria e me entregou um saquinho de couro: a minha metade dos lucros da estrada.",
-              "— Você mereceu cada moeda — disse ele."
+              "Abri o saquinho de couro que Armando me deu na despedida: a minha metade dos lucros da estrada."
             ],
             "textoItem": [
               "Na véspera da avaliação, Armando passou na joalheria e me entregou um saquinho de couro. Bem mais leve do que eu esperava.",
