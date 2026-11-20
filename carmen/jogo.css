@@ -153,7 +153,7 @@ button.botao { font-family: var(--display); }
 .como-jogar[open] summary { margin-bottom: .5rem; }
 .chamada p { font-style: italic; margin: 0 0 .35rem; }
 .chamada { margin: 1.25rem 0; }
-.como-jogar ul { margin: 0; padding-left: 1.1rem; }
+.como-jogar ul { margin: 0; padding-left: 1.1rem; text-align: left; }
 .como-jogar li { margin: 0 0 .3rem; font-size: 1rem; line-height: 1.5; }
 
 /* Fundo de cada arco: silhueta a bico de pena no pé da página */
