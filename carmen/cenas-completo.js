@@ -800,16 +800,166 @@ window.JOGO = {
           "com": "madalena"
         },
         {
+          "titulo": "A chegada",
+          "desbloqueia": [
+            "jaime"
+          ],
+          "texto": [
+            "Uma hora a noite chegou. Com ela vieram meus “pretendentes”.",
+            "Tudo começou como de costume: cantadas para lá, risadas para cá… Armando aguardava Madalena inquieto, batendo os pés no chão enquanto permanecia sentado no sofá. Antes que ela aparecesse, porém, ouviu-se o barulho dos cascos dos cavalos trotando na rua, e a carruagem dos Barbosa parou em frente ao bordel.",
+            "Meu estômago revirou. A aparição repentina de Jaime podia arruinar tudo. Por mais que Madalena privilegiasse Armando, ele não se comparava a um Ilustre. E eu não fazia ideia de como o mascate reagiria quando fosse rejeitado na frente de todos.",
+            "Com o apoio dos seus guardas, Jaime desceu da carruagem e subiu os degraus. Seus passos pesados fizeram as tábuas rangerem, num som que contrastava com o barulho oco e repetitivo da bota de Armando batendo contra o piso.",
+            "— Podem continuar. Finjam que não estou aqui.",
+            "Jaime gesticulou para que um casal liberasse o sofá e sentou-se ao lado de Armando com as pernas bem abertas. Atrás dele, notei um segundo Ilustre: o filho, a imagem cuspida e escarrada do pai, porém menos alto e menos roliço, sem saber se apreciava mais a beleza do teto ou das paredes.",
+            "— Sente-se aqui, Alexandro. A espera é chata, mas valerá a pena.",
+            "Aquela não era a primeira vez que um pai trazia um filho ao bordel. Mas um Ilustre fazer isso justamente quando o meu aniversário estava tão próximo só podia significar uma coisa.",
+            "Madalena tinha dedo nisso."
+          ],
+          "pergunta": "Ficar ali, à vista de todos, ou sumir antes que alguém lesse meu rosto?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: — Com licença, vou buscar mais vinho na cozinha.",
+              "certa": true,
+              "antes": [
+                "Suei frio. Precisava sair dali antes que alguém lesse no meu rosto o que eu estava pensando."
+              ],
+              "resultado": [
+                "Na cozinha, bebi um copo d’água em goles apressados, abanando o pescoço, inspirando fundo e expirando devagar. Não era hora de me desesperar.",
+                "— Mada!",
+                "— Jaime!",
+                "Coloquei a cabeça para fora da porta. Madalena caminhava rumo ao Ilustre, que a esperava de braços abertos. Enquanto ela era envolvida pelo abraço de Jaime, o mascate saiu pisando duro, como se realmente nutrisse a esperança de que o resultado fosse diferente.",
+                "*Homens são tão estúpidos…*, pensei, limpando uma lágrima besta que escapou dos meus olhos. Eu não tinha tempo a perder sofrendo pelos outros; minha situação acabava de piorar.",
+                "Não demorou muito para que a voz de Madalena me chamasse. Tive que me apresentar para o abate."
+              ],
+              "pontos": {
+                "astucia": 1
+              }
+            },
+            {
+              "texto": "Verdade: Ir até Armando e sussurrar: — Vá embora antes que ela desça. Ela vai escolher o Ilustre, e eu não quero te ver humilhado.",
+              "desvio": true,
+              "resultado": [
+                "Armando nem olhou para mim. — Se eu sair agora, aí é que vão rir de mim.",
+                "Ao lado dele, Jaime ergueu uma sobrancelha. — Segredinhos com o mascate, menina?",
+                "— Só perguntando se ele queria mais vinho — ri, alto demais. Melhor sumir dali antes que alguém juntasse as peças."
+              ]
+            },
+            {
+              "texto": "Mentira: — Senhor Jaime, minha mãe está indisposta hoje. Talvez seja melhor voltar amanhã.",
+              "resultado": [
+                "— Indisposta? A Mada? — Jaime gargalhou e encheu os pulmões. — MADA! Desce, que sua filha está dizendo que você morreu!",
+                "Madalena desceu radiante e me lançou um olhar que valia mais que um tapa. Mais tarde, no corredor, sibilou: — Mentir para um Ilustre, na minha casa?",
+                "Daquela noite em diante, Gasparo não saiu mais da minha porta. Na véspera do meu aniversário, a loja de Armando partiu sem mim."
+              ]
+            }
+          ],
+          "quando": "2 dias antes, à noite",
+          "com": "jaime"
+        },
+        {
+          "titulo": "A fruta madura",
+          "texto": [
+            "Sem querer dar o braço a torcer, fiz-me de desentendida.",
+            "— O que foi?",
+            "— Seu pretendente está aqui.",
+            "Ela virou o rosto e acenou para os clientes Ilustres, que devolveram o gesto.",
+            "— Meu prazo ainda não acabou — murmurei, mantendo um falso sorriso. — O combinado era até amanhã à noite.",
+            "— Sei disso — respondeu ela, tão atriz quanto eu. — Hoje de manhã, mandei uma carta sugerindo que ele trouxesse o menino no seu aniversário. Mas Jaime gostou tanto da ideia que veio colher a fruta antes de ficar madura."
+          ],
+          "pergunta": "Como ganhar mais um dia?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: — Não estou pronta, mãe. Diga que estou com o fluxo, por favor. Peça para voltar amanhã.",
+              "certa": true,
+              "antes": [
+                "Minha vontade era de espernear, porém eu estava lidando com o ganha-pão de todas ali. Eu não podia simplesmente me recusar a cumprir com o serviço."
+              ],
+              "resultado": [
+                "— Para de frescura, Carmen. Que diferença faz um dia só?",
+                "*Toda diferença do mundo*, queria responder, mas não podia. A demora causou suspeitas em Jaime, que se aproximou.",
+                "— Algum problema, Mada?",
+                "— Nenhum, só estou acertando os últimos detalhes com minha filha. Quero que essa seja uma noite especial para o seu menino.",
+                "— Menino, não. Alexandro está prestes a virar homem!",
+                "Jaime gargalhou bem alto, e vários clientes deram tapinhas nas costas de Alexandro, que parecia verde de tão nervoso. Madalena mandou os dois se adiantarem: o quarto de Carmen ficava no final do corredor, à esquerda."
+              ],
+              "pontos": {
+                "performance": 1
+              }
+            },
+            {
+              "texto": "Verdade: — Eu não quero, mãe. Não com ele, não hoje.",
+              "desvio": true,
+              "resultado": [
+                "O sorriso de Madalena não se mexeu um milímetro; só a voz endureceu. — Fala baixo. Aqui ninguém quer nada. A gente trabalha.",
+                "Os clientes olhavam. Recusar ali, na frente de todo mundo, era mexer com o ganha-pão da casa inteira. Engoli o *não quero* e procurei uma desculpa."
+              ]
+            },
+            {
+              "texto": "Mentira: Fingir um desmaio ali mesmo, no meio do salão.",
+              "resultado": [
+                "Caí com toda a graça que consegui. Ouvi gritinhos, cadeiras arrastando, e então a mão de Madalena estalou de leve no meu rosto.",
+                "— Levanta. Todo mundo viu que você caiu de bunda primeiro.",
+                "Jaime riu até tossir. Madalena não riu. Ela conhecia aquele truque porque tinha sido ela quem me ensinou, e a partir dali não tirou mais os olhos de mim. A loja de Armando partiu sem mim."
+              ]
+            }
+          ],
+          "quando": "2 dias antes, à noite",
+          "com": "madalena"
+        },
+        {
+          "titulo": "Os netinhos",
+          "texto": [
+            "— Por favor, mãe. Minha primeira vez não pode ser com ele.",
+            "— Não só pode como vai. E, aliás, você deveria estar me agradecendo por isso. Estou dando exatamente o que você me pediu: uma chance de se deitar com um homem só pelo resto da vida.",
+            "— Você quer que eu seja concubina daquilo lá?",
+            "— Não só isso, mas quero também que vocês me deem vários netinhos. Essas Ilustres têm mil e um empregados, e você pode viver de madame. Alexandro ainda é muito novinho para ter noiva. Faça ele se apaixonar por você bem antes da hora, e, mesmo que se case com uma Ilustre por obrigação, você continuará a viver como a preferida.",
+            "Fiquei sem palavras. Por mais insano que soasse, eu não conseguia enxergar nenhuma falha na lógica dela. O único ponto faltante seria o amor. Mas será que esse sentimento não poderia ser comprado?",
+            "— Filha. — Madalena apertou gentilmente o meu ombro. — Por uma única vez na vida, escute a sua mãe. Tenho certeza de que dará tudo certo. Você só precisa me ouvir."
+          ],
+          "pergunta": "Bater de frente com ela, ou deixar que achasse que tinha vencido?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: Assentir, embora hesitante. — Está bem, mãe.",
+              "certa": true,
+              "resultado": [
+                "— Boa menina… — Ela acariciou minha bochecha com a ponta dos dedos. — Você é linda demais; tenho certeza de que me dará netinhos belíssimos. Claro que vou fazê-los me chamarem de titia, mas serei uma boa avó para eles.",
+                "Uma família normal: isso era tudo o que eu queria ter tido na infância. Agora era tarde demais para mim, mas eu poderia proporcionar isso aos meus filhos. Só precisava sacrificar minha escolha de marido.",
+                "Forçar um sorriso não foi tão difícil quanto eu esperava. Madalena me guiou pelo corredor até o quarto dela e, antes de abrir a porta, sorriu.",
+                "— Tome as rédeas de tudo. Você sabe o que fazer.",
+                "Ela abriu o quarto, revelando a figura obesa de Jaime nua do tronco para cima, ocupando grande parte da cama, e bateu a porta rápido. Tremeliquei o pescoço e segui rumo ao meu destino, tentando apagar a imagem da memória."
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
+            },
+            {
+              "texto": "Mentira: — Já pensei em tudo isso, mãe. Esse menino vai comer na minha mão.",
+              "desvio": true,
+              "resultado": [
+                "Madalena riu pelo nariz. — Não precisa exagerar, pequena canção. Ninguém está pedindo que você goste. Só que não faça cena.",
+                "Eu tinha passado do ponto. Baixei os olhos e respondi do jeito que ela esperava."
+              ]
+            },
+            {
+              "texto": "Verdade: — Não. Eu não vou ser concubina de ninguém. Nem dele, nem de Ilustre nenhum.",
+              "resultado": [
+                "Madalena tirou a mão do meu ombro. — Então você vai ser o que eu mandar.",
+                "Ela me levou pelo braço até o quarto, me empurrou para dentro com Alexandro e trancou a porta por fora. Só abriu na manhã seguinte, quando a loja de Armando já ia longe."
+              ]
+            }
+          ],
+          "quando": "2 dias antes, à noite",
+          "com": "madalena"
+        },
+        {
           "titulo": "O pretendente",
           "desbloqueia": [
-            "jaime",
             "alexandro"
           ],
           "texto": [
-            "Naquela noite, a carruagem dos Barbosa parou na frente do bordel. Jaime, o Ilustre local, subiu os degraus com os guardas. Atrás dele vinha o filho, Alexandro, sem saber se admirava o teto ou as paredes.",
-            "Madalena tinha dedo nisso.",
-            "— Tome as rédeas de tudo — disse ela, à porta do meu quarto. — Você sabe o que fazer.",
-            "Lá dentro, Alexandro estava sentado na beira da cama, felizmente vestido. Não tinha coragem de me encarar nos olhos.",
+            "Pelo corredor, perguntei a mim mesma o que eu queria e, sendo sincera, já não sabia a resposta. Parte de mim ainda desejava seguir com o plano, ser livre de verdade. Mas e se Armando não aparecesse? E se simplesmente me deixasse para trás?",
+            "Diante de tantas incertezas, deixei que a vida decidisse por mim.",
+            "No quarto, Alexandro estava sentado na beira da cama, felizmente vestido. Não tinha coragem de me encarar nos olhos.",
             "*Tire a roupa peça por peça. Seja sedutora. Peça e distribua elogios.* Essas seriam as instruções da minha mãe."
           ],
           "pergunta": "Obedecer, ou encontrar outro jeito de passar a noite?",
