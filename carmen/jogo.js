@@ -178,7 +178,9 @@
       '<p class="rotulo">Um jogo de escolhas</p>' +
       "<h1>" + esc(J.titulo) + "</h1>" +
       '<p class="subtitulo">' + esc(J.subtitulo) + "</p>" +
+      (J.abertura && J.abertura.length ? '<div class="texto chamada">' + paragrafos(J.abertura) + "</div>" : "") +
       '<div class="aviso"><strong>Aviso</strong> ' + esc(J.aviso) + "</div>" +
+      (J.comoJogar ? '<details class="como-jogar"><summary class="rotulo">Como jogar</summary><ul>' + J.comoJogar.map(function (t) { return "<li>" + fmt(t) + "</li>"; }).join("") + "</ul></details>" : "") +
       '<div class="acoes">';
     if (estado.venceu) {
       html += '<button class="botao principal" data-acao="vitoria">Ver minha tela de vitória</button>' +
@@ -365,9 +367,9 @@
     var b = e.target.closest("[data-acao]");
     if (!b || b.tagName === "FORM") return;
     var acao = b.getAttribute("data-acao");
-    if (acao === "comecar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaAbertura(); }
+    if (acao === "comecar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaArco(); }
     else if (acao === "continuar") { telaArco(); }
-    else if (acao === "zerar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaAbertura(); }
+    else if (acao === "zerar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaArco(); }
     else if (acao === "arco") { telaArco(); }
     else if (acao === "cena") { telaCena(+b.getAttribute("data-cena")); }
     else if (acao === "escolher") { escolher(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }

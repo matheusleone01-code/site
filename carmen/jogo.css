@@ -145,7 +145,14 @@ button.botao { font-family: var(--display); }
 
 /* Como jogar */
 .como-jogar { margin: 1.5rem 0 0; padding: .875rem 1rem; border: 1px solid var(--linha); border-left: 3px solid var(--acento); border-radius: 3px; background: color-mix(in srgb, var(--papel-2) 70%, transparent); }
-.como-jogar .rotulo { margin: 0 0 .4rem; }
+.como-jogar .rotulo { margin: 0; }
+.como-jogar summary { cursor: pointer; list-style: none; }
+.como-jogar summary::-webkit-details-marker { display: none; }
+.como-jogar summary::before { content: "+ "; }
+.como-jogar[open] summary::before { content: "− "; }
+.como-jogar[open] summary { margin-bottom: .5rem; }
+.chamada p { font-style: italic; margin: 0 0 .35rem; }
+.chamada { margin: 1.25rem 0; }
 .como-jogar ul { margin: 0; padding-left: 1.1rem; }
 .como-jogar li { margin: 0 0 .3rem; font-size: 1rem; line-height: 1.5; }
 
