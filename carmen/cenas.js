@@ -37,6 +37,7 @@ window.JOGO = {
     "Algumas falas erradas têm conserto; outras não.",
     "Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras.",
     "Algumas escolhas dão pontos de Persuasão, Sagacidade, Performance, Honestidade ou Humor.",
+    "Algumas escolhas levam a finais alternativos, fora da história do livro. O jogo avisa antes.",
     "Na dúvida, consulte as fichas dos personagens."
   ],
 
@@ -775,6 +776,45 @@ window.JOGO = {
           "com": {
             "nome": "A nariguda"
           }
+        },
+        {
+          "titulo": "A cantoria",
+          "texto": [
+            "Na terceira vila, a praça estava cheia, mas ninguém olhava para a loja. Nem para mim, empoleirada na boleia feito manequim.",
+            "— Manequim parado ninguém vê — disse Armando, coçando a barba. — Você não cantarolava o tempo todo lá em Serra Verde? Canta alguma coisa. Gente vai para onde tem música.",
+            "Eu cantava, sim. Sozinha, no quarto, de porta fechada."
+          ],
+          "pergunta": "Cantar ali, na frente da praça inteira?",
+          "opcoes": [
+            {
+              "texto": "Virar de costas para a praça, fechar os olhos e cantar baixinho a canção de ninar de Madalena.",
+              "certa": true,
+              "pontos": {
+                "performance": 1
+              },
+              "resultado": [
+                "Comecei num fio de voz, de costas para todo mundo, como se ainda estivesse no meu quarto.",
+                "Na segunda estrofe, ouvi passos. Na terceira, cochichos. Quando abri os olhos e me virei, havia uma roda de mulheres em volta da loja, e duas já tinham um xale na mão.",
+                "— Viu? — disse Armando, embrulhando as compras. — Amanhã, de frente."
+              ]
+            },
+            {
+              "texto": "Recusar: — Eu sou manequim, Armando. Não sou cantora.",
+              "desvio": true,
+              "resultado": [
+                "— E eu sou mascate, não sou padre, e mesmo assim rezo para vender alguma coisa — resmungou ele.",
+                "A praça continuava passando reto. Engoli a vergonha. Se era para ser isca, que fosse uma isca que fizesse barulho."
+              ]
+            },
+            {
+              "texto": "Cantar e passar o chapéu, pedindo uma moeda a cada mulher que parasse para ouvir.",
+              "resultado": [
+                "— Cantora de praça, cobrando das senhoras? Isso tem outro nome — disse uma delas, alto o bastante para a vila inteira ouvir.",
+                "A palavra correu a praça mais depressa que a minha voz. Antes do almoço, o guarda pediu que a loja seguisse viagem. Na vila seguinte, Armando me deu algumas andorinhas e uma carona de volta para o sul."
+              ]
+            }
+          ],
+          "com": "armando"
         }
       ],
       "fecho": [
@@ -978,6 +1018,57 @@ window.JOGO = {
             }
           ],
           "com": "rosa"
+        },
+        {
+          "titulo": "A taverna",
+          "texto": [
+            "Para juntar uns beija-flores a mais antes do domingo, passei a cantar à noite na taverna da esquina. O dono pagava em sopa e moedas; os fregueses, em silêncio, o que já era muito.",
+            "Naquela noite, terminei a canção de ninar de Madalena e um homem de casaca cor de vinho se levantou da mesa do canto. Pôs um cartão no balcão, ao lado do meu copo de água.",
+            "— Teatro Aurora, na Capital — disse ele. — Procuro uma voz assim há dois anos. A vaga é sua, se partir comigo na segunda-feira."
+          ],
+          "pergunta": "Um palco na Capital. E o Palácio?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: — Agradeço, senhor. Mas já tenho outro palco em vista.",
+              "certa": true,
+              "pontos": {
+                "performance": 1,
+                "dinheiro": 1
+              },
+              "resultado": [
+                "Ele ergueu as sobrancelhas e deixou o cartão onde estava. — Se o outro palco não der certo, a senhorita sabe onde me achar.",
+                "Guardei o cartão no fundo da bolsa. Um Ilustre não se conquista cantando em taverna. Mas era bom saber que existia uma porta dos fundos."
+              ]
+            },
+            {
+              "texto": "Mentira: — Eu? O senhor me confundiu com outra.",
+              "desvio": true,
+              "resultado": [
+                "— Confundi? A senhorita acabou de cantar para trinta pessoas. — Ele riu e não tirou o cartão do balcão.",
+                "Mentir para quem tinha acabado de me ouvir não ia colar. Respirei fundo e respondi como gente grande."
+              ]
+            },
+            {
+              "texto": "Verdade: — Não posso. No domingo vou entrar no Palácio Real como Ilustre.",
+              "resultado": [
+                "O homem riu tão alto que a taverna inteira virou para nós. — Uma cantora de taverna, Ilustre? Essa eu conto no teatro!",
+                "Contou. E não só no teatro. Até sexta, metade de Pacentro sabia da cantora que ia se fingir de Ilustre. No domingo, os Guardas Reais tinham a minha descrição."
+              ]
+            },
+            {
+              "texto": "Aceitar o cartão e partir para a Capital na segunda-feira.",
+              "final": "cantora",
+              "requerAtributo": {
+                "performance": 3
+              },
+              "resultado": [
+                "Peguei o cartão. Minhas mãos tremiam. Mas a voz, quando eu disse “aceito”, saiu firme como nunca."
+              ]
+            }
+          ],
+          "com": {
+            "nome": "O empresário"
+          }
         }
       ],
       "fecho": [
@@ -1364,5 +1455,20 @@ window.JOGO = {
   "vitoria": [
     "Carmen chegou ao Palácio Real. Como Vivian Barbosa, filha de um Ilustre, no meio das donzelas mais prendadas do reino.",
     "Se ela vai passar na avaliação, se a farsa vai durar e quem ela vai encontrar lá dentro… isso o jogo não conta. O livro conta."
-  ]
+  ],
+
+  "finais": {
+    "cantora": {
+      "titulo": "A cantora",
+      "texto": [
+        "Na segunda-feira, em vez de um vestido azul-ciano, embarquei numa diligência com um baú emprestado e o cartão do Teatro Aurora no decote.",
+        "Na Capital, ninguém me perguntou de que casa eu vinha. Só perguntaram se eu cantava de novo amanhã.",
+        "Em um ano, meu nome estava nos cartazes. Não um nome emprestado. Não Ilustre de coisa nenhuma. Só Carmen, em letras douradas.",
+        "Nunca entrei no Palácio Real. Mas, numa noite de casa cheia, um Ilustre da primeira fila me jogou uma rosa. Agradeci com uma mesura e não desci do palco. Pela primeira vez, quem escolhia era eu."
+      ],
+      "nota": "No livro, Carmen segue para o Palácio. Esta é outra vida que ela poderia ter tido."
+    }
+  },
+
+  "finalPalacio": "O Palácio Real"
 };

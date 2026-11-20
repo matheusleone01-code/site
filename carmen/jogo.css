@@ -236,3 +236,11 @@ button.interlocutor:hover .retrato, button.interlocutor:focus-visible .retrato {
 .texto.antes { margin-bottom: 1rem; }
 /* Escolha crítica: 5 opções, mais peso */
 .selo-critica { display: inline-block; margin: -.25rem 0 .75rem; padding: .3rem .65rem; border: 1px solid var(--acento); border-radius: 2px; font: 700 .7rem/1 var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--acento); }
+/* Finais alternativos */
+.aviso-final { margin: 1.25rem 0; padding: .9rem 1rem; border: 1px solid var(--acento); border-radius: 3px; font-style: italic; }
+.finais { margin: 1.5rem 0 .5rem; }
+.finais ul { list-style: none; padding: 0; margin: .4rem 0 0; display: flex; flex-wrap: wrap; gap: .4rem .6rem; }
+.finais li { padding: .25rem .6rem; border: 1px solid var(--linha); border-radius: 2px; font: 600 .85rem/1.2 var(--display); }
+.finais li.oculto { color: var(--tinta-suave); border-style: dashed; }
+.final-alternativo .ornamento, .final-alternativo h2 { text-align: center; }
+.nota-final { margin: 1.5rem 0 0; font-style: italic; color: var(--tinta-suave); text-align: center; }

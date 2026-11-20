@@ -27,6 +27,21 @@
   function carregar() {
     try { var s = JSON.parse(localStorage.getItem(CHAVE)); return s && typeof s.arco === "number" ? completar(s) : null; } catch (e) { return null; }
   }
+  var CHAVE_FINAIS = CHAVE + "-finais";
+  function finaisVistos() { try { return JSON.parse(localStorage.getItem(CHAVE_FINAIS) || "[]"); } catch (e) { return []; } }
+  function marcarFinal(id) { var v = finaisVistos(); if (v.indexOf(id) < 0) { v.push(id); try { localStorage.setItem(CHAVE_FINAIS, JSON.stringify(v)); } catch (e) {} } }
+  function listaFinais() {
+    var ids = ["palacio"].concat(Object.keys(J.finais || {}));
+    return ids.map(function (id) { return { id: id, titulo: id === "palacio" ? (J.finalPalacio || "O Palácio Real") : J.finais[id].titulo }; });
+  }
+  function galeriaFinais() {
+    if (!J.finais || !Object.keys(J.finais).length) return "";
+    var vistos = finaisVistos(), todos = listaFinais();
+    var n = todos.filter(function (f) { return vistos.indexOf(f.id) >= 0; }).length;
+    if (!n) return "";
+    return '<div class="finais"><p class="rotulo">Finais descobertos: ' + n + " de " + todos.length + "</p><ul>" +
+      todos.map(function (f) { return vistos.indexOf(f.id) >= 0 ? "<li>" + esc(f.titulo) + "</li>" : '<li class="oculto">???</li>'; }).join("") + "</ul></div>";
+  }
   function salvar() { try { localStorage.setItem(CHAVE, JSON.stringify(estado)); } catch (e) {} }
 
   /* ---------- utilidades ---------- */
@@ -207,6 +222,7 @@
       (J.abertura && J.abertura.length ? '<div class="texto chamada">' + paragrafos(J.abertura) + "</div>" : "") +
       '<div class="aviso"><strong>Aviso</strong> ' + esc(J.aviso) + "</div>" +
       (J.comoJogar ? '<details class="como-jogar"><summary class="rotulo">Como jogar</summary><ul>' + J.comoJogar.map(function (t) { return "<li>" + fmt(t) + "</li>"; }).join("") + "</ul></details>" : "") +
+      galeriaFinais() +
       '<div class="acoes">';
     if (estado.venceu) {
       html += '<button class="botao principal" data-acao="vitoria">Ver minha tela de vitória</button>' +
@@ -364,8 +380,43 @@
     );
   }
 
+  function confirmarFinal(i, k) {
+    var c = J.arcos[estado.arco].cenas[i], o = c.opcoes[k];
+    mostrar(
+      '<section class="tela confirmar-final">' +
+      '<p class="rotulo">Final alternativo</p>' +
+      escolhida(o) +
+      '<p class="aviso-final">Este caminho se afasta da história do livro e leva a um final alternativo, encerrando o jogo.</p>' +
+      '<div class="acoes"><button class="botao principal" data-acao="final-sim" data-cena="' + i + '" data-opcao="' + k + '">Seguir para este final</button>' +
+      '<button class="botao" data-acao="cena" data-cena="' + i + '">Voltar e escolher de novo</button></div>' +
+      "</section>", ".rotulo"
+    );
+  }
+  function telaFinal(i, k) {
+    var c = J.arcos[estado.arco].cenas[i], o = c.opcoes[k], f = J.finais[o.final];
+    somar(o.pontos); marcarFinal(o.final); salvar();
+    rotulo("Final alternativo");
+    mostrar(
+      '<section class="tela final-alternativo">' +
+      '<p class="rotulo">Final alternativo</p>' +
+      escolhida(o) +
+      '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
+      '<p class="ornamento" aria-hidden="true">❦</p>' +
+      "<h2>" + esc(f.titulo) + "</h2>" +
+      '<div class="texto">' + paragrafos(f.texto) + "</div>" +
+      (f.nota ? '<p class="nota-final">' + esc(f.nota) + "</p>" : "") +
+      galeriaFinais() +
+      '<div class="acoes">' +
+      '<button class="botao principal" data-acao="arco">Voltar ao início do arco ' + numeral(estado.arco) + "</button>" +
+      '<button class="botao" data-acao="zerar">Começar do zero</button>' +
+      '<a class="botao" href="' + esc(J.linkLivro) + '" target="_blank" rel="noopener">Ler o livro</a>' +
+      "</div></section>", ".rotulo"
+    );
+  }
+
   function escolher(i, k) {
     var a = J.arcos[estado.arco], c = a.cenas[i], o = c.opcoes[k];
+    if (o.final && J.finais && J.finais[o.final]) return confirmarFinal(i, k);
     // desvio que dá certo para quem tem o atributo
     if (!o.certa && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, antes: o.sucesso.antes, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
     if (o.certa || o.desvio) {
@@ -487,8 +538,9 @@
     else if (acao === "cena") { telaCena(+b.getAttribute("data-cena")); }
     else if (acao === "escolher") { escolher(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }
     else if (acao === "fecho") { telaFecho(); }
+    else if (acao === "final-sim") { telaFinal(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }
     else if (acao === "proximo") { estado.arco += 1; salvar(); telaArco(); }
-    else if (acao === "vencer") { estado.venceu = true; salvar(); telaVitoria(); }
+    else if (acao === "vencer") { estado.venceu = true; marcarFinal("palacio"); salvar(); telaVitoria(); }
     else if (acao === "vitoria") { telaVitoria(); }
   });
   palco.addEventListener("submit", function (e) {
