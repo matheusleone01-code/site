@@ -219,3 +219,6 @@ img.retrato, .retrato-grande { background: #EADBBE; }
 .produto-texto { grid-column: 2 / 4; font-size: .9375rem; color: var(--tinta-suave); line-height: 1.4; }
 .produto:has(input:checked) { border-color: var(--acento); }
 .produto.caro { opacity: .5; cursor: not-allowed; }
+
+/* Rótulo do tipo de fala */
+.tipo-fala { display: block; font: 600 .7rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--acento); margin-bottom: .35rem; }

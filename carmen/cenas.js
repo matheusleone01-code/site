@@ -242,7 +242,7 @@ window.JOGO = {
           "pergunta": "Enfrentá-la agora, ou fingir submissão?",
           "opcoes": [
             {
-              "texto": "— Está bem… Me dói admitir, mas tem razão. Quando a hora chegar, farei o que diz.",
+              "texto": "Mentira: — Está bem… Me dói admitir, mas tem razão. Quando a hora chegar, farei o que diz.",
               "certa": true,
               "resultado": [
                 "Deixei os ombros caírem um centímetro, simulando derrota. O espelho não mentia: a expressão sisuda dela se aliviou em um sorriso largo.",
@@ -254,7 +254,7 @@ window.JOGO = {
               }
             },
             {
-              "texto": "— Prefiro morrer a virar o que você é.",
+              "texto": "Verdade: — Prefiro morrer a virar o que você é.",
               "resultado": [
                 "O silêncio que se seguiu foi pior do que um tapa. Madalena largou a escova na penteadeira.",
                 "— Então vai ser por mal.",
@@ -262,10 +262,11 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "— Então eu vou embora daqui, mãe. Nem que seja a pé.",
+              "texto": "Meia-verdade: — Eu só tenho medo, mãe. Não estou pronta.",
               "resultado": [
-                "Madalena riu, mas os olhos dela não riram. — Vai, é? Pois vá. A estrada está ali, e a fome também.",
-                "Ela voltou a escovar meu cabelo, esperando. Engoli o orgulho. Ameaçar Madalena era o jeito mais rápido de ter Gasparo vigiando a minha porta. Eu precisava que ela baixasse a guarda, não que a erguesse."
+                "Madalena apertou a escova. — Medo passa. Pronta, ninguém fica.",
+                "Ela me encarou pelo espelho, desconfiada. Medo era só metade da verdade, e ela sabia ler a outra metade nos meus olhos.",
+                "Engoli o resto. Eu precisava que ela baixasse a guarda, não que a erguesse."
               ],
               "desvio": true,
               "pontos": {
@@ -284,7 +285,7 @@ window.JOGO = {
           "pergunta": "Que desculpa me livraria do salão sem levantar suspeitas?",
           "opcoes": [
             {
-              "texto": "Levar a mão à boca do estômago: “Estou enjoada. Acho que é do nervosismo.”",
+              "texto": "Meia-verdade: Levar a mão à boca do estômago: “Estou enjoada. Acho que é do nervosismo.”",
               "certa": true,
               "resultado": [
                 "A suspeita sumiu do rosto de Madalena.",
@@ -296,7 +297,7 @@ window.JOGO = {
               }
             },
             {
-              "texto": "Fingir cólica: “Estou naqueles dias, mãe”, embora meu fluxo só viesse daqui a 2 semanas.",
+              "texto": "Mentira: Fingir cólica: “Estou naqueles dias, mãe”, embora meu fluxo só viesse daqui a 2 semanas.",
               "resultado": [
                 "Madalena ergueu uma sobrancelha. — Naqueles dias? Os seus só vêm daqui a duas semanas.",
                 "*Merda.* Ela sabia o meu calendário melhor do que eu. — Não é isso… — emendei, depressa. — É outra coisa. Aqui, mais em cima."
@@ -314,7 +315,7 @@ window.JOGO = {
               }
             },
             {
-              "texto": "— Ninguém. Não quero ninguém.",
+              "texto": "Verdade: — Ninguém. Não quero ninguém.",
               "resultado": [
                 "Madalena estreitou os olhos. — Ninguém? Pois bem. Se você não escolhe, eu escolho por você.",
                 "Ela desceu as escadas e voltou com o cliente mais rico da noite. Depois disso, nunca mais me deixou sozinha. Não houve fuga."
@@ -338,7 +339,7 @@ window.JOGO = {
           "pergunta": "Pedir logo o que eu queria, ou ganhá-lo na conversa?",
           "opcoes": [
             {
-              "texto": "— Hoje é diferente. Só quero que me conte como foi a viagem até aqui; se as estradas estão seguras; se está vendendo muito…",
+              "texto": "Meia-verdade: — Hoje é diferente. Só quero que me conte como foi a viagem até aqui; se as estradas estão seguras; se está vendendo muito…",
               "certa": true,
               "resultado": [
                 "A suspeita no rosto dele se desfez em desalento.",
@@ -352,7 +353,7 @@ window.JOGO = {
               }
             },
             {
-              "texto": "— Quero que me leve com você quando for embora.",
+              "texto": "Verdade: — Quero que me leve com você quando for embora.",
               "resultado": [
                 "Armando soltou uma gargalhada. — E eu quero ser o rei dos Burgos. — Ele balançou a cabeça. — Vou fingir que não ouvi isso.",
                 "Ele já se virava para a porta do bordel. Tola: ninguém faz um favor desses a quem começa pelo fim. Segurei a manga dele, com o meu sorriso mais inocente. — Era brincadeira. Fica um pouco."
@@ -363,7 +364,7 @@ window.JOGO = {
               }
             },
             {
-              "texto": "— Um vestido, claro. Aquele de renda que você trouxe da última vez.",
+              "texto": "Mentira: — Um vestido, claro. Aquele de renda que você trouxe da última vez.",
               "resultado": [
                 "— Eu sabia. — Ele sorriu, satisfeito por ter acertado. — Vou pensar no seu caso.",
                 "E entrou no bordel atrás de Madalena. Ganhei um vestido dias depois, mas nunca mais tive a atenção dele. Para Armando, eu continuava sendo só a menina que pedia presentes."
@@ -382,43 +383,33 @@ window.JOGO = {
           "pergunta": "Como fazer valer a pena me levar?",
           "opcoes": [
             {
-              "texto": "— Não seja por isso. Uso minha beleza como isca: serei um manequim para você expor, atraindo as pessoas enquanto você faz sua mágica com a arte da venda.",
-              "certa": true,
+              "texto": "Meia-verdade: — Não seja por isso. Uso minha beleza como isca: serei um manequim para você expor, atraindo as pessoas enquanto você faz sua mágica com a arte da venda.",
               "resultado": [
-                "Agora, sim, ele sorriu.",
-                "— Essa é uma ótima ideia. Pode muito bem funcionar.",
-                "— E então? Quando podemos partir?"
-              ],
-              "pontos": {
-                "persuasao": 1
-              }
-            },
-            {
-              "texto": "— Eu pago a viagem. Tenho umas economias guardadas.",
-              "resultado": [
-                "Armando cruzou os braços. — Economias? Todo tostão que entra nesta casa passa pela mão da sua mãe. Se você tem dinheiro escondido, ele é dela.",
-                "Ele tinha razão, e eu não tinha economia nenhuma. Mas, enquanto ele reclamava das vendas magras, percebi que ele não precisava de dinheiro. Precisava de clientes."
+                "Armando estreitou os olhos. — E o que uma moça como você ganha andando em cima de uma carroça pelas vilas?",
+                "— Conhecer a Capital, ora.",
+                "— Tem coisa aí que você não está me contando. — Ele cruzou os braços. — Ou me conta tudo, ou eu entro e falo com a sua mãe.",
+                "Com Armando, meia-verdade não ia colar."
               ],
               "desvio": true
             },
             {
-              "texto": "— Então me empresta o dinheiro. Eu te pago quando arrumar trabalho na Capital.",
+              "texto": "Mentira: — Eu pago a viagem. Tenho umas economias guardadas.",
               "resultado": [
-                "— Menina, eu acabei de dizer que não tenho nem para mim.",
-                "Ele suspirou, cansado, e entrou no bordel. Eu tinha pedido dinheiro a um homem que tinha acabado de dizer que estava sem nenhum."
+                "Armando cruzou os braços. — Economias? Todo tostão que entra nesta casa passa pela mão da sua mãe. Se você tem dinheiro escondido, ele é dela.",
+                "Ele entrou no bordel e contou tudo a Madalena. Naquela noite, ela revirou meu quarto atrás das economias que eu não tinha. E Gasparo passou a dormir na minha porta."
               ]
             },
             {
-              "texto": "Contar a verdade: — Daqui a quatro dias, minha mãe vai me vender para o primeiro Ilustre que pagar. Me leva. Eu trabalho para você de graça até pagar a viagem.",
-              "certa": true,
-              "requerAtributo": {
-                "honestidade": 1
-              },
+              "texto": "Verdade: — Daqui a quatro dias, minha mãe vai me vender para o primeiro Ilustre que pagar. Me leva. Eu trabalho para você de graça até pagar a viagem.",
               "resultado": [
                 "Armando ficou um bom tempo calado, olhando para a porta do bordel.",
                 "— De graça, não. Ninguém trabalha de graça na minha loja. — Ele coçou a nuca. — Mas uma moça bonita lá em cima da loja talvez atraia mais freguesas do que as minhas rendas. Você ficaria em pé na boleia, como um manequim?",
                 "— Fico onde você quiser. — Respirei fundo. — E então? Quando podemos partir?"
-              ]
+              ],
+              "certa": true,
+              "pontos": {
+                "honestidade": 1
+              }
             }
           ],
           "quando": "4 dias antes, fim de tarde"
@@ -431,7 +422,7 @@ window.JOGO = {
           "pergunta": "Deixar que ele falasse com minha mãe, ou impedi-lo a qualquer custo?",
           "opcoes": [
             {
-              "texto": "— Ela nunca aceitará que eu viva da minha própria maneira. Se ela me ama de fato, uma hora entenderá que precisei escolher meu caminho. E perdoará a nós dois.",
+              "texto": "Verdade: — Ela nunca aceitará que eu viva da minha própria maneira. Se ela me ama de fato, uma hora entenderá que precisei escolher meu caminho. E perdoará a nós dois.",
               "certa": true,
               "resultado": [
                 "Armando me encarou em silêncio por um bom tempo.",
@@ -444,14 +435,14 @@ window.JOGO = {
               }
             },
             {
-              "texto": "— Tudo bem, fale com ela. Mas fale com jeito.",
+              "texto": "Meia-verdade: — Ela até desconfia que eu quero ir embora. Pode falar com ela, mas com jeito.",
               "resultado": [
                 "Ele falou com jeito. Madalena ouviu tudo com um sorriso educado, agradeceu a gentileza e, assim que ele saiu, mandou Gasparo vigiar a loja-carruagem até ela deixar a cidade.",
                 "— Achou mesmo que eu não ia descobrir, pequena canção?"
               ]
             },
             {
-              "texto": "— Se você contar a ela, eu digo que você tentou me levar para a cama.",
+              "texto": "Mentira: — Se você contar a ela, eu digo que você tentou me levar para a cama.",
               "resultado": [
                 "O rosto de Armando endureceu como pedra. — Então não temos mais nada para conversar.",
                 "Ele deu as costas. E eu entendi, tarde, o que tinha feito: ameaçar o único homem disposto a me ajudar.",
@@ -478,7 +469,7 @@ window.JOGO = {
           "pergunta": "Obedecer, ou encontrar outro jeito de passar a noite?",
           "opcoes": [
             {
-              "texto": "Sentar ao lado dele, segurar sua mão e dizer: “Você está bem nervoso para sua primeira vez, não está? Também estou.”",
+              "texto": "Verdade: Sentar ao lado dele, segurar sua mão e dizer: “Você está bem nervoso para sua primeira vez, não está? Também estou.”",
               "certa": true,
               "resultado": [
                 "Ele finalmente me olhou, com aqueles olhos amedrontados.",
@@ -492,7 +483,7 @@ window.JOGO = {
               }
             },
             {
-              "texto": "Seguir as instruções da mãe. Uma noite só, e amanhã estaria livre.",
+              "texto": "Mentira: Fingir desejo e seguir as instruções da mãe. Uma noite só, e amanhã estaria livre.",
               "resultado": [
                 "Fiz tudo o que Madalena tinha me ensinado. Funcionou, como ela sempre disse que funcionaria.",
                 "Quando abri os olhos, o sol já ia alto. Da janela, vi a esquina vazia: a loja de Armando tinha partido sem mim.",
@@ -500,7 +491,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Pedir licença, ir até a janela e fugir agora mesmo, no escuro.",
+              "texto": "Meia-verdade: — Só preciso de um pouco de ar. — E ir até a janela, pensando em fugir agora mesmo, no escuro.",
               "resultado": [
                 "Abri a janela. Lá embaixo, os guardas de Jaime fumavam encostados na carruagem dos Barbosa, de olho na rua. A loja de Armando só chegaria pela manhã.",
                 "Fechei a janela devagar. Alexandro continuava na beira da cama, me olhando como se eu fosse pular de verdade. Era ele quem eu precisava resolver primeiro."
@@ -571,7 +562,7 @@ window.JOGO = {
           "pergunta": "O que dizer para ele me deixar passar?",
           "opcoes": [
             {
-              "texto": "— Cedo para quem? Quando eu voltar, ainda tenho que arrumar toda a bagunça lá dentro. E, se ficarem me atrasando, minha mãe vai comer o meu fígado e, logo depois, o de vocês.",
+              "texto": "Meia-verdade: — Cedo para quem? Quando eu voltar, ainda tenho que arrumar toda a bagunça lá dentro. E, se ficarem me atrasando, minha mãe vai comer o meu fígado e, logo depois, o de vocês.",
               "certa": true,
               "resultado": [
                 "— Pare de a atazanar e deixe-a ir logo — disse o outro guarda.",
@@ -584,7 +575,7 @@ window.JOGO = {
               }
             },
             {
-              "texto": "— É que… derramei vinho no meu vestido. Preciso lavar antes que manche.",
+              "texto": "Mentira: — É que… derramei vinho no meu vestido. Preciso lavar antes que manche.",
               "resultado": [
                 "O guarda franziu a testa e espiou dentro do balde. — Isso aqui não parece um vestido sujo. Parece uma mudança inteira.",
                 "Meu coração parou. Mas guarda nenhum gosta de parecer que manda menos do que manda. Endireitei os ombros e mudei o tom."
@@ -592,10 +583,10 @@ window.JOGO = {
               "desvio": true
             },
             {
-              "texto": "— Se está com tanta pressa de ver roupa lavada, por que não vem me ajudar a esfregar?",
+              "texto": "Verdade: — Estou indo embora de Serra Verde. E vocês nunca me viram.",
               "resultado": [
-                "O guarda sorriu de um jeito que eu não gostei e veio atrás de mim.",
-                "Ele me acompanhou até o rio. E, do rio, viu muito bem a loja de Armando parada na outra margem, esperando por mim."
+                "O guarda mais alto riu e segurou meu braço. — Nunca vimos, é? Então vamos ver o que o patrão acha disso.",
+                "Jaime acordou Madalena. Madalena acordou a casa inteira. A loja de Armando partiu sem mim."
               ]
             }
           ],

@@ -249,6 +249,18 @@
     );
   }
 
+  var TIPOS = ["Meia-verdade", "Mentira", "Verdade"];
+  function tipoFala(t) { var m = /^(Meia-verdade|Mentira|Verdade):\s*/.exec(t || ""); return m ? m[1] : ""; }
+  function textoOpcao(t) {
+    var tipo = tipoFala(t);
+    return tipo ? '<span class="tipo-fala">' + tipo + "</span>" + fmt(t.replace(/^[^:]+:\s*/, "")) : fmt(t);
+  }
+  function ordenar(lista) {
+    // com rótulos, ordem fixa (meia-verdade, mentira, verdade) e itens da bolsa no fim; sem rótulos, embaralha
+    if (!lista.some(function (x) { return tipoFala(x.o.texto); })) return embaralhar(lista);
+    function peso(x) { var t = TIPOS.indexOf(tipoFala(x.o.texto)); return t < 0 ? 9 : t; }
+    return lista.slice().sort(function (p, q) { return peso(p) - peso(q); });
+  }
   function telaLoja(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i], pg = c.pagamento, pago = "";
     if (pg) {
@@ -313,7 +325,7 @@
     salvar(); cenarioDoArco();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
     var novas = (c.desbloqueia || []).map(function (id) { return J.fichas[id] ? J.fichas[id].nome : ""; }).filter(Boolean);
-    var opcoes = embaralhar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return (!x.o.requer || temItem(x.o.requer)) && temAtributo(x.o.requerAtributo); }));
+    var opcoes = ordenar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return (!x.o.requer || temItem(x.o.requer)) && temAtributo(x.o.requerAtributo); }));
     mostrar(
       '<section class="tela cena">' +
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
@@ -325,7 +337,7 @@
       opcoes.map(function (x) {
         var item = x.o.requer && J.itens[x.o.requer];
         return '<button class="opcao' + (item ? " opcao-item" : "") + '" data-acao="escolher" data-cena="' + i + '" data-opcao="' + x.k + '">' +
-          (item ? '<span class="marca-item">Da bolsa: ' + esc(item.nome) + "</span>" : "") + fmt(x.o.texto) + "</button>";
+          (item ? '<span class="marca-item">Da bolsa: ' + esc(item.nome) + "</span>" : "") + textoOpcao(x.o.texto) + "</button>";
       }).join("") +
       "</fieldset></section>"
     );
@@ -334,7 +346,7 @@
   function escolher(i, k) {
     var a = J.arcos[estado.arco], c = a.cenas[i], o = c.opcoes[k];
     // desvio que dá certo para quem tem o atributo
-    if (o.desvio && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
+    if (!o.certa && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
     if (o.certa || o.desvio) {
       var ultima = i === a.cenas.length - 1;
       var corpo;
@@ -347,11 +359,11 @@
         var ganhosDesvio = somar(o.pontos), ganhosD = somar(certa.pontos && certa.pontos.dinheiro ? { dinheiro: certa.pontos.dinheiro } : null);
         corpo =
           '<p class="rotulo">Desvio · ' + esc(c.quando || c.titulo) + "</p>" +
-          '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
+          '<blockquote class="escolhida">' + textoOpcao(o.texto) + "</blockquote>" +
           '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
           avisos(null, null, ganhosDesvio) +
           '<p class="conserto">' + esc(J.textoConserto || "Carmen respirou fundo e consertou o rumo:") + "</p>" +
-          '<blockquote class="escolhida">' + fmt(certa.texto) + "</blockquote>" +
+          '<blockquote class="escolhida">' + textoOpcao(certa.texto) + "</blockquote>" +
           avisos(novosD, forD, ganhosD) +
           '<div class="texto">' + paragrafos(certa.resultado) + "</div>";
       } else {
@@ -359,7 +371,7 @@
         var novos = ganhar(o.ganha), foram = perder(o.perde), ganhos = somar(o.pontos);
         corpo =
           '<p class="rotulo">' + esc(c.quando || c.titulo) + "</p>" +
-          '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
+          '<blockquote class="escolhida">' + textoOpcao(o.texto) + "</blockquote>" +
           avisos(novos, foram, ganhos) +
           '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
           (o.requerAtributo ? '<p class="aviso-ponto">Só deu certo porque Carmen tem ' + esc(Object.keys(o.requerAtributo).map(function (k) { return (J.atributos[k] ? J.atributos[k].nome : k) + " " + o.requerAtributo[k]; }).join(" e ")) + ".</p>" : "");
@@ -377,7 +389,7 @@
       mostrar(
         '<section class="tela derrota">' +
         '<p class="rotulo">Fim da linha</p>' +
-        '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
+        '<blockquote class="escolhida">' + textoOpcao(o.texto) + "</blockquote>" +
         '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
         '<p class="selo-fim">A história de Carmen terminou aqui.</p>' +
         '<div class="acoes">' +
