@@ -307,7 +307,7 @@ window.JOGO = {
         {
           "titulo": "A desculpa",
           "texto": [
-            "— Estava dizendo que você já deveria usar essa noite para ir escolhendo com quem gostaria de ter sua primeira vez — continuou Madalena. — Permitirei que você escolha, dessa vez.",
+            "— Use esta noite para escolher com quem gostaria de ter sua primeira vez — disse Madalena. — Permitirei que você escolha, dessa vez.",
             "Nossa, obrigada por me dar essa liberdade toda, pensei. Mas, se eu fingisse estar satisfeita, teria que passar a noite inteira flertando com os clientes. E eu precisava de tempo sozinha para planejar a fuga."
           ],
           "pergunta": "Como Carmen escapa da noite no salão?",
