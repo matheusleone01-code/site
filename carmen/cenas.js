@@ -278,8 +278,8 @@ window.JOGO = {
         {
           "titulo": "A desculpa",
           "texto": [
-            "— Use esta noite para escolher com quem gostaria de ter sua primeira vez — disse Madalena. — Permitirei que você escolha, dessa vez.",
-            "Nossa, obrigada por me dar essa liberdade toda, pensei. Mas, se eu fingisse estar satisfeita, teria que passar a noite inteira flertando com os clientes. E eu precisava de tempo sozinha para planejar a fuga."
+            "— Use esta noite para escolher com quem gostaria de ter sua primeira vez — disse Madalena.",
+            "“Ninguém”, seria minha resposta, mas não podia ser combativa."
           ],
           "pergunta": "Que desculpa me livraria do salão sem levantar suspeitas?",
           "opcoes": [
@@ -304,10 +304,10 @@ window.JOGO = {
               "desvio": true
             },
             {
-              "texto": "Concordar e descer para o salão, para não levantar suspeitas.",
+              "texto": "— Ninguém. Não quero ninguém.",
               "resultado": [
-                "Passei a noite inteira no salão, sob os olhos de Madalena, sorrindo para homens que eu não queria e sem um minuto para pensar.",
-                "Quando o único cliente que poderia me tirar dali chegou, minha mãe foi direto até ele. Eu nunca tive a chance de falar com ele a sós."
+                "Madalena estreitou os olhos. — Ninguém? Pois bem. Se você não escolhe, eu escolho por você.",
+                "Ela desceu as escadas e voltou com o cliente mais rico da noite. Depois disso, nunca mais me deixou sozinha. Não houve fuga."
               ]
             },
             {
