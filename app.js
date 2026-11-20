@@ -108,9 +108,13 @@
   $("ebooks").innerHTML = E.map(function (b) {
     return '<article class="ebook">' + capa(b.titulo, P.nome, b.capa, b.link) +
       "<h3>" + esc(b.titulo) + "</h3>" + (b.sinopse ? "<p>" + esc(b.sinopse) + "</p>" : "") +
-      (b.link ? '<a class="botao principal" href="' + esc(b.link) + '" target="_blank" rel="noopener">Ver na Amazon</a>' : "") + "</article>";
+      ((b.link || b.fisico) ? '<div class="ebook-botoes">' +
+        (b.link ? '<a class="botao principal" href="' + esc(b.link) + '" target="_blank" rel="noopener">Ver na Amazon</a>' : "") +
+        (b.fisico ? '<a class="botao" href="' + esc(b.fisico) + '" target="_blank" rel="noopener">Livro físico</a>' : "") +
+        "</div>" : "") + "</article>";
   }).join("");
   $("ebooks").hidden = !E.length;
+  $("ebooks").classList.toggle("tem-fisico", E.some(function (b) { return b.fisico; }));
   $("amazon").innerHTML = P.amazon
     ? '<a class="botao' + (E.length ? "" : " principal") + '" href="' + esc(P.amazon) + '" target="_blank" rel="noopener">' + (E.length ? "Ver todos na Amazon" : "Ver meus ebooks na Amazon") + "</a>"
     : "";

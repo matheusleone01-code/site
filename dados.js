@@ -99,7 +99,8 @@ window.DADOS = {
       titulo: "Carmen",
       capa: "capas/carmen.jpg",
       sinopse: "Carmen só tinha uma certeza na vida: a de que não seria puta.",
-      link: "https://a.co/d/0dUY5sYb"
+      link: "https://a.co/d/0dUY5sYb",
+      fisico: "https://flyve.com.br/1434/carmen"
     },
     {
       titulo: "O Paladino da Alvorada",
