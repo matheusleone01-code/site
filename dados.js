@@ -13,7 +13,7 @@ window.DADOS = {
   /* ---------- SOBRE VOCÊ ---------- */
   perfil: {
     nome: "Matheus Leone",
-    bio: "Advogado e Escritor. Autor de \"Carmen\" e \"A Maldição do Bastardo\". Faz vlogs de leitura e tece comentários sobre o mercado literário em suas redes sociais: @omatheusleone.",
+    bio: "Advogado e Escritor. Autor de \"Carmen\" e \"A Maldição do Bastardo\". Faz vlogs de leitura, bastidores da escrita e tece comentários sobre o mercado literário em suas redes sociais: @omatheusleone.",
     // Sua foto (aparece pequena e redonda). Vazio = mostra suas iniciais.
     foto: "img/avatar.jpg",
     // Imagem de fundo do topo do site (fica escurecida e desfocada). Vazio = fundo verde.
