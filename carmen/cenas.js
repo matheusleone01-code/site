@@ -34,10 +34,10 @@ window.JOGO = {
   "abertura": [],
 
   "comoJogar": [
-    "Algumas falas erradas têm conserto; outras acabam com a história ali, e você recomeça do início do arco.",
-    "Em certos momentos, Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras mais adiante.",
-    "Algumas escolhas dão pontos de Persuasão, Honestidade ou Astúcia. Com pontos suficientes, aparecem falas extras com certos personagens.",
-    "As fichas dos personagens guardam pistas."
+    "Algumas falas erradas têm conserto; outras não.",
+    "Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras.",
+    "Algumas escolhas dão pontos de Persuasão, Honestidade ou Astúcia.",
+    "Na dúvida, consulte as fichas dos personagens."
   ],
 
   // Prêmio para quem chega ao Palácio Real

@@ -12,10 +12,10 @@ window.JOGO = {
   "abertura": [],
   "comoJogar": [
     "A fala certa é sempre a que Carmen escolheu no livro, mesmo quando não foi a mais sensata.",
-    "Algumas falas erradas têm conserto; outras acabam com a história ali, e você recomeça do início do arco.",
-    "Em certos momentos, Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras mais adiante.",
-    "Algumas escolhas dão pontos de Persuasão, Honestidade ou Astúcia. Com pontos suficientes, aparecem falas extras com certos personagens.",
-    "As fichas guardam pistas, e nesta versão contam tudo."
+    "Algumas falas erradas têm conserto; outras não.",
+    "Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras.",
+    "Algumas escolhas dão pontos de Persuasão, Honestidade ou Astúcia.",
+    "Na dúvida, consulte as fichas dos personagens."
   ],
   "premio": {
     "valor": "R$ 10 de desconto",
