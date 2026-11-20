@@ -205,3 +205,5 @@ img.retrato, .retrato-grande { background: #EADBBE; }
 .apresenta-nome { font: 600 1.05rem/1.2 var(--display); }
 .apresenta-ver { font: 600 .7rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--acento); }
 .ficha { scroll-margin-top: 5rem; }
+
+.pergunta-cena { font-weight: 700; margin-top: 1.25rem; }

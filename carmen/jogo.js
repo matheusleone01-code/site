@@ -243,13 +243,6 @@
     );
   }
 
-  function comPergunta(texto, pergunta) {
-    var t = (texto || []).slice();
-    if (!pergunta) return t;
-    var ult = t[t.length - 1] || "";
-    if (ult && !/^\s*[—*“]/.test(ult)) t[t.length - 1] = ult + " " + pergunta; else t.push(pergunta);
-    return t;
-  }
   function telaCena(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i];
     abrirFichas(c.desbloqueia);
@@ -263,7 +256,7 @@
       "<h2>" + esc(c.quando || c.titulo) + "</h2>" +
       (novas.length ? '<p class="aviso-ficha">Nova ficha: ' + esc(novas.join(", ")) + ". Abra em <em>Fichas</em>, lá em cima.</p>" : "") +
       (c.imagem ? '<figure class="ilustracao"><img src="' + esc(c.imagem.arquivo) + '" alt="' + esc(c.imagem.descricao || "") + '" loading="lazy" decoding="async"></figure>' : "") +
-      '<div class="texto">' + paragrafos(comPergunta(c.texto, c.pergunta)) + "</div>" +
+      '<div class="texto">' + paragrafos(c.texto) + (c.pergunta ? '<p class="pergunta-cena">' + fmt(c.pergunta) + "</p>" : "") + "</div>" +
       '<fieldset class="escolha" aria-label="' + esc(c.pergunta) + '"><legend>Sua escolha</legend>' +
       opcoes.map(function (x) {
         var item = x.o.requer && J.itens[x.o.requer];
