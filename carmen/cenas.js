@@ -32,10 +32,7 @@ window.JOGO = {
   "aviso": "Este jogo se passa num bordel e tem linguagem e temas adultos. Recomendado para maiores de 16 anos.",
 
   "abertura": [
-    "No Reino dos Burgos, a plebe sempre será plebe. Os nobres, chamados de Ilustres, casam-se entre si. As plebeias bonitas, no máximo, tornam-se concubinas.",
-    "Carmen cresceu em Serra Verde, uma cidade pequena. Madalena, mãe dela, é a cortesã mais disputada do bordel onde moram. De manhã, Carmen varre o salão; à noite, conversa com os clientes. Só conversa, por enquanto.",
-    "Faltam 7 dias para Carmen atingir a maioridade. E Madalena já decidiu o destino da filha.",
-    "Carmen prefere morrer a se prostituir. Você irá guiá-la para uma vida melhor.",
+    "Você irá guiar Carmen para uma vida melhor.",
     "Minta. Engane. Oculte. Faça o que for necessário para que Carmen suba de vida.",
     "Mas não se esqueça que, por trás até mesmo de uma farsante, bate um coração."
   ],
