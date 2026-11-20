@@ -211,8 +211,8 @@ window.JOGO = {
             "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
           },
           "texto": [
-            "Madalena escovava meus cabelos diante do espelho, como fazia quando eu era criança. Eu tinha acabado de pedir mais alguns meses antes de ter que trabalhar. Quem sabe, assim, conquistaria um Ilustre nesse meio-tempo.",
-            "— Só de dizer uma coisa dessas, já mostra como você é infantil — interrompeu ela. — Ilustres nunca se casarão com uma plebeia; no máximo, eles te farão uma concubina. É por isso que, por bem ou por mal, você fará o que digo. E acabou a discussão.",
+            "Madalena escovava meus cabelos diante do espelho, como fazia quando eu era criança. Eu tinha acabado de pedir mais alguns meses antes de ter que trabalhar no bordel. Quem sabe, assim, conquistaria um Ilustre nesse meio-tempo.",
+            "— Só de dizer uma coisa dessas, já mostra como você é infantil — respondeu Madalena. — Ilustres nunca se casarão com uma plebeia; no máximo, eles te farão uma concubina. É por isso que fará o que digo. E acabou a discussão.",
             "Olhei para baixo. Por mais que eu insistisse, ela nunca daria o braço a torcer. Só me restava uma opção.",
             "Eu fugiria do bordel.",
             "Mas, antes, precisava responder à minha mãe."
