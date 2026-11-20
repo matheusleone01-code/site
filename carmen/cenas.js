@@ -178,6 +178,7 @@ window.JOGO = {
       "cenas": [
         {
           "titulo": "O camarim",
+          "imagem": { "arquivo": "img/espelho-cor.jpg", "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira." },
           "texto": [
             "Madalena escovava meus cabelos diante do espelho, como fazia quando eu era criança. Eu tinha acabado de pedir mais alguns meses: sair, circular pelas ruas, quem sabe conquistar um bom partido. Quem sabe até um Ilustre.",
             "— Só de dizer uma coisa dessas, já mostra como você é infantil — interrompeu ela. — Ilustres nunca se casarão com uma plebeia; no máximo, eles te farão uma concubina. É por isso que, por bem ou por mal, você fará o que digo. E acabou a discussão.",

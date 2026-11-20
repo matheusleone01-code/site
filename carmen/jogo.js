@@ -203,6 +203,7 @@
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
       "<h2>" + esc(c.titulo) + "</h2>" +
       (novas.length ? '<p class="aviso-ficha">Nova ficha: ' + esc(novas.join(", ")) + ". Abra em <em>Fichas</em>, lá em cima.</p>" : "") +
+      (c.imagem ? '<figure class="ilustracao"><img src="' + esc(c.imagem.arquivo) + '" alt="' + esc(c.imagem.descricao || "") + '" loading="lazy" decoding="async"></figure>' : "") +
       '<div class="texto">' + paragrafos(c.texto) + "</div>" +
       '<fieldset class="escolha"><legend>' + esc(c.pergunta) + "</legend>" +
       opcoes.map(function (x) {
