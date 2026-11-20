@@ -229,28 +229,28 @@ window.JOGO = {
     },
     "luvas": {
       "nome": "Luvas de cetim",
-      "preco": 2,
+      "preco": 3,
       "texto": [
         "Brancas, até o cotovelo. Mão de Ilustre não pega em nada sozinha."
       ]
     },
     "leque": {
       "nome": "Leque de plumas",
-      "preco": 2,
+      "preco": 4,
       "texto": [
         "Plumas de avestruz e cabo de madrepérola. Serve para abanar, e para esconder o rosto."
       ]
     },
     "colar": {
       "nome": "Colar de pérolas",
-      "preco": 4,
+      "preco": 7,
       "texto": [
         "Pérolas verdadeiras, pequenas, mas verdadeiras. A peça mais cara que Carmen já tocou."
       ]
     },
     "perfume": {
       "nome": "Perfume de flor de laranjeira",
-      "preco": 3,
+      "preco": 4,
       "texto": [
         "O mesmo cheiro do lenço de Madalena, em frasco de cristal. Carmen não soube explicar por que escolheu esse."
       ]
@@ -586,7 +586,7 @@ window.JOGO = {
               ],
               "pontos": {
                 "astucia": 1,
-                "dinheiro": 5
+                "dinheiro": 4
               }
             },
             {
@@ -1033,8 +1033,7 @@ window.JOGO = {
                 "Ele me esmagou num abraço, repetindo “obrigado” uma centena de vezes."
               ],
               "pontos": {
-                "honestidade": 1,
-                "dinheiro": 5
+                "honestidade": 1
               }
             },
             {
@@ -1113,11 +1112,22 @@ window.JOGO = {
           "titulo": "O mercado",
           "loja": true,
           "texto": [
-            "Na véspera da avaliação, juntei tudo o que tinha e fui ao mercado de Pacentro. Um vestido de seda de segunda mão eu já tinha garantido.",
+            "Juntei tudo o que tinha e fui ao mercado de Pacentro. Um vestido de seda de segunda mão eu já tinha garantido.",
             "Faltava o resto: os detalhes que separam uma moça bonita de uma Ilustre."
           ],
           "pergunta": "O que eu compraria?",
           "opcoes": [],
+          "pagamento": {
+            "item": "moedas",
+            "valor": 11,
+            "valorItem": 5,
+            "texto": [
+              "Abri o saquinho de couro que Armando me deu na despedida: a minha metade dos lucros da estrada, e um pouco mais."
+            ],
+            "textoItem": [
+              "Abri o saquinho de couro que Armando me deu na despedida. Bem mais leve do que eu esperava, com um bilhete: “Eu vi a bolsinha de veludo na estrada. Conheço as coisas da sua mãe. A parte dela, eu devolvo a ela.”"
+            ]
+          },
           "produtos": [
             "luvas",
             "leque",

@@ -250,11 +250,21 @@
   }
 
   function telaLoja(i) {
-    var a = J.arcos[estado.arco], c = a.cenas[i], tem = pontosDe("dinheiro");
+    var a = J.arcos[estado.arco], c = a.cenas[i], pg = c.pagamento, pago = "";
+    if (pg) {
+      if (!pontosDe("lucro")) {
+        estado.atributos.lucro = 1; estado.atributos.lucroDescontado = temItem(pg.item) ? 1 : 0;
+        estado.atributos.dinheiro = pontosDe("dinheiro") + (estado.atributos.lucroDescontado ? pg.valorItem : pg.valor);
+        salvar();
+      }
+      var desc = pontosDe("lucroDescontado");
+      pago = '<div class="texto">' + paragrafos(desc ? pg.textoItem : pg.texto) + "</div>" + avisos(null, null, ["+" + valor(desc ? pg.valorItem : pg.valor)]);
+    }
+    var tem = pontosDe("dinheiro");
     mostrar(
       '<section class="tela cena loja">' +
       '<p class="rotulo">Compras</p>' +
-      "<h2>" + esc(c.quando || c.titulo) + "</h2>" +
+      "<h2>" + esc(c.quando || c.titulo) + "</h2>" + pago +
       '<div class="texto">' + paragrafos(c.texto) + (c.pergunta ? '<p class="pergunta-cena">' + fmt(c.pergunta) + "</p>" : "") + "</div>" +
       '<p class="saldo" id="saldo" data-tem="' + tem + '"></p>' +
       '<fieldset class="escolha produtos"><legend>Na banca</legend>' +
