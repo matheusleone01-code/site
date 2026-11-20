@@ -2212,10 +2212,10 @@ window.JOGO = {
     "Carmen entrou no palácio como Vivian Barbosa e saiu da Câmara como a futura Vivian Macedo. Você lembrou de cada escolha dela.",
     "Mas você sabe que a história não termina aí: ainda há o epílogo, três anos depois, e as cartas de Madalena. A continuação, “Uma Canção Desnaturada”, sai em 2027."
   ],
+  "chave": "carmen-jogo-completo-v1",
   "outraVersao": {
     "texto": "Ainda não leu o livro? Jogue a versão sem spoilers.",
     "link": "./"
   },
-  "chave": "carmen-jogo-completo-v1",
   "tituloVitoria": "Carmen virou Vivian Macedo"
 };

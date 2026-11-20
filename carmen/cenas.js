@@ -1182,11 +1182,5 @@ window.JOGO = {
   "vitoria": [
     "Carmen chegou ao Palácio Real. Como Vivian Barbosa, filha de um Ilustre, no meio das donzelas mais prendadas do reino.",
     "Se ela vai passar na avaliação, se a farsa vai durar e quem ela vai encontrar lá dentro… isso o jogo não conta. O livro conta."
-  ],
-
-  // Link para a outra versão, na tela inicial
-  "outraVersao": {
-    "texto": "Já leu o livro inteiro? Jogue a versão completa (com spoilers).",
-    "link": "completo.html"
-  }
+  ]
 };
