@@ -301,7 +301,17 @@ window.JOGO = {
                 "Madalena ergueu uma sobrancelha. — Cólica? A sua só vem daqui a duas semanas.",
                 "*Merda.* Ela sabia o meu calendário melhor do que eu. — Não é cólica… — emendei, depressa. — É outra coisa. Aqui, mais em cima."
               ],
-              "desvio": true
+              "desvio": true,
+              "sucesso": {
+                "requerAtributo": {
+                  "persuasao": 1
+                },
+                "resultado": [
+                  "Madalena ergueu uma sobrancelha. — Cólica? A sua só vem daqui a duas semanas.",
+                  "— Veio adiantada — eu disse, sem piscar, com a mão no ventre e a cara mais sofrida do mundo. — Deve ser o nervoso.",
+                  "Ela me olhou por um tempo. Depois suspirou. — Está bem. Vá se deitar. Mas, se isso virar costume, decidirei tudo por você."
+                ]
+              }
             },
             {
               "texto": "— Ninguém. Não quero ninguém.",

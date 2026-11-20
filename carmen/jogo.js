@@ -333,6 +333,8 @@
 
   function escolher(i, k) {
     var a = J.arcos[estado.arco], c = a.cenas[i], o = c.opcoes[k];
+    // desvio que dá certo para quem tem o atributo
+    if (o.desvio && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
     if (o.certa || o.desvio) {
       var ultima = i === a.cenas.length - 1;
       var corpo;
@@ -342,7 +344,7 @@
         estado.desvios += 1;
         abrirFichas(certa.desbloqueia);
         var novosD = ganhar(certa.ganha), forD = perder(certa.perde);
-        var ganhosDesvio = somar(o.pontos), ganhosD = somar(certa.pontos);
+        var ganhosDesvio = somar(o.pontos), ganhosD = somar(certa.pontos && certa.pontos.dinheiro ? { dinheiro: certa.pontos.dinheiro } : null);
         corpo =
           '<p class="rotulo">Desvio · ' + esc(c.quando || c.titulo) + "</p>" +
           '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
