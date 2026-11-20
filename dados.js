@@ -119,5 +119,16 @@ window.DADOS = {
       sinopse: "Rio de Janeiro, cyberpunk, 2054.",
       link: "https://a.co/d/0eYRUogM"
     }
-  ]
+  ],
+
+  // Ilustrações de um livro, mostradas abaixo dos ebooks. Para esconder, deixe imagens: [].
+  ilustracoes: {
+    titulo: "Ilustrações de Carmen",
+    texto: "Algumas das ilustrações que estão dentro do livro.",
+    credito: "",   // ex.: "Ilustrações de Fulana (@fulana)"
+    imagens: [
+      { src: "img/ilustracoes/carmen-espelho.jpg", descricao: "Ilustração de Carmen: duas mulheres loiras diante de um espelho de penteadeira" },
+      { src: "img/ilustracoes/carmen-biblioteca.jpg", descricao: "Ilustração de Carmen: um homem ruivo de casaca vermelha beija a mão de uma criada numa biblioteca" },
+    ],
+  },
 };

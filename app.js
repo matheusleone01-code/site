@@ -115,6 +115,19 @@
     ? '<a class="botao' + (E.length ? "" : " principal") + '" href="' + esc(P.amazon) + '" target="_blank" rel="noopener">' + (E.length ? "Ver todos na Amazon" : "Ver meus ebooks na Amazon") + "</a>"
     : "";
 
+  /* Ilustrações */
+  var IL = D.ilustracoes;
+  if (IL && (IL.imagens || []).length) {
+    $("ilustracoes").innerHTML =
+      "<h3>" + esc(IL.titulo || "Ilustrações") + "</h3>" +
+      (IL.texto ? '<p class="ilustracoes-texto">' + esc(IL.texto) + "</p>" : "") +
+      '<div class="ilustracoes-grade">' + IL.imagens.map(function (im) {
+        return '<a class="ilustracao" href="' + esc(im.src) + '" target="_blank" rel="noopener"><img src="' + esc(im.src) + '" alt="' + esc(im.descricao || "") + '" loading="lazy"></a>';
+      }).join("") + "</div>" +
+      (IL.credito ? '<p class="ilustracoes-credito">' + esc(IL.credito) + "</p>" : "");
+    $("ilustracoes").hidden = false;
+  }
+
   /* Contato */
   if (!P.email && !P.newsletter) {
     $("contato").hidden = true;
