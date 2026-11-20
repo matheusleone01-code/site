@@ -2556,20 +2556,125 @@ window.JOGO = {
     }
   },
   "finalPalacio": "O Palácio Real",
+  "sons": {
+    "tema": "tema",
+    "ambiente": {
+      "Serra Verde": "bordel",
+      "A estrada": "estrada",
+      "Pacentro": "feira",
+      "O Palácio Real": "palacio"
+    },
+    "cenas": {
+      "Serra Verde|O segredo": {
+        "amb": "noite"
+      },
+      "Serra Verde|O quarto de Madalena": {
+        "amb": "noite"
+      },
+      "Serra Verde|O balde": {
+        "amb": "noite"
+      },
+      "A estrada|A feira": {
+        "amb": "feira"
+      },
+      "A estrada|A cabine": {
+        "amb": "feira"
+      },
+      "A estrada|A cantoria": {
+        "amb": "feira"
+      },
+      "A estrada|A fogueira": {
+        "amb": "noite",
+        "mus": "musFogueira"
+      },
+      "Pacentro|A joalheria": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A primeira cliente": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A Ilustre de rosa": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A data": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A taverna": {
+        "amb": "taverna",
+        "mus": "musTaverna"
+      },
+      "Pacentro|A despedida": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A verdade de Armando": {
+        "amb": "joalheria"
+      },
+      "O Palácio Real|O mercado": {
+        "amb": "feira"
+      },
+      "O Palácio Real|O disfarce": {
+        "amb": "feira"
+      },
+      "O Palácio Real|A carruagem": {
+        "amb": "feira"
+      },
+      "O Palácio Real|O nome": {
+        "amb": "estrada"
+      },
+      "Empregada Real|A biblioteca": {
+        "amb": "joalheria"
+      },
+      "Empregada Real|Os elogios": {
+        "amb": "joalheria"
+      },
+      "Empregada Real|O livro caído": {
+        "amb": "joalheria"
+      },
+      "Confissões|A prova do vinho": {
+        "amb": "palacio"
+      },
+      "Confissões|A pergunta": {
+        "amb": "palacio"
+      },
+      "Confissões|A valsa": {
+        "amb": "",
+        "mus": "musValsa"
+      }
+    },
+    "efeitos": {
+      "palacio": "tacas"
+    },
+    "arquivos": {
+      "tema": "sons/tema-violao.mp3",
+      "bordel": "sons/amb-bordel.mp3",
+      "noite": "sons/amb-noite.mp3",
+      "estrada": "sons/amb-estrada.mp3",
+      "feira": "sons/amb-feira.mp3",
+      "joalheria": "sons/amb-joalheria.mp3",
+      "taverna": "sons/amb-taverna.mp3",
+      "palacio": "sons/amb-palacio.mp3",
+      "tacas": "sons/efeito-tacas.mp3",
+      "musTaverna": "sons/mus-taverna.mp3",
+      "musFogueira": "sons/mus-fogueira.mp3",
+      "musValsa": "sons/mus-valsa.mp3"
+    },
+    "creditos": [
+      "Flamenco Motion – Sonican (Pixabay)",
+      "Placidplace (Pixabay)",
+      "OwlStorm (Freesound/Pixabay)",
+      "freesound_community (Pixabay)",
+      "spinopel (Pixabay)",
+      "janbezouska (Freesound/Pixabay)",
+      "Wolff-SFX (Pixabay)",
+      "Just Lute – kaazoom (Pixabay)",
+      "At the Campfire – JuliusH (Pixabay)",
+      "Suguri Waltz – Yubatake (OpenGameArt.org), CC BY 3.0"
+    ]
+  },
   "chave": "carmen-jogo-completo-v1",
   "outraVersao": {
     "texto": "Ainda não leu o livro? Jogue a versão sem spoilers.",
     "link": "./"
-  },
-  "sons": {
-    "ambiente": {},
-    "musicas": {
-      "Confissões|A valsa": "sons/baile-valsa.mp3"
-    },
-    "tema": null,
-    "creditos": [
-      "Suguri Waltz – Yubatake (OpenGameArt.org), CC BY 3.0"
-    ]
   },
   "tituloVitoria": "Carmen virou Vivian Macedo"
 };

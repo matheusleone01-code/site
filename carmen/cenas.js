@@ -1470,5 +1470,88 @@ window.JOGO = {
     }
   },
 
-  "finalPalacio": "O Palácio Real"
+  "finalPalacio": "O Palácio Real",
+
+  "sons": {
+    "tema": "tema",
+    "ambiente": {
+      "Serra Verde": "bordel",
+      "A estrada": "estrada",
+      "Pacentro": "feira",
+      "O Palácio Real": "palacio"
+    },
+    "cenas": {
+      "Serra Verde|O segredo": {
+        "amb": "noite"
+      },
+      "Serra Verde|O quarto de Madalena": {
+        "amb": "noite"
+      },
+      "Serra Verde|O balde": {
+        "amb": "noite"
+      },
+      "A estrada|A feira": {
+        "amb": "feira"
+      },
+      "A estrada|A cabine": {
+        "amb": "feira"
+      },
+      "A estrada|A cantoria": {
+        "amb": "feira"
+      },
+      "Pacentro|A joalheria": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A primeira cliente": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A Ilustre de rosa": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A data": {
+        "amb": "joalheria"
+      },
+      "Pacentro|A taverna": {
+        "amb": "taverna",
+        "mus": "musTaverna"
+      },
+      "O Palácio Real|O mercado": {
+        "amb": "feira"
+      },
+      "O Palácio Real|O disfarce": {
+        "amb": "feira"
+      },
+      "O Palácio Real|A carruagem": {
+        "amb": "feira"
+      },
+      "O Palácio Real|O nome": {
+        "amb": "estrada"
+      }
+    },
+    "efeitos": {
+      "palacio": "tacas"
+    },
+    "arquivos": {
+      "tema": "sons/tema-violao.mp3",
+      "bordel": "sons/amb-bordel.mp3",
+      "noite": "sons/amb-noite.mp3",
+      "estrada": "sons/amb-estrada.mp3",
+      "feira": "sons/amb-feira.mp3",
+      "joalheria": "sons/amb-joalheria.mp3",
+      "taverna": "sons/amb-taverna.mp3",
+      "palacio": "sons/amb-palacio.mp3",
+      "tacas": "sons/efeito-tacas.mp3",
+      "musTaverna": "sons/mus-taverna.mp3"
+    },
+    "creditos": [
+      "Flamenco Motion – Sonican (Pixabay)",
+      "Placidplace (Pixabay)",
+      "OwlStorm (Freesound/Pixabay)",
+      "freesound_community (Pixabay)",
+      "spinopel (Pixabay)",
+      "janbezouska (Freesound/Pixabay)",
+      "Wolff-SFX (Pixabay)",
+      "Just Lute – kaazoom (Pixabay)"
+    ]
+  }
 };

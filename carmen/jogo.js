@@ -12,17 +12,39 @@
   var listaBolsa = document.getElementById("lista-bolsa");
 
   /* ---------- som (ambiente por arco, música quando acontece na história, tema nas telas de início e fim) ---------- */
-  var SOM = J.sons || null, audio = null, trilha = null, somLigado = false, botaoSom = null;
+  var SOM = J.sons || null, somLigado = false, botaoSom = null, efeitoTimer = null;
+  var canais = { amb: null, mus: null }, querido = { amb: null, mus: null };
   try { somLigado = localStorage.getItem((J.chave || "carmen-jogo-v1") + "-som") === "1"; } catch (e) {}
-  function tocar() {
-    if (!audio) { audio = new Audio(); audio.loop = true; audio.volume = 0.45; }
-    if (!somLigado || !trilha) { audio.pause(); return; }
-    if (audio.getAttribute("data-trilha") !== trilha) { audio.setAttribute("data-trilha", trilha); audio.src = trilha; }
-    var p = audio.play(); if (p && p.catch) p.catch(function () {});
+  function canal(nome) {
+    if (!canais[nome]) { canais[nome] = new Audio(); canais[nome].loop = true; canais[nome].volume = nome === "amb" ? 0.55 : 0.5; }
+    return canais[nome];
   }
-  function somPara(t) { if (!SOM) return; trilha = t || null; tocar(); }
-  function somDoArco() { var a = J.arcos[estado.arco]; return SOM && a ? SOM.ambiente[a.titulo] || null : null; }
-  function somDaCena(c) { var a = J.arcos[estado.arco]; return (SOM && SOM.musicas[a.titulo + "|" + c.titulo]) || somDoArco(); }
+  function tocar() {
+    ["amb", "mus"].forEach(function (nome) {
+      var id = querido[nome], src = id && SOM.arquivos[id], a = canal(nome);
+      if (!somLigado || !src) { a.pause(); return; }
+      if (a.getAttribute("data-id") !== id) { a.setAttribute("data-id", id); a.src = src; }
+      var p = a.play(); if (p && p.catch) p.catch(function () {});
+    });
+    clearTimeout(efeitoTimer);
+    var ef = somLigado && querido.amb && SOM.efeitos && SOM.efeitos[querido.amb];
+    if (ef && SOM.arquivos[ef]) (function agendar() {
+      efeitoTimer = setTimeout(function () {
+        if (!somLigado || !SOM.efeitos[querido.amb]) return;
+        var e = new Audio(SOM.arquivos[ef]); e.volume = 0.35; var p = e.play(); if (p && p.catch) p.catch(function () {});
+        agendar();
+      }, 20000 + Math.random() * 20000);
+    })();
+  }
+  // t = { amb, mus } (ids de SOM.arquivos); null em cada um = silêncio
+  function somPara(t) { if (!SOM) return; querido.amb = (t && t.amb) || null; querido.mus = (t && t.mus) || null; tocar(); }
+  function somTema() { return { mus: SOM && SOM.tema }; }
+  function somDoArco() { var a = J.arcos[estado.arco]; return { amb: SOM && a ? SOM.ambiente[a.titulo] || null : null }; }
+  function somDaCena(c) {
+    var a = J.arcos[estado.arco], x = SOM && SOM.cenas[a.titulo + "|" + c.titulo];
+    if (!x) return somDoArco();
+    return { amb: x.amb === undefined ? somDoArco().amb : x.amb, mus: x.mus || null };
+  }
   function desenharBotaoSom() {
     if (!botaoSom) return;
     botaoSom.setAttribute("aria-pressed", somLigado ? "true" : "false");
@@ -243,7 +265,7 @@
 
   /* ---------- telas ---------- */
   function telaInicio() {
-    rotulo(""); cenario(null); somPara(SOM && SOM.tema);
+    rotulo(""); cenario(null); somPara(somTema());
     var temProgresso = estado.iniciado && !estado.venceu;
     var html =
       '<section class="tela inicio">' +
@@ -428,7 +450,7 @@
   }
   function telaFinal(i, k) {
     var c = J.arcos[estado.arco].cenas[i], o = c.opcoes[k], f = J.finais[o.final];
-    somar(o.pontos); marcarFinal(o.final); salvar(); somPara(SOM && SOM.tema);
+    somar(o.pontos); marcarFinal(o.final); salvar(); somPara(somTema());
     rotulo("Final alternativo");
     mostrar(
       '<section class="tela final-alternativo">' +
@@ -521,7 +543,7 @@
   }
 
   function telaVitoria() {
-    rotulo("Vitória"); cenarioDoArco(); somPara(SOM && SOM.tema);
+    rotulo("Vitória"); cenarioDoArco(); somPara(somTema());
     var temCodigo = estado.arroba && window.CODIGO.valido(estado.arroba);
     var html =
       '<section class="tela vitoria">' +
