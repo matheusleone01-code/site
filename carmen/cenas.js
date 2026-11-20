@@ -1555,10 +1555,10 @@ window.JOGO = {
     "cenas": {},
     "efeitos": {},
     "arquivos": {
-      "tema": "sons/tema-violao-baixo.mp3"
+      "tema": "sons/tema-chorinho.mp3"
     },
     "creditos": [
-      "Flamenco Motion – Sonican (Pixabay)"
+      "Siles Calendar: July 21 – Siles Felipe (Pixabay)"
     ]
   }
 };

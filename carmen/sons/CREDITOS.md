@@ -36,3 +36,9 @@ Os sons do Pixabay seguem a Pixabay Content License. Ela permite uso gratuito, i
 | mus-taverna.mp3 | [Just Lute – Medieval Lute Music](https://pixabay.com/music/folk-just-lute-medieval-lute-music-363314/), kaazoom | Pixabay Content License | Opcional: "Just Lute – kaazoom (Pixabay)" |
 | mus-fogueira.mp3 | [At the Campfire](https://pixabay.com/music/solo-guitar-at-the-campfire-acoustic-guitar-music-2084/), JuliusH | Pixabay Content License | Opcional: "At the Campfire – JuliusH (Pixabay)" |
 | mus-valsa.mp3 | [Suguri Waltz](https://lpc.opengameart.org/content/suguri-waltz), Yubatake | **CC BY 3.0** | **Obrigatório:** "Suguri Waltz – Yubatake (OpenGameArt.org), CC BY 3.0" |
+
+## Tema atual (2026-11-20)
+
+| tema-chorinho.mp3 | [Siles Calendar: July 21](https://pixabay.com/music/modern-classical-siles-calendar-july-21-484089/), Siles Felipe | Pixabay Content License | Opcional: "Siles Calendar: July 21 – Siles Felipe (Pixabay)" |
+
+Mono, 72 kbps, no mesmo volume baixo do tema de violão aprovado (cerca de -36 LUFS), com fade de 1 s na entrada e 3,5 s na saída para o loop não dar tranco. Original em `originais/chorinho-siles-calendar.mp3`.
