@@ -1859,10 +1859,10 @@ window.JOGO = {
     "cenas": {},
     "efeitos": {},
     "arquivos": {
-      "tema": "sons/tema-chorinho.mp3"
+      "tema": "sons/tema-violao-dedilhado.mp3"
     },
     "creditos": [
-      "Siles Calendar: July 21 – Siles Felipe (Pixabay)"
+      "Warm Fingerpicked Guitar (Pixabay)"
     ]
   }
 };

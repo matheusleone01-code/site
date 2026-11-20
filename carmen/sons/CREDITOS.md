@@ -42,3 +42,9 @@ Os sons do Pixabay seguem a Pixabay Content License. Ela permite uso gratuito, i
 | tema-chorinho.mp3 | [Siles Calendar: July 21](https://pixabay.com/music/modern-classical-siles-calendar-july-21-484089/), Siles Felipe | Pixabay Content License | Opcional: "Siles Calendar: July 21 – Siles Felipe (Pixabay)" |
 
 Mono, 72 kbps, no mesmo volume baixo do tema de violão aprovado (cerca de -36 LUFS), com fade de 1 s na entrada e 3,5 s na saída para o loop não dar tranco. Original em `originais/chorinho-siles-calendar.mp3`.
+
+## Tema atual (2026-11-20, substitui o chorinho)
+
+| tema-violao-dedilhado.mp3 | [Warm Fingerpiked Guitar](https://pixabay.com/music/modern-classical-warm-fingerpiked-guitar-594729/) | Pixabay Content License | Opcional: "Warm Fingerpicked Guitar (Pixabay)" |
+
+Mono, 72 kbps, cerca de -36 LUFS (mesmo volume baixo aprovado), fade de 1 s na entrada e 3,5 s na saída. Original em `originais/warm-fingerpiked-guitar.mp3`.
