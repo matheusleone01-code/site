@@ -1259,7 +1259,7 @@ window.JOGO = {
               "texto": "Uma das cantigas obscenas que aprendeu no bordel, para fazê-lo rir.",
               "resultado": [
                 "Armando, que nunca dizia um palavrão na minha frente, ficou vermelho até as orelhas e foi dormir mais cedo.",
-                "Não foi essa a noite que Carmen viveu no livro. Sem a canção da mãe, ela nunca teria reparado no nariz dele."
+                "Daquela noite em diante, ele me tratou como a moça do bordel que eu tinha sido. Em Pacentro, me deixou na porta da joalheria e seguiu viagem sem olhar para trás."
               ]
             },
             {

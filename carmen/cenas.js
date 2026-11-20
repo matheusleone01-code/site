@@ -1178,12 +1178,51 @@ window.JOGO = {
             }
           ],
           "com": "armando"
+        },
+        {
+          "titulo": "A fogueira",
+          "texto": [
+            "Na última noite de estrada, acampamos numa clareira. Armando acendeu a fogueira; servi pão dormido, vinho para ele e suco de uva para mim.",
+            "— Você nunca me disse por que não bebe.",
+            "— É um motivo meio bobo. Álcool resseca a voz. E eu sempre gostei de cantar.",
+            "— Então cante alguma coisa para mim."
+          ],
+          "pergunta": "O que eu cantaria para ele?",
+          "opcoes": [
+            {
+              "texto": "A canção de ninar que Madalena cantava para ela: “Sob a luz do luar”.",
+              "certa": true,
+              "resultado": [
+                "“Meu amor se foi / Mas jurou voltar / Na calada da noite / Sob a luz do luar…”",
+                "Terminei de olhos fechados. Nada de aplausos. Armando encarava as chamas em silêncio e parecia limpar um olho que eu não conseguia enxergar.",
+                "— Você pode cantar de novo?",
+                "Cantei. Depois, ao erguer o copo, vi meu reflexo no suco escuro, iluminado pelo fogo, e entendi o que havia de familiar no perfil dele. Larguei o pão e toquei meu nariz."
+              ],
+              "pontos": {
+                "performance": 1
+              }
+            },
+            {
+              "texto": "Uma das cantigas obscenas que aprendeu no bordel, para fazê-lo rir.",
+              "resultado": [
+                "Armando, que nunca dizia um palavrão na minha frente, ficou vermelho até as orelhas e foi dormir mais cedo.",
+                "Daquela noite em diante, ele me tratou como a moça do bordel que eu tinha sido. Em Pacentro, me deixou na porta da joalheria e seguiu viagem sem olhar para trás."
+              ]
+            },
+            {
+              "texto": "Recusar: ela só canta quando ninguém está olhando.",
+              "resultado": [
+                "A fogueira estalou em silêncio. Armando não insistiu; só ficou olhando as chamas, com cara de quem já tinha ouvido muitos nãos na vida.",
+                "Foi essa cara que me venceu. — Está bem. Uma só. — E fechei os olhos."
+              ],
+              "desvio": true
+            }
+          ],
+          "com": "armando"
         }
       ],
       "fecho": [
-        "Juntos, viajamos de vilarejos a cidades maiores, coletando mais moedas do que cobradores de impostos. Sem mais o que vender, partimos para a Capital.",
-        "Na última noite de estrada, junto à fogueira, Armando me pediu que cantasse. Cantei a canção de ninar que minha mãe cantava para mim. Ele ficou em silêncio, encarando as chamas, e pediu que eu cantasse de novo.",
-        "Ali, recortado contra o fogo, o perfil dele tinha algo de familiar. Eu só não sabia dizer o quê."
+        "Juntos, viajamos de vilarejos a cidades maiores, coletando mais moedas do que cobradores de impostos. Na manhã seguinte à fogueira, avistamos Pacentro."
       ],
       "cenario": "estrada"
     },
