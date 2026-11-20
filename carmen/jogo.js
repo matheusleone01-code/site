@@ -7,15 +7,24 @@
   var botaoFichas = document.getElementById("botao-fichas");
   var painel = document.getElementById("painel-fichas");
   var listaFichas = document.getElementById("lista-fichas");
+  var botaoBolsa = document.getElementById("botao-bolsa");
+  var painelBolsa = document.getElementById("painel-bolsa");
+  var listaBolsa = document.getElementById("lista-bolsa");
+  J.itens = J.itens || {};
 
   /* ---------- estado (checkpoint) ---------- */
   var estado = carregar() || novoEstado();
   function novoEstado() {
     var abertas = Object.keys(J.fichas).filter(function (k) { return J.fichas[k].inicial; });
-    return { arco: 0, fichas: abertas, novas: [], venceu: false, arroba: "", data: "", iniciado: false };
+    return { arco: 0, fichas: abertas, novas: [], itens: [], itensNovos: [], desvios: 0, marco: null, venceu: false, arroba: "", data: "", iniciado: false };
+  }
+  function completar(s) {
+    if (!s) return s;
+    s.itens = s.itens || []; s.itensNovos = s.itensNovos || []; s.desvios = s.desvios || 0;
+    return s;
   }
   function carregar() {
-    try { var s = JSON.parse(localStorage.getItem(CHAVE)); return s && typeof s.arco === "number" ? s : null; } catch (e) { return null; }
+    try { var s = JSON.parse(localStorage.getItem(CHAVE)); return s && typeof s.arco === "number" ? completar(s) : null; } catch (e) { return null; }
   }
   function salvar() { try { localStorage.setItem(CHAVE, JSON.stringify(estado)); } catch (e) {} }
 
@@ -73,6 +82,57 @@
   });
   painel.addEventListener("click", function (e) { if (e.target === painel && painel.close) painel.close(); });
 
+  /* ---------- bolsa (itens) ---------- */
+  function temItem(id) { return estado.itens.indexOf(id) >= 0; }
+  function ganhar(ids) {
+    var novos = [];
+    (ids || []).forEach(function (id) {
+      if (J.itens[id] && !temItem(id)) { estado.itens.push(id); estado.itensNovos.push(id); novos.push(J.itens[id].nome); }
+    });
+    atualizarBotaoBolsa();
+    return novos;
+  }
+  function perder(ids) {
+    var foram = [];
+    (ids || []).forEach(function (id) {
+      var i = estado.itens.indexOf(id);
+      if (i >= 0) { estado.itens.splice(i, 1); foram.push(J.itens[id].nome); }
+      var n = estado.itensNovos.indexOf(id); if (n >= 0) estado.itensNovos.splice(n, 1);
+    });
+    atualizarBotaoBolsa();
+    return foram;
+  }
+  function atualizarBotaoBolsa() {
+    if (!botaoBolsa) return;
+    botaoBolsa.hidden = !Object.keys(J.itens).length;
+    var n = estado.itensNovos.length;
+    botaoBolsa.innerHTML = "Bolsa" + (n ? ' <span class="selo-nova" aria-label="' + n + ' novo(s)">' + n + "</span>" : "");
+  }
+  function desenharBolsa() {
+    listaBolsa.innerHTML = estado.itens.length ? estado.itens.map(function (id) {
+      var it = J.itens[id];
+      var novo = estado.itensNovos.indexOf(id) >= 0 ? ' <span class="selo-nova">novo</span>' : "";
+      return '<li class="ficha item"><h3>' + esc(it.nome) + novo + "</h3>" + paragrafos(it.texto) + "</li>";
+    }).join("") : '<li class="ficha bloqueada"><p class="papel">A bolsa está vazia. Algumas escolhas deixam Carmen levar coisas consigo.</p></li>';
+  }
+  if (botaoBolsa) {
+    botaoBolsa.addEventListener("click", function () {
+      desenharBolsa();
+      if (typeof painelBolsa.showModal === "function") painelBolsa.showModal(); else painelBolsa.setAttribute("open", "");
+    });
+    painelBolsa.addEventListener("close", function () { estado.itensNovos = []; salvar(); atualizarBotaoBolsa(); });
+    document.getElementById("fechar-bolsa").addEventListener("click", function () {
+      if (typeof painelBolsa.close === "function") painelBolsa.close(); else { painelBolsa.removeAttribute("open"); estado.itensNovos = []; salvar(); atualizarBotaoBolsa(); }
+    });
+    painelBolsa.addEventListener("click", function (e) { if (e.target === painelBolsa && painelBolsa.close) painelBolsa.close(); });
+  }
+  function avisos(novos, foram) {
+    var h = "";
+    if (novos && novos.length) h += '<p class="aviso-ficha">Na bolsa: ' + esc(novos.join(", ")) + ". Abra em <em>Bolsa</em>, lá em cima.</p>";
+    if (foram && foram.length) h += '<p class="aviso-ficha">Saiu da bolsa: ' + esc(foram.join(", ")) + ".</p>";
+    return h;
+  }
+
   /* ---------- telas ---------- */
   function telaInicio() {
     rotulo("");
@@ -112,6 +172,14 @@
 
   function telaArco() {
     var a = J.arcos[estado.arco];
+    // checkpoint: ao (re)começar um arco, a bolsa e os desvios voltam ao que eram no início dele
+    if (estado.marco && estado.marco.arco === estado.arco) {
+      estado.itens = estado.marco.itens.slice(); estado.desvios = estado.marco.desvios;
+      estado.itensNovos = estado.itensNovos.filter(temItem);
+    } else {
+      estado.marco = { arco: estado.arco, itens: estado.itens.slice(), desvios: estado.desvios };
+    }
+    salvar(); atualizarBotaoBolsa();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
     mostrar(
       '<section class="tela arco">' +
@@ -129,7 +197,7 @@
     salvar();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
     var novas = (c.desbloqueia || []).map(function (id) { return J.fichas[id] ? J.fichas[id].nome : ""; }).filter(Boolean);
-    var opcoes = embaralhar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }));
+    var opcoes = embaralhar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return !x.o.requer || temItem(x.o.requer); }));
     mostrar(
       '<section class="tela cena">' +
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
@@ -138,7 +206,9 @@
       '<div class="texto">' + paragrafos(c.texto) + "</div>" +
       '<fieldset class="escolha"><legend>' + esc(c.pergunta) + "</legend>" +
       opcoes.map(function (x) {
-        return '<button class="opcao" data-acao="escolher" data-cena="' + i + '" data-opcao="' + x.k + '">' + fmt(x.o.texto) + "</button>";
+        var item = x.o.requer && J.itens[x.o.requer];
+        return '<button class="opcao' + (item ? " opcao-item" : "") + '" data-acao="escolher" data-cena="' + i + '" data-opcao="' + x.k + '">' +
+          (item ? '<span class="marca-item">Da bolsa: ' + esc(item.nome) + "</span>" : "") + fmt(x.o.texto) + "</button>";
       }).join("") +
       "</fieldset></section>"
     );
@@ -146,15 +216,35 @@
 
   function escolher(i, k) {
     var a = J.arcos[estado.arco], c = a.cenas[i], o = c.opcoes[k];
-    if (o.certa) {
-      abrirFichas(o.desbloqueia);
-      salvar();
+    if (o.certa || o.desvio) {
       var ultima = i === a.cenas.length - 1;
+      var corpo;
+      if (o.desvio) {
+        // erro com conserto: mostra a consequência e depois a fala certa, e a história segue
+        var certa = c.opcoes.filter(function (x) { return x.certa && !x.requer; })[0];
+        estado.desvios += 1;
+        abrirFichas(certa.desbloqueia);
+        var novosD = ganhar(certa.ganha), forD = perder(certa.perde);
+        corpo =
+          '<p class="rotulo">Desvio · ' + esc(c.titulo) + "</p>" +
+          '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
+          '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
+          '<p class="conserto">' + esc(J.textoConserto || "Carmen respirou fundo e consertou o rumo:") + "</p>" +
+          '<blockquote class="escolhida">' + fmt(certa.texto) + "</blockquote>" +
+          avisos(novosD, forD) +
+          '<div class="texto">' + paragrafos(certa.resultado) + "</div>";
+      } else {
+        abrirFichas(o.desbloqueia);
+        var novos = ganhar(o.ganha), foram = perder(o.perde);
+        corpo =
+          '<p class="rotulo">' + esc(c.titulo) + "</p>" +
+          '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
+          avisos(novos, foram) +
+          '<div class="texto">' + paragrafos(o.resultado) + "</div>";
+      }
+      salvar();
       mostrar(
-        '<section class="tela resultado">' +
-        '<p class="rotulo">' + esc(c.titulo) + "</p>" +
-        '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
-        '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
+        '<section class="tela resultado' + (o.desvio ? " desvio" : "") + '">' + corpo +
         '<div class="acoes">' +
         (ultima
           ? '<button class="botao principal" data-acao="fecho">Continuar</button>'
@@ -199,6 +289,7 @@
       '<p class="ornamento" aria-hidden="true">❦</p>' +
       "<h2>" + esc(J.tituloVitoria || "Carmen chegou ao Palácio Real") + "</h2>" +
       '<div class="texto">' + paragrafos(J.vitoria) + "</div>" +
+      '<p class="placar">' + (estado.desvios ? "Você chegou com " + estado.desvios + (estado.desvios === 1 ? " desvio" : " desvios") + " no caminho." : "Você chegou sem nenhum desvio. Caminho limpo.") + "</p>" +
       '<div class="premio">';
     if (temCodigo) {
       html +=
@@ -230,9 +321,9 @@
     var b = e.target.closest("[data-acao]");
     if (!b || b.tagName === "FORM") return;
     var acao = b.getAttribute("data-acao");
-    if (acao === "comecar") { estado = novoEstado(); estado.iniciado = true; salvar(); telaAbertura(); }
+    if (acao === "comecar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaAbertura(); }
     else if (acao === "continuar") { telaArco(); }
-    else if (acao === "zerar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); telaAbertura(); }
+    else if (acao === "zerar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaAbertura(); }
     else if (acao === "arco") { telaArco(); }
     else if (acao === "cena") { telaCena(+b.getAttribute("data-cena")); }
     else if (acao === "escolher") { escolher(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }
@@ -254,5 +345,6 @@
 
   /* ---------- tema (mesmo do site) ---------- */
   atualizarBotaoFichas();
+  atualizarBotaoBolsa();
   telaInicio();
 })();
