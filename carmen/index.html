@@ -10,6 +10,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <link rel="stylesheet" href="../estilo.css">
 <link rel="stylesheet" href="jogo.css">
+<style>
+  .beta { width: calc(100% - 2rem); max-width: 42rem; margin: 1rem auto 0; box-sizing: border-box; padding: .6rem 1rem; border: 1px dashed var(--linha); border-radius: 4px; text-align: center; font-style: italic; font-size: .9375rem; color: var(--tinta-suave); background: color-mix(in srgb, var(--papel-2) 70%, transparent); }
+  .beta strong { font: 600 .75rem/1 var(--display); letter-spacing: .12em; text-transform: uppercase; font-style: normal; color: var(--acento); margin-right: .4rem; }
+  .outra-versao { display: none; } /* versão completa ainda não publicada */
+</style>
 </head>
 <body class="jogo">
 <div class="pergaminho" aria-hidden="true"></div>
@@ -21,6 +26,8 @@
     <button class="botao-fichas" id="botao-fichas" type="button">Fichas</button>
   </div>
 </header>
+
+<p class="beta" role="note"><strong>Beta</strong> O jogo ainda está em testes. Achou algum erro? Me conte no Instagram <a href="https://instagram.com/omatheusleone">@omatheusleone</a>.</p>
 
 <main class="palco" id="palco"></main>
 

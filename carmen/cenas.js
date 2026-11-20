@@ -33,9 +33,9 @@ window.JOGO = {
 
   "abertura": [
     "No reino dos Burgos, quem nasce plebeu morre plebeu. Os nobres, chamados de Ilustres, casam-se entre si; às plebeias bonitas, no máximo, oferecem o posto de concubina.",
-    "Carmen cresceu em Serra Verde, uma cidadezinha no sul da província central, dentro do bordel onde a mãe, Madalena, é a cortesã mais disputada. Ali, ela varre o salão de manhã e conversa com os clientes à noite. Só conversa.",
-    "Faltam sete dias para a maioridade de Carmen. E Madalena já decidiu o que a filha fará com ela.",
-    "Você vai guiar Carmen pelas encruzilhadas do caminho. Escolha bem as palavras: algumas falas erradas têm conserto, outras acabam com a história ali. Em certos momentos, Carmen pode levar coisas na bolsa, e elas abrem caminhos extras mais adiante. Se precisar, consulte as fichas dos personagens. Elas guardam as pistas."
+    "Carmen cresceu em Serra Verde, uma cidadezinha no sul da província central, dentro do bordel onde a mãe dela, Madalena, é a cortesã mais disputada. De manhã, Carmen varre o salão; à noite, conversa com os clientes. Só conversa.",
+    "Faltam sete dias para Carmen atingir a maioridade. E Madalena já decidiu como a filha vai ganhar a vida quando adulta.",
+    "Você vai guiar Carmen pelas encruzilhadas do caminho. Escolha bem as palavras: algumas falas erradas têm conserto, outras acabam com a história ali. Em certos momentos, Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras mais adiante. Se precisar, consulte as fichas dos personagens. Elas guardam as pistas."
   ],
 
   // Prêmio para quem chega ao Palácio Real
@@ -173,11 +173,12 @@ window.JOGO = {
     {
       "titulo": "Serra Verde",
       "abertura": [
-        "Trancada no camarim do prostíbulo, Carmen só tinha uma certeza na vida: que não ia ser puta."
+        "Trancada no camarim do prostíbulo, eu só tinha uma certeza na vida: que eu não ia ser puta."
       ],
       "cenas": [
         {
           "titulo": "O camarim",
+          "imagem": { "arquivo": "img/espelho-cor.jpg", "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira." },
           "texto": [
             "Madalena escovava meus cabelos diante do espelho, como fazia quando eu era criança. Eu tinha acabado de pedir mais alguns meses: sair, circular pelas ruas, quem sabe conquistar um bom partido. Quem sabe até um Ilustre.",
             "— Só de dizer uma coisa dessas, já mostra como você é infantil — interrompeu ela. — Ilustres nunca se casarão com uma plebeia; no máximo, eles te farão uma concubina. É por isso que, por bem ou por mal, você fará o que digo. E acabou a discussão.",
