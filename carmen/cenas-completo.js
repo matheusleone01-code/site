@@ -226,6 +226,34 @@ window.JOGO = {
         "Botão de prata com o brasão dos Barbosa. Alexandro o perdeu no quarto de Carmen, na noite em que não aconteceu nada.",
         "Pequeno demais para fazer falta a ele. Talvez grande o bastante para abrir uma porta."
       ]
+    },
+    "luvas": {
+      "nome": "Luvas de cetim",
+      "preco": 2,
+      "texto": [
+        "Brancas, até o cotovelo. Mão de Ilustre não pega em nada sozinha."
+      ]
+    },
+    "leque": {
+      "nome": "Leque de plumas",
+      "preco": 2,
+      "texto": [
+        "Plumas de avestruz e cabo de madrepérola. Serve para abanar, e para esconder o rosto."
+      ]
+    },
+    "colar": {
+      "nome": "Colar de pérolas",
+      "preco": 4,
+      "texto": [
+        "Pérolas verdadeiras, pequenas, mas verdadeiras. A peça mais cara que Carmen já tocou."
+      ]
+    },
+    "perfume": {
+      "nome": "Perfume de flor de laranjeira",
+      "preco": 3,
+      "texto": [
+        "O mesmo cheiro do lenço de Madalena, em frasco de cristal. Carmen não soube explicar por que escolheu esse."
+      ]
     }
   },
   "atributos": {
@@ -241,6 +269,11 @@ window.JOGO = {
       "nome": "Astúcia",
       "texto": "Mentir bem, enganar, ocultar. Toda farsa precisa dela."
     }
+  },
+  "moeda": {
+    "singular": "beija-flor",
+    "plural": "beija-flores",
+    "texto": "Moedas de prata. Dá para juntar trabalhando, ou pegando o que não é seu."
   },
   "arcos": [
     {
@@ -552,7 +585,8 @@ window.JOGO = {
                 "Não era roubo, disse a mim mesma. Eram dezessete anos de salão varrido. A consciência não concordou, mas a consciência não ia pagar meu pão na estrada."
               ],
               "pontos": {
-                "astucia": 1
+                "astucia": 1,
+                "dinheiro": 5
               }
             },
             {
@@ -819,7 +853,8 @@ window.JOGO = {
                 "— Você sabe menos do que acredita saber, mas mais do que eu esperava. Contratada. Por um dia teste."
               ],
               "pontos": {
-                "persuasao": 1
+                "persuasao": 1,
+                "dinheiro": 2
               }
             },
             {
@@ -848,7 +883,10 @@ window.JOGO = {
                 "— Bajulações não funcionam comigo, menina — disse, sem tirar o brinco. — Mas reconheço que podem funcionar com certas clientes.",
                 "Ela me fez meia dúzia de perguntas sobre pedras e banhos. Acertei quase todas.",
                 "— Contratada. Por um dia teste."
-              ]
+              ],
+              "pontos": {
+                "dinheiro": 2
+              }
             }
           ]
         },
@@ -869,7 +907,10 @@ window.JOGO = {
                 "O rosto rechonchudo se contorceu numa carranca. — Mudei de ideia. Quem sabe eu volte outro dia.",
                 "— Você estava certíssima — disse Isolina, recém-desperta. — Mas não somos pagas para estar certas; somos pagas para vender o que a cliente quer.",
                 "Depois desse puxão de orelha, aprendi a lição."
-              ]
+              ],
+              "pontos": {
+                "dinheiro": 2
+              }
             },
             {
               "texto": "Entregar o brinco de bolinha dourado com um sorriso e elogiar a escolha.",
@@ -913,7 +954,8 @@ window.JOGO = {
                 "Bastava. Se uma Ilustre de terceira classe como ela tinha sido convidada, todas as Ilustres que acabavam de fazer a maioridade deviam ter sido também. Muitas candidatas, uma sem saber das outras. Dava para entrar no meio."
               ],
               "pontos": {
-                "astucia": 1
+                "astucia": 1,
+                "dinheiro": 2
               }
             },
             {
@@ -949,7 +991,8 @@ window.JOGO = {
                 "Dei tchauzinhos para ela. Seis dias: tempo para os ajustes finais do plano e para a Ilustre esquecer os detalhes do meu rosto."
               ],
               "pontos": {
-                "astucia": 1
+                "astucia": 1,
+                "dinheiro": 1
               }
             },
             {
@@ -990,7 +1033,8 @@ window.JOGO = {
                 "Ele me esmagou num abraço, repetindo “obrigado” uma centena de vezes."
               ],
               "pontos": {
-                "honestidade": 1
+                "honestidade": 1,
+                "dinheiro": 5
               }
             },
             {
@@ -1066,9 +1110,25 @@ window.JOGO = {
       ],
       "cenas": [
         {
+          "titulo": "O mercado",
+          "loja": true,
+          "texto": [
+            "Na véspera da avaliação, juntei tudo o que tinha e fui ao mercado de Pacentro. Um vestido de seda de segunda mão eu já tinha garantido.",
+            "Faltava o resto: os detalhes que separam uma moça bonita de uma Ilustre."
+          ],
+          "pergunta": "O que eu compraria?",
+          "opcoes": [],
+          "produtos": [
+            "luvas",
+            "leque",
+            "colar",
+            "perfume"
+          ]
+        },
+        {
           "titulo": "O disfarce",
           "texto": [
-            "Acordei cedo e escondi o saquinho de moedas no decote. Comprar o vestido e as joias era a parte fácil.",
+            "Acordei cedo, vesti o que tinha comprado e escondi no decote o que sobrou das moedas. Me arrumar era a parte fácil.",
             "A difícil era outra: a menina de rosa tinha visto meu rosto, e estaria lá. Se me reconhecesse, era o fim."
           ],
           "pergunta": "Como mudar meu rosto sem chamar ainda mais atenção?",
@@ -1148,6 +1208,16 @@ window.JOGO = {
                 "O cocheiro olhou a bolsinha, olhou a rua vazia, olhou de novo a bolsinha. A casa dele só precisaria da carruagem à tarde.",
                 "— Entendido, Vossa Ilustreza. — Ele guardou as moedas no bolso do terno. Lá se ia a última coisa de Madalena que eu carregava.",
                 "— Por sinal, como devo anunciá-la na entrada do Palácio Real?"
+              ]
+            },
+            {
+              "texto": "Estender a mão enluvada ao cocheiro, sem dizer nada, e esperar que ele me ajude a subir.",
+              "requer": "luvas",
+              "certa": true,
+              "resultado": [
+                "Ele hesitou um instante. Depois desceu da boleia, tirou a cartola e me deu a mão.",
+                "Nenhuma plebeia espera ser ajudada a subir. Uma Ilustre nem pergunta.",
+                "— Ao Palácio Real — eu disse, ajeitando a saia no banco de veludo. — E depressa."
               ]
             }
           ]
@@ -1244,6 +1314,15 @@ window.JOGO = {
                 "— Vivian Barbosa.",
                 "Ela passou o dedo em cada nome iniciado por V. Então levantou o rosto, sem graça.",
                 "— Não está aqui. Desculpe-me, senhorita, mas sem o nome na lista não posso te deixar entrar."
+              ]
+            },
+            {
+              "texto": "Tocar o colar de pérolas: — Uma Barbosa não anda com papéis. Anda com isto.",
+              "requer": "colar",
+              "certa": true,
+              "resultado": [
+                "A empregada olhou as pérolas. Eram verdadeiras, e ela sabia.",
+                "O sorriso de troça murchou. — Perdão, Vossa Ilustreza. Vou procurar seu nome na lista."
               ]
             }
           ]
@@ -1345,6 +1424,15 @@ window.JOGO = {
                 "Metade do meu rosto sumiu atrás do bordado. Só sobraram os olhos, e para os olhos da vendedora a menina de rosa nunca tinha olhado direito.",
                 "Ela me analisou por alguns instantes, franziu o nariz como se eu tivesse ofendido o perfume dela e foi se posicionar bem longe de mim.",
                 "Guardei o lenço. Pela primeira vez, Madalena tinha me salvado sem saber."
+              ]
+            },
+            {
+              "texto": "Abrir o leque diante do rosto e responder por trás das plumas: — Duvido. Eu me lembraria de um rosa tão… corajoso.",
+              "requer": "leque",
+              "certa": true,
+              "resultado": [
+                "Ela estreitou os olhos, tentando enxergar além das plumas. Só viu o leque, e uma Ilustre entediada.",
+                "— Hum. Deve ter sido outra pessoa. — E voltou para perto das outras."
               ]
             }
           ]
@@ -1480,6 +1568,15 @@ window.JOGO = {
               "texto": "— Se pensa assim, devia me pedir em casamento.",
               "resultado": [
                 "Humberto riu alto, achando ótima a piada. A partir dali, eu era a empregada engraçadinha. Ninguém se casa com a engraçadinha."
+              ]
+            },
+            {
+              "texto": "Deixar que ele sinta o perfume e responder: — É flor de laranjeira. Mas não se acostume: hoje é só a minha mão.",
+              "requer": "perfume",
+              "certa": true,
+              "resultado": [
+                "— Flor de laranjeira — repetiu ele, como quem guarda um segredo.",
+                "Retirei a mão devagar. Ele ficou olhando para ela, e depois para mim, como se fosse a primeira vez que alguém lhe negava alguma coisa com um sorriso."
               ]
             }
           ]

@@ -207,3 +207,15 @@ img.retrato, .retrato-grande { background: #EADBBE; }
 .ficha { scroll-margin-top: 5rem; }
 
 .pergunta-cena { font-weight: 700; margin-top: 1.25rem; }
+
+/* Loja */
+.saldo { margin: 1rem 0 .25rem; color: var(--tinta-suave); }
+.saldo strong { color: var(--verde); }
+.produtos { display: grid; gap: .5rem; }
+.produto { display: grid; grid-template-columns: auto 1fr auto; gap: .15rem .75rem; align-items: baseline; padding: .75rem .875rem; border: 1px solid var(--linha); border-radius: 4px; cursor: pointer; background: color-mix(in srgb, var(--papel-2) 55%, transparent); }
+.produto input { grid-row: span 2; align-self: center; width: 1.1rem; height: 1.1rem; accent-color: var(--acento); }
+.produto-nome { font-weight: 700; }
+.produto-preco { font: 600 .8rem/1 var(--display); letter-spacing: .08em; color: var(--acento); white-space: nowrap; }
+.produto-texto { grid-column: 2 / 4; font-size: .9375rem; color: var(--tinta-suave); line-height: 1.4; }
+.produto:has(input:checked) { border-color: var(--acento); }
+.produto.caro { opacity: .5; cursor: not-allowed; }

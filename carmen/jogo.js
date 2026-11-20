@@ -135,7 +135,7 @@
     if (at) at.innerHTML = Object.keys(J.atributos).map(function (k) {
       var a = J.atributos[k], n = pontosDe(k);
       return '<li class="atributo"><div class="atributo-topo"><h3>' + esc(a.nome) + '</h3><span class="atributo-valor">' + n + "</span></div><p>" + esc(a.texto) + "</p></li>";
-    }).join("");
+    }).join("") + (J.moeda ? '<li class="atributo"><div class="atributo-topo"><h3>Dinheiro</h3><span class="atributo-valor">' + pontosDe("dinheiro") + "</span></div><p>" + esc(J.moeda.plural.charAt(0).toUpperCase() + J.moeda.plural.slice(1) + ". " + J.moeda.texto) + "</p></li>" : "");
     listaBolsa.innerHTML = estado.itens.length ? estado.itens.map(function (id) {
       var it = J.itens[id];
       var novo = estado.itensNovos.indexOf(id) >= 0 ? ' <span class="selo-nova">novo</span>' : "";
@@ -159,12 +159,18 @@
   function somar(p) {
     var ganhos = [];
     Object.keys(p || {}).forEach(function (k) {
+      if (k === "dinheiro" && J.moeda) {
+        estado.atributos.dinheiro = pontosDe("dinheiro") + p[k];
+        ganhos.push("+" + valor(p[k]));
+        return;
+      }
       if (!J.atributos[k]) return;
       estado.atributos[k] = pontosDe(k) + p[k];
       ganhos.push("+" + p[k] + " " + J.atributos[k].nome);
     });
     return ganhos;
   }
+  function valor(n) { return n + " " + (n === 1 ? J.moeda.singular : J.moeda.plural); }
   function placarAtributos() {
     return Object.keys(J.atributos).map(function (k) { return J.atributos[k].nome + " " + pontosDe(k); }).join(" · ");
   }
@@ -243,8 +249,56 @@
     );
   }
 
+  function telaLoja(i) {
+    var a = J.arcos[estado.arco], c = a.cenas[i], tem = pontosDe("dinheiro");
+    mostrar(
+      '<section class="tela cena loja">' +
+      '<p class="rotulo">Compras</p>' +
+      "<h2>" + esc(c.quando || c.titulo) + "</h2>" +
+      '<div class="texto">' + paragrafos(c.texto) + (c.pergunta ? '<p class="pergunta-cena">' + fmt(c.pergunta) + "</p>" : "") + "</div>" +
+      '<p class="saldo" id="saldo" data-tem="' + tem + '"></p>' +
+      '<fieldset class="escolha produtos"><legend>Na banca</legend>' +
+      (c.produtos || []).map(function (id) {
+        var p = J.itens[id];
+        return '<label class="produto"><input type="checkbox" value="' + esc(id) + '" data-preco="' + p.preco + '"><span class="produto-nome">' + esc(p.nome) + '</span><span class="produto-preco">' + valor(p.preco) + '</span><span class="produto-texto">' + fmt(p.texto[0]) + "</span></label>";
+      }).join("") +
+      "</fieldset>" +
+      '<div class="acoes"><button class="botao principal" data-acao="comprar" data-cena="' + i + '">Seguir para o palácio</button></div>' +
+      "</section>", "h2"
+    );
+    atualizarLoja();
+  }
+  function atualizarLoja() {
+    var saldo = document.getElementById("saldo"); if (!saldo) return;
+    var tem = +saldo.getAttribute("data-tem"), caixas = [].slice.call(palco.querySelectorAll(".produto input"));
+    var gasto = caixas.filter(function (x) { return x.checked; }).reduce(function (s, x) { return s + +x.getAttribute("data-preco"); }, 0);
+    var resta = tem - gasto;
+    caixas.forEach(function (x) { x.disabled = !x.checked && +x.getAttribute("data-preco") > resta; x.parentNode.classList.toggle("caro", x.disabled); });
+    saldo.innerHTML = tem ? "Carmen tem <strong>" + valor(tem) + "</strong>. " + (gasto ? "Sobram <strong>" + valor(resta) + "</strong>." : "Escolha o que levar.") : "Carmen não juntou dinheiro nenhum. Vai ao palácio com o que tem.";
+  }
+  function comprar(i) {
+    var a = J.arcos[estado.arco], c = a.cenas[i];
+    var ids = [].slice.call(palco.querySelectorAll(".produto input:checked")).map(function (x) { return x.value; });
+    var gasto = ids.reduce(function (s, id) { return s + J.itens[id].preco; }, 0);
+    if (gasto > pontosDe("dinheiro")) return;
+    estado.atributos.dinheiro = pontosDe("dinheiro") - gasto;
+    var novos = ganhar(ids);
+    salvar();
+    var ultima = i === a.cenas.length - 1;
+    mostrar(
+      '<section class="tela resultado">' +
+      '<p class="rotulo">' + esc(c.quando || c.titulo) + "</p>" +
+      '<div class="texto">' + (novos.length
+        ? "<p>Voltei para casa com " + esc(novos.join(", ").replace(/, ([^,]*)$/, " e $1")) + ". Sobraram " + esc(valor(pontosDe("dinheiro"))) + ".</p>"
+        : "<p>Voltei para casa de mãos vazias. O vestido de segunda mão teria que bastar.</p>") + "</div>" +
+      avisos(novos, null, null) +
+      '<div class="acoes"><button class="botao principal" data-acao="' + (ultima ? "fecho" : "cena") + '" data-cena="' + (i + 1) + '">Continuar</button></div>' +
+      "</section>", ".rotulo"
+    );
+  }
   function telaCena(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i];
+    if (c.loja) { abrirFichas(c.desbloqueia); salvar(); cenarioDoArco(); rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo); return telaLoja(i); }
     abrirFichas(c.desbloqueia);
     salvar(); cenarioDoArco();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
@@ -375,6 +429,7 @@
   }
 
   /* ---------- ações ---------- */
+  palco.addEventListener("change", function (e) { if (e.target.closest(".produto")) atualizarLoja(); });
   palco.addEventListener("click", function (e) {
     var b = e.target.closest("[data-acao]");
     if (!b || b.tagName === "FORM") return;
@@ -383,6 +438,7 @@
     else if (acao === "continuar") { telaArco(); }
     else if (acao === "zerar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaArco(); }
     else if (acao === "arco") { telaArco(); }
+    else if (acao === "comprar") { comprar(+b.getAttribute("data-cena")); }
     else if (acao === "ficha") { verFicha(b.getAttribute("data-ficha")); }
     else if (acao === "cena") { telaCena(+b.getAttribute("data-cena")); }
     else if (acao === "escolher") { escolher(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }
