@@ -278,7 +278,7 @@
     // com rótulos, ordem fixa (meia-verdade, mentira, verdade) e itens da bolsa no fim; sem rótulos, embaralha
     if (!lista.some(function (x) { return tipoFala(x.o.texto); })) return embaralhar(lista);
     function peso(x) { var t = TIPOS.indexOf(tipoFala(x.o.texto)); return t < 0 ? 9 : t; }
-    return lista.slice().sort(function (p, q) { return peso(p) - peso(q); });
+    return embaralhar(lista.slice()).sort(function (p, q) { return peso(p) - peso(q); }); // mesmo tipo: ordem sorteada
   }
   function telaLoja(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i], pg = c.pagamento, pago = "";
@@ -348,6 +348,7 @@
     mostrar(
       '<section class="tela cena">' +
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
+      (c.critica ? '<p class="selo-critica">Escolha crítica</p>' : "") +
       "<h2>" + esc(c.quando || c.titulo) + "</h2>" +
       interlocutores(c) +
       (novas.length ? '<p class="aviso-ficha">Nova ficha: ' + esc(novas.join(", ")) + ". Abra em <em>Fichas</em>, lá em cima.</p>" : "") +

@@ -234,3 +234,5 @@ button.interlocutor:hover .retrato, button.interlocutor:focus-visible .retrato {
 .interlocutores-entre { align-self: center; margin-top: -1.4rem; display: flex; align-items: center; gap: .3rem; font-size: .7rem; color: var(--acento); }
 .interlocutores-entre::before, .interlocutores-entre::after { content: ""; width: 1rem; height: 1px; background: var(--linha); }
 .texto.antes { margin-bottom: 1rem; }
+/* Escolha crítica: 5 opções, mais peso */
+.selo-critica { display: inline-block; margin: -.25rem 0 .75rem; padding: .3rem .65rem; border: 1px solid var(--acento); border-radius: 2px; font: 700 .7rem/1 var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--acento); }

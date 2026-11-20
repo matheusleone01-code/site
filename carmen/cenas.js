@@ -36,7 +36,7 @@ window.JOGO = {
   "comoJogar": [
     "Algumas falas erradas têm conserto; outras não.",
     "Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras.",
-    "Algumas escolhas dão pontos de Persuasão, Honestidade ou Astúcia.",
+    "Algumas escolhas dão pontos de Persuasão, Sagacidade, Performance, Honestidade ou Humor.",
     "Na dúvida, consulte as fichas dos personagens."
   ],
 
@@ -205,15 +205,23 @@ window.JOGO = {
   "atributos": {
     "persuasao": {
       "nome": "Persuasão",
-      "texto": "Elogios na medida certa, argumentos na hora certa. Funciona com quem gosta de ouvir o que quer, como Madalena."
+      "texto": "Elogios na medida certa, argumentos na hora certa. Funciona com quem gosta de ouvir o que quer."
+    },
+    "astucia": {
+      "nome": "Sagacidade",
+      "texto": "Ler as pessoas depressa e fazer a pergunta certa na hora certa."
+    },
+    "performance": {
+      "nome": "Performance",
+      "texto": "Fingir com o corpo inteiro: um enjoo, uma submissão, uma Ilustre que nunca ouviu um não."
     },
     "honestidade": {
       "nome": "Honestidade",
       "texto": "Dizer a verdade, mesmo quando custa. Funciona com quem valoriza sinceridade, como Armando."
     },
-    "astucia": {
-      "nome": "Astúcia",
-      "texto": "Mentir bem, enganar, ocultar. Toda farsa precisa dela."
+    "humor": {
+      "nome": "Humor",
+      "texto": "Dizer a verdade rindo. Muita gente acha que é piada, e é aí que ela passa."
     }
   },
 
@@ -252,7 +260,7 @@ window.JOGO = {
                 "— Boa menina…"
               ],
               "pontos": {
-                "persuasao": 1
+                "performance": 1
               }
             },
             {
@@ -295,7 +303,7 @@ window.JOGO = {
                 "— De gravidez é que não é. — Ela riu alto. — Está bem, pode ir para o seu quarto. Mas, se esse tal enjoo ficar se repetindo, decidirei tudo por você."
               ],
               "pontos": {
-                "astucia": 1
+                "performance": 1
               },
               "antes": [
                 "As melhores desculpas eram aquelas que tinham um fundo de verdade. E meu estômago estava mesmo embrulhado."
@@ -310,7 +318,7 @@ window.JOGO = {
               "desvio": true,
               "sucesso": {
                 "requerAtributo": {
-                  "persuasao": 1
+                  "performance": 1
                 },
                 "resultado": [
                   "Madalena ergueu uma sobrancelha. — Naqueles dias? Os seus só vêm daqui a duas semanas.",
@@ -415,12 +423,33 @@ window.JOGO = {
               ],
               "certa": true,
               "pontos": {
-                "honestidade": 1
+                "honestidade": 2
               }
+            },
+            {
+              "texto": "Verdade: — Mas dinheiro para pagar minha mãe você tem, não é?",
+              "desvio": true,
+              "pontos": {
+                "humor": 1
+              },
+              "resultado": [
+                "Armando engasgou. Ficou vermelho da gola às orelhas e, por um segundo, achei que tinha estragado tudo.",
+                "Então ele riu, uma risada curta, de quem foi pego no flagra. — Língua de chibata, essa sua.",
+                "Ri junto, mas mordi a língua. A piada tinha aberto a porta. Quem precisava passar por ela era a verdade."
+              ]
+            },
+            {
+              "texto": "Verdade: — Não seja por isso; eu te ajudo a vender a mercadoria encalhada. Quem melhor do que eu para vender roupas femininas?",
+              "resultado": [
+                "— Alguém com duas décadas de experiência, talvez?",
+                "Só depois que as palavras saíram percebi a ofensa velada. Armando ficou sério, desejou boa noite e entrou no bordel.",
+                "Ofender o orgulho de um vendedor era pior do que ofender a mãe dele. Na véspera do meu aniversário, a loja partiu sem mim."
+              ]
             }
           ],
           "quando": "4 dias antes, fim de tarde",
-          "com": "armando"
+          "com": "armando",
+          "critica": true
         },
         {
           "titulo": "O segredo",
@@ -601,7 +630,7 @@ window.JOGO = {
                 "Minutos depois, do outro lado da ponte do rio, subi na boleia ao lado dele. Serra Verde ficou para trás."
               ],
               "pontos": {
-                "astucia": 1
+                "humor": 1
               }
             },
             {
@@ -718,7 +747,7 @@ window.JOGO = {
                 "Ela gargalhou tanto que deixou escapar um ronco. A transformação dela atraiu as amigas, e as amigas atraíram a feira inteira. De vendedor principal, Armando foi rebaixado a segurança de grife na porta da cabine, sem reclamar."
               ],
               "pontos": {
-                "persuasao": 1
+                "humor": 1
               }
             },
             {
@@ -798,7 +827,7 @@ window.JOGO = {
               "desvio": true,
               "sucesso": {
                 "requerAtributo": {
-                  "persuasao": 3
+                  "persuasao": 2
                 },
                 "pontos": {
                   "dinheiro": 2
@@ -919,7 +948,7 @@ window.JOGO = {
                 "Dei tchauzinhos para ela. Seis dias: tempo para os ajustes finais do plano e para a Ilustre esquecer os detalhes do meu rosto."
               ],
               "pontos": {
-                "astucia": 1,
+                "performance": 1,
                 "dinheiro": 1
               },
               "antes": [
@@ -1039,7 +1068,7 @@ window.JOGO = {
                 "— Entendido, Vossa Ilustreza. — Ele enfiou a garça no bolso. — Por sinal, como devo anunciá-la na entrada do Palácio Real?"
               ],
               "pontos": {
-                "astucia": 1
+                "performance": 1
               }
             },
             {
@@ -1212,7 +1241,7 @@ window.JOGO = {
                 "Ela pegou o bico de pena e acrescentou meu nome no fim da lista, com um visto de presença."
               ],
               "pontos": {
-                "persuasao": 1
+                "performance": 1
               }
             },
             {
@@ -1224,7 +1253,7 @@ window.JOGO = {
               "desvio": true,
               "sucesso": {
                 "requerAtributo": {
-                  "astucia": 4
+                  "astucia": 3
                 },
                 "resultado": [
                   "A empregada conferiu as Marias e depois foi, obediente, até o fim da lista. Não havia nenhum W.",
@@ -1263,7 +1292,7 @@ window.JOGO = {
                 "E foi se posicionar bem longe de mim."
               ],
               "pontos": {
-                "astucia": 1
+                "humor": 1
               },
               "antes": [
                 "Uma plebeia gaguejaria e baixaria os olhos. Uma Ilustre responderia com a arrogância de quem nunca é esquecida."
@@ -1278,10 +1307,21 @@ window.JOGO = {
               "desvio": true
             },
             {
-              "texto": "Verdade: — Pode ser. Passei uns dias em Pacentro.",
+              "texto": "Verdade: Rir: — Talvez da joalheria de Pacentro. Eu vendia brincos lá, sabia?",
               "resultado": [
-                "— Pacentro… — Os olhos dela se arregalaram. — A vendedora da joalheria! Empregadas! Essa daqui é uma plebeia!"
-              ]
+                "A menina não riu. — Pacentro… — Os olhos dela se arregalaram. — A vendedora da joalheria! Empregadas! Essa daqui é uma plebeia!"
+              ],
+              "sucesso": {
+                "requerAtributo": {
+                  "humor": 2
+                },
+                "resultado": [
+                  "A menina de rosa me encarou. Depois soltou uma gargalhada aguda. — Vendedora! Você? Com esse vestido?",
+                  "As outras riram junto, sem saber de quê.",
+                  "— Perdão, acho que te confundi — disse ela, ainda rindo, e foi se posicionar bem longe de mim.",
+                  "Ninguém acredita numa verdade dita rindo."
+                ]
+              }
             },
             {
               "texto": "Levar o lenço de Madalena ao nariz, como uma Ilustre entediada com o perfume alheio: — Conhecer, talvez. Lembrar, duvido.",
