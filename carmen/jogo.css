@@ -233,3 +233,4 @@ button.interlocutor:hover .retrato, button.interlocutor:focus-visible .retrato {
 .interlocutor-nome { font: 600 .8rem/1.2 var(--display); letter-spacing: .04em; text-align: center; }
 .interlocutores-entre { align-self: center; margin-top: -1.4rem; display: flex; align-items: center; gap: .3rem; font-size: .7rem; color: var(--acento); }
 .interlocutores-entre::before, .interlocutores-entre::after { content: ""; width: 1rem; height: 1px; background: var(--linha); }
+.texto.antes { margin-bottom: 1rem; }

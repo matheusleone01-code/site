@@ -262,6 +262,12 @@
     );
   }
 
+  // pensamento de Carmen antes da fala (opcao.antes), depois a fala escolhida
+  function escolhida(op) {
+    return (op.antes ? '<div class="texto antes">' + paragrafos(op.antes) + "</div>" : "") +
+      '<blockquote class="escolhida">' + textoOpcao(op.texto) + "</blockquote>";
+  }
+
   var TIPOS = ["Meia-verdade", "Mentira", "Verdade"];
   function tipoFala(t) { var m = /^(Meia-verdade|Mentira|Verdade):\s*/.exec(t || ""); return m ? m[1] : ""; }
   function textoOpcao(t) {
@@ -360,7 +366,7 @@
   function escolher(i, k) {
     var a = J.arcos[estado.arco], c = a.cenas[i], o = c.opcoes[k];
     // desvio que dá certo para quem tem o atributo
-    if (!o.certa && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
+    if (!o.certa && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, antes: o.sucesso.antes, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
     if (o.certa || o.desvio) {
       var ultima = i === a.cenas.length - 1;
       var corpo;
@@ -373,11 +379,11 @@
         var ganhosDesvio = somar(o.pontos), ganhosD = somar(certa.pontos && certa.pontos.dinheiro ? { dinheiro: certa.pontos.dinheiro } : null);
         corpo =
           '<p class="rotulo">Desvio · ' + esc(c.quando || c.titulo) + "</p>" +
-          '<blockquote class="escolhida">' + textoOpcao(o.texto) + "</blockquote>" +
+          escolhida(o) +
           '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
           avisos(null, null, ganhosDesvio) +
           '<p class="conserto">' + esc(J.textoConserto || "Carmen respirou fundo e consertou o rumo:") + "</p>" +
-          '<blockquote class="escolhida">' + textoOpcao(certa.texto) + "</blockquote>" +
+          escolhida(certa) +
           avisos(novosD, forD, ganhosD) +
           '<div class="texto">' + paragrafos(certa.resultado) + "</div>";
       } else {
@@ -385,7 +391,7 @@
         var novos = ganhar(o.ganha), foram = perder(o.perde), ganhos = somar(o.pontos);
         corpo =
           '<p class="rotulo">' + esc(c.quando || c.titulo) + "</p>" +
-          '<blockquote class="escolhida">' + textoOpcao(o.texto) + "</blockquote>" +
+          escolhida(o) +
           avisos(novos, foram, ganhos) +
           '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
           (o.requerAtributo ? '<p class="aviso-ponto">Só deu certo porque Carmen tem ' + esc(Object.keys(o.requerAtributo).map(function (k) { return (J.atributos[k] ? J.atributos[k].nome : k) + " " + o.requerAtributo[k]; }).join(" e ")) + ".</p>" : "");
@@ -403,7 +409,7 @@
       mostrar(
         '<section class="tela derrota">' +
         '<p class="rotulo">Fim da linha</p>' +
-        '<blockquote class="escolhida">' + textoOpcao(o.texto) + "</blockquote>" +
+        escolhida(o) +
         '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
         '<p class="selo-fim">A história de Carmen terminou aqui.</p>' +
         '<div class="acoes">' +
