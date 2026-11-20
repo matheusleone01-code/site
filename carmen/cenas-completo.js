@@ -315,7 +315,7 @@ window.JOGO = {
             {
               "texto": "Meia-verdade: — Eu só tenho medo, mãe. Não estou pronta.",
               "resultado": [
-                "Madalena apertou a escova. — Medo passa. Pronta, ninguém fica.",
+                "Madalena apertou a escova. — Medo passa. E você está pronta sim; te treinei a vida inteira para isso.",
                 "Ela me encarou pelo espelho, desconfiada. Medo era só metade da verdade, e ela sabia ler a outra metade nos meus olhos.",
                 "Engoli o resto. Eu precisava que ela baixasse a guarda, não que a erguesse."
               ],
