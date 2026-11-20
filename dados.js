@@ -126,7 +126,7 @@ window.DADOS = {
     titulo: "Ilustrações de Carmen",
     texto: "Algumas das ilustrações que estão dentro do livro.",
     credito: "",   // ex.: "Ilustrações de Fulana (@fulana)"
-    // Galeria desligada a pedido (2026-11-20). Para religar, troque "imagens: []" por "imagens: [" e tire as // das linhas abaixo.
+    // Galeria desligada a pedido (2026-11-20). Para religar, apague a linha "imagens: [],", logo abaixo, e tire as // das linhas seguintes.
     imagens: [],
     //imagens: [
     //  { src: "img/ilustracoes/carmen-espelho.jpg", descricao: "Ilustração de Carmen: duas mulheres loiras diante de um espelho de penteadeira" },
