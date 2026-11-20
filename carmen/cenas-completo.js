@@ -641,13 +641,145 @@ window.JOGO = {
           "com": "armando"
         },
         {
+          "titulo": "A vassoura",
+          "texto": [
+            "Um dia antes da fuga, acordei bem cedinho para cumprir minhas obrigações. Acompanhada apenas por vassoura e pá, cantarolei todas as cantigas do meu repertório enquanto varria minuciosamente o salão, a cozinha e o lavabo.",
+            "— Você parece feliz.",
+            "A voz de Madalena interrompeu minha cantoria. Ela estava recostada na porta da cozinha, provavelmente me assistindo varrer por algum tempo.",
+            "Demorei um segundo para reagir.",
+            "— Acordou cedo por quê, mãe?",
+            "— Fui resolver um negócio, mas não mude de assunto. Adoraria saber o motivo dessa felicidade toda."
+          ],
+          "pergunta": "Como explicar tanta alegria sem me entregar?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: — Na verdade, é puro nervosismo. Mas, como o povo diz: “quem canta seus males espanta”, então estou testando esse provérbio.",
+              "certa": true,
+              "antes": [
+                "E agora? Como eu poderia me explicar? As melhores desculpas eram aquelas que tinham um fundo de verdade."
+              ],
+              "resultado": [
+                "Madalena abriu um sorriso caloroso e se aproximou de mim.",
+                "— Entendo que esteja ansiosa com a sua primeira vez, mas será uma boa experiência. Até porque você não está indo às cegas; mamãe já te ensinou tudo o que você precisa saber. Agora só falta a prática.",
+                "— Eu sei, eu sei…",
+                "Suspirei resignada, apoiando os braços no topo da vassoura. Uma parte minha a ressentia por ter me ensinado coisas de adulta quando pequena; outra parte era grata por ela ter me passado esses conhecimentos úteis."
+              ],
+              "pontos": {
+                "astucia": 1
+              }
+            },
+            {
+              "texto": "Mentira: — Um cliente me deu uma gorjeta gorda ontem à noite.",
+              "desvio": true,
+              "resultado": [
+                "— Gorjeta? — Madalena estendeu a mão aberta. — Então me mostre. Todo passarinho que entra nesta casa passa pela minha mão.",
+                "Eu não tinha gorjeta nenhuma para mostrar. Ela estreitou os olhos, e eu ri, como quem confessa uma brincadeira."
+              ]
+            },
+            {
+              "texto": "Verdade: — Porque daqui a pouco tudo isso acaba.",
+              "resultado": [
+                "— Acaba? — Madalena desencostou da porta. — O que é que acaba, pequena canção?",
+                "Gaguejei qualquer coisa sobre a minha primeira vez, mas era tarde. Ela passou o dia inteiro de olho em mim, e à noite mandou Gasparo vigiar a porta dos fundos. A loja de Armando partiu sem mim."
+              ]
+            }
+          ],
+          "quando": "2 dias antes do aniversário, de manhã",
+          "com": "madalena"
+        },
+        {
+          "titulo": "O sortudo",
+          "texto": [
+            "— Mas e então? — Ela repousou a mão gentilmente no meu antebraço. — Você já escolheu quem será o sortudo?",
+            "“Nenhum deles, pode ter certeza”, era o que eu queria dizer."
+          ],
+          "pergunta": "Dizer o que eu pensava, ou o que ela aguentava ouvir?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: — Ainda não. Parece que nenhum deles “merece” ser minha primeira vez.",
+              "certa": true,
+              "resultado": [
+                "— Seu problema é valorizar demais o sexo. Depois da primeira transa, você perceberá que não tem nada de mágico nisso tudo. No fundo, somos animais iguais aos passarinhos que copulam nas árvores e os cachorros que trepam na rua. A única diferença é que montamos um no outro de portas fechadas, em vez de ao ar livre.",
+                "Recuei os braços do topo e segurei a vassoura pelo cabo.",
+                "— Nossa, Madalena!",
+                "— Que foi? Não é nada que eu já não tenha te dito antes.",
+                "— Mas não de maneira tão direta assim.",
+                "Ela deu de ombros.",
+                "— Eu só disse a verdade. Você confirmará depois de amanhã."
+              ],
+              "pontos": {
+                "performance": 1
+              }
+            },
+            {
+              "texto": "Mentira: — Já escolhi, mas é segredo. A senhora vai saber na hora.",
+              "desvio": true,
+              "resultado": [
+                "— Segredo, comigo? — Madalena riu. — Então diga um nome. Um só.",
+                "Abri a boca e nenhum nome saiu. Ela riu mais alto. — Foi o que pensei.",
+                "Mentira sem nome não para em pé. Encolhi os ombros e tentei de novo."
+              ]
+            },
+            {
+              "texto": "Verdade: — Nenhum deles. Não vou me deitar com ninguém, mãe.",
+              "resultado": [
+                "O sorriso de Madalena sumiu. — Vai, sim. Nem que eu tenha que escolher o homem e trancar a porta por fora.",
+                "Desde aquela manhã, ela não me deixou sozinha nem para buscar água no poço. Na véspera do meu aniversário, a loja de Armando partiu sem mim."
+              ]
+            }
+          ],
+          "quando": "2 dias antes do aniversário, de manhã",
+          "com": "madalena"
+        },
+        {
+          "titulo": "A escolha da mãe",
+          "texto": [
+            "Abaixei a cabeça e murmurei um “pode ser…”, ciente de que não adiantaria nada discutir. Madalena apoiou o indicador no meu queixo e levantou meu rosto.",
+            "— Nós duas sabemos que você não escolherá ninguém. Então deixe a mamãe escolher por você.",
+            "A primeira frase gelou minha espinha, porém a segunda acalmou meus nervos."
+          ],
+          "pergunta": "Como ganhar tempo sem levantar suspeitas?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: — Eu ainda tenho tempo. O combinado é só amanhã à noite.",
+              "certa": true,
+              "resultado": [
+                "Madalena retirou a mão.",
+                "— Está bem. Cumprirei a minha parte do trato, mas nada de choradeiras quando você tiver que cumprir a sua.",
+                "*Pois pode esperar sentada*, pensei, mas assenti.",
+                "Como se pensamentos tivessem poder, Madalena sentou-se para me assistir varrer. Continuei com meus afazeres cantarolando, como se ela nem estivesse ali."
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
+            },
+            {
+              "texto": "Mentira: — Pode escolher, mãe. Eu confio na senhora.",
+              "desvio": true,
+              "resultado": [
+                "Madalena estreitou os olhos. — Desde quando você confia em mim sem discutir?",
+                "Docilidade demais era tão suspeita quanto rebeldia. Apertei o cabo da vassoura e emendei, com o tom de sempre:"
+              ]
+            },
+            {
+              "texto": "Verdade: — Não. Quem escolhe sou eu, ou não vai ser ninguém.",
+              "resultado": [
+                "— Então vai ser quem eu mandar. E hoje mesmo.",
+                "Ela chamou Gasparo antes do almoço. Daquele dia em diante, ele passou a me seguir até a porta do lavabo. Na véspera do meu aniversário, a loja de Armando partiu sem mim."
+              ]
+            }
+          ],
+          "quando": "2 dias antes do aniversário, de manhã",
+          "com": "madalena"
+        },
+        {
           "titulo": "O pretendente",
           "desbloqueia": [
             "jaime",
             "alexandro"
           ],
           "texto": [
-            "Na véspera da fuga, a carruagem dos Barbosa parou na frente do bordel. Jaime, o Ilustre local, subiu os degraus com os guardas. Atrás dele vinha o filho, Alexandro, sem saber se admirava o teto ou as paredes.",
+            "Naquela noite, a carruagem dos Barbosa parou na frente do bordel. Jaime, o Ilustre local, subiu os degraus com os guardas. Atrás dele vinha o filho, Alexandro, sem saber se admirava o teto ou as paredes.",
             "Madalena tinha dedo nisso.",
             "— Tome as rédeas de tudo — disse ela, à porta do meu quarto. — Você sabe o que fazer.",
             "Lá dentro, Alexandro estava sentado na beira da cama, felizmente vestido. Não tinha coragem de me encarar nos olhos.",
@@ -686,7 +818,7 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "quando": "2 dias antes do aniversário",
+          "quando": "2 dias antes, à noite",
           "com": "alexandro"
         },
         {
