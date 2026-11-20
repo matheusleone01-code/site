@@ -213,7 +213,7 @@ window.JOGO = {
             "Eu fugiria do bordel.",
             "Mas, antes, precisava responder à minha mãe."
           ],
-          "pergunta": "O que Carmen diz a Madalena?",
+          "pergunta": "Enfrentá-la agora, ou fingir submissão?",
           "opcoes": [
             {
               "texto": "— Está bem… Me dói admitir, mas tem razão. Quando a hora chegar, farei o que diz.",
@@ -255,7 +255,7 @@ window.JOGO = {
             "— Use esta noite para escolher com quem gostaria de ter sua primeira vez — disse Madalena. — Permitirei que você escolha, dessa vez.",
             "Nossa, obrigada por me dar essa liberdade toda, pensei. Mas, se eu fingisse estar satisfeita, teria que passar a noite inteira flertando com os clientes. E eu precisava de tempo sozinha para planejar a fuga."
           ],
-          "pergunta": "Como Carmen escapa da noite no salão?",
+          "pergunta": "Que desculpa me livraria do salão sem levantar suspeitas?",
           "opcoes": [
             {
               "texto": "Levar a mão à boca do estômago: “Estou meio indisposta. Enjoo. Acho que é do nervosismo.”",
@@ -311,7 +311,7 @@ window.JOGO = {
             "Balancei o cabelo, ajeitei a postura e coloquei meu melhor sorriso no rosto. Ele se aproximou da janela trazendo seu perfume amadeirado.",
             "— Madalena está ocupada? — perguntou. E, ao ver meu sorriso, ergueu a sobrancelha. — O que você quer dessa vez? Chapéu, brinco, vestido?"
           ],
-          "pergunta": "Como Carmen puxa conversa?",
+          "pergunta": "Pedir logo o que eu queria, ou ganhá-lo na conversa?",
           "opcoes": [
             {
               "texto": "— Hoje é diferente. Só quero que me conte como foi a viagem até aqui; se as estradas estão seguras; se está vendendo muito…",
@@ -355,7 +355,7 @@ window.JOGO = {
             "— Isso é injusto, de verdade — disse Armando, gravemente. — Tão injusto que eu me disporia a te levar de graça à Capital, se eu não estivesse vendendo o almoço para pagar a janta.",
             "Era a brecha que eu esperava."
           ],
-          "pergunta": "Como Carmen convence Armando?",
+          "pergunta": "Como fazer valer a pena me levar?",
           "opcoes": [
             {
               "texto": "— Não seja por isso. Uso minha beleza como isca: serei um manequim para você expor, atraindo as pessoas enquanto você faz sua mágica com a arte da venda.",
@@ -404,7 +404,7 @@ window.JOGO = {
           "texto": [
             "— Calma, um passo de cada vez — disse Armando. — Primeiro eu tenho que falar com sua mãe. Madalena é uma mulher prática. Se eu explicar que você estaria trabalhando de maneira honesta, não tem por que negar."
           ],
-          "pergunta": "O que Carmen responde?",
+          "pergunta": "Deixar que ele falasse com minha mãe, ou impedi-lo a qualquer custo?",
           "opcoes": [
             {
               "texto": "— Ela nunca aceitará que eu viva da minha própria maneira. Se ela me ama de fato, uma hora entenderá que precisei escolher meu caminho. E perdoará a nós dois.",
@@ -451,7 +451,7 @@ window.JOGO = {
             "Lá dentro, Alexandro estava sentado na beira da cama, felizmente vestido. Não tinha coragem de me encarar nos olhos.",
             "*Tire a roupa peça por peça. Seja sedutora. Peça e distribua elogios.* Essas seriam as instruções da minha mãe."
           ],
-          "pergunta": "O que Carmen faz?",
+          "pergunta": "Obedecer, ou encontrar outro jeito de passar a noite?",
           "opcoes": [
             {
               "texto": "Sentar ao lado dele, segurar sua mão e dizer: “Você está bem nervoso para sua primeira vez, não está? Também estou.”",
@@ -495,7 +495,7 @@ window.JOGO = {
             "No chão do meu quarto, perto da bota de Alexandro, brilhava um botão de punho de prata.",
             "Eu tinha tempo para uma coisa só."
           ],
-          "pergunta": "O que Carmen leva consigo?",
+          "pergunta": "O que eu levaria comigo?",
           "opcoes": [
             {
               "texto": "Entrar no quarto da mãe e pegar as moedas da caixinha de joias.",
@@ -543,7 +543,7 @@ window.JOGO = {
             "Despejei minhas roupas favoritas num balde de madeira, segurei a alça e caminhei confiante rumo à saída. O guarda mais alto e magro me barrou com o olhar.",
             "— Meio cedo para lavar roupas, não?"
           ],
-          "pergunta": "Como Carmen responde ao guarda?",
+          "pergunta": "O que dizer para ele me deixar passar?",
           "opcoes": [
             {
               "texto": "— Cedo para quem? Quando eu voltar, ainda tenho que arrumar toda a bagunça lá dentro. E, se ficarem me atrasando, minha mãe vai comer o meu fígado e, logo depois, o de vocês.",
@@ -607,7 +607,7 @@ window.JOGO = {
             "“Olha só como ela está vestida”, murmurou uma baixinha rechonchuda. “Está querendo chamar atenção”, sussurrou a despeitada. “Deve ser uma mulher da vida”, concluiu a nariguda.",
             "*Puta, não!*"
           ],
-          "pergunta": "O que Carmen faz?",
+          "pergunta": "Revidar, engolir, ou virar o jogo?",
           "opcoes": [
             {
               "texto": "Encarar a nariguda até ela corar e, depois, sorrir: “Essa roupa é mesmo demais para uma feira. É que sou assistente de um mascate. Trouxemos peças lindíssimas da Capital. Vamos lá conferir juntas.”",
@@ -656,7 +656,7 @@ window.JOGO = {
             "— Tem várias peças bonitas, mas é tudo meio… demais para mim, não acha?",
             "Eram mesmo peças chamativas para quem escondia as poucas curvas num vestido bege mal ajustado. Mas a curiosidade continuava acesa nos olhos dela."
           ],
-          "pergunta": "Como Carmen faz a venda?",
+          "pergunta": "Concordar com ela, ou mostrar o que ela não enxergava?",
           "opcoes": [
             {
               "texto": "Erguer o queixo dela: “Discordo. Nos seus olhos há uma mulher poderosa que sabe o que quer. O que não combina com você é o que está vestindo agora.”",
@@ -714,7 +714,7 @@ window.JOGO = {
             "Isolina recuou a mão.",
             "— Desculpa, mas não estou contratando. Tenho minha lojinha há décadas, e nunca precisei de ninguém."
           ],
-          "pergunta": "Como Carmen consegue a vaga?",
+          "pergunta": "Como fazer uma mulher que nunca precisou de ninguém precisar de mim?",
           "opcoes": [
             {
               "texto": "— Pela beleza da loja, a senhora fez um trabalho excepcional esses anos todos. Não acha que, depois de tanto esforço, merece descansar um pouco?",
@@ -766,7 +766,7 @@ window.JOGO = {
             "— Queria um brinco dourado, daqueles de bolinha. Vocês têm?",
             "Encontrei o par na estante. Mas, sinceramente, um brinco de bolinha deixaria aquele rosto ainda mais redondo. E o dourado não combinava com o tom frio da pele dela."
           ],
-          "pergunta": "O que Carmen faz?",
+          "pergunta": "Vender o que ela pediu, ou o que ficaria melhor nela?",
           "opcoes": [
             {
               "texto": "Entregar o brinco de bolinha dourado com um sorriso e elogiar a escolha.",
@@ -809,7 +809,7 @@ window.JOGO = {
             "*E se eu me infiltrar no palácio e participar dessa avaliação?*",
             "Para saber se era possível, eu precisava de mais informações."
           ],
-          "pergunta": "Como Carmen arranca informações dela?",
+          "pergunta": "Perguntar direto, ou fazê-la falar sem perceber?",
           "opcoes": [
             {
               "texto": "— Tenho certeza de que Vossa Ilustreza será aprovada. Mas as outras candidatas também são Ilustres, não são? A competição deve ser acirrada… A senhorita sabe quantas são?",
@@ -845,7 +845,7 @@ window.JOGO = {
           "texto": [
             "A menina pagou e já se dirigia à porta. Eu sabia quase tudo. Faltava o principal: quando seria a avaliação."
           ],
-          "pergunta": "Como Carmen descobre a data?",
+          "pergunta": "Como arrancar isso dela antes que saísse pela porta?",
           "opcoes": [
             {
               "texto": "Correr para abrir a porta com uma mesura: “Estarei rezando pelo seu sucesso. A avaliação será quando mesmo? Para eu saber quando acender as velas.”",
@@ -895,7 +895,7 @@ window.JOGO = {
             "Acordei cedo e escondi o saquinho de moedas no decote. Comprar o vestido e as joias era a parte fácil.",
             "A difícil era outra: a menina de rosa tinha visto meu rosto, e estaria lá. Se me reconhecesse, era o fim."
           ],
-          "pergunta": "Como Carmen muda a aparência?",
+          "pergunta": "Como mudar meu rosto sem chamar ainda mais atenção?",
           "opcoes": [
             {
               "texto": "Ir ao cabeleireiro e cortar os cabelos na altura dos ombros, como os da mãe.",
@@ -933,7 +933,7 @@ window.JOGO = {
             "À beira da estrada estava parada uma carruagem vermelha e lustrosa, com adornos dourados e cavalos de raça. Na boleia, um cavalheiro de terno preto tirou a cartola.",
             "— Senhorita."
           ],
-          "pergunta": "Como Carmen consegue a carruagem?",
+          "pergunta": "Como fazer aquela carruagem me levar ao palácio?",
           "opcoes": [
             {
               "texto": "— Senhorita, não: Vossa Ilustreza! O condutor que papai contratou está passando mal. Preciso que me leve agora para o Palácio Real. — E jogar uma garça de ouro no colo dele.",
@@ -982,7 +982,7 @@ window.JOGO = {
             "— Como devo anunciá-la, Vossa Ilustreza?",
             "Saboreei a pergunta. Eu precisava do nome de uma Ilustre de verdade. Uma que acabasse de fazer a maioridade, que ninguém em Pacentro conhecesse de vista, e de quem eu soubesse o bastante para responder a qualquer pergunta."
           ],
-          "pergunta": "Que nome Carmen dá?",
+          "pergunta": "Que nome eu daria?",
           "opcoes": [
             {
               "texto": "— Diga-lhes meu nome completo: Vivian Barbosa.",
@@ -1026,7 +1026,7 @@ window.JOGO = {
             "— E-eu deixei minha bolsa em casa… Não sabia que era para trazer.",
             "— Como assim você não sabia? — Ela abriu um sorriso de troça."
           ],
-          "pergunta": "Como Carmen reage ao deboche?",
+          "pergunta": "Engolir o deboche, ou devolvê-lo?",
           "opcoes": [
             {
               "texto": "— A exigência de apresentação não estava prevista na carta. E só quem foi convidada apareceria aqui no dia exato, na hora exata. De que outra forma eu saberia de um evento tão discreto?",
@@ -1078,7 +1078,7 @@ window.JOGO = {
             "Para minha surpresa, ela estava sendo educada. Acreditava em mim; só me barrava por burocracia. Talvez temesse as consequências de me deixar passar.",
             "Atrás de mim, passos ecoavam no mármore: novas Ilustres chegavam, e a fila crescia."
           ],
-          "pergunta": "O que Carmen faz?",
+          "pergunta": "Como passar daquela lista?",
           "opcoes": [
             {
               "texto": "Erguer a voz: — Isso é um absurdo! Exijo falar com a governanta. Se além de errarem os nomes vocês atrasarem o evento, ela vai comer o fígado de vocês.",
@@ -1131,7 +1131,7 @@ window.JOGO = {
             "Ela olhou para mim. Desviei o olhar. Os saltos dela estalaram no mármore, cada vez mais perto.",
             "— Eu não te conheço de algum lugar?"
           ],
-          "pergunta": "O que Carmen responde?",
+          "pergunta": "Fugir do olhar dela, ou encará-lo?",
           "opcoes": [
             {
               "texto": "Dar uma piscadela: — Se tivesse conhecido, você com certeza não se esqueceria de mim.",
