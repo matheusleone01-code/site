@@ -18,7 +18,11 @@
   var canais = { amb: null, mus: null }, querido = { amb: null, mus: null };
   try { somLigado = localStorage.getItem((J.chave || "carmen-jogo-v1") + "-som") === "1"; } catch (e) {}
   function canal(nome) {
-    if (!canais[nome]) { canais[nome] = new Audio(); canais[nome].loop = true; canais[nome].volume = nome === "amb" ? 0.55 : (SOM.volumeMusica || 0.6); }
+    if (!canais[nome]) {
+      var au = canais[nome] = new Audio(); au.loop = true; au.preload = "auto"; au.volume = nome === "amb" ? 0.55 : (SOM.volumeMusica || 0.6);
+      // alguns navegadores (iPhone, arquivos embutidos) ignoram o loop: recomeça na mão quando acaba
+      au.addEventListener("ended", function () { if (somLigado && querido[nome]) { au.currentTime = 0; var p = au.play(); if (p && p.catch) p.catch(function () {}); } });
+    }
     return canais[nome];
   }
   function tocar() {
@@ -26,6 +30,7 @@
       var id = querido[nome], src = id && SOM.arquivos[id], a = canal(nome);
       if (!somLigado || !src) { a.pause(); return; }
       if (a.getAttribute("data-id") !== id) { a.setAttribute("data-id", id); a.src = src; }
+      if (a.ended) a.currentTime = 0;
       var p = a.play(); if (p && p.catch) p.catch(function () {});
     });
     clearTimeout(efeitoTimer);
