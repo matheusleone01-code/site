@@ -279,7 +279,7 @@ window.JOGO = {
           "titulo": "A desculpa",
           "texto": [
             "— Use esta noite para escolher com quem gostaria de ter sua primeira vez — disse Madalena.",
-            "“Ninguém”, seria minha resposta, mas não podia ser combativa."
+            "“Ninguém”, seria minha resposta, mas era arriscado ser tão combativa."
           ],
           "pergunta": "Que desculpa me livraria do salão sem levantar suspeitas?",
           "opcoes": [
@@ -296,10 +296,10 @@ window.JOGO = {
               }
             },
             {
-              "texto": "Levar a mão ao ventre: “Estou com cólica.”",
+              "texto": "Elogio forçado: — Que vestido lindo, mãe! A senhora está mais bonita do que nunca.",
               "resultado": [
-                "Madalena ergueu uma sobrancelha. — Cólica? A sua só vem daqui a duas semanas.",
-                "*Merda.* Ela sabia o meu calendário melhor do que eu. — Não é cólica… — emendei, depressa. — É outra coisa. Aqui, mais em cima."
+                "Madalena ergueu uma sobrancelha. — Puxa-saco. Quando você me elogia assim, é porque quer alguma coisa. O que é?",
+                "*Merda.* Ela me conhecia bem demais. Elogio sem jeito era pior do que nenhum. — Não é nada, mãe… — emendei, depressa, levando a mão à barriga."
               ],
               "desvio": true
             },
