@@ -995,56 +995,44 @@ window.JOGO = {
           "com": "alexandro"
         },
         {
-          "titulo": "O quarto de Madalena",
+          "titulo": "O despertar",
           "texto": [
-            "Quando abri os olhos, ainda estava escuro. Alexandro dormia pesado. Da janela, vi a carruagem dos Barbosa na frente do bordel e, na esquina, a loja itinerante.",
+            "Quando abri os olhos, ainda estava escuro. Alexandro dormia pesado. Passei por cima dele sem tocá-lo e fui na ponta dos pés até a janela: a carruagem dos Barbosa continuava na frente do bordel e, no fim da rua, estava a loja itinerante.",
             "Armando tinha cumprido a palavra!",
-            "No fim do corredor, a porta do quarto de Madalena estava entreaberta. Ela tinha passado a noite no quarto de Jaime, como sempre que ele vinha. A caixinha de joias, o espelho, o cheiro dela: tudo ali, sem ninguém para vigiar.",
-            "No chão do meu quarto, perto da bota de Alexandro, brilhava um botão de punho de prata.",
-            "Eu tinha tempo para uma coisa só."
+            "Mordi o lábio para não comemorar em voz alta. Os guardas de Jaime ainda estavam postados na entrada."
           ],
-          "pergunta": "O que eu levaria comigo?",
+          "pergunta": "Pular a janela, ou passar bem debaixo do nariz deles?",
           "opcoes": [
             {
-              "texto": "Entrar no quarto da mãe e pegar as moedas da caixinha de joias.",
-              "certa": true,
-              "ganha": [
-                "moedas"
-              ],
-              "resultado": [
-                "A caixinha ficava na segunda gaveta, embaixo das meias, como sempre. Contei as moedas no escuro e enfiei a bolsinha no decote."
-              ],
-              "pontos": {
-                "astucia": 1,
-                "dinheiro": 4
-              },
-              "antes": [
-                "Não era roubo, disse a mim mesma. Eram dezessete anos de salão varrido. A consciência não concordou, mas a consciência não ia pagar meu pão na estrada."
-              ]
-            },
-            {
-              "texto": "Entrar no quarto da mãe e pegar o lenço bordado que ela usava quando cantava para Carmen dormir.",
-              "certa": true,
-              "ganha": [
-                "lenco"
-              ],
-              "resultado": [
-                "Estava pendurado no espelho da penteadeira, onde sempre esteve. Cheirava a ela: talco, vinho e flor de laranjeira.",
-                "Dobrei o lenço e o guardei junto ao peito."
-              ],
-              "antes": [
-                "O lenço não valia uma andorinha. Mas, se eu nunca mais ia ver Madalena, que pelo menos levasse a voz dela comigo."
-              ]
-            },
-            {
-              "texto": "Passar longe do quarto da mãe. Pegar só o botão de punho que Alexandro deixou cair.",
+              "texto": "Esconder as roupas favoritas num balde de madeira e sair pela porta da frente, como quem vai lavar roupa.",
               "certa": true,
               "ganha": [
                 "botao"
               ],
+              "antes": [
+                "Andei de um lado para o outro sobre o tapete. Só uma poção de invisibilidade resolveria. Até que a ideia veio: quem disse que eles não poderiam me ver?"
+              ],
               "resultado": [
-                "Passei longe da porta de Madalena. Se eu entrasse, talvez não tivesse coragem de sair.",
-                "Recolhi o botão do chão e o girei entre os dedos: prata de verdade, com o brasão dos Barbosa. Alexandro tinha outros dez iguais. Eu tinha um pressentimento."
+                "Abri o armário só até a metade, porque a porta estalava. Vesti uma roupa leve e peguei a saca com meus vestidos prediletos. No chão, perto da bota de Alexandro, brilhava um botão de punho de prata, com o brasão dos Barbosa. Guardei-o também.",
+                "No lavabo, despejei tudo num balde de madeira, segurei a alça de ferro e caminhei confiante rumo à saída."
+              ],
+              "pontos": {
+                "astucia": 1
+              }
+            },
+            {
+              "texto": "Pular a janela e correr até a esquina.",
+              "desvio": true,
+              "resultado": [
+                "Passei uma perna pelo peitoril e olhei para baixo. Os guardas estavam bem ali, fumando encostados na carruagem. Se eu pulasse, cairia praticamente no colo deles, e eles viriam me interrogar.",
+                "Recolhi a perna devagar. Eu não precisava sair escondida. Precisava sair de um jeito que ninguém estranhasse."
+              ]
+            },
+            {
+              "texto": "Acordar Alexandro e pedir que ele a acompanhe até a rua, como se fossem passear.",
+              "resultado": [
+                "Alexandro abriu um olho, depois o outro. — Passear? Agora? — Ele se sentou, de repente bem acordado. — Meu pai disse para eu não te deixar sair do quarto até ele voltar.",
+                "Ele não era mau. Era só obediente. Quando Jaime bateu à porta, já com o sol alto, a loja de Armando tinha ido embora."
               ]
             }
           ],
@@ -1053,8 +1041,7 @@ window.JOGO = {
         {
           "titulo": "O balde",
           "texto": [
-            "Mas os guardas de Jaime continuavam na entrada. Então tive uma ideia: quem disse que eles não poderiam me ver?",
-            "Despejei minhas roupas favoritas num balde de madeira, segurei a alça e caminhei confiante rumo à saída. O guarda mais alto e magro me barrou com o olhar.",
+            "Assim que me aproximei da porta, o guarda mais alto e magro me barrou com o olhar.",
             "— Meio cedo para lavar roupas, não?"
           ],
           "pergunta": "O que dizer para ele me deixar passar?",
