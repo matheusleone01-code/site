@@ -98,7 +98,7 @@ window.DADOS = {
     {
       titulo: "Carmen",
       capa: "capas/carmen.jpg",
-      sinopse: "Carmen só tinha uma certeza na vida, a de que não seria puta.",
+      sinopse: "Carmen só tinha uma certeza na vida: a de que não seria puta.",
       link: "https://a.co/d/0dUY5sYb"
     },
     {
