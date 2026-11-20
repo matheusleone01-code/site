@@ -274,7 +274,8 @@ window.JOGO = {
               }
             }
           ],
-          "quando": "7 dias antes do aniversário"
+          "quando": "7 dias antes do aniversário",
+          "com": "madalena"
         },
         {
           "titulo": "A desculpa",
@@ -322,7 +323,8 @@ window.JOGO = {
               ]
             }
           ],
-          "quando": "6 dias antes do aniversário"
+          "quando": "6 dias antes do aniversário",
+          "com": "madalena"
         },
         {
           "titulo": "A janela",
@@ -371,7 +373,8 @@ window.JOGO = {
               ]
             }
           ],
-          "quando": "4 dias antes do aniversário"
+          "quando": "4 dias antes do aniversário",
+          "com": "armando"
         },
         {
           "titulo": "A proposta",
@@ -412,7 +415,8 @@ window.JOGO = {
               }
             }
           ],
-          "quando": "4 dias antes, fim de tarde"
+          "quando": "4 dias antes, fim de tarde",
+          "com": "armando"
         },
         {
           "titulo": "O segredo",
@@ -466,7 +470,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "quando": "4 dias antes, ao anoitecer"
+          "quando": "4 dias antes, ao anoitecer",
+          "com": "armando"
         },
         {
           "titulo": "O pretendente",
@@ -514,7 +519,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "quando": "2 dias antes do aniversário"
+          "quando": "2 dias antes do aniversário",
+          "com": "alexandro"
         },
         {
           "titulo": "O quarto de Madalena",
@@ -605,7 +611,10 @@ window.JOGO = {
               ]
             }
           ],
-          "quando": "Véspera do aniversário, amanhecer"
+          "quando": "Véspera do aniversário, amanhecer",
+          "com": {
+            "nome": "Os guardas"
+          }
         }
       ],
       "fecho": [
@@ -679,7 +688,10 @@ window.JOGO = {
                 "As moedas de Madalena adoçaram a tarde. Puxei a nariguda pelo braço e, sem olhar para trás, eu sabia que as outras duas nos seguiam."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "As moças da feira"
+          }
         },
         {
           "titulo": "A cabine",
@@ -719,7 +731,10 @@ window.JOGO = {
                 "— Eu não sou desse tipo — disse, e desceu da cabine às pressas. As amigas foram atrás. Na feira inteira, ninguém mais chegou perto da loja."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "A nariguda"
+          }
         }
       ],
       "fecho": [
@@ -792,7 +807,8 @@ window.JOGO = {
                 ]
               }
             }
-          ]
+          ],
+          "com": "isolina"
         },
         {
           "titulo": "A primeira cliente",
@@ -832,7 +848,10 @@ window.JOGO = {
                 "Saiu da loja batendo a porta. Isolina, descendo a escada, ouviu a última frase da cliente: “mentirosa”. A chave sobressalente voltou para a gaveta dela."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "A cliente"
+          }
         },
         {
           "titulo": "A Ilustre de rosa",
@@ -877,7 +896,8 @@ window.JOGO = {
                 "Saiu sem comprar nada. Isolina não disse uma palavra. Só estendeu a mão aberta, esperando a chave sobressalente."
               ]
             }
-          ]
+          ],
+          "com": "rosa"
         },
         {
           "titulo": "A data",
@@ -914,7 +934,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "rosa"
         }
       ],
       "fecho": [
@@ -1052,7 +1073,10 @@ window.JOGO = {
                 "— Ao Palácio Real — eu disse, ajeitando a saia no banco de veludo. — E depressa."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "O cocheiro"
+          }
         },
         {
           "titulo": "O nome",
@@ -1089,7 +1113,10 @@ window.JOGO = {
                 "Eu não sabia responder nenhuma das perguntas que vieram depois."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "O cocheiro"
+          }
         },
         {
           "titulo": "O convite",
@@ -1157,7 +1184,8 @@ window.JOGO = {
                 "O sorriso de troça murchou. — Perdão, Vossa Ilustreza. Vou procurar seu nome na lista."
               ]
             }
-          ]
+          ],
+          "com": "empregadas"
         },
         {
           "titulo": "A lista",
@@ -1206,7 +1234,8 @@ window.JOGO = {
                 "Na lista dela, uma Ilustre sem nome era só uma plebeia bem vestida."
               ]
             }
-          ]
+          ],
+          "com": "empregadas"
         },
         {
           "titulo": "A menina de rosa",
@@ -1264,7 +1293,8 @@ window.JOGO = {
                 "— Hum. Deve ter sido outra pessoa. — E voltou para perto das outras."
               ]
             }
-          ]
+          ],
+          "com": "rosa"
         }
       ],
       "fecho": [

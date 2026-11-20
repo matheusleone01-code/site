@@ -66,6 +66,19 @@
     return '<span class="retrato medalhao" aria-hidden="true">' + esc(ini) + "</span>";
   }
 
+  function pessoaEmCena(id) {
+    var f = J.fichas[id];
+    if (!f) return "";
+    if (estado.fichas.indexOf(id) < 0) return '<div class="interlocutor"><span class="retrato medalhao" aria-hidden="true">?</span><span class="interlocutor-nome">???</span></div>';
+    return '<button class="interlocutor" data-acao="ficha" data-ficha="' + esc(id) + '" title="Ver ficha">' + retrato(f) + '<span class="interlocutor-nome">' + esc(f.nome) + "</span></button>";
+  }
+  function interlocutores(c) {
+    if (!c.com) return "";
+    var outro = typeof c.com === "string" ? pessoaEmCena(c.com) :
+      '<div class="interlocutor"><span class="retrato medalhao" aria-hidden="true">' + esc(c.com.inicial || String(c.com.nome).replace(/^(A|As|O|Os|Uma|Um)\s+/, "").charAt(0)) + '</span><span class="interlocutor-nome">' + esc(c.com.nome) + "</span></div>";
+    return '<div class="interlocutores">' + pessoaEmCena("carmen") + '<span class="interlocutores-entre" aria-hidden="true">✦</span>' + outro + "</div>";
+  }
+
   /* ---------- fichas ---------- */
   function abrirFichas(ids) {
     (ids || []).forEach(function (id) {
@@ -330,6 +343,7 @@
       '<section class="tela cena">' +
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
       "<h2>" + esc(c.quando || c.titulo) + "</h2>" +
+      interlocutores(c) +
       (novas.length ? '<p class="aviso-ficha">Nova ficha: ' + esc(novas.join(", ")) + ". Abra em <em>Fichas</em>, lá em cima.</p>" : "") +
       (c.imagem ? '<figure class="ilustracao"><img src="' + esc(c.imagem.arquivo) + '" alt="' + esc(c.imagem.descricao || "") + '" loading="lazy" decoding="async"></figure>' : "") +
       '<div class="texto">' + paragrafos(c.texto) + (c.pergunta ? '<p class="pergunta-cena">' + fmt(c.pergunta) + "</p>" : "") + "</div>" +

@@ -325,7 +325,8 @@ window.JOGO = {
               }
             }
           ],
-          "quando": "7 dias antes do aniversário"
+          "quando": "7 dias antes do aniversário",
+          "com": "madalena"
         },
         {
           "titulo": "A desculpa",
@@ -373,7 +374,8 @@ window.JOGO = {
               ]
             }
           ],
-          "quando": "6 dias antes do aniversário"
+          "quando": "6 dias antes do aniversário",
+          "com": "madalena"
         },
         {
           "titulo": "A janela",
@@ -422,7 +424,8 @@ window.JOGO = {
               ]
             }
           ],
-          "quando": "4 dias antes do aniversário"
+          "quando": "4 dias antes do aniversário",
+          "com": "armando"
         },
         {
           "titulo": "A proposta",
@@ -463,7 +466,8 @@ window.JOGO = {
               }
             }
           ],
-          "quando": "4 dias antes, fim de tarde"
+          "quando": "4 dias antes, fim de tarde",
+          "com": "armando"
         },
         {
           "titulo": "O segredo",
@@ -517,7 +521,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "quando": "4 dias antes, ao anoitecer"
+          "quando": "4 dias antes, ao anoitecer",
+          "com": "armando"
         },
         {
           "titulo": "O pretendente",
@@ -565,7 +570,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "quando": "2 dias antes do aniversário"
+          "quando": "2 dias antes do aniversário",
+          "com": "alexandro"
         },
         {
           "titulo": "O quarto de Madalena",
@@ -656,7 +662,10 @@ window.JOGO = {
               ]
             }
           ],
-          "quando": "Véspera do aniversário, amanhecer"
+          "quando": "Véspera do aniversário, amanhecer",
+          "com": {
+            "nome": "Os guardas"
+          }
         }
       ],
       "fecho": [
@@ -730,7 +739,10 @@ window.JOGO = {
                 "As moedas de Madalena adoçaram a tarde. Puxei a nariguda pelo braço e, sem olhar para trás, eu sabia que as outras duas nos seguiam."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "As moças da feira"
+          }
         },
         {
           "titulo": "A cabine",
@@ -770,7 +782,10 @@ window.JOGO = {
                 "— Eu não sou desse tipo — disse, e desceu da cabine às pressas. As amigas foram atrás. Na feira inteira, ninguém mais chegou perto da loja."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "A nariguda"
+          }
         },
         {
           "titulo": "A fogueira",
@@ -821,7 +836,8 @@ window.JOGO = {
                 "Depois, ao erguer o copo, vi meu reflexo no suco escuro, iluminado pelo fogo, e entendi o que havia de familiar no perfil dele. Larguei o pão e toquei meu nariz."
               ]
             }
-          ]
+          ],
+          "com": "armando"
         }
       ],
       "fecho": [
@@ -892,7 +908,8 @@ window.JOGO = {
                 ]
               }
             }
-          ]
+          ],
+          "com": "isolina"
         },
         {
           "titulo": "A primeira cliente",
@@ -932,7 +949,10 @@ window.JOGO = {
                 "Saiu da loja batendo a porta. Isolina, descendo a escada, ouviu a última frase da cliente: “mentirosa”. A chave sobressalente voltou para a gaveta dela."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "A cliente"
+          }
         },
         {
           "titulo": "A Ilustre de rosa",
@@ -977,7 +997,8 @@ window.JOGO = {
                 "Saiu sem comprar nada. Isolina não disse uma palavra. Só estendeu a mão aberta, esperando a chave sobressalente."
               ]
             }
-          ]
+          ],
+          "com": "rosa"
         },
         {
           "titulo": "A data",
@@ -1014,7 +1035,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "rosa"
         },
         {
           "titulo": "A despedida",
@@ -1054,7 +1076,8 @@ window.JOGO = {
                 "Armando saiu de cabeça baixa. Cedo demais: no livro, Carmen primeiro o perdoou. A raiva só veio quando ele contou por que nunca voltou."
               ]
             }
-          ]
+          ],
+          "com": "armando"
         },
         {
           "titulo": "A verdade de Armando",
@@ -1097,7 +1120,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "armando"
         }
       ],
       "fecho": [
@@ -1234,7 +1258,10 @@ window.JOGO = {
                 "— Ao Palácio Real — eu disse, ajeitando a saia no banco de veludo. — E depressa."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "O cocheiro"
+          }
         },
         {
           "titulo": "O nome",
@@ -1271,7 +1298,10 @@ window.JOGO = {
                 "Eu não sabia responder nenhuma das perguntas que vieram depois."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "O cocheiro"
+          }
         },
         {
           "titulo": "O convite",
@@ -1339,7 +1369,8 @@ window.JOGO = {
                 "O sorriso de troça murchou. — Perdão, Vossa Ilustreza. Vou procurar seu nome na lista."
               ]
             }
-          ]
+          ],
+          "com": "empregadas"
         },
         {
           "titulo": "A lista",
@@ -1388,7 +1419,8 @@ window.JOGO = {
                 "Na lista dela, uma Ilustre sem nome era só uma plebeia bem vestida."
               ]
             }
-          ]
+          ],
+          "com": "empregadas"
         },
         {
           "titulo": "A menina de rosa",
@@ -1446,7 +1478,8 @@ window.JOGO = {
                 "— Hum. Deve ter sido outra pessoa. — E voltou para perto das outras."
               ]
             }
-          ]
+          ],
+          "com": "rosa"
         }
       ],
       "fecho": [
@@ -1500,7 +1533,8 @@ window.JOGO = {
                 "Não soube responder. Meu nome foi riscado da lista antes do primeiro turno."
               ]
             }
-          ]
+          ],
+          "com": "sebastiana"
         },
         {
           "titulo": "A biblioteca",
@@ -1540,7 +1574,11 @@ window.JOGO = {
                 "Desci tão depressa que errei um degrau. O conselheiro me segurou, sim, e riu. Uma desastrada, não uma mulher memorável."
               ]
             }
-          ]
+          ],
+          "com": {
+            "nome": "Uma voz",
+            "inicial": "?"
+          }
         },
         {
           "titulo": "Os elogios",
@@ -1590,7 +1628,8 @@ window.JOGO = {
                 "Retirei a mão devagar. Ele ficou olhando para ela, e depois para mim, como se fosse a primeira vez que alguém lhe negava alguma coisa com um sorriso."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "O livro caído",
@@ -1627,7 +1666,8 @@ window.JOGO = {
                 "O sorriso dele morreu. Eu tinha mordido sem assoprar."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "A pergunta de Valéria",
@@ -1663,7 +1703,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "valeria"
         },
         {
           "titulo": "O convite",
@@ -1702,7 +1743,8 @@ window.JOGO = {
                 "honestidade": 1
               }
             }
-          ]
+          ],
+          "com": "humberto"
         }
       ],
       "fecho": [
@@ -1750,7 +1792,8 @@ window.JOGO = {
                 "Sem Valéria ao meu lado, ninguém me contou quem era Humberto de verdade nem quem era o homem que o enfrentaria. Fui para aquele pátio cega."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "A facção real",
@@ -1800,7 +1843,8 @@ window.JOGO = {
                 "Valéria me olhou estranho. Uma Barbosa que não sabia de que lado a própria família lutou. Ela não esqueceu."
               ]
             }
-          ]
+          ],
+          "com": "valeria"
         },
         {
           "titulo": "O duelo",
@@ -1841,7 +1885,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "Os bailes",
@@ -1877,7 +1922,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "paloma"
         }
       ],
       "fecho": [
@@ -1927,7 +1973,8 @@ window.JOGO = {
                 "honestidade": 1
               }
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "O beijo devido",
@@ -1963,7 +2010,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "A máscara",
@@ -2000,7 +2048,8 @@ window.JOGO = {
                 "Ele não voltou a bater à minha porta."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "A prova do vinho",
@@ -2036,7 +2085,8 @@ window.JOGO = {
                 "Carmen não bebia. No livro, o primeiro gole dela ainda estava muito longe, e não foi nada bonito."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "A pergunta",
@@ -2077,7 +2127,8 @@ window.JOGO = {
                 "Humberto pareceu quase aliviado. Ninguém nunca tinha tido coragem de perguntar, e eu também não tive."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "A valsa",
@@ -2113,7 +2164,8 @@ window.JOGO = {
                 "Humberto, meio bêbado, riu da “brincadeira”. No dia seguinte, contou a piada à irmã. Úrsula não riu."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         }
       ],
       "fecho": [
@@ -2162,7 +2214,8 @@ window.JOGO = {
                 "Sebastiana me expulsou antes que eu terminasse a frase. Nunca cheguei a ver Humberto de novo."
               ]
             }
-          ]
+          ],
+          "com": "sebastiana"
         },
         {
           "titulo": "Diante do rei",
@@ -2198,7 +2251,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "Quem é você?",
@@ -2234,7 +2288,8 @@ window.JOGO = {
                 "Uma mentira para cobrir outra. Humberto passou anos entre espiões: percebeu antes de eu terminar o sobrenome."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "A pergunta de Humberto",
@@ -2268,7 +2323,8 @@ window.JOGO = {
               ],
               "desvio": true
             }
-          ]
+          ],
+          "com": "humberto"
         },
         {
           "titulo": "A declaração",
@@ -2307,7 +2363,8 @@ window.JOGO = {
                 "Era verdade, mas não era a verdade inteira. Humberto ouviu só a primeira parte e chamou os guardas."
               ]
             }
-          ]
+          ],
+          "com": "humberto"
         }
       ],
       "fecho": [
