@@ -2550,7 +2550,7 @@ window.JOGO = {
     "cenas": {},
     "efeitos": {},
     "arquivos": {
-      "tema": "sons/tema-violao.mp3"
+      "tema": "sons/tema-violao-baixo.mp3"
     },
     "creditos": [
       "Flamenco Motion – Sonican (Pixabay)"

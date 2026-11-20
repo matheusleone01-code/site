@@ -16,7 +16,7 @@
   var canais = { amb: null, mus: null }, querido = { amb: null, mus: null };
   try { somLigado = localStorage.getItem((J.chave || "carmen-jogo-v1") + "-som") === "1"; } catch (e) {}
   function canal(nome) {
-    if (!canais[nome]) { canais[nome] = new Audio(); canais[nome].loop = true; canais[nome].volume = nome === "amb" ? 0.55 : (SOM.volumeMusica || 0.12); }
+    if (!canais[nome]) { canais[nome] = new Audio(); canais[nome].loop = true; canais[nome].volume = nome === "amb" ? 0.55 : (SOM.volumeMusica || 0.6); }
     return canais[nome];
   }
   function tocar() {
