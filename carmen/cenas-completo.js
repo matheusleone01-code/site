@@ -343,12 +343,14 @@ window.JOGO = {
               "certa": true,
               "resultado": [
                 "A suspeita sumiu do rosto de Madalena.",
-                "— De gravidez é que não é. — Ela riu alto. — Está bem, pode ir para o seu quarto. Mas, se esse tal enjoo ficar se repetindo, decidirei tudo por você.",
-                "As melhores desculpas eram aquelas que tinham um fundo de verdade. Meu estômago estava mesmo embrulhado."
+                "— De gravidez é que não é. — Ela riu alto. — Está bem, pode ir para o seu quarto. Mas, se esse tal enjoo ficar se repetindo, decidirei tudo por você."
               ],
               "pontos": {
                 "astucia": 1
-              }
+              },
+              "antes": [
+                "As melhores desculpas eram aquelas que tinham um fundo de verdade. E meu estômago estava mesmo embrulhado."
+              ]
             },
             {
               "texto": "Mentira: Fingir cólica: “Estou naqueles dias, mãe”, embora meu fluxo só viesse daqui a 2 semanas.",
@@ -593,13 +595,15 @@ window.JOGO = {
                 "moedas"
               ],
               "resultado": [
-                "A caixinha ficava na segunda gaveta, embaixo das meias, como sempre. Contei as moedas no escuro e enfiei a bolsinha no decote.",
-                "Não era roubo, disse a mim mesma. Eram dezessete anos de salão varrido. A consciência não concordou, mas a consciência não ia pagar meu pão na estrada."
+                "A caixinha ficava na segunda gaveta, embaixo das meias, como sempre. Contei as moedas no escuro e enfiei a bolsinha no decote."
               ],
               "pontos": {
                 "astucia": 1,
                 "dinheiro": 4
-              }
+              },
+              "antes": [
+                "Não era roubo, disse a mim mesma. Eram dezessete anos de salão varrido. A consciência não concordou, mas a consciência não ia pagar meu pão na estrada."
+              ]
             },
             {
               "texto": "Entrar no quarto da mãe e pegar o lenço bordado que ela usava quando cantava para Carmen dormir.",
@@ -608,8 +612,11 @@ window.JOGO = {
                 "lenco"
               ],
               "resultado": [
-                "O lenço estava pendurado no espelho da penteadeira, onde sempre esteve. Cheirava a ela: talco, vinho e flor de laranjeira.",
-                "Não valia uma andorinha. Dobrei e guardei junto ao peito mesmo assim. Se eu nunca mais ia ver Madalena, que pelo menos levasse a voz dela comigo."
+                "Estava pendurado no espelho da penteadeira, onde sempre esteve. Cheirava a ela: talco, vinho e flor de laranjeira.",
+                "Dobrei o lenço e o guardei junto ao peito."
+              ],
+              "antes": [
+                "O lenço não valia uma andorinha. Mas, se eu nunca mais ia ver Madalena, que pelo menos levasse a voz dela comigo."
               ]
             },
             {
@@ -1009,14 +1016,16 @@ window.JOGO = {
               "texto": "Mentira: Correr para abrir a porta com uma mesura: “Estarei rezando pelo seu sucesso. A avaliação será quando mesmo? Para eu saber quando acender as velas.”",
               "certa": true,
               "resultado": [
-                "Colocar a Resplandecente no meio foi golpe baixo, mas eu precisava de uma resposta sincera.",
                 "— No domingo, ao meio-dia.",
                 "Dei tchauzinhos para ela. Seis dias: tempo para os ajustes finais do plano e para a Ilustre esquecer os detalhes do meu rosto."
               ],
               "pontos": {
                 "astucia": 1,
                 "dinheiro": 1
-              }
+              },
+              "antes": [
+                "Eu precisava de uma resposta sincera. Colocar a Resplandecente no meio seria golpe baixo. Mas funcionaria."
+              ]
             },
             {
               "texto": "Verdade: — Eu daria tudo para ver essa avaliação de perto. Quando vai ser?",
@@ -1434,14 +1443,16 @@ window.JOGO = {
               "texto": "Meia-verdade: Dar uma piscadela: — Se tivesse conhecido, você com certeza não se esqueceria de mim.",
               "certa": true,
               "resultado": [
-                "Era uma resposta que nenhuma plebeia daria.",
                 "A menina me analisou por alguns instantes. Então olhou em volta, como se de repente percebesse quão estranha estava parecendo para as outras.",
                 "— Perdão, acho que te confundi.",
                 "E foi se posicionar bem longe de mim."
               ],
               "pontos": {
                 "astucia": 1
-              }
+              },
+              "antes": [
+                "Uma plebeia gaguejaria e baixaria os olhos. Uma Ilustre responderia com a arrogância de quem nunca é esquecida."
+              ]
             },
             {
               "texto": "Mentira: — Não. Duvido muito.",
@@ -1722,7 +1733,10 @@ window.JOGO = {
               ],
               "pontos": {
                 "persuasao": 1
-              }
+              },
+              "antes": [
+                "Eu precisava de tempo para ler. E de um motivo bonito para ele esperar."
+              ]
             },
             {
               "texto": "Meia-verdade: — Aceito. O livro está na minha cabeceira. — E improvisar sobre ele na hora.",
@@ -1898,13 +1912,16 @@ window.JOGO = {
               "texto": "Meia-verdade: — Mamãe morre de ciúmes de outras Ilustres, então evita bailes com meu pai. Se sua prima conhece minha família como sugere, deve saber disso.",
               "certa": true,
               "resultado": [
-                "Era verdade: Alexandro tinha me contado. Paloma estreitou os olhos e sorriu de canto.",
+                "Paloma estreitou os olhos e sorriu de canto.",
                 "— Ciúmes fazem mulheres bonitas agirem como loucas por homens não tão… belos assim.",
                 "Valéria a enfrentou. Paloma foi embora. Mas agora tinha um assunto para escrever à prima."
               ],
               "pontos": {
                 "astucia": 1
-              }
+              },
+              "antes": [
+                "Lembrei de Alexandro, naquela noite em Serra Verde, falando da mãe e dos ciúmes dela. Era verdade, só não era a minha."
+              ]
             },
             {
               "texto": "Mentira: — Estive no baile de verão, sim. Você deve ter esquecido.",
@@ -1947,12 +1964,14 @@ window.JOGO = {
               "texto": "Verdade: — Pedirei o que eu precisar; negarei o que soar excessivo.",
               "certa": true,
               "resultado": [
-                "— Nada mais justo.",
-                "Era tentador mandá-las me servir uvas na boca. Mas, no dia seguinte, eu voltaria ao meu grau normal, e elas não esqueceriam."
+                "— Nada mais justo."
               ],
               "pontos": {
                 "honestidade": 1
-              }
+              },
+              "antes": [
+                "Era tentador mandá-las me servir uvas na boca. Mas, no dia seguinte, eu voltaria ao meu grau normal, e elas não esqueceriam."
+              ]
             },
             {
               "texto": "Mentira: — Nasci para ser servida. — E mandar as duas abanarem e servirem uvas na boca, uma a uma.",
@@ -2141,12 +2160,14 @@ window.JOGO = {
               "certa": true,
               "resultado": [
                 "— Por você, eu espero.",
-                "Manter a postura de donzela era só uma desculpa. Era Vivian que ele queria beijar, não Carmen.",
                 "No dia em que matasse Carmen, eu finalmente estaria livre para viver como Vivian."
               ],
               "pontos": {
                 "honestidade": 1
-              }
+              },
+              "antes": [
+                "Eu também queria. Mas manter a postura de donzela era a desculpa perfeita: era Vivian que ele queria beijar, não Carmen."
+              ]
             },
             {
               "texto": "Mentira: — Sou toda sua, Humberto. — E erguer o rosto para beijá-lo.",
