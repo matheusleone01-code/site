@@ -752,15 +752,11 @@ window.JOGO = {
             "jaime"
           ],
           "texto": [
-            "Uma hora a noite chegou. Com ela vieram meus “pretendentes”.",
-            "Tudo começou como de costume: cantadas para lá, risadas para cá… Armando aguardava Madalena inquieto, batendo os pés no chão enquanto permanecia sentado no sofá. Antes que ela aparecesse, porém, ouviu-se o barulho dos cascos dos cavalos trotando na rua, e a carruagem dos Barbosa parou em frente ao bordel.",
-            "Meu estômago revirou. A aparição repentina de Jaime podia arruinar tudo. Por mais que Madalena privilegiasse Armando, ele não se comparava a um Ilustre. E eu não fazia ideia de como o mascate reagiria quando fosse rejeitado na frente de todos.",
-            "Com o apoio dos seus guardas, Jaime desceu da carruagem e subiu os degraus. Seus passos pesados fizeram as tábuas rangerem, num som que contrastava com o barulho oco e repetitivo da bota de Armando batendo contra o piso.",
-            "— Podem continuar. Finjam que não estou aqui.",
-            "Jaime gesticulou para que um casal liberasse o sofá e sentou-se ao lado de Armando com as pernas bem abertas. Atrás dele, notei um segundo Ilustre: o filho, a imagem cuspida e escarrada do pai, porém menos alto e menos roliço, sem saber se apreciava mais a beleza do teto ou das paredes.",
+            "Uma hora a noite chegou, e com ela meus “pretendentes”. Armando aguardava Madalena no sofá, batendo o pé no chão, quando a carruagem dos Barbosa parou em frente ao bordel.",
+            "Meu estômago revirou. Por mais que Madalena privilegiasse Armando, ele não se comparava a um Ilustre.",
+            "Jaime subiu os degraus com os guardas e sentou-se ao lado de Armando, de pernas bem abertas. Atrás dele vinha o filho, a imagem cuspida e escarrada do pai, sem saber se admirava o teto ou as paredes.",
             "— Sente-se aqui, Alexandro. A espera é chata, mas valerá a pena.",
-            "Aquela não era a primeira vez que um pai trazia um filho ao bordel. Mas um Ilustre fazer isso justamente quando o meu aniversário estava tão próximo só podia significar uma coisa.",
-            "Madalena tinha dedo nisso."
+            "Um Ilustre trazendo o filho ao bordel tão perto do meu aniversário só podia significar uma coisa: Madalena tinha dedo nisso."
           ],
           "pergunta": "Ficar ali, à vista de todos, ou sumir antes que alguém lesse meu rosto?",
           "opcoes": [
