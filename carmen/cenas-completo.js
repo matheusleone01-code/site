@@ -347,22 +347,18 @@ window.JOGO = {
               }
             },
             {
+              "texto": "Fingir cólica, embora não estivesse menstruada: “Estou com cólica, mãe.”",
+              "resultado": [
+                "Madalena ergueu uma sobrancelha. — Cólica? A sua só vem daqui a duas semanas.",
+                "*Merda.* Ela sabia o meu calendário melhor do que eu. — Não é cólica… — emendei, depressa. — É outra coisa. Aqui, mais em cima."
+              ],
+              "desvio": true
+            },
+            {
               "texto": "— Ninguém. Não quero ninguém.",
               "resultado": [
                 "Madalena estreitou os olhos. — Ninguém? Pois bem. Se você não escolhe, eu escolho por você.",
                 "Ela desceu as escadas e voltou com o cliente mais rico da noite. Depois disso, nunca mais me deixou sozinha. Não houve fuga."
-              ]
-            },
-            {
-              "texto": "Elogiar a mãe: — Hoje a noite é sua, mãe. Se eu descer, ninguém vai saber para quem olhar, e eu ainda nem sei sorrir como a senhora.",
-              "certa": true,
-              "requerAtributo": {
-                "persuasao": 1
-              },
-              "resultado": [
-                "Madalena parou a escova no ar. Por um instante, achei que tinha exagerado.",
-                "— Puxa-saco — disse ela, mas o canto da boca já subia. — Está bem. Vá dormir cedo e treine esse sorriso no espelho. Na próxima, você desce.",
-                "Elogio na medida certa. Foi ela mesma quem me ensinou."
               ]
             }
           ],
