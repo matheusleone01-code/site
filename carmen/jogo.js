@@ -10,6 +10,8 @@
   var botaoBolsa = document.getElementById("botao-bolsa");
   var painelBolsa = document.getElementById("painel-bolsa");
   var listaBolsa = document.getElementById("lista-bolsa");
+  var botaoBonus = document.getElementById("botao-bonus");
+  var painelBonus = document.getElementById("painel-bonus");
 
   /* ---------- som (ambiente por arco, música quando acontece na história, tema nas telas de início e fim) ---------- */
   var SOM = J.sons || null, somLigado = false, botaoSom = null, efeitoTimer = null;
@@ -52,7 +54,7 @@
     if (!botaoSom) return;
     botaoSom.setAttribute("aria-pressed", somLigado ? "true" : "false");
     botaoSom.setAttribute("aria-label", somLigado ? "Desligar o som" : "Ligar o som");
-    botaoSom.innerHTML = '<span aria-hidden="true">♪</span> ' + (somLigado ? "Som" : "<s>Som</s>");
+    botaoSom.innerHTML = '<span aria-hidden="true">♪</span><span class="som-txt"> ' + (somLigado ? "Som" : "<s>Som</s>") + "</span>";
   }
   if (SOM) {
     botaoSom = document.createElement("button");
@@ -73,11 +75,11 @@
   var estado = carregar() || novoEstado();
   function novoEstado() {
     var abertas = Object.keys(J.fichas).filter(function (k) { return J.fichas[k].inicial; });
-    return { arco: 0, fichas: abertas, novas: [], itens: [], itensNovos: [], atributos: {}, desvios: 0, marco: null, venceu: false, arroba: "", data: "", iniciado: false };
+    return { arco: 0, fichas: abertas, novas: [], itens: [], itensNovos: [], bonusNovos: [], atributos: {}, desvios: 0, marco: null, venceu: false, arroba: "", data: "", iniciado: false };
   }
   function completar(s) {
     if (!s) return s;
-    s.itens = s.itens || []; s.itensNovos = s.itensNovos || []; s.desvios = s.desvios || 0; s.atributos = s.atributos || {};
+    s.itens = s.itens || []; s.itensNovos = s.itensNovos || []; s.bonusNovos = s.bonusNovos || []; s.desvios = s.desvios || 0; s.atributos = s.atributos || {};
     return s;
   }
   function carregar() {
@@ -212,19 +214,29 @@
     if (!botaoBolsa) return;
     botaoBolsa.hidden = !Object.keys(J.itens).length;
     var n = estado.itensNovos.length;
-    botaoBolsa.innerHTML = "Bolsa" + (n ? ' <span class="selo-nova" aria-label="' + n + ' novo(s)">' + n + "</span>" : "");
+    botaoBolsa.innerHTML = "Inventário" + (n ? ' <span class="selo-nova" aria-label="' + n + ' novo(s)">' + n + "</span>" : "");
+    if (botaoBonus) {
+      botaoBonus.hidden = !Object.keys(J.atributos).length;
+      var b = estado.bonusNovos.length;
+      botaoBonus.innerHTML = "Bônus" + (b ? ' <span class="selo-nova" aria-label="' + b + ' novo(s)">' + b + "</span>" : "");
+    }
   }
-  function desenharBolsa() {
+  function desenharBonus() {
     var at = document.getElementById("lista-atributos");
     if (at) at.innerHTML = Object.keys(J.atributos).map(function (k) {
       var a = J.atributos[k], n = pontosDe(k);
-      return '<li class="atributo"><div class="atributo-topo"><h3>' + esc(a.nome) + '</h3><span class="atributo-valor">' + n + "</span></div><p>" + esc(a.texto) + "</p></li>";
-    }).join("") + (J.moeda ? '<li class="atributo"><div class="atributo-topo"><h3>Dinheiro</h3><span class="atributo-valor">' + pontosDe("dinheiro") + "</span></div><p>" + esc(J.moeda.plural.charAt(0).toUpperCase() + J.moeda.plural.slice(1) + ". " + J.moeda.texto) + "</p></li>" : "");
+      var novo = estado.bonusNovos.indexOf(k) >= 0 ? ' <span class="selo-nova">novo</span>' : "";
+      return '<li class="atributo"><div class="atributo-topo"><h3>' + esc(a.nome) + novo + '</h3><span class="atributo-valor">' + n + "</span></div><p>" + esc(a.texto) + "</p></li>";
+    }).join("");
+  }
+  function desenharBolsa() {
+    var din = document.getElementById("lista-dinheiro");
+    if (din) din.innerHTML = (J.moeda ? '<li class="atributo"><div class="atributo-topo"><h3>Dinheiro</h3><span class="atributo-valor">' + pontosDe("dinheiro") + "</span></div><p>" + esc(J.moeda.plural.charAt(0).toUpperCase() + J.moeda.plural.slice(1) + ". " + J.moeda.texto) + "</p></li>" : "");
     listaBolsa.innerHTML = estado.itens.length ? estado.itens.map(function (id) {
       var it = J.itens[id];
       var novo = estado.itensNovos.indexOf(id) >= 0 ? ' <span class="selo-nova">novo</span>' : "";
       return '<li class="ficha item"><h3>' + esc(it.nome) + novo + "</h3>" + paragrafos(it.texto) + "</li>";
-    }).join("") : '<li class="ficha bloqueada"><p class="papel">A bolsa está vazia. Algumas escolhas deixam Carmen levar coisas consigo.</p></li>';
+    }).join("") : '<li class="ficha bloqueada"><p class="papel">Nenhum item ainda. Algumas escolhas deixam Carmen levar coisas consigo.</p></li>';
   }
   if (botaoBolsa) {
     botaoBolsa.addEventListener("click", function () {
@@ -236,6 +248,18 @@
       if (typeof painelBolsa.close === "function") painelBolsa.close(); else { painelBolsa.removeAttribute("open"); estado.itensNovos = []; salvar(); atualizarBotaoBolsa(); }
     });
     painelBolsa.addEventListener("click", function (e) { if (e.target === painelBolsa && painelBolsa.close) painelBolsa.close(); });
+  }
+  if (botaoBonus) {
+    var limparBonus = function () { estado.bonusNovos = []; salvar(); atualizarBotaoBolsa(); };
+    botaoBonus.addEventListener("click", function () {
+      desenharBonus();
+      if (typeof painelBonus.showModal === "function") painelBonus.showModal(); else painelBonus.setAttribute("open", "");
+    });
+    painelBonus.addEventListener("close", limparBonus);
+    document.getElementById("fechar-bonus").addEventListener("click", function () {
+      if (typeof painelBonus.close === "function") painelBonus.close(); else { painelBonus.removeAttribute("open"); limparBonus(); }
+    });
+    painelBonus.addEventListener("click", function (e) { if (e.target === painelBonus && painelBonus.close) painelBonus.close(); });
   }
   /* ---------- atributos ---------- */
   function pontosDe(k) { return estado.atributos[k] || 0; }
@@ -250,6 +274,7 @@
       }
       if (!J.atributos[k]) return;
       estado.atributos[k] = pontosDe(k) + p[k];
+      if (p[k] > 0 && estado.bonusNovos.indexOf(k) < 0) estado.bonusNovos.push(k);
       ganhos.push("+" + p[k] + " " + J.atributos[k].nome);
     });
     return ganhos;
@@ -261,8 +286,8 @@
   function avisos(novos, foram, ganhos) {
     var h = "";
     if (ganhos && ganhos.length) h += '<p class="aviso-ponto">' + esc(ganhos.join(" · ")) + "</p>";
-    if (novos && novos.length) h += '<p class="aviso-ficha">Na bolsa: ' + esc(novos.join(", ")) + ". Abra em <em>Bolsa</em>, lá em cima.</p>";
-    if (foram && foram.length) h += '<p class="aviso-ficha">Saiu da bolsa: ' + esc(foram.join(", ")) + ".</p>";
+    if (novos && novos.length) h += '<p class="aviso-ficha">No inventário: ' + esc(novos.join(", ")) + ". Abra em <em>Inventário</em>, lá em cima.</p>";
+    if (foram && foram.length) h += '<p class="aviso-ficha">Saiu do inventário: ' + esc(foram.join(", ")) + ".</p>";
     return h;
   }
 
@@ -433,7 +458,7 @@
       opcoes.map(function (x) {
         var item = x.o.requer && J.itens[x.o.requer];
         return '<button class="opcao' + (item ? " opcao-item" : "") + '" data-acao="escolher" data-cena="' + i + '" data-opcao="' + x.k + '">' +
-          (item ? '<span class="marca-item">Da bolsa: ' + esc(item.nome) + "</span>" : "") + textoOpcao(x.o.texto) + "</button>";
+          (item ? '<span class="marca-item">Do inventário: ' + esc(item.nome) + "</span>" : "") + textoOpcao(x.o.texto) + "</button>";
       }).join("") +
       "</fieldset></section>"
     );

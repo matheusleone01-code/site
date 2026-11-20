@@ -35,8 +35,8 @@ window.JOGO = {
 
   "comoJogar": [
     "Algumas falas erradas têm conserto; outras não.",
-    "Carmen pode guardar objetos na bolsa, e eles abrem caminhos extras.",
-    "Algumas escolhas dão pontos de Persuasão, Sagacidade, Performance, Honestidade ou Humor.",
+    "Carmen pode guardar objetos no inventário, e eles abrem caminhos extras.",
+    "Algumas escolhas dão pontos de bônus em Persuasão, Sagacidade, Performance, Honestidade ou Humor.",
     "Algumas escolhas levam a finais alternativos, fora da história do livro. O jogo avisa antes.",
     "Na dúvida, consulte as fichas dos personagens."
   ],
@@ -424,33 +424,12 @@ window.JOGO = {
               ],
               "certa": true,
               "pontos": {
-                "honestidade": 2
+                "honestidade": 1
               }
-            },
-            {
-              "texto": "Verdade: — Mas dinheiro para pagar minha mãe você tem, não é?",
-              "desvio": true,
-              "pontos": {
-                "humor": 1
-              },
-              "resultado": [
-                "Armando engasgou. Ficou vermelho da gola às orelhas e, por um segundo, achei que tinha estragado tudo.",
-                "Então ele riu, uma risada curta, de quem foi pego no flagra. — Língua de chibata, essa sua.",
-                "Ri junto, mas mordi a língua. A piada tinha aberto a porta. Quem precisava passar por ela era a verdade."
-              ]
-            },
-            {
-              "texto": "Verdade: — Não seja por isso; eu te ajudo a vender a mercadoria encalhada. Quem melhor do que eu para vender roupas femininas?",
-              "resultado": [
-                "— Alguém com duas décadas de experiência, talvez?",
-                "Só depois que as palavras saíram percebi a ofensa velada. Armando ficou sério, desejou boa noite e entrou no bordel.",
-                "Ofender o orgulho de um vendedor era pior do que ofender a mãe dele. Na véspera do meu aniversário, a loja partiu sem mim."
-              ]
             }
           ],
           "quando": "4 dias antes, fim de tarde",
-          "com": "armando",
-          "critica": true
+          "com": "armando"
         },
         {
           "titulo": "O segredo",
@@ -467,21 +446,7 @@ window.JOGO = {
                 "— Eu queria argumentar que não, mas uma filha conhece melhor a mãe do que eu. O complicado é que eu fico de mãos atadas sem a permissão dela. Se eu te ajudar a fugir, as pessoas vão achar que eu sequestrei você.",
                 "Engoli em seco e ganhei tempo até encontrar uma saída.",
                 "— O povo de Serra Verde pode achar isso. Mas, nas próximas vilas, todo mundo vai ver que eu fui de bom grado, e que estamos trabalhando juntos. A verdade prevalecerá no final.",
-                "Sorri para transmitir confiança, enquanto limpava o suor frio das mãos no vestido.",
-                "— Pode ser, mas… e quanto à sua mãe? Se ela quer tanto que você siga os passos dela, Madalena me mata se eu te ajudar.",
-                "— Mata nada. — Minha voz saiu em falsete, e abanei a mão no ar, fazendo pouco caso. — Você vai levar meses para voltar. Até lá, ela já vai ter te perdoado. Quem sabe até te agradeça, por eu não estar mais aqui para testar a paciência dela.",
-                "Em vez de tranquilizado, Armando franziu o cenho.",
-                "— Você acha que Madalena não te ama?",
-                "A pergunta direta me pegou de saia arriada. Sem saber o que ele queria ouvir, respondi com sinceridade:",
-                "— Eu acho que ela ama ter uma filha, mas não a filha que tem.",
-                "Armando me encarou no fundo dos olhos e meneou a cabeça.",
-                "— Ela te ama, Carmen. Nas conversas que tivemos, ela sempre falou com orgulho da sua pequena canção.",
-                "Envolver meu nome em conversas de cama com clientes, ainda mais com aquele apelido deplorável, era motivo de revolta. Mas contrariá-lo era a escolha errada.",
-                "— Se ela me ama de fato, uma hora vai entender que precisei escolher meu próprio caminho. E vai perdoar tanto a mim quanto a você pelo que fizemos.",
-                "— Fizemos? Você fala como se eu já tivesse aceitado.",
-                "Ele ainda não tinha concordado, era verdade. Mas, se fosse recusar, bastaria ter dado as costas e entrado no bordel. No fundo, a permanência dele ali era prova do aceite.",
-                "— Você é um homem bom. Não tem opção além de me ajudar.",
-                "— Não sou um homem bom — disse ele, ainda olhando nos meus olhos —, mas também não sou um homem péssimo. Então, sim, eu te ajudarei a fugir. Sairemos na véspera do seu aniversário, pela manhã."
+                "Sorri para transmitir confiança, enquanto limpava o suor frio das mãos no vestido."
               ],
               "pontos": {
                 "honestidade": 1
@@ -502,6 +467,123 @@ window.JOGO = {
                 "— Espera! Desculpa. Eu nunca diria isso. Eu só… tenho medo dela. — Ele parou, com a mão na porta. Respirei fundo e, dessa vez, confiei nele de verdade."
               ],
               "desvio": true
+            }
+          ],
+          "quando": "4 dias antes, ao anoitecer",
+          "com": "armando"
+        },
+        {
+          "titulo": "A mãe",
+          "texto": [
+            "— Pode ser, mas… e quanto à sua mãe? Se ela quer tanto que você siga os passos dela, Madalena me mata se eu te ajudar."
+          ],
+          "pergunta": "Como tirar o medo de Madalena da cabeça dele?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: Abanar a mão no ar, fazendo pouco caso: — Mata nada. Você vai levar meses para voltar. Até lá, ela já vai ter te perdoado. Quem sabe até te agradeça, por eu não estar mais aqui para testar a paciência dela.",
+              "certa": true,
+              "resultado": [
+                "Minha voz saiu em falsete, mas a piada ficou no ar.",
+                "Em vez de tranquilizado, Armando franziu o cenho."
+              ],
+              "pontos": {
+                "humor": 1
+              }
+            },
+            {
+              "texto": "Verdade: — Ela não vai fazer nada contra você. Quem vai pagar o preço sou eu, e eu prefiro pagar longe daqui.",
+              "desvio": true,
+              "resultado": [
+                "O rosto de Armando se fechou. — Pagar o preço? É exatamente isso que me assusta, menina. Se ela é capaz disso com a própria filha, imagine com quem ajudar a filha a fugir.",
+                "Eu tinha assustado o homem em vez de acalmá-lo. Tratei de rir, como se tivesse exagerado, e abanei a mão no ar."
+              ]
+            },
+            {
+              "texto": "Mentira: — Ela nem vai saber que foi você. Vou dizer a todo mundo que fugi com um cliente.",
+              "resultado": [
+                "— E deixar sua mãe achar que você foi levada por qualquer um? — Armando balançou a cabeça. — Não. Isso eu não faço com ela.",
+                "Ele entrou no bordel sem se despedir. Antes da meia-noite, Madalena sabia de tudo, e Gasparo dormia atravessado na minha porta."
+              ]
+            }
+          ],
+          "quando": "4 dias antes, ao anoitecer",
+          "com": "armando"
+        },
+        {
+          "titulo": "A pequena canção",
+          "texto": [
+            "— Você acha que Madalena não te ama?",
+            "A pergunta direta me pegou de saia arriada. Sem saber o que ele queria ouvir, respondi com sinceridade:",
+            "— Eu acho que ela ama ter uma filha, mas não a filha que tem.",
+            "Armando me encarou no fundo dos olhos e meneou a cabeça.",
+            "— Ela te ama, Carmen. Nas conversas que tivemos, ela sempre falou com orgulho da sua pequena canção.",
+            "Envolver meu nome em conversas de cama com clientes, ainda mais com aquele apelido deplorável, era motivo de revolta."
+          ],
+          "pergunta": "Contrariá-lo, ou engolir a revolta?",
+          "opcoes": [
+            {
+              "texto": "Meia-verdade: — Se ela me ama de fato, uma hora vai entender que precisei escolher meu próprio caminho. E vai perdoar tanto a mim quanto a você pelo que fizemos.",
+              "certa": true,
+              "antes": [
+                "Mas contrariá-lo era a escolha errada."
+              ],
+              "resultado": [
+                "— Fizemos? Você fala como se eu já tivesse aceitado."
+              ],
+              "pontos": {
+                "performance": 1
+              }
+            },
+            {
+              "texto": "Verdade: — Orgulho? Ela me chama de pequena canção para me vender melhor. Isso não é amor, é propaganda.",
+              "desvio": true,
+              "resultado": [
+                "Armando endureceu o queixo. — Cuidado com o que diz da sua mãe. Ela fez o que pôde, no mundo que tinha.",
+                "Ele gostava dela. E eu precisava dele do meu lado, não do lado de Madalena. Engoli a revolta e tentei de novo, mais macia."
+              ]
+            },
+            {
+              "texto": "Mentira: — Você tem razão. Talvez eu devesse conversar com ela antes de qualquer coisa.",
+              "resultado": [
+                "Armando sorriu, aliviado. — É isso. Converse com ela. Se ela concordar, eu te levo.",
+                "Eu tinha dado a ele a saída que ele procurava. Madalena nunca concordou, e na véspera do meu aniversário a loja-carruagem partiu sem mim."
+              ]
+            }
+          ],
+          "quando": "4 dias antes, ao anoitecer",
+          "com": "armando"
+        },
+        {
+          "titulo": "O aceite",
+          "texto": [
+            "Ele ainda não tinha concordado, era verdade. Mas, se fosse recusar, bastaria ter dado as costas e entrado no bordel. No fundo, a permanência dele ali era prova do aceite."
+          ],
+          "pergunta": "Como arrancar dele o sim?",
+          "opcoes": [
+            {
+              "texto": "Verdade: — Você é um homem bom. Não tem opção além de me ajudar.",
+              "certa": true,
+              "resultado": [
+                "— Não sou um homem bom — disse ele, ainda olhando nos meus olhos —, mas também não sou um homem péssimo. Então, sim, eu te ajudarei a fugir. Sairemos na véspera do seu aniversário, pela manhã."
+              ],
+              "pontos": {
+                "persuasao": 1
+              }
+            },
+            {
+              "texto": "Meia-verdade: — Ainda não aceitou, mas já está fazendo as contas de quanto vai vender comigo na boleia.",
+              "desvio": true,
+              "resultado": [
+                "Armando riu, mas não com os olhos. — Não reduza isso a dinheiro, menina. Se fosse só dinheiro, eu já tinha ido embora.",
+                "Não era o lucro que o segurava ali. Era outra coisa, e eu sabia o nome dela."
+              ]
+            },
+            {
+              "texto": "Mentira: — Já aceitou, sim. Minha mãe mesma disse que você me levaria.",
+              "resultado": [
+                "— Disse, é? — Armando ergueu as sobrancelhas. — Então vamos perguntar a ela juntos.",
+                "Ele me pegou pelo braço e me levou para dentro. Madalena ouviu tudo, sorriu para ele e, quando ele saiu, me trancou no quarto até a loja-carruagem deixar Serra Verde."
+              ]
             }
           ],
           "quando": "4 dias antes, ao anoitecer",

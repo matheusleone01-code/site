@@ -248,3 +248,15 @@ button.interlocutor:hover .retrato, button.interlocutor:focus-visible .retrato {
 .botao-som s { text-decoration-thickness: 1.5px; }
 .creditos-som { margin-top: 1rem; font-size: .85rem; color: var(--tinta-suave); }
 .creditos-som ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+/* Barra com quatro botões em telas estreitas: o nome do arco desce para uma segunda linha */
+@media (max-width: 30rem) {
+  .barra-dentro { flex-wrap: wrap; gap: .3rem .35rem; }
+  .voltar { margin-right: auto; font-size: .75rem; }
+  .voltar-txt, .som-txt { display: none; }
+  .rotulo-arco { order: 9; flex-basis: 100%; font-size: .6875rem; }
+  .rotulo-arco:empty { display: none; }
+  .botao-fichas { padding: .5rem .45rem; letter-spacing: .01em; font-size: .75rem; gap: .25rem; }
+  .botao-fichas .selo-nova { min-width: 1.05rem; height: 1.05rem; padding: 0 .25rem; font-size: .625rem; }
+  .botao-fichas + .botao-fichas { margin-left: 0; }
+  .botao-som[aria-pressed="false"] { opacity: .55; }
+}

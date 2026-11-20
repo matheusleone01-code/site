@@ -20,9 +20,10 @@
 <div class="pergaminho" aria-hidden="true"></div>
 <header class="barra">
   <div class="barra-dentro">
-    <a class="voltar" href="../">← Site</a>
+    <a class="voltar" href="../" aria-label="Voltar ao site">← <span class="voltar-txt">Site</span></a>
     <span class="rotulo-arco" id="rotulo-arco" aria-live="polite"></span>
-    <button class="botao-fichas" id="botao-bolsa" type="button" hidden>Bolsa</button>
+    <button class="botao-fichas" id="botao-bolsa" type="button" hidden>Inventário</button>
+    <button class="botao-fichas" id="botao-bonus" type="button" hidden>Bônus</button>
     <button class="botao-fichas" id="botao-fichas" type="button">Fichas</button>
   </div>
 </header>
@@ -45,11 +46,23 @@
 <dialog class="painel" id="painel-bolsa" aria-labelledby="titulo-bolsa">
   <div class="painel-dentro">
     <div class="painel-topo">
-      <h2 id="titulo-bolsa">Bolsa</h2>
+      <h2 id="titulo-bolsa">Inventário</h2>
       <button class="botao" id="fechar-bolsa" type="button">Fechar</button>
     </div>
-    <p class="painel-dica">O que Carmen leva consigo. Alguns itens abrem escolhas extras mais adiante; elas aparecem marcadas com “Da bolsa”.</p>
+    <p class="painel-dica">O que Carmen leva consigo. Alguns itens abrem escolhas extras mais adiante; elas aparecem marcadas com “Do inventário”.</p>
+    <ul class="lista-atributos" id="lista-dinheiro"></ul>
     <ul class="lista-fichas" id="lista-bolsa"></ul>
+  </div>
+</dialog>
+
+<dialog class="painel" id="painel-bonus" aria-labelledby="titulo-bonus">
+  <div class="painel-dentro">
+    <div class="painel-topo">
+      <h2 id="titulo-bonus">Bônus</h2>
+      <button class="botao" id="fechar-bonus" type="button">Fechar</button>
+    </div>
+    <p class="painel-dica">Algumas escolhas dão pontos de bônus. Com pontos suficientes, aparecem falas extras, marcadas com o atributo.</p>
+    <ul class="lista-atributos" id="lista-atributos"></ul>
   </div>
 </dialog>
 
