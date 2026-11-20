@@ -324,10 +324,8 @@
       '<fieldset class="escolha" aria-label="' + esc(c.pergunta) + '"><legend>Sua escolha</legend>' +
       opcoes.map(function (x) {
         var item = x.o.requer && J.itens[x.o.requer];
-        var req = x.o.requerAtributo ? Object.keys(x.o.requerAtributo).map(function (k) { return (J.atributos[k] ? J.atributos[k].nome : k) + " " + x.o.requerAtributo[k]; }).join(", ") : "";
-        return '<button class="opcao' + (item ? " opcao-item" : "") + (req ? " opcao-atributo" : "") + '" data-acao="escolher" data-cena="' + i + '" data-opcao="' + x.k + '">' +
-          (item ? '<span class="marca-item">Da bolsa: ' + esc(item.nome) + "</span>" : "") +
-          (req ? '<span class="marca-item">' + esc(req) + "</span>" : "") + fmt(x.o.texto) + "</button>";
+        return '<button class="opcao' + (item ? " opcao-item" : "") + '" data-acao="escolher" data-cena="' + i + '" data-opcao="' + x.k + '">' +
+          (item ? '<span class="marca-item">Da bolsa: ' + esc(item.nome) + "</span>" : "") + fmt(x.o.texto) + "</button>";
       }).join("") +
       "</fieldset></section>"
     );
@@ -361,7 +359,8 @@
           '<p class="rotulo">' + esc(c.quando || c.titulo) + "</p>" +
           '<blockquote class="escolhida">' + fmt(o.texto) + "</blockquote>" +
           avisos(novos, foram, ganhos) +
-          '<div class="texto">' + paragrafos(o.resultado) + "</div>";
+          '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
+          (o.requerAtributo ? '<p class="aviso-ponto">Só deu certo porque Carmen tem ' + esc(Object.keys(o.requerAtributo).map(function (k) { return (J.atributos[k] ? J.atributos[k].nome : k) + " " + o.requerAtributo[k]; }).join(" e ")) + ".</p>" : "");
       }
       salvar();
       mostrar(

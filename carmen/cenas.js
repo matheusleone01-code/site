@@ -296,14 +296,6 @@ window.JOGO = {
               }
             },
             {
-              "texto": "Elogio forçado: — Que vestido lindo, mãe! A senhora está mais bonita do que nunca.",
-              "resultado": [
-                "Madalena ergueu uma sobrancelha. — Puxa-saco. Quando você me elogia assim, é porque quer alguma coisa. O que é?",
-                "*Merda.* Ela me conhecia bem demais. Elogio sem jeito era pior do que nenhum. — Não é nada, mãe… — emendei, depressa, levando a mão à barriga."
-              ],
-              "desvio": true
-            },
-            {
               "texto": "— Ninguém. Não quero ninguém.",
               "resultado": [
                 "Madalena estreitou os olhos. — Ninguém? Pois bem. Se você não escolhe, eu escolho por você.",
