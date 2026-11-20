@@ -244,3 +244,7 @@ button.interlocutor:hover .retrato, button.interlocutor:focus-visible .retrato {
 .finais li.oculto { color: var(--tinta-suave); border-style: dashed; }
 .final-alternativo .ornamento, .final-alternativo h2 { text-align: center; }
 .nota-final { margin: 1.5rem 0 0; font-style: italic; color: var(--tinta-suave); text-align: center; }
+/* Som */
+.botao-som s { text-decoration-thickness: 1.5px; }
+.creditos-som { margin-top: 1rem; font-size: .85rem; color: var(--tinta-suave); }
+.creditos-som ul { margin: .4rem 0 0; padding-left: 1.1rem; }

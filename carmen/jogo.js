@@ -10,6 +10,37 @@
   var botaoBolsa = document.getElementById("botao-bolsa");
   var painelBolsa = document.getElementById("painel-bolsa");
   var listaBolsa = document.getElementById("lista-bolsa");
+
+  /* ---------- som (ambiente por arco, música quando acontece na história, tema nas telas de início e fim) ---------- */
+  var SOM = J.sons || null, audio = null, trilha = null, somLigado = false, botaoSom = null;
+  try { somLigado = localStorage.getItem((J.chave || "carmen-jogo-v1") + "-som") === "1"; } catch (e) {}
+  function tocar() {
+    if (!audio) { audio = new Audio(); audio.loop = true; audio.volume = 0.45; }
+    if (!somLigado || !trilha) { audio.pause(); return; }
+    if (audio.getAttribute("data-trilha") !== trilha) { audio.setAttribute("data-trilha", trilha); audio.src = trilha; }
+    var p = audio.play(); if (p && p.catch) p.catch(function () {});
+  }
+  function somPara(t) { if (!SOM) return; trilha = t || null; tocar(); }
+  function somDoArco() { var a = J.arcos[estado.arco]; return SOM && a ? SOM.ambiente[a.titulo] || null : null; }
+  function somDaCena(c) { var a = J.arcos[estado.arco]; return (SOM && SOM.musicas[a.titulo + "|" + c.titulo]) || somDoArco(); }
+  function desenharBotaoSom() {
+    if (!botaoSom) return;
+    botaoSom.setAttribute("aria-pressed", somLigado ? "true" : "false");
+    botaoSom.setAttribute("aria-label", somLigado ? "Desligar o som" : "Ligar o som");
+    botaoSom.innerHTML = '<span aria-hidden="true">♪</span> ' + (somLigado ? "Som" : "<s>Som</s>");
+  }
+  if (SOM) {
+    botaoSom = document.createElement("button");
+    botaoSom.type = "button"; botaoSom.className = "botao-fichas botao-som"; botaoSom.id = "botao-som";
+    var irmao = document.getElementById("botao-bolsa");
+    irmao.parentNode.insertBefore(botaoSom, irmao);
+    desenharBotaoSom();
+    botaoSom.addEventListener("click", function () {
+      somLigado = !somLigado;
+      try { localStorage.setItem((J.chave || "carmen-jogo-v1") + "-som", somLigado ? "1" : "0"); } catch (e) {}
+      desenharBotaoSom(); tocar();
+    });
+  }
   J.itens = J.itens || {};
   J.atributos = J.atributos || {};
 
@@ -212,7 +243,7 @@
 
   /* ---------- telas ---------- */
   function telaInicio() {
-    rotulo(""); cenario(null);
+    rotulo(""); cenario(null); somPara(SOM && SOM.tema);
     var temProgresso = estado.iniciado && !estado.venceu;
     var html =
       '<section class="tela inicio">' +
@@ -223,6 +254,7 @@
       '<div class="aviso"><strong>Aviso</strong> ' + esc(J.aviso) + "</div>" +
       (J.comoJogar ? '<details class="como-jogar"><summary class="rotulo">Como jogar</summary><ul>' + J.comoJogar.map(function (t) { return "<li>" + fmt(t) + "</li>"; }).join("") + "</ul></details>" : "") +
       galeriaFinais() +
+      (SOM && SOM.creditos && SOM.creditos.length ? '<details class="creditos-som"><summary class="rotulo">Créditos dos sons</summary><ul>' + SOM.creditos.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></details>" : "") +
       '<div class="acoes">';
     if (estado.venceu) {
       html += '<button class="botao principal" data-acao="vitoria">Ver minha tela de vitória</button>' +
@@ -253,6 +285,7 @@
 
   function telaArco() {
     var a = J.arcos[estado.arco];
+    somPara(somDoArco());
     // checkpoint: ao (re)começar um arco, a bolsa e os desvios voltam ao que eram no início dele
     if (estado.marco && estado.marco.arco === estado.arco) {
       estado.itens = estado.marco.itens.slice(); estado.desvios = estado.marco.desvios;
@@ -355,6 +388,7 @@
   }
   function telaCena(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i];
+    somPara(somDaCena(c));
     if (c.loja) { abrirFichas(c.desbloqueia); salvar(); cenarioDoArco(); rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo); return telaLoja(i); }
     abrirFichas(c.desbloqueia);
     salvar(); cenarioDoArco();
@@ -394,7 +428,7 @@
   }
   function telaFinal(i, k) {
     var c = J.arcos[estado.arco].cenas[i], o = c.opcoes[k], f = J.finais[o.final];
-    somar(o.pontos); marcarFinal(o.final); salvar();
+    somar(o.pontos); marcarFinal(o.final); salvar(); somPara(SOM && SOM.tema);
     rotulo("Final alternativo");
     mostrar(
       '<section class="tela final-alternativo">' +
@@ -487,7 +521,7 @@
   }
 
   function telaVitoria() {
-    rotulo("Vitória"); cenarioDoArco();
+    rotulo("Vitória"); cenarioDoArco(); somPara(SOM && SOM.tema);
     var temCodigo = estado.arroba && window.CODIGO.valido(estado.arroba);
     var html =
       '<section class="tela vitoria">' +

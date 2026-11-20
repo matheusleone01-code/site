@@ -2561,5 +2561,15 @@ window.JOGO = {
     "texto": "Ainda não leu o livro? Jogue a versão sem spoilers.",
     "link": "./"
   },
+  "sons": {
+    "ambiente": {},
+    "musicas": {
+      "Confissões|A valsa": "sons/baile-valsa.mp3"
+    },
+    "tema": null,
+    "creditos": [
+      "Suguri Waltz – Yubatake (OpenGameArt.org), CC BY 3.0"
+    ]
+  },
   "tituloVitoria": "Carmen virou Vivian Macedo"
 };
