@@ -173,7 +173,7 @@ window.JOGO = {
     {
       "titulo": "Serra Verde",
       "abertura": [
-        "Trancada no camarim do prostíbulo, Carmen só tinha uma certeza na vida: eu que não ia ser puta."
+        "Trancada no camarim do prostíbulo, eu só tinha uma certeza na vida: que eu não ia ser puta."
       ],
       "cenas": [
         {
