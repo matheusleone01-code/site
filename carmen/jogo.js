@@ -16,7 +16,7 @@
   var canais = { amb: null, mus: null }, querido = { amb: null, mus: null };
   try { somLigado = localStorage.getItem((J.chave || "carmen-jogo-v1") + "-som") === "1"; } catch (e) {}
   function canal(nome) {
-    if (!canais[nome]) { canais[nome] = new Audio(); canais[nome].loop = true; canais[nome].volume = nome === "amb" ? 0.55 : 0.5; }
+    if (!canais[nome]) { canais[nome] = new Audio(); canais[nome].loop = true; canais[nome].volume = nome === "amb" ? 0.55 : (SOM.volumeMusica || 0.12); }
     return canais[nome];
   }
   function tocar() {
@@ -39,8 +39,11 @@
   // t = { amb, mus } (ids de SOM.arquivos); null em cada um = silêncio
   function somPara(t) { if (!SOM) return; querido.amb = (t && t.amb) || null; querido.mus = (t && t.mus) || null; tocar(); }
   function somTema() { return { mus: SOM && SOM.tema }; }
-  function somDoArco() { var a = J.arcos[estado.arco]; return { amb: SOM && a ? SOM.ambiente[a.titulo] || null : null }; }
+  function somDoArco() { if (SOM && SOM.temaSempre) return somTema();
+    return somDoArcoReal(); }
+  function somDoArcoReal() { var a = J.arcos[estado.arco]; return { amb: SOM && a ? SOM.ambiente[a.titulo] || null : null }; }
   function somDaCena(c) {
+    if (SOM && SOM.temaSempre) return somTema();
     var a = J.arcos[estado.arco], x = SOM && SOM.cenas[a.titulo + "|" + c.titulo];
     if (!x) return somDoArco();
     return { amb: x.amb === undefined ? somDoArco().amb : x.amb, mus: x.mus || null };

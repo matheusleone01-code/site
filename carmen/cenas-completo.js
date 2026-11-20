@@ -75,8 +75,7 @@ window.JOGO = {
         "Características: Nunca diz palavrões na frente de Carmen.",
         "Segredo: É o pai de Carmen. Prometeu tirar Madalena do bordel e nunca cumpriu: no fundo, sentia vergonha do ofício dela.",
         "Revelação: Quando Carmen cantou a canção de ninar da mãe junto à fogueira, ele chorou. Ali, com o perfil recortado contra o fogo, o nariz o denunciou: era igual ao dela."
-      ],
-      "retrato": "img/retratos/armando.svg"
+      ]
     },
     "jaime": {
       "nome": "Jaime Barbosa",
@@ -85,8 +84,7 @@ window.JOGO = {
         "Descrição: Anda sempre com dois guardas, que ficam postados na porta enquanto ele se diverte.",
         "Histórico: O nobre local, dono do castelo no alto do morro. Cliente assíduo de Madalena, banca o luxo do bordel.",
         "Características: Gosta de ser o centro das atenções."
-      ],
-      "retrato": "img/retratos/jaime.svg"
+      ]
     },
     "alexandro": {
       "nome": "Alexandro Barbosa",
@@ -97,8 +95,7 @@ window.JOGO = {
         "Características: Tímido e nervoso. Fala muito da família.",
         "Sonho: Perder a virgindade com alguém que ame de verdade.",
         "Família: A mãe perdoa as escapadas de Jaime, desde que não sejam com outra Ilustre. A irmã caçula, Vivian, vive entre aulas de costura, postura, dança e línguas, e quase nunca sai do castelo."
-      ],
-      "retrato": "img/retratos/alexandro.svg"
+      ]
     },
     "isolina": {
       "nome": "Dona Isolina",
@@ -108,8 +105,7 @@ window.JOGO = {
         "Histórico: Vende semijoias em Pacentro há décadas e nunca precisou de funcionária.",
         "Características: Casca dura, coração mole. Diz que bajulação não funciona com ela, mas sabe que funciona com as clientes.",
         "Experiência: Depois de décadas de balcão, sabe que ninguém em Pacentro gosta de receber conselho de uma moça do interior."
-      ],
-      "retrato": "img/retratos/isolina.svg"
+      ]
     },
     "rosa": {
       "nome": "A Ilustre de rosa",
@@ -119,8 +115,7 @@ window.JOGO = {
         "Histórico: Tem sotaque do norte, a região mais caipira do reino. Entre os Ilustres, deve ser de terceira classe. Por isso conta vantagem para cima da plebe.",
         "Características: Destrata quem considera inferior.",
         "Ponto fraco: Adora plateia. Com bajulação suficiente, fala mais do que deveria."
-      ],
-      "retrato": "img/retratos/rosa.svg"
+      ]
     },
     "empregadas": {
       "nome": "As Empregadas Reais",
@@ -130,8 +125,7 @@ window.JOGO = {
         "Histórico: Passaram a vida inteira entre castelos e palácios.",
         "Características: Sabem lidar com Ilustres, mas não com quem levanta a voz.",
         "Medo: Acima delas está a governanta, Sebastiana. Nenhuma quer levar uma bronca dela."
-      ],
-      "retrato": "img/retratos/empregadas.svg"
+      ]
     },
     "valeria": {
       "nome": "Valéria Castro",
@@ -143,8 +137,7 @@ window.JOGO = {
         "Talentos: Cozinha, toca violino e faz crochê como ninguém.",
         "Segredo: Lê romances água com açúcar às escondidas.",
         "Tipo ideal: Ramiro, o Guarda Real feio."
-      ],
-      "retrato": "img/retratos/valeria.svg"
+      ]
     },
     "sebastiana": {
       "nome": "Sebastiana",
@@ -152,8 +145,7 @@ window.JOGO = {
       "texto": [
         "Descrição: Costas eretas, olhar crítico, óculos de correntinha.",
         "Características: Passa o dedo nos vasos procurando poeira. Despreza Ilustres mimadas que nunca tocaram numa panela. Respeita quem trabalha e não desiste."
-      ],
-      "retrato": "img/retratos/sebastiana.svg"
+      ]
     },
     "humberto": {
       "nome": "Humberto Macedo",
@@ -174,8 +166,7 @@ window.JOGO = {
         "Descrição: Altíssima, ruiva, a mulher mais bela do reino.",
         "Histórico: Saúde frágil desde menina. Aos treze anos, percebeu sozinha que o jovem Ferdinando manipulava os conselheiros.",
         "Características: Gentil e encantadora, até alguém ameaçar o irmão."
-      ],
-      "retrato": "img/retratos/ursula.svg"
+      ]
     },
     "ferdinando": {
       "nome": "Ferdinando",
@@ -184,8 +175,7 @@ window.JOGO = {
         "Descrição: Baixo, calmo, frio.",
         "Histórico: Coroou a si mesmo ainda adolescente.",
         "Características: Olha para as pessoas como peças de um tabuleiro. Faz planos para décadas. Raramente levanta a voz."
-      ],
-      "retrato": "img/retratos/ferdinando.svg"
+      ]
     },
     "paloma": {
       "nome": "Paloma Torres",
@@ -194,8 +184,7 @@ window.JOGO = {
         "Descrição: Cabelos castanho-claros, olhos azul-acinzentados.",
         "Histórico: Empregada pessoal da rainha, primeira filha de um Arqui-ilustre. Por muito tempo, foi a favorita para se casar com Humberto. Tem uma prima casada com um Ilustre das bandas de Serra Verde.",
         "Características: Não ataca de frente: manda as subordinadas e escreve cartas."
-      ],
-      "retrato": "img/retratos/paloma.svg"
+      ]
     },
     "eusebio": {
       "nome": "Eusébio",
@@ -205,8 +194,7 @@ window.JOGO = {
         "Histórico: O Iluminado. Faz milagres sem dizer uma palavra.",
         "Características: Sagaz: descobre tudo fazendo perguntas.",
         "Apelidos: Trata Humberto por “Betinho” e a rainha por “Ursinha”."
-      ],
-      "retrato": "img/retratos/eusebio.svg"
+      ]
     },
     "ramiro": {
       "nome": "Ramiro",
@@ -215,8 +203,7 @@ window.JOGO = {
         "Descrição: Juba desgrenhada, cicatriz que atravessa a bochecha, nariz torto.",
         "Histórico: Bastardo, sem título. Salvou a vida do pai de Valéria nas batalhas pelo trono.",
         "Características: Luta sujo, mas é efetivo."
-      ],
-      "retrato": "img/retratos/ramiro.svg"
+      ]
     }
   },
   "itens": {
@@ -2558,117 +2545,15 @@ window.JOGO = {
   "finalPalacio": "O Palácio Real",
   "sons": {
     "tema": "tema",
-    "ambiente": {
-      "Serra Verde": "bordel",
-      "A estrada": "estrada",
-      "Pacentro": "feira",
-      "O Palácio Real": "palacio"
-    },
-    "cenas": {
-      "Serra Verde|O segredo": {
-        "amb": "noite"
-      },
-      "Serra Verde|O quarto de Madalena": {
-        "amb": "noite"
-      },
-      "Serra Verde|O balde": {
-        "amb": "noite"
-      },
-      "A estrada|A feira": {
-        "amb": "feira"
-      },
-      "A estrada|A cabine": {
-        "amb": "feira"
-      },
-      "A estrada|A cantoria": {
-        "amb": "feira"
-      },
-      "A estrada|A fogueira": {
-        "amb": "noite",
-        "mus": "musFogueira"
-      },
-      "Pacentro|A joalheria": {
-        "amb": "joalheria"
-      },
-      "Pacentro|A primeira cliente": {
-        "amb": "joalheria"
-      },
-      "Pacentro|A Ilustre de rosa": {
-        "amb": "joalheria"
-      },
-      "Pacentro|A data": {
-        "amb": "joalheria"
-      },
-      "Pacentro|A taverna": {
-        "amb": "taverna",
-        "mus": "musTaverna"
-      },
-      "Pacentro|A despedida": {
-        "amb": "joalheria"
-      },
-      "Pacentro|A verdade de Armando": {
-        "amb": "joalheria"
-      },
-      "O Palácio Real|O mercado": {
-        "amb": "feira"
-      },
-      "O Palácio Real|O disfarce": {
-        "amb": "feira"
-      },
-      "O Palácio Real|A carruagem": {
-        "amb": "feira"
-      },
-      "O Palácio Real|O nome": {
-        "amb": "estrada"
-      },
-      "Empregada Real|A biblioteca": {
-        "amb": "joalheria"
-      },
-      "Empregada Real|Os elogios": {
-        "amb": "joalheria"
-      },
-      "Empregada Real|O livro caído": {
-        "amb": "joalheria"
-      },
-      "Confissões|A prova do vinho": {
-        "amb": "palacio"
-      },
-      "Confissões|A pergunta": {
-        "amb": "palacio"
-      },
-      "Confissões|A valsa": {
-        "amb": "",
-        "mus": "musValsa"
-      }
-    },
-    "efeitos": {
-      "palacio": "tacas"
-    },
+    "temaSempre": true,
+    "ambiente": {},
+    "cenas": {},
+    "efeitos": {},
     "arquivos": {
-      "tema": "sons/tema-violao.mp3",
-      "bordel": "sons/amb-bordel.mp3",
-      "noite": "sons/amb-noite.mp3",
-      "estrada": "sons/amb-estrada.mp3",
-      "feira": "sons/amb-feira.mp3",
-      "joalheria": "sons/amb-joalheria.mp3",
-      "taverna": "sons/amb-taverna.mp3",
-      "palacio": "sons/amb-palacio.mp3",
-      "tacas": "sons/efeito-tacas.mp3",
-      "musTaverna": "sons/mus-taverna.mp3",
-      "musFogueira": "sons/mus-fogueira.mp3",
-      "musValsa": "sons/mus-valsa.mp3"
+      "tema": "sons/tema-violao.mp3"
     },
     "creditos": [
-      "Flamenco Motion – Sonican (Pixabay)",
-      "Placidplace (Pixabay)",
-      "OwlStorm (Freesound/Pixabay)",
-      "freesound_community (Pixabay)",
-      "spinopel (Pixabay)",
-      "janbezouska (Freesound/Pixabay)",
-      "Wolff-SFX (Pixabay)",
-      "Just Lute – kaazoom (Pixabay)",
-      "At the Campfire – JuliusH (Pixabay)",
-      "Suguri Waltz – Yubatake (OpenGameArt.org), CC BY 3.0"
+      "Flamenco Motion – Sonican (Pixabay)"
     ]
   },
   "chave": "carmen-jogo-completo-v1",
