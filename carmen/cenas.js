@@ -31,11 +31,7 @@ window.JOGO = {
 
   "aviso": "Este jogo se passa num bordel e tem linguagem e temas adultos. Recomendado para maiores de 16 anos.",
 
-  "abertura": [
-    "Você irá guiar Carmen para uma vida melhor.",
-    "Minta. Engane. Oculte. Faça o que for necessário para que Carmen suba de vida.",
-    "Mas não se esqueça que, por trás até mesmo de uma farsante, bate um coração."
-  ],
+  "abertura": [],
 
   "comoJogar": [
     "Algumas falas erradas têm conserto; outras acabam com a história ali, e você recomeça do início do arco.",

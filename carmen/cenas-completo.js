@@ -9,11 +9,7 @@ window.JOGO = {
   "titulo": "Carmen",
   "subtitulo": "Versão completa, para quem já leu",
   "aviso": "Contém spoilers do livro inteiro: é só para quem já terminou Carmen. Também tem linguagem e temas adultos (maiores de 16 anos).",
-  "abertura": [
-    "Você irá guiar Carmen para uma vida melhor.",
-    "Minta. Engane. Oculte. Faça o que for necessário para que Carmen suba de vida.",
-    "Mas não se esqueça que, por trás até mesmo de uma farsante, bate um coração."
-  ],
+  "abertura": [],
   "comoJogar": [
     "A fala certa é sempre a que Carmen escolheu no livro, mesmo quando não foi a mais sensata.",
     "Algumas falas erradas têm conserto; outras acabam com a história ali, e você recomeça do início do arco.",
