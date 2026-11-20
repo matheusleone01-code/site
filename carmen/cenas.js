@@ -422,13 +422,28 @@ window.JOGO = {
           "pergunta": "Deixar que ele falasse com minha mãe, ou impedi-lo a qualquer custo?",
           "opcoes": [
             {
-              "texto": "Verdade: — Ela nunca aceitará que eu viva da minha própria maneira. Se ela me ama de fato, uma hora entenderá que precisei escolher meu caminho. E perdoará a nós dois.",
+              "texto": "Verdade: — Ela nunca aceitará que eu viva da minha própria maneira. Ela quer que eu siga os passos dela, e ponto.",
               "certa": true,
               "resultado": [
-                "Armando me encarou em silêncio por um bom tempo.",
-                "— Eu queria argumentar que não, mas uma filha conhece melhor a mãe do que eu.",
+                "Armando me encarou em silêncio por um tempo.",
+                "— Eu queria argumentar que não, mas uma filha conhece melhor a mãe do que eu. O complicado é que eu fico de mãos atadas sem a permissão dela. Se eu te ajudar a fugir, as pessoas vão achar que eu sequestrei você.",
+                "Engoli em seco e ganhei tempo até encontrar uma saída.",
+                "— O povo de Serra Verde pode achar isso. Mas, nas próximas vilas, todo mundo vai ver que eu fui de bom grado, e que estamos trabalhando juntos. A verdade prevalecerá no final.",
+                "Sorri para transmitir confiança, enquanto limpava o suor frio das mãos no vestido.",
+                "— Pode ser, mas… e quanto à sua mãe? Se ela quer tanto que você siga os passos dela, Madalena me mata se eu te ajudar.",
+                "— Mata nada. — Minha voz saiu em falsete, e abanei a mão no ar, fazendo pouco caso. — Você vai levar meses para voltar. Até lá, ela já vai ter te perdoado. Quem sabe até te agradeça, por eu não estar mais aqui para testar a paciência dela.",
+                "Em vez de tranquilizado, Armando franziu o cenho.",
+                "— Você acha que Madalena não te ama?",
+                "A pergunta direta me pegou de saia arriada. Sem saber o que ele queria ouvir, respondi com sinceridade:",
+                "— Eu acho que ela ama ter uma filha, mas não a filha que tem.",
+                "Armando me encarou no fundo dos olhos e meneou a cabeça.",
+                "— Ela te ama, Carmen. Nas conversas que tivemos, ela sempre falou com orgulho da sua pequena canção.",
+                "Envolver meu nome em conversas de cama com clientes, ainda mais com aquele apelido deplorável, era motivo de revolta. Mas contrariá-lo era a escolha errada.",
+                "— Se ela me ama de fato, uma hora vai entender que precisei escolher meu próprio caminho. E vai perdoar tanto a mim quanto a você pelo que fizemos.",
+                "— Fizemos? Você fala como se eu já tivesse aceitado.",
+                "Ele ainda não tinha concordado, era verdade. Mas, se fosse recusar, bastaria ter dado as costas e entrado no bordel. No fundo, a permanência dele ali era prova do aceite.",
                 "— Você é um homem bom. Não tem opção além de me ajudar.",
-                "— Não sou um homem bom, mas também não sou um homem péssimo. Então, sim, eu te ajudarei a fugir. Sairemos na véspera do seu aniversário, pela manhã."
+                "— Não sou um homem bom — disse ele, ainda olhando nos meus olhos —, mas também não sou um homem péssimo. Então, sim, eu te ajudarei a fugir. Sairemos na véspera do seu aniversário, pela manhã."
               ],
               "pontos": {
                 "honestidade": 1
