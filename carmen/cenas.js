@@ -894,7 +894,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Verdade: Afastar a mão dela: — Não. Não vou ser concubina de ninguém.",
+              "texto": "Verdade: Recuar um passo: — Não. Não vou ser concubina de ninguém.",
               "resultado": [
                 "Madalena tirou a mão do meu ombro. — Então você vai ser o que eu mandar.",
                 "Ela me levou pelo braço até o quarto, me empurrou para dentro com Alexandro e trancou a porta por fora. Só abriu na manhã seguinte, quando a loja de Armando já ia longe."
