@@ -503,7 +503,7 @@ window.JOGO = {
           "pergunta": "Como tirar o medo de Madalena da cabeça dele?",
           "opcoes": [
             {
-              "texto": "Abanar a mão: — Mata nada. Até você voltar, ela já te perdoou.",
+              "texto": "Abanar a mão no ar, fazendo pouco caso: — Mata nada. Você vai levar meses para voltar. Até lá, ela já vai ter te perdoado. Quem sabe até te agradeça, por eu não estar mais aqui para testar a paciência dela.",
               "certa": true,
               "resultado": [
                 "Minha voz saiu em falsete, mas a piada ficou no ar.",
@@ -511,11 +511,10 @@ window.JOGO = {
               ],
               "pontos": {
                 "humor": 1
-              },
-              "fala": "Abanar a mão no ar, fazendo pouco caso: — Mata nada. Você vai levar meses para voltar. Até lá, ela já vai ter te perdoado. Quem sabe até te agradeça, por eu não estar mais aqui para testar a paciência dela."
+              }
             },
             {
-              "texto": "Segurar o braço dele: — Ela não vai fazer nada contra você. Quem paga sou eu.",
+              "texto": "Segurar o braço dele: — Ela não vai fazer nada contra você. Se alguém vai pagar por essa fuga, sou eu. Ela já me cobra por respirar nesta casa. Uma dívida a mais, uma a menos, que diferença faz?",
               "desvio": true,
               "resultado": [
                 "O rosto de Armando se fechou. — Pagar o preço? É exatamente isso que me assusta, menina. Se ela é capaz disso com a própria filha, imagine com quem ajudar a filha a fugir.",
@@ -523,7 +522,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Dar de ombros: — Ela nem vai saber que foi você. Digo que fugi com um cliente.",
+              "texto": "Dar de ombros: — Ela nem vai saber que foi você. Saio antes do sol, sozinha, e deixo um bilhete dizendo que fugi com um cliente. Ela vai xingar o mundo inteiro, menos o mascate que trouxe as rendas dela.",
               "resultado": [
                 "— E deixar sua mãe achar que você foi levada por qualquer um? — Armando balançou a cabeça. — Não. Isso eu não faço com ela.",
                 "Ele entrou no bordel sem se despedir. Antes da meia-noite, Madalena sabia de tudo, e Gasparo dormia atravessado na minha porta."
