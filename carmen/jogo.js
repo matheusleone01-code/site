@@ -200,6 +200,18 @@
     });
     atualizarBotaoFichas();
   }
+  function revelado(id) { return (estado.revelados || []).indexOf(id) >= 0; }
+  function revelar(ids) {
+    var nomes = [];
+    (ids || []).forEach(function (id) {
+      if (!J.fichas[id] || revelado(id)) return;
+      estado.revelados = (estado.revelados || []).concat([id]);
+      if (estado.novas.indexOf(id) < 0) estado.novas.push(id);
+      nomes.push(J.fichas[id].nome);
+    });
+    atualizarBotaoFichas();
+    return nomes.length ? '<p class="aviso-ficha">Ficha atualizada: ' + esc(nomes.join(", ")) + ". Tem um segredo novo nela.</p>" : "";
+  }
   function atualizarBotaoFichas() {
     var n = estado.novas.length;
     botaoFichas.innerHTML = "Fichas" + (n ? ' <span class="selo-nova" aria-label="' + n + ' nova(s)">' + n + "</span>" : "");
@@ -211,7 +223,8 @@
         return '<li class="ficha bloqueada"><div class="ficha-topo"><span class="retrato medalhao" aria-hidden="true">?</span><div><h3>???</h3><p class="papel">Ainda não apareceu na história.</p></div></div></li>';
       }
       var nova = estado.novas.indexOf(id) >= 0 ? ' <span class="selo-nova">nova</span>' : "";
-      return '<li class="ficha" data-id="' + esc(id) + '"><details' + (nova ? " open" : "") + '><summary><div class="ficha-topo">' + retrato(f) + "<div><h3>" + esc(f.nome) + nova + '</h3><p class="papel">' + esc(f.papel) + "</p></div></div></summary>" + retrato(f, true) + campos(f.texto) + "</details></li>";
+      var texto = f.segredo && revelado(id) ? f.texto.concat(f.segredo) : f.texto;
+      return '<li class="ficha" data-id="' + esc(id) + '"><details' + (nova ? " open" : "") + '><summary><div class="ficha-topo">' + retrato(f) + "<div><h3>" + esc(f.nome) + nova + '</h3><p class="papel">' + esc(f.papel) + "</p></div></div></summary>" + retrato(f, true) + campos(texto) + "</details></li>";
     }).join("");
   }
   function verFicha(id) {
@@ -382,9 +395,10 @@
     if (estado.marco && estado.marco.arco === estado.arco) {
       estado.itens = estado.marco.itens.slice(); estado.desvios = estado.marco.desvios;
       estado.atributos = JSON.parse(JSON.stringify(estado.marco.atributos || {}));
+      estado.revelados = (estado.marco.revelados || []).slice();
       estado.itensNovos = estado.itensNovos.filter(temItem);
     } else {
-      estado.marco = { arco: estado.arco, itens: estado.itens.slice(), desvios: estado.desvios, atributos: JSON.parse(JSON.stringify(estado.atributos)) };
+      estado.marco = { arco: estado.arco, itens: estado.itens.slice(), desvios: estado.desvios, atributos: JSON.parse(JSON.stringify(estado.atributos)), revelados: (estado.revelados || []).slice() };
     }
     salvar(); atualizarBotaoBolsa(); cenarioDoArco();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
@@ -547,7 +561,7 @@
     if (!o.certa && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, antes: o.sucesso.antes, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
     if (o.certa || o.desvio) {
       var ultima = i === a.cenas.length - 1;
-      var corpo;
+      var corpo, avisoSegredo = revelar(c.revela);
       if (o.desvio) {
         // erro com conserto: mostra a consequência e depois a fala certa, e a história segue
         var certa = c.opcoes.filter(function (x) { return x.certa && !x.requer && !x.requerAtributo; })[0];
@@ -576,7 +590,7 @@
       }
       salvar();
       mostrar(
-        '<section class="tela resultado' + (o.desvio ? " desvio" : "") + '">' + corpo +
+        '<section class="tela resultado' + (o.desvio ? " desvio" : "") + '">' + corpo + avisoSegredo +
         '<div class="acoes">' +
         (ultima
           ? '<button class="botao principal" data-acao="fecho">Continuar</button>'

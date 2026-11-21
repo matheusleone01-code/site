@@ -83,7 +83,9 @@ window.JOGO = {
         "Idade: Cinquentão.",
         "Descrição: Barba aparada, cabelos grisalhos penteados para trás. Perfume amadeirado.",
         "Histórico: Mascate. Viaja de vila em vila numa loja-carruagem puxada por dois burros. Um dos clientes favoritos de Madalena.",
-        "Características: Nunca diz palavrões na frente de Carmen.",
+        "Características: Nunca diz palavrões na frente de Carmen."
+      ],
+      "segredo": [
         "Segredo: É o pai de Carmen. Prometeu tirar Madalena do bordel e nunca cumpriu: no fundo, sentia vergonha do ofício dela.",
         "Revelação: Quando Carmen cantou a canção de ninar da mãe junto à fogueira, ele chorou. Ali, com o perfil recortado contra o fogo, o nariz o denunciou: era igual ao dela."
       ]
@@ -1574,6 +1576,9 @@ window.JOGO = {
                 "Armando saiu de cabeça baixa. Cedo demais: no livro, Carmen primeiro o perdoou. A raiva só veio quando ele contou por que nunca voltou."
               ]
             }
+          ],
+          "revela": [
+            "armando"
           ],
           "com": "armando"
         },

@@ -111,6 +111,10 @@ window.JOGO = {
         "Histórico: Viaja de vila em vila numa loja-carruagem puxada por dois burros, vendendo roupas e acessórios femininos. Este ano, a temporada de vendas vai mal. É um dos clientes favoritos de Madalena e ainda vê Carmen como uma garotinha.",
         "Características: Adora contar histórias das viagens e do reino. Nunca diz palavrões na frente de Carmen. Tem bom coração, mas não gosta de ser pressionado.",
         "Ponto fraco: Desconfia de quem só se aproxima por interesse."
+      ],
+      "segredo": [
+        "Segredo: É o pai de Carmen. Prometeu tirar Madalena do bordel e nunca cumpriu: no fundo, sentia vergonha do ofício dela.",
+        "Revelação: Quando Carmen cantou a canção de ninar da mãe junto à fogueira, ele chorou. Ali, com o perfil recortado contra o fogo, o nariz o denunciou: era igual ao dela."
       ]
     },
     "jaime": {
@@ -1510,6 +1514,9 @@ window.JOGO = {
                 "Armando saiu de cabeça baixa. Cedo demais: no livro, Carmen primeiro o perdoou. A raiva só veio quando ele contou por que nunca voltou."
               ]
             }
+          ],
+          "revela": [
+            "armando"
           ],
           "com": "armando"
         },
