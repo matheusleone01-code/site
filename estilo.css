@@ -281,3 +281,9 @@ footer::before { margin-bottom: 1.25rem; }
 .ebook-botoes { margin-top: auto; display: flex; flex-direction: column; align-items: flex-start; gap: .5rem; }
 .ebook-botoes .botao { margin-top: 0; }
 .tem-fisico .ebook-botoes { min-height: 5.25rem; } /* reserva espaço p/ 2 botões: os de Amazon ficam na mesma altura */
+
+/* Menu no celular: sem "Início" (o topo já é o início), letras menores, tudo visível sem arrastar */
+@media (max-width: 40rem) {
+  .nav .nav-inicio, .nav .so-pc { display: none; }
+  .nav ul { flex-wrap: wrap; justify-content: center; overflow: visible; gap: .35rem .9rem; font-size: .72rem; letter-spacing: .03em; padding-block: .7rem; padding-inline: 10px; }
+}
