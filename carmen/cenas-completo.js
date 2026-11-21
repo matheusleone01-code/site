@@ -12,7 +12,7 @@ window.JOGO = {
   "abertura": [],
   "comoJogar": [
     "A fala certa é sempre a que Carmen escolheu no livro, mesmo quando não foi a mais sensata.",
-    "Algumas falas erradas têm conserto; outras não.",
+    "Só nas escolhas críticas um erro encerra o arco. Nas outras, Carmen vê aonde a fala errada levaria e pode pensar melhor.",
     "Carmen pode guardar objetos no inventário, e eles abrem caminhos extras.",
     "Algumas escolhas dão pontos de bônus em Persuasão, Sagacidade, Performance, Honestidade ou Humor.",
     "Cada arco concluído vale desconto no livro. Quanto mais longe Carmen chegar, maior o desconto.",
@@ -409,7 +409,8 @@ window.JOGO = {
           ],
           "quando": "4 dias antes, fim de tarde",
           "com": "armando",
-          "cenario": "serra-verde"
+          "cenario": "serra-verde",
+          "critica": true
         },
         {
           "titulo": "O segredo",
@@ -490,7 +491,8 @@ window.JOGO = {
           ],
           "quando": "4 dias antes, ao anoitecer",
           "com": "armando",
-          "cenario": "serra-verde"
+          "cenario": "serra-verde",
+          "critica": true
         },
         {
           "titulo": "A pequena canção",
@@ -711,7 +713,8 @@ window.JOGO = {
           ],
           "quando": "2 dias antes do aniversário, de manhã",
           "com": "madalena",
-          "cenario": "serra-verde"
+          "cenario": "serra-verde",
+          "critica": true
         }
       ],
       "fecho": [
@@ -878,7 +881,8 @@ window.JOGO = {
           ],
           "quando": "2 dias antes, à noite",
           "com": "madalena",
-          "cenario": "serra-verde"
+          "cenario": "serra-verde",
+          "critica": true
         },
         {
           "titulo": "O pretendente",
@@ -1017,7 +1021,8 @@ window.JOGO = {
           "com": {
             "nome": "Os guardas"
           },
-          "cenario": "serra-verde"
+          "cenario": "serra-verde",
+          "critica": true
         },
         {
           "titulo": "A feira",
@@ -1078,7 +1083,8 @@ window.JOGO = {
           "com": {
             "nome": "As moças da feira"
           },
-          "cenario": "estrada"
+          "cenario": "estrada",
+          "critica": true
         },
         {
           "titulo": "A cabine",
@@ -1337,7 +1343,8 @@ window.JOGO = {
           "com": {
             "nome": "A cliente"
           },
-          "cenario": "pacentro"
+          "cenario": "pacentro",
+          "critica": true
         },
         {
           "titulo": "A Ilustre de rosa",
@@ -1426,7 +1433,8 @@ window.JOGO = {
             }
           ],
           "com": "rosa",
-          "cenario": "pacentro"
+          "cenario": "pacentro",
+          "critica": true
         },
         {
           "titulo": "A taverna",
@@ -1857,7 +1865,8 @@ window.JOGO = {
             }
           ],
           "com": "empregadas",
-          "cenario": "palacio"
+          "cenario": "palacio",
+          "critica": true
         },
         {
           "titulo": "A menina de rosa",
@@ -1988,7 +1997,8 @@ window.JOGO = {
             }
           ],
           "com": "sebastiana",
-          "cenario": "empregada"
+          "cenario": "empregada",
+          "critica": true
         },
         {
           "titulo": "A biblioteca",
@@ -2305,7 +2315,8 @@ window.JOGO = {
             }
           ],
           "com": "valeria",
-          "cenario": "duelo"
+          "cenario": "duelo",
+          "critica": true
         },
         {
           "titulo": "O duelo",
@@ -2348,7 +2359,8 @@ window.JOGO = {
             }
           ],
           "com": "humberto",
-          "cenario": "duelo"
+          "cenario": "duelo",
+          "critica": true
         },
         {
           "titulo": "Os bailes",
@@ -2523,7 +2535,8 @@ window.JOGO = {
             }
           ],
           "com": "humberto",
-          "cenario": "confissoes"
+          "cenario": "confissoes",
+          "critica": true
         },
         {
           "titulo": "A prova do vinho",
@@ -2688,7 +2701,8 @@ window.JOGO = {
             }
           ],
           "com": "sebastiana",
-          "cenario": "farsa"
+          "cenario": "farsa",
+          "critica": true
         },
         {
           "titulo": "Diante do rei",
@@ -2843,7 +2857,8 @@ window.JOGO = {
             }
           ],
           "com": "humberto",
-          "cenario": "farsa"
+          "cenario": "farsa",
+          "critica": true
         }
       ],
       "fecho": [
