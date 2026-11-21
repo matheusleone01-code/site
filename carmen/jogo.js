@@ -400,6 +400,7 @@
   }
 
   function telaArco() {
+    riscadas = {};
     var a = J.arcos[estado.arco];
     somPara(somDoArco());
     // checkpoint: ao (re)começar um arco, a bolsa e os desvios voltam ao que eram no início dele
@@ -504,6 +505,7 @@
       "</section>", ".rotulo"
     );
   }
+  var riscadas = {}; // opções já descartadas na cena atual (segunda chance)
   function telaCena(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i];
     somPara(somDaCena(c));
@@ -512,7 +514,8 @@
     salvar(); cenario(c.cenario || J.arcos[estado.arco].cenario);
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
     var novas = (c.desbloqueia || []).map(function (id) { return J.fichas[id] ? J.fichas[id].nome : ""; }).filter(Boolean);
-    var opcoes = ordenar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return (!x.o.requer || temItem(x.o.requer)) && temAtributo(x.o.requerAtributo); }));
+    var fora = riscadas[i] || [];
+    var opcoes = ordenar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return fora.indexOf(x.k) < 0 && (!x.o.requer || temItem(x.o.requer)) && temAtributo(x.o.requerAtributo); }));
     mostrar(
       '<section class="tela cena">' +
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
@@ -610,6 +613,19 @@
           : '<button class="botao principal" data-acao="cena" data-cena="' + (i + 1) + '">Continuar</button>') +
         "</div></section>", ".rotulo"
       );
+    } else if (!c.critica) {
+      // fora das escolhas críticas, o erro é só o que Carmen imagina: conta como desvio e ela escolhe de novo
+      estado.desvios += 1; salvar();
+      riscadas[i] = (riscadas[i] || []).concat([k]);
+      mostrar(
+        '<section class="tela derrota quase">' +
+        '<p class="rotulo">E se…</p>' +
+        escolhida(o) +
+        '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
+        '<p class="selo-fim">' + esc(J.textoQuase || "Ainda não. Isso foi só o pior cenário passando pela cabeça de Carmen. Ela respirou fundo e pensou melhor.") + "</p>" +
+        '<div class="acoes"><button class="botao principal" data-acao="repensar" data-cena="' + i + '">Escolher de novo</button></div>' +
+        "</section>", ".rotulo"
+      );
     } else {
       mostrar(
         '<section class="tela derrota">' +
@@ -685,7 +701,8 @@
     else if (acao === "arco") { telaArco(); }
     else if (acao === "comprar") { comprar(+b.getAttribute("data-cena")); }
     else if (acao === "ficha") { verFicha(b.getAttribute("data-ficha")); }
-    else if (acao === "cena") { telaCena(+b.getAttribute("data-cena")); }
+    else if (acao === "cena") { riscadas = {}; telaCena(+b.getAttribute("data-cena")); }
+    else if (acao === "repensar") { telaCena(+b.getAttribute("data-cena")); }
     else if (acao === "escolher") { escolher(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }
     else if (acao === "fecho") { telaFecho(); }
     else if (acao === "final-sim") { telaFinal(+b.getAttribute("data-cena"), +b.getAttribute("data-opcao")); }
