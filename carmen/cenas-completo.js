@@ -13,6 +13,7 @@ window.JOGO = {
   "comoJogar": [
     "A fala certa é sempre a que Carmen escolheu no livro, mesmo quando não foi a mais sensata.",
     "Nas escolhas críticas (⚠), um erro encerra o arco e você volta ao último ponto seguro. Nas outras, Carmen vê aonde a fala errada levaria, perde 1 ponto de atributo e pode pensar melhor.",
+    "Rede de segurança: uma vez por arco, se Carmen tiver 3 pontos ou mais no atributo da cena, um erro numa escolha crítica não encerra o arco. Custa 2 pontos.",
     "Carmen pode guardar objetos no inventário, e eles abrem caminhos extras.",
     "Algumas escolhas dão pontos de bônus em Persuasão, Sagacidade, Performance, Honestidade ou Humor.",
     "Cada arco concluído vale desconto no livro. Quanto mais longe Carmen chegar, maior o desconto.",
