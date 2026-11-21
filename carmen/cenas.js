@@ -1046,7 +1046,7 @@ window.JOGO = {
             {
               "texto": "— É que derramei vinho no vestido. Preciso lavar antes que manche.",
               "resultado": [
-                "O guarda franziu a testa e espiou dentro do balde. — Isso aqui não parece um vestido sujo. Parece uma mudança inteira.",
+                "O guarda franziu a testa e espiou dentro do balde. — Isso aqui não é um vestido sujo. É o guarda-roupa inteiro.",
                 "Meu coração parou. Mas guarda nenhum gosta de parecer que manda menos do que manda. Endireitei os ombros e mudei o tom."
               ],
               "desvio": true
