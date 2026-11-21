@@ -1596,7 +1596,8 @@ window.JOGO = {
               "Abri o saquinho de couro que Armando me deu na despedida: a minha metade dos lucros da estrada, e um pouco mais."
             ],
             "textoItem": [
-              "Abri o saquinho de couro que Armando me deu na despedida. Bem mais leve do que eu esperava, com um bilhete: “Eu vi a bolsinha de veludo na estrada. Conheço as coisas da sua mãe. A parte dela, eu devolvo a ela.”"
+              "Abri o saquinho de couro que Armando me deu na despedida. Bem mais leve do que eu esperava, com um bilhete:",
+              "*Eu vi a bolsinha de veludo na estrada. Conheço as coisas da sua mãe. A parte dela, eu devolvo a ela.*"
             ]
           },
           "produtos": [
