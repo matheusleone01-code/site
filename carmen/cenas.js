@@ -363,9 +363,9 @@ window.JOGO = {
           ],
           "texto": [
             "Do peitoril do meu quarto, vi uma charrete inusitada dobrar a rua: o tamanho de uma carruagem ilustre, mas puxada por burros de carga, com caixas e mais caixas empilhadas no topo.",
-            "Armando, o mascate, tinha chegado semanas antes do previsto. Em poucos dias estaria de saída novamente, rumo a outras vilas, quem sabe à Capital.",
+            "Armando, o mascate, tinha chegado antes do previsto. Em poucos dias partiria de novo, quem sabe rumo à Capital.",
             "Espera. Ele podia ser a chave para minha fuga!",
-            "Balancei o cabelo, ajeitei a postura e coloquei meu melhor sorriso no rosto. Ele se aproximou da janela trazendo seu perfume amadeirado.",
+            "Ajeitei a postura e abri meu melhor sorriso. Ele se aproximou da janela.",
             "— Madalena está ocupada? — perguntou. E, ao ver meu sorriso, ergueu a sobrancelha. — O que você quer dessa vez? Chapéu, brinco, vestido?"
           ],
           "pergunta": "Pedir logo o que eu queria, ou ganhá-lo na conversa?",
@@ -464,10 +464,10 @@ window.JOGO = {
               "certa": true,
               "resultado": [
                 "Armando me encarou em silêncio por um tempo.",
-                "— Eu queria argumentar que não, mas uma filha conhece melhor a mãe do que eu. O complicado é que eu fico de mãos atadas sem a permissão dela. Se eu te ajudar a fugir, as pessoas vão achar que eu sequestrei você.",
+                "— Uma filha conhece a mãe melhor do que eu. Mas, se eu te ajudar a fugir sem a permissão dela, vão achar que te sequestrei.",
                 "Engoli em seco e ganhei tempo até encontrar uma saída.",
-                "— O povo de Serra Verde pode achar isso. Mas, nas próximas vilas, todo mundo vai ver que eu fui de bom grado, e que estamos trabalhando juntos. A verdade prevalecerá no final.",
-                "Sorri para transmitir confiança, enquanto limpava o suor frio das mãos no vestido."
+                "— Em Serra Verde, talvez. Nas próximas vilas, todo mundo vai ver que fui de bom grado.",
+                "Sorri, limpando o suor frio das mãos no vestido."
               ],
               "pontos": {
                 "honestidade": 1
@@ -620,10 +620,9 @@ window.JOGO = {
         {
           "titulo": "A vassoura",
           "texto": [
-            "Um dia antes da fuga, acordei bem cedinho para cumprir minhas obrigações. Acompanhada apenas por vassoura e pá, cantarolei todas as cantigas do meu repertório enquanto varria minuciosamente o salão, a cozinha e o lavabo.",
+            "Um dia antes da fuga, varri o salão bem cedinho, cantarolando todas as cantigas que eu sabia.",
             "— Você parece feliz.",
-            "A voz de Madalena interrompeu minha cantoria. Ela estava recostada na porta da cozinha, provavelmente me assistindo varrer por algum tempo.",
-            "Demorei um segundo para reagir.",
+            "Madalena estava recostada na porta da cozinha. Há quanto tempo me observava?",
             "— Acordou cedo por quê, mãe?",
             "— Fui resolver um negócio, mas não mude de assunto. Adoraria saber o motivo dessa felicidade toda."
           ],
@@ -1065,9 +1064,8 @@ window.JOGO = {
         {
           "titulo": "A feira",
           "texto": [
-            "No horizonte, o sol nascia e tingia o céu de dourado. Desde pequena, eu me imaginava uma princesa resgatada por um príncipe num cavalo branco.",
-            "Nem nos meus dias mais criativos imaginei que sairia de Serra Verde numa loja itinerante, puxada por burros e conduzida por um cinquentão. Mas eu não podia reclamar.",
-            "No primeiro vilarejo, vesti um conjunto roxo glamuroso e me exibi do alto da loja, imóvel e sorridente como um manequim. Uma pequena multidão se reuniu.",
+            "Nunca imaginei que sairia de Serra Verde em uma loja puxada por burros. Mas eu não podia reclamar.",
+            "No primeiro vilarejo, vesti um conjunto roxo e me exibi do alto da loja, como um manequim. Uma pequena multidão se reuniu.",
             "O problema: os maridos babavam ao me encarar. Entre tapas, beliscões e reprimendas, as esposas desistiram da compra e saíram puxando os homens pelo braço.",
             "— Carmen, você está afastando a clientela! Vá bater as pernas enquanto eu vendo como de costume.",
             "Desci emburrada e caminhei pela feira. Três moças de roupas recatadas me mediram de cima a baixo.",
@@ -1221,7 +1219,7 @@ window.JOGO = {
           "pergunta": "O que eu cantaria para ele?",
           "opcoes": [
             {
-              "texto": "Cantar a canção de ninar que Madalena cantava para ela.",
+              "texto": "Cantar a canção de ninar que Madalena cantava para mim.",
               "certa": true,
               "resultado": [
                 "“Meu amor se foi / Mas jurou voltar / Na calada da noite / Sob a luz do luar…”",
@@ -1232,7 +1230,7 @@ window.JOGO = {
               "pontos": {
                 "performance": 1
               },
-              "fala": "Cantar a canção de ninar que Madalena cantava para ela: “Sob a luz do luar”."
+              "fala": "Cantar a canção de ninar que Madalena cantava para mim: “Sob a luz do luar”."
             },
             {
               "texto": "Cantar uma cantiga obscena do bordel, para fazê-lo rir.",
@@ -1242,7 +1240,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Recusar: ela só canta quando ninguém está olhando.",
+              "texto": "Recusar: só canto quando ninguém está olhando.",
               "resultado": [
                 "A fogueira estalou em silêncio. Armando não insistiu; só ficou olhando as chamas, com cara de quem já tinha ouvido muitos nãos na vida.",
                 "Foi essa cara que me venceu. — Está bem. Uma só. — E fechei os olhos."
@@ -1271,7 +1269,7 @@ window.JOGO = {
             "isolina"
           ],
           "texto": [
-            "Armando prometeu me dar minha metade dos lucros, mas só depois que eu provasse que sabia lidar com quantias menores. Antes, me ajudaria a arranjar um emprego. Escolhi a joalheria da Dona Isolina, a que pagava melhor.",
+            "Antes de me dar minha parte dos lucros, Armando me ajudaria a arranjar um emprego. Escolhi a joalheria da Dona Isolina, a que pagava melhor.",
             "— Ela tem beleza, bom gosto e muita lábia — disse Armando. — Por isso será uma ótima funcionária.",
             "Isolina recuou a mão.",
             "— Desculpa, mas não estou contratando. Tenho minha lojinha há décadas, e nunca precisei de ninguém."
@@ -1378,12 +1376,11 @@ window.JOGO = {
             "rosa"
           ],
           "texto": [
-            "No fim da tarde, uma menina toda de rosa entrou na loja como se fosse a dona. Tinha a minha idade. Destratou-me na primeira frase e passou a criticar cada peça da estante. Isolina, puxando o saco dela, a chamou de “donzela tão Ilustre”.",
+            "No fim da tarde, uma menina da minha idade, toda de rosa, entrou na loja como se fosse a dona e criticou cada peça da estante. Isolina a chamou de “donzela tão Ilustre”.",
             "Uma Ilustre! Comprando imitações. Pelo sotaque, devia ser do norte.",
             "Até que, para contar vantagem, ela soltou:",
-            "— Recebemos cartas individuais, com o selo do rei. Vamos participar de uma avaliação para nos tornarmos Empregadas Reais. O que eu quero mesmo é o reconhecimento de ser uma das donzelas mais prendadas do reino. Assim, conseguirei um marido Ilustríssimo…",
-            "*E se eu me infiltrar no palácio e participar dessa avaliação?*",
-            "Para saber se era possível, eu precisava de mais informações."
+            "— Recebemos cartas com o selo do rei. Vamos participar de uma avaliação para nos tornarmos Empregadas Reais. Assim, conseguirei um marido Ilustríssimo…",
+            "*E se eu me infiltrar no palácio e participar dessa avaliação?*"
           ],
           "pergunta": "Perguntar direto, ou fazê-la falar sem perceber?",
           "opcoes": [
@@ -1465,8 +1462,8 @@ window.JOGO = {
         {
           "titulo": "A taverna",
           "texto": [
-            "Para juntar uns beija-flores a mais antes do domingo, passei a cantar à noite na taverna da esquina. O dono pagava em sopa e moedas; os fregueses, em silêncio, o que já era muito.",
-            "Naquela noite, terminei a canção de ninar de Madalena e um homem de casaca cor de vinho se levantou da mesa do canto. Pôs um cartão no balcão, ao lado do meu copo de água.",
+            "Para juntar uns beija-flores a mais antes do domingo, passei a cantar à noite na taverna da esquina.",
+            "Naquela noite, terminei a canção de ninar de Madalena, e um homem de casaca cor de vinho pôs um cartão no balcão.",
             "— Teatro Aurora, aqui mesmo em Pacentro — disse ele. — Procuro uma voz assim há dois anos. A vaga é sua, se começar comigo na segunda-feira."
           ],
           "pergunta": "Um palco de verdade. E o Palácio?",
@@ -1509,7 +1506,7 @@ window.JOGO = {
           "texto": [
             "Na véspera do grande dia, Armando apareceu à minha porta todo arrumado e me entregou um saquinho de couro.",
             "— Você tem trabalhado duro e economizado bastante. Aqui está o seu dinheiro.",
-            "Ele estava indo embora. Avancei e o abracei forte. Apoiei o rosto no peito dele, inspirando o cheiro de loção pós-barba. Não havia segundas intenções naquele abraço; eu me sentia segura, como imaginava que uma filha se sentiria nos braços do pai.",
+            "Ele estava indo embora. Avancei e o abracei forte. Eu me sentia segura, como imaginava que uma filha se sentiria nos braços do pai.",
             "Desde a noite da fogueira, eu guardava uma suspeita a sete chaves. Agora não restavam dúvidas."
           ],
           "pergunta": "Dizer em voz alta, ou guardar para mim?",
@@ -1700,7 +1697,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Mostrar a bolsinha de Madalena: — Pago o triplo do que a sua casa paga, se me levar agora ao Palácio Real.",
+              "texto": "Mostrar a bolsinha de Madalena: — Pago o triplo, se me levar agora ao Palácio.",
               "certa": true,
               "requer": "moedas",
               "perde": [
@@ -1713,7 +1710,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Estender a mão enluvada ao cocheiro, sem dizer nada, e esperar que ele me ajude a subir.",
+              "texto": "Estender a mão enluvada ao cocheiro e esperar, sem dizer nada.",
               "requer": "luvas",
               "certa": true,
               "resultado": [
@@ -1775,7 +1772,7 @@ window.JOGO = {
             "empregadas"
           ],
           "texto": [
-            "O palácio era um edifício branco de quatro andares, com centenas de janelas. Uns vinte Guardas Reais ladeavam um tapete vermelho até o salão, onde Empregadas Reais conferiam as candidatas numa mesa.",
+            "O palácio era um edifício branco de quatro andares. No salão, Empregadas Reais conferiam as candidatas em uma mesa.",
             "— Convite — pediu a empregada da esquerda à Ilustre de amarelo, que tirou da bolsinha uma carta com o selo real.",
             "*Merda.*",
             "— Convite — pediu a empregada da direita, para mim.",
@@ -1816,7 +1813,7 @@ window.JOGO = {
               "desvio": true
             },
             {
-              "texto": "Pôr sobre a mesa o botão de punho com o brasão dos Barbosa: — Meu irmão esqueceu isto comigo. Serve como apresentação?",
+              "texto": "Pôr o botão dos Barbosa sobre a mesa: — Meu irmão esqueceu isto comigo. Serve?",
               "certa": true,
               "requer": "botao",
               "resultado": [
@@ -1944,7 +1941,7 @@ window.JOGO = {
               }
             },
             {
-              "texto": "Levar o lenço de Madalena ao nariz, como uma Ilustre entediada com o perfume alheio: — Conhecer, talvez. Lembrar, duvido.",
+              "texto": "Levar o lenço de Madalena ao nariz, entediada: — Conhecer, talvez. Lembrar, duvido.",
               "certa": true,
               "requer": "lenco",
               "resultado": [
@@ -1954,7 +1951,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Abrir o leque diante do rosto e responder por trás das plumas: — Duvido. Eu me lembraria de um rosa tão… corajoso.",
+              "texto": "Abrir o leque diante do rosto: — Duvido. Eu me lembraria de um rosa tão… corajoso.",
               "requer": "leque",
               "certa": true,
               "resultado": [
