@@ -819,7 +819,7 @@ window.JOGO = {
             {
               "texto": "— Senhor Jaime, minha mãe está indisposta hoje. Talvez seja melhor voltar amanhã.",
               "resultado": [
-                "— Indisposta? A Mada? — Jaime gargalhou e encheu os pulmões. — MADA! Desce, que sua filha está dizendo que você morreu!",
+                "— Indisposta? A Mada? — Jaime riu e foi até o pé da escada. — Mada! Sua filha disse que você está de cama. Desce para eu ver se é verdade!",
                 "Madalena desceu radiante e me lançou um olhar que valia mais que um tapa. Mais tarde, no corredor, sibilou: — Mentir para um Ilustre, na minha casa?",
                 "Daquela noite em diante, Gasparo não saiu mais da minha porta. Na véspera do meu aniversário, a loja de Armando partiu sem mim."
               ]
