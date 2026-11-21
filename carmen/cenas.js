@@ -83,7 +83,7 @@ window.JOGO = {
         "Idade: 42 anos (diz 32 aos clientes).",
         "Descrição: Cabelos loiros na altura dos ombros. Perfume de especiarias, cremes de chocolate e baunilha.",
         "Histórico: A cortesã mais requisitada de Serra Verde. Gasparo, o cafetão, deixa quase tudo nas mãos dela.",
-        "Características: Não suporta ser desafiada: quando a filha bate de frente, aperta o cerco; quando a filha cede, relaxa. Conhece Carmen como a palma da mão. Sabe de cor até o ciclo dela.",
+        "Características: Não suporta ser desafiada: quando a filha bate de frente, aperta o cerco; quando a filha cede, relaxa. Conhece Carmen como a palma da mão.",
         "Sonho: Que Carmen siga os passos dela. Igual, não: melhor.",
         "Apelido: Chama a filha de “minha pequena canção”."
       ],
@@ -131,7 +131,6 @@ window.JOGO = {
         "Descrição: A cara do pai, só que mais baixo e menos roliço.",
         "Histórico: Filho de Jaime. Foi levado ao bordel pelo pai, contra a vontade.",
         "Características: Tímido e nervoso. Fala muito da família.",
-        "Sonho: Perder a virgindade com alguém que ame de verdade.",
         "Família: A mãe perdoa as escapadas de Jaime, desde que não sejam com outra Ilustre. A irmã caçula, Vivian, vive entre aulas de costura, postura, dança e línguas, e quase nunca sai do castelo."
       ]
     },
@@ -216,22 +215,27 @@ window.JOGO = {
   // Atributos de Carmen. "pontos" numa opção soma pontos; "requerAtributo" só mostra a opção com pontos suficientes.
   "atributos": {
     "persuasao": {
+      "titulo": "A Encantadora",
       "nome": "Persuasão",
       "texto": "Elogios na medida certa, argumentos na hora certa. Funciona com quem gosta de ouvir o que quer."
     },
     "astucia": {
+      "titulo": "A Raposa",
       "nome": "Sagacidade",
       "texto": "Ler as pessoas depressa e fazer a pergunta certa na hora certa."
     },
     "performance": {
+      "titulo": "A Atriz",
       "nome": "Performance",
       "texto": "Fingir com o corpo inteiro: um enjoo, uma submissão, uma Ilustre que nunca ouviu um não."
     },
     "honestidade": {
+      "titulo": "A Sincera",
       "nome": "Honestidade",
       "texto": "Dizer a verdade, mesmo quando custa. Funciona com quem valoriza sinceridade, como Armando."
     },
     "humor": {
+      "titulo": "A Espirituosa",
       "nome": "Humor",
       "texto": "Dizer a verdade rindo. Muita gente acha que é piada, e é aí que ela passa."
     }
@@ -345,7 +349,7 @@ window.JOGO = {
               "texto": "Verdade: — Ninguém. Não quero ninguém.",
               "resultado": [
                 "Madalena estreitou os olhos. — Ninguém? Pois bem. Se você não escolhe, eu escolho por você.",
-                "Ela desceu as escadas e voltou com o cliente mais rico da noite. Depois disso, nunca mais me deixou sozinha. Não houve fuga."
+                "Naquela mesma noite, ela me trancou no quarto e entregou a chave a Gasparo. Depois disso, nunca mais me deixou sozinha. Não houve fuga."
               ]
             }
           ],
@@ -441,7 +445,8 @@ window.JOGO = {
               "certa": true,
               "pontos": {
                 "honestidade": 1
-              }
+              },
+              "marca": "franca-com-armando"
             }
           ],
           "quando": "4 dias antes, fim de tarde",
@@ -478,7 +483,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Mentira: — Se você contar a ela, eu digo que você tentou me levar para a cama.",
+              "texto": "Mentira: — Se você contar a ela, eu digo que foi você quem me deu a ideia de fugir.",
               "resultado": [
                 "O rosto de Armando endureceu como pedra. — Então não temos mais nada para conversar.",
                 "Ele deu as costas. E eu entendi, tarde, o que tinha feito: ameaçar o único homem disposto a me ajudar.",
@@ -699,7 +704,7 @@ window.JOGO = {
             {
               "texto": "Verdade: — Nenhum deles. Não vou me deitar com ninguém, mãe. Com ninguém.",
               "resultado": [
-                "O sorriso de Madalena sumiu. — Vai, sim. Nem que eu tenha que escolher o homem e trancar a porta por fora.",
+                "O sorriso de Madalena sumiu. — Vai, sim. Nem que eu tenha que decidir tudo por você.",
                 "Desde aquela manhã, ela não me deixou sozinha nem para buscar água no poço. Na véspera do meu aniversário, a loja de Armando partiu sem mim."
               ]
             }
@@ -743,7 +748,7 @@ window.JOGO = {
             {
               "texto": "Verdade: — Não. Quem escolhe sou eu, ou não vai ser ninguém.",
               "resultado": [
-                "— Então vai ser quem eu mandar. E hoje mesmo.",
+                "— Então vai ser quem eu mandar.",
                 "Ela chamou Gasparo antes do almoço. Daquele dia em diante, ele passou a me seguir até a porta do lavabo. Na véspera do meu aniversário, a loja de Armando partiu sem mim."
               ]
             }
@@ -911,7 +916,7 @@ window.JOGO = {
               "texto": "Verdade: Recuar um passo: — Não. Não vou ser concubina de ninguém.",
               "resultado": [
                 "Madalena tirou a mão do meu ombro. — Então você vai ser o que eu mandar.",
-                "Ela me levou pelo braço até o quarto, me empurrou para dentro com Alexandro e trancou a porta por fora. Só abriu na manhã seguinte, quando a loja de Armando já ia longe."
+                "Ela me levou pelo braço até o meu quarto e trancou a porta por fora. Só abriu na manhã seguinte, quando a loja de Armando já ia longe."
               ]
             }
           ],
@@ -948,11 +953,11 @@ window.JOGO = {
               "fala": "Verdade: Sentar ao lado dele, segurar sua mão e dizer: — Você está bem nervoso para sua primeira vez, não está? Também estou."
             },
             {
-              "texto": "Mentira: Seguir as instruções da mãe: — Tire a camisa. Eu cuido do resto.",
+              "texto": "Mentira: Abrir a porta: — Vou buscar vinho para nós dois. Volto já.",
               "resultado": [
-                "Fiz tudo o que Madalena tinha me ensinado. Funcionou, como ela sempre disse que funcionaria.",
-                "Quando abri os olhos, o sol já ia alto. Da janela, vi a esquina vazia: a loja de Armando tinha partido sem mim.",
-                "Eu tinha jurado uma única coisa a mim mesma. E não cumpri."
+                "Gasparo estava no pé da escada, como se me esperasse. — Vinho, a esta hora? A senhora Madalena mandou a menina ficar no quarto.",
+                "Jaime levou o filho embora, ofendido, e Madalena me trancou sozinha no meu quarto. Só abriu na manhã seguinte.",
+                "Da janela, vi a esquina vazia: a loja de Armando tinha partido sem mim."
               ]
             },
             {
@@ -1463,9 +1468,9 @@ window.JOGO = {
           "texto": [
             "Para juntar uns beija-flores a mais antes do domingo, passei a cantar à noite na taverna da esquina. O dono pagava em sopa e moedas; os fregueses, em silêncio, o que já era muito.",
             "Naquela noite, terminei a canção de ninar de Madalena e um homem de casaca cor de vinho se levantou da mesa do canto. Pôs um cartão no balcão, ao lado do meu copo de água.",
-            "— Teatro Aurora, na Capital — disse ele. — Procuro uma voz assim há dois anos. A vaga é sua, se partir comigo na segunda-feira."
+            "— Teatro Aurora, aqui mesmo em Pacentro — disse ele. — Procuro uma voz assim há dois anos. A vaga é sua, se começar comigo na segunda-feira."
           ],
-          "pergunta": "Um palco na Capital. E o Palácio?",
+          "pergunta": "Um palco de verdade. E o Palácio?",
           "opcoes": [
             {
               "texto": "Meia-verdade: — Agradeço, senhor. Mas já tenho outro palco em vista.",
@@ -1495,7 +1500,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Aceitar o cartão e partir para a Capital na segunda-feira.",
+              "texto": "Aceitar o cartão e começar no Teatro Aurora na segunda-feira.",
               "final": "cantora",
               "requerAtributo": {
                 "performance": 3
@@ -1993,8 +1998,8 @@ window.JOGO = {
     "cantora": {
       "titulo": "A cantora",
       "texto": [
-        "Na segunda-feira, em vez de um vestido azul-ciano, embarquei numa diligência com um baú emprestado e o cartão do Teatro Aurora no decote.",
-        "Na Capital, ninguém me perguntou de que casa eu vinha. Só perguntaram se eu cantava de novo amanhã.",
+        "Na segunda-feira, em vez de um vestido azul-ciano, vesti o que eu tinha de melhor e atravessei Pacentro até o Teatro Aurora, com o cartão no decote.",
+        "No teatro, ninguém me perguntou de que casa eu vinha. Só perguntaram se eu cantava de novo amanhã.",
         "Em um ano, meu nome estava nos cartazes. Não um nome emprestado. Não Ilustre de coisa nenhuma. Só Carmen, em letras douradas.",
         "Nunca entrei no Palácio Real. Mas, numa noite de casa cheia, um Ilustre da primeira fila me jogou uma rosa. Agradeci com uma mesura e não desci do palco. Pela primeira vez, quem escolhia era eu."
       ],
@@ -2003,6 +2008,19 @@ window.JOGO = {
   },
 
   "finalPalacio": "O Palácio Real",
+
+  "trocas": [
+    {
+      "marca": "franca-com-armando",
+      "de": "— Quando eu mais precisava, você esteve lá por mim.",
+      "por": "— Lá em Serra Verde, eu te contei a verdade e você acreditou em mim. Quando eu mais precisava, você esteve lá. É por isso que eu te perdoo, pai."
+    },
+    {
+      "marca": "romances-para-valeria",
+      "de": "— Não é verdade, Vivi?… Vivi?",
+      "por": "— Não é verdade, Vivi?… Vivi? — Valéria me defendia no meio do salão. Depois, só para mim: — Nem os romances eram verdade, eram?"
+    }
+  ],
 
   "sons": {
     "tema": "tema",

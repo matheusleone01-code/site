@@ -263,3 +263,7 @@ button.interlocutor:hover .retrato, button.interlocutor:focus-visible .retrato {
 .premio-titulo { font: 600 .75rem/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--acento); }
 .premio-dica { font-size: .9375rem; }
 .fecho .premio { margin: 1.5rem 0; }
+
+.titulo-atributo { text-align: center; margin: 1.2em 0; }
+.titulo-atributo .rotulo { display: block; margin-bottom: .3em; }
+.titulo-atributo strong { display: block; font-size: 1.5em; font-weight: 600; }

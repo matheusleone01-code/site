@@ -80,11 +80,11 @@
   var estado = carregar() || novoEstado();
   function novoEstado() {
     var abertas = Object.keys(J.fichas).filter(function (k) { return J.fichas[k].inicial; });
-    return { arco: 0, fichas: abertas, novas: [], itens: [], itensNovos: [], bonusNovos: [], atributos: {}, desvios: 0, marco: null, venceu: false, arroba: "", data: "", iniciado: false };
+    return { arco: 0, fichas: abertas, novas: [], itens: [], itensNovos: [], bonusNovos: [], atributos: {}, desvios: 0, marcas: [], marco: null, venceu: false, arroba: "", data: "", iniciado: false };
   }
   function completar(s) {
     if (!s) return s;
-    s.itens = s.itens || []; s.itensNovos = s.itensNovos || []; s.bonusNovos = s.bonusNovos || []; s.desvios = s.desvios || 0; s.atributos = s.atributos || {};
+    s.itens = s.itens || []; s.itensNovos = s.itensNovos || []; s.bonusNovos = s.bonusNovos || []; s.desvios = s.desvios || 0; s.atributos = s.atributos || {}; s.marcas = s.marcas || [];
     return s;
   }
   function carregar() {
@@ -146,8 +146,12 @@
   /* ---------- utilidades ---------- */
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function fmt(t) { return esc(t).replace(/\*([^*]+)\*/g, "<em>$1</em>"); }
+  function trocar(p) {
+    (J.trocas || []).forEach(function (t) { if (estado && (estado.marcas || []).indexOf(t.marca) >= 0 && p.indexOf(t.de) === 0) p = t.por; });
+    return p;
+  }
   function paragrafos(lista, classe) {
-    return (lista || []).map(function (p) {
+    return (lista || []).map(trocar).map(function (p) {
       var fala = /^\s*—/.test(p);
       return '<p class="' + (classe || "") + (fala ? " fala" : "") + '">' + fmt(p) + "</p>";
     }).join("");
@@ -334,6 +338,13 @@
     return ganhos;
   }
   function valor(n) { return n + " " + (n === 1 ? J.moeda.singular : J.moeda.plural); }
+  // título pelo atributo mais alto (empate: o primeiro da lista)
+  function tituloAtributo() {
+    var melhor = null, n = 0;
+    Object.keys(J.atributos).forEach(function (k) { var v = pontosDe(k); if (J.atributos[k].titulo && v > n) { melhor = k; n = v; } });
+    if (!melhor) return "";
+    return '<p class="titulo-atributo"><span class="rotulo">Seu título</span><strong>' + esc(J.atributos[melhor].titulo) + "</strong> · " + esc(J.atributos[melhor].nome) + " " + n + ". Outro caminho, outro título.</p>";
+  }
   function placarAtributos() {
     return Object.keys(J.atributos).map(function (k) { return J.atributos[k].nome + " " + pontosDe(k); }).join(" · ");
   }
@@ -396,9 +407,10 @@
       estado.itens = estado.marco.itens.slice(); estado.desvios = estado.marco.desvios;
       estado.atributos = JSON.parse(JSON.stringify(estado.marco.atributos || {}));
       estado.revelados = (estado.marco.revelados || []).slice();
+      estado.marcas = (estado.marco.marcas || []).slice();
       estado.itensNovos = estado.itensNovos.filter(temItem);
     } else {
-      estado.marco = { arco: estado.arco, itens: estado.itens.slice(), desvios: estado.desvios, atributos: JSON.parse(JSON.stringify(estado.atributos)), revelados: (estado.revelados || []).slice() };
+      estado.marco = { arco: estado.arco, itens: estado.itens.slice(), desvios: estado.desvios, atributos: JSON.parse(JSON.stringify(estado.atributos)), revelados: (estado.revelados || []).slice(), marcas: (estado.marcas || []).slice() };
     }
     salvar(); atualizarBotaoBolsa(); cenarioDoArco();
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
@@ -560,6 +572,7 @@
     // desvio que dá certo para quem tem o atributo
     if (!o.certa && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, fala: o.sucesso.fala || o.fala, antes: o.sucesso.antes, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
     if (o.certa || o.desvio) {
+      if (o.marca && estado.marcas.indexOf(o.marca) < 0) estado.marcas.push(o.marca);
       var ultima = i === a.cenas.length - 1;
       var corpo, avisoSegredo = revelar(c.revela);
       if (o.desvio) {
@@ -647,6 +660,7 @@
       '<div class="texto">' + paragrafos(J.vitoria) + "</div>" +
       '<p class="placar">' + (estado.desvios ? "Você chegou com " + estado.desvios + (estado.desvios === 1 ? " desvio" : " desvios") + " no caminho." : "Você chegou sem nenhum desvio. Caminho limpo.") + "</p>" +
       (Object.keys(J.atributos).length ? '<p class="placar">' + esc(placarAtributos()) + "</p>" : "") +
+      tituloAtributo() +
       premioHtml() +
       '<div class="acoes"><a class="botao principal" href="' + esc(J.linkLivro) + '" target="_blank" rel="noopener">Continuar a história no livro</a></div>' +
       "</section>";
