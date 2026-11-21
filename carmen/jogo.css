@@ -267,3 +267,5 @@ button.interlocutor:hover .retrato, button.interlocutor:focus-visible .retrato {
 .titulo-atributo { text-align: center; margin: 1.2em 0; }
 .titulo-atributo .rotulo { display: block; margin-bottom: .3em; }
 .titulo-atributo strong { display: block; font-size: 1.5em; font-weight: 600; }
+
+.aviso-ponto.perda { color: var(--acento); }

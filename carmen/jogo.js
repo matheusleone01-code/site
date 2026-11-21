@@ -322,6 +322,15 @@
   /* ---------- atributos ---------- */
   function pontosDe(k) { return estado.atributos[k] || 0; }
   function temAtributo(req) { return Object.keys(req || {}).every(function (k) { return pontosDe(k) >= req[k]; }); }
+  // erro fora das escolhas críticas: Carmen perde 1 ponto (do atributo que a fala certa daria; senão, do mais alto)
+  function perderPonto(c) {
+    var certa = c.opcoes.filter(function (x) { return x.certa && !x.requer && !x.requerAtributo; })[0];
+    var alvo = Object.keys((certa && certa.pontos) || {}).filter(function (k) { return J.atributos[k] && pontosDe(k) > 0; })[0];
+    if (!alvo) Object.keys(J.atributos).forEach(function (k) { if (pontosDe(k) > 0 && (!alvo || pontosDe(k) > pontosDe(alvo))) alvo = k; });
+    if (!alvo) return "";
+    estado.atributos[alvo] = pontosDe(alvo) - 1;
+    return "−1 " + J.atributos[alvo].nome;
+  }
   function somar(p) {
     var ganhos = [];
     Object.keys(p || {}).forEach(function (k) {
@@ -615,13 +624,15 @@
       );
     } else if (!c.critica) {
       // fora das escolhas críticas, o erro é só o que Carmen imagina: conta como desvio e ela escolhe de novo
-      estado.desvios += 1; salvar();
+      estado.desvios += 1;
+      var perdido = perderPonto(c); salvar();
       riscadas[i] = (riscadas[i] || []).concat([k]);
       mostrar(
         '<section class="tela derrota quase">' +
         '<p class="rotulo">E se…</p>' +
         escolhida(o) +
         '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
+        (perdido ? '<p class="aviso-ponto perda">' + esc(perdido) + "</p>" : "") +
         '<p class="selo-fim">' + esc(J.textoQuase || "Ainda não. Isso foi só o pior cenário passando pela cabeça de Carmen. Ela respirou fundo e pensou melhor.") + "</p>" +
         '<div class="acoes"><button class="botao principal" data-acao="repensar" data-cena="' + i + '">Escolher de novo</button></div>' +
         "</section>", ".rotulo"
