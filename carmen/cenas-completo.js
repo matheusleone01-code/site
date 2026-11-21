@@ -348,7 +348,7 @@ window.JOGO = {
             {
               "texto": "— Quero que me leve com você quando for embora.",
               "resultado": [
-                "Armando soltou uma gargalhada. — E eu quero ser o rei dos Burgos. — Ele balançou a cabeça. — Vou fingir que não ouvi isso.",
+                "Armando soltou uma gargalhada. — E eu quero uma loja de verdade, com teto e balcão. — Ele balançou a cabeça. — Vou fingir que não ouvi isso.",
                 "Ele já se virava para a porta do bordel. Tola: ninguém faz um favor desses a quem começa pelo fim. Segurei a manga dele, com o meu sorriso mais inocente. — Era brincadeira. Fica um pouco."
               ],
               "desvio": true,
@@ -391,7 +391,7 @@ window.JOGO = {
               "texto": "— Eu pago a viagem. Tenho umas economias guardadas.",
               "resultado": [
                 "Armando cruzou os braços. — Economias? Todo tostão que entra nesta casa passa pela mão da sua mãe. Se você tem dinheiro escondido, ele é dela.",
-                "Ele entrou no bordel e contou tudo a Madalena. Naquela noite, ela revirou meu quarto atrás das economias que eu não tinha. E Gasparo passou a dormir na minha porta."
+                "Ele entrou no bordel. Não sei o que disse a Madalena, mas naquela noite ela revirou meu quarto atrás das economias que eu não tinha. E Gasparo passou a dormir na minha porta."
               ]
             },
             {
@@ -570,7 +570,7 @@ window.JOGO = {
               "texto": "— Já aceitou, sim. Minha mãe mesma disse que você me levaria.",
               "resultado": [
                 "— Disse, é? — Armando ergueu as sobrancelhas. — Então vamos perguntar a ela juntos.",
-                "Ele me pegou pelo braço e me levou para dentro. Madalena ouviu tudo, sorriu para ele e, quando ele saiu, me trancou no quarto até a loja-carruagem deixar Serra Verde."
+                "E foi entrando no bordel antes que eu pudesse segurá-lo. Madalena ouviu tudo, sorriu para ele e, quando ele saiu, me trancou no quarto até a loja-carruagem deixar Serra Verde."
               ]
             }
           ],
@@ -916,8 +916,8 @@ window.JOGO = {
             {
               "texto": "Abrir a porta: — Vou buscar vinho para nós dois. Volto já.",
               "resultado": [
-                "Gasparo estava no pé da escada, como se me esperasse. — Vinho, a esta hora? A senhora Madalena mandou a menina ficar no quarto.",
-                "Jaime levou o filho embora, ofendido, e Madalena me trancou sozinha no meu quarto. Só abriu na manhã seguinte.",
+                "Gasparo estava no pé da escada, como se me esperasse. — Vinho, a esta hora? Quem busca o vinho sou eu, menina.",
+                "Ele foi contar à patroa. Madalena não precisou de mais nada para entender que eu pensava em fugir: me trancou sozinha no meu quarto e só abriu na manhã seguinte.",
                 "Da janela, vi a esquina vazia: a loja de Armando tinha partido sem mim."
               ]
             },
@@ -1059,7 +1059,7 @@ window.JOGO = {
               "resultado": [
                 "A nariguda riu alto. — Noiva de Ilustre, em cima de uma carroça de mascate?",
                 "A risada dela atraiu a feira inteira. Quando a história chegou ao chefe da guarda, já tinha virado “a meretriz que se diz noiva de Ilustre”. Em meia hora, ele pediu que Armando recolhesse a mercadoria e seguisse viagem.",
-                "Na vila seguinte, Armando me deu algumas andorinhas e uma carona de volta para o sul. A parceria tinha durado um dia."
+                "Armando recolheu a mercadoria calado, com cara de quem fazia as contas do prejuízo. Na vila seguinte, me deu algumas andorinhas e disse que mascate nenhum sobrevive com fama de levar meretriz na boleia. A parceria tinha durado um dia."
               ]
             },
             {
@@ -1166,7 +1166,7 @@ window.JOGO = {
               "texto": "Cantar e passar o chapéu, pedindo uma moeda a cada mulher que parasse para ouvir.",
               "resultado": [
                 "— Cantora de praça, cobrando das senhoras? Isso tem outro nome — disse uma delas, alto o bastante para a vila inteira ouvir.",
-                "A palavra correu a praça mais depressa que a minha voz. Antes do almoço, o guarda pediu que a loja seguisse viagem. Na vila seguinte, Armando me deu algumas andorinhas e uma carona de volta para o sul."
+                "A palavra correu a praça mais depressa que a minha voz. Antes do almoço, o guarda pediu que a loja seguisse viagem. Armando não brigou comigo; só ficou calado o resto do dia. Na vila seguinte, me pagou algumas andorinhas e seguiu viagem sozinho."
               ]
             }
           ],
@@ -2530,7 +2530,7 @@ window.JOGO = {
             {
               "texto": "Arquear a sobrancelha: — Quantas vezes já disse isso a outras mulheres?",
               "resultado": [
-                "Humberto riu, ofendido. — Se é isso que pensa de mim, não sei o que estamos fazendo aqui.",
+                "Humberto ficou sério. — Se é isso que pensa de mim, não sei o que estamos fazendo aqui.",
                 "Ele não voltou a bater à minha porta."
               ]
             }
