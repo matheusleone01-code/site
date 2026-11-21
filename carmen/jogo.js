@@ -409,7 +409,7 @@
   }
 
   function telaArco() {
-    riscadas = {};
+    riscadas = {}; estado.retorno = null;
     var a = J.arcos[estado.arco];
     somPara(somDoArco());
     // checkpoint: ao (re)começar um arco, a bolsa e os desvios voltam ao que eram no início dele
@@ -514,6 +514,14 @@
       "</section>", ".rotulo"
     );
   }
+  function temRetorno() { return !!(estado.retorno && estado.retorno.arco === estado.arco); }
+  function voltarAoRetorno() {
+    var r = estado.retorno;
+    estado.itens = r.itens.slice(); estado.desvios = r.desvios;
+    estado.atributos = JSON.parse(JSON.stringify(r.atributos)); estado.revelados = r.revelados.slice(); estado.marcas = r.marcas.slice();
+    estado.itensNovos = estado.itensNovos.filter(temItem);
+    riscadas = {}; salvar(); telaCena(r.cena);
+  }
   var riscadas = {}; // opções já descartadas na cena atual (segunda chance)
   function telaCena(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i];
@@ -528,7 +536,7 @@
     mostrar(
       '<section class="tela cena">' +
       '<p class="rotulo">Encruzilhada ' + (i + 1) + " de " + a.cenas.length + "</p>" +
-      (c.critica ? '<p class="selo-critica">Escolha crítica</p>' : "") +
+      (c.critica ? '<p class="selo-critica">⚠ Escolha crítica</p><p class="aviso-critica">Um erro aqui encerra o arco.</p>' : "") +
       "<h2>" + esc(c.quando || c.titulo) + "</h2>" +
       interlocutores(c) +
       (novas.length ? '<p class="aviso-ficha">Nova ficha: ' + esc(novas.join(", ")) + ". Abra em <em>Fichas</em>, lá em cima.</p>" : "") +
@@ -613,6 +621,8 @@
           '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
           (o.requerAtributo ? '<p class="aviso-ponto">Só deu certo porque Carmen tem ' + esc(Object.keys(o.requerAtributo).map(function (k) { return (J.atributos[k] ? J.atributos[k].nome : k) + " " + o.requerAtributo[k]; }).join(" e ")) + ".</p>" : "");
       }
+      // passou por uma escolha crítica: daqui em diante, um erro crítico volta para a cena seguinte, não para o início do arco
+      if (c.critica && i < a.cenas.length - 1) estado.retorno = { arco: estado.arco, cena: i + 1, itens: estado.itens.slice(), desvios: estado.desvios, atributos: JSON.parse(JSON.stringify(estado.atributos)), revelados: (estado.revelados || []).slice(), marcas: (estado.marcas || []).slice() };
       salvar();
       mostrar(
         '<section class="tela resultado' + (o.desvio ? " desvio" : "") + '">' + corpo + avisoSegredo +
@@ -645,7 +655,9 @@
         '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
         '<p class="selo-fim">A história de Carmen terminou aqui.</p>' +
         '<div class="acoes">' +
-        '<button class="botao principal" data-acao="arco">Tentar de novo do início do arco ' + numeral(estado.arco) + "</button>" +
+        (temRetorno()
+          ? '<button class="botao principal" data-acao="retorno">Voltar ao último ponto seguro</button>'
+          : '<button class="botao principal" data-acao="arco">Tentar de novo do início do arco ' + numeral(estado.arco) + "</button>") +
         '<a class="botao" href="' + esc(J.linkLivro) + '" target="_blank" rel="noopener">Ler o livro</a>' +
         "</div></section>", ".rotulo"
       );
@@ -708,6 +720,7 @@
     var acao = b.getAttribute("data-acao");
     if (acao === "comecar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaArco(); }
     else if (acao === "continuar") { telaArco(); }
+    else if (acao === "retorno") { voltarAoRetorno(); }
     else if (acao === "zerar") { estado = novoEstado(); estado.iniciado = true; salvar(); atualizarBotaoFichas(); atualizarBotaoBolsa(); telaArco(); }
     else if (acao === "arco") { telaArco(); }
     else if (acao === "comprar") { comprar(+b.getAttribute("data-cena")); }
