@@ -37,7 +37,6 @@ window.JOGO = {
     "Algumas falas erradas têm conserto; outras não.",
     "Carmen pode guardar objetos no inventário, e eles abrem caminhos extras.",
     "Algumas escolhas dão pontos de bônus em Persuasão, Sagacidade, Performance, Honestidade ou Humor.",
-    "Algumas escolhas levam a finais alternativos, fora da história do livro. O jogo avisa antes.",
     "Cada arco concluído vale desconto no livro. Quanto mais longe Carmen chegar, maior o desconto.",
     "Na dúvida, consulte as fichas dos personagens."
   ],
@@ -1498,18 +1497,6 @@ window.JOGO = {
                 "O homem riu tão alto que a taverna inteira virou para nós. — Uma cantora de taverna, Ilustre? Essa eu conto no teatro!",
                 "Contou. E não só no teatro. Até sexta, metade de Pacentro sabia da cantora que ia se fingir de Ilustre. No domingo, os Guardas Reais tinham a minha descrição."
               ]
-            },
-            {
-              "texto": "Aceitar o cartão e começar no Teatro Aurora na segunda-feira.",
-              "final": "cantora",
-              "requerAtributo": {
-                "performance": 3
-              },
-              "resultado": [
-                "Peguei o cartão. Minhas mãos tremiam.",
-                "— Aceito.",
-                "A voz saiu firme como nunca."
-              ]
             }
           ],
           "com": {
@@ -1993,21 +1980,6 @@ window.JOGO = {
     "Carmen chegou ao Palácio Real. Como Vivian Barbosa, filha de um Ilustre, no meio das donzelas mais prendadas do reino.",
     "Se ela vai passar na avaliação, se a farsa vai durar e quem ela vai encontrar lá dentro… isso o jogo não conta. O livro conta."
   ],
-
-  "finais": {
-    "cantora": {
-      "titulo": "A cantora",
-      "texto": [
-        "Na segunda-feira, em vez de um vestido azul-ciano, vesti o que eu tinha de melhor e atravessei Pacentro até o Teatro Aurora, com o cartão no decote.",
-        "No teatro, ninguém me perguntou de que casa eu vinha. Só perguntaram se eu cantava de novo amanhã.",
-        "Em um ano, meu nome estava nos cartazes. Não um nome emprestado. Não Ilustre de coisa nenhuma. Só Carmen, em letras douradas.",
-        "Nunca entrei no Palácio Real. Mas, numa noite de casa cheia, um Ilustre da primeira fila me jogou uma rosa. Agradeci com uma mesura e não desci do palco. Pela primeira vez, quem escolhia era eu."
-      ],
-      "nota": "No livro, Carmen segue para o Palácio. Esta é outra vida que ela poderia ter tido."
-    }
-  },
-
-  "finalPalacio": "O Palácio Real",
 
   "trocas": [
     {
