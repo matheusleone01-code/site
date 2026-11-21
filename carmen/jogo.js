@@ -323,6 +323,14 @@
   function pontosDe(k) { return estado.atributos[k] || 0; }
   function temAtributo(req) { return Object.keys(req || {}).every(function (k) { return pontosDe(k) >= req[k]; }); }
   // erro fora das escolhas críticas: Carmen perde 1 ponto (do atributo que a fala certa daria; senão, do mais alto)
+  function atributoDaCena(c) {
+    var certa = c.opcoes.filter(function (x) { return x.certa && !x.requer && !x.requerAtributo; })[0];
+    var k = Object.keys((certa && certa.pontos) || {}).filter(function (k) { return J.atributos[k]; })[0];
+    if (!k) Object.keys(J.atributos).forEach(function (x) { if (!k || pontosDe(x) > pontosDe(k)) k = x; }); // cena sem atributo: o mais alto
+    return k || null;
+  }
+  function redeDisponivel(c) { var k = atributoDaCena(c); return !!k && estado.redeArco !== estado.arco && pontosDe(k) >= 3; }
+  function usarRede(c) { var k = atributoDaCena(c); estado.redeArco = estado.arco; estado.atributos[k] = pontosDe(k) - 2; return "−2 " + J.atributos[k].nome; }
   function perderPonto(c) {
     var certa = c.opcoes.filter(function (x) { return x.certa && !x.requer && !x.requerAtributo; })[0];
     var alvo = Object.keys((certa && certa.pontos) || {}).filter(function (k) { return J.atributos[k] && pontosDe(k) > 0; })[0];
@@ -409,7 +417,7 @@
   }
 
   function telaArco() {
-    riscadas = {}; estado.retorno = null;
+    riscadas = {}; estado.retorno = null; estado.redeArco = null;
     var a = J.arcos[estado.arco];
     somPara(somDoArco());
     // checkpoint: ao (re)começar um arco, a bolsa e os desvios voltam ao que eram no início dele
@@ -632,10 +640,12 @@
           : '<button class="botao principal" data-acao="cena" data-cena="' + (i + 1) + '">Continuar</button>') +
         "</div></section>", ".rotulo"
       );
-    } else if (!c.critica) {
-      // fora das escolhas críticas, o erro é só o que Carmen imagina: conta como desvio e ela escolhe de novo
+    } else if (!c.critica || redeDisponivel(c)) {
+      // fora das escolhas críticas, o erro é só o que Carmen imagina: conta como desvio e ela escolhe de novo.
+      // Rede de segurança: uma vez por arco, numa crítica, com 3+ pontos no atributo da cena, vale o mesmo, custando 2 pontos.
+      var rede = !!c.critica;
       estado.desvios += 1;
-      var perdido = perderPonto(c); salvar();
+      var perdido = rede ? usarRede(c) : perderPonto(c); salvar();
       riscadas[i] = (riscadas[i] || []).concat([k]);
       mostrar(
         '<section class="tela derrota quase">' +
@@ -643,6 +653,7 @@
         escolhida(o) +
         '<div class="texto">' + paragrafos(o.resultado) + "</div>" +
         (perdido ? '<p class="aviso-ponto perda">' + esc(perdido) + "</p>" : "") +
+        (rede ? '<p class="aviso-critica">Rede de segurança: os pontos de Carmen a salvaram desta vez. Só acontece uma vez por arco.</p>' : "") +
         '<p class="selo-fim">' + esc(J.textoQuase || "Ainda não. Isso foi só o pior cenário passando pela cabeça de Carmen. Ela respirou fundo e pensou melhor.") + "</p>" +
         '<div class="acoes"><button class="botao principal" data-acao="repensar" data-cena="' + i + '">Escolher de novo</button></div>' +
         "</section>", ".rotulo"
