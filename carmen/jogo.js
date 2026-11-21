@@ -420,7 +420,7 @@
   // pensamento de Carmen antes da fala (opcao.antes), depois a fala escolhida
   function escolhida(op) {
     return (op.antes ? '<div class="texto antes">' + paragrafos(op.antes) + "</div>" : "") +
-      '<blockquote class="escolhida">' + textoOpcao(op.texto) + "</blockquote>";
+      '<blockquote class="escolhida">' + textoOpcao(op.fala || op.texto) + "</blockquote>";
   }
 
   var TIPOS = ["Meia-verdade", "Mentira", "Verdade"];
@@ -558,7 +558,7 @@
     var a = J.arcos[estado.arco], c = a.cenas[i], o = c.opcoes[k];
     if (o.final && J.finais && J.finais[o.final]) return confirmarFinal(i, k);
     // desvio que dá certo para quem tem o atributo
-    if (!o.certa && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, antes: o.sucesso.antes, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
+    if (!o.certa && o.sucesso && temAtributo(o.sucesso.requerAtributo)) o = { texto: o.texto, fala: o.sucesso.fala || o.fala, antes: o.sucesso.antes, certa: true, resultado: o.sucesso.resultado, requerAtributo: o.sucesso.requerAtributo, pontos: o.sucesso.pontos };
     if (o.certa || o.desvio) {
       var ultima = i === a.cenas.length - 1;
       var corpo, avisoSegredo = revelar(c.revela);
