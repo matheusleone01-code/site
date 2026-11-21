@@ -69,7 +69,7 @@ window.JOGO = {
         "Descrição: Loira, cabelos ondulados e cheios, olhos azuis.",
         "Histórico: Nasceu e cresceu no bordel de Serra Verde. Nunca saiu da cidade.",
         "Características: Mente bem. Sabe conquistar as pessoas. Finge submissão quando é preciso, impõe-se quando pode.",
-        "Juramento: “Não serei puta”",
+        "Juramento: Não serei puta.",
         "Sonho: Casamento por amor. Uma família de verdade. Um mundo maior do que Serra Verde.",
         "Talentos secretos: Gosta de cantar, mas só quando ninguém está olhando."
       ],
@@ -84,7 +84,7 @@ window.JOGO = {
         "Descrição: Cabelos loiros na altura dos ombros. Perfume de especiarias, cremes de chocolate e baunilha.",
         "Histórico: A cortesã mais requisitada de Serra Verde. Gasparo, o cafetão, deixa quase tudo nas mãos dela.",
         "Características: Não suporta ser desafiada: quando a filha bate de frente, aperta o cerco; quando a filha cede, relaxa. Conhece Carmen como a palma da mão. Sabe de cor até o ciclo dela.",
-        "Sonho: Que Carmen siga os passos dela. “Igual, não. Melhor.”",
+        "Sonho: Que Carmen siga os passos dela. Igual, não: melhor.",
         "Apelido: Chama a filha de “minha pequena canção”."
       ],
       "retrato": "img/retratos/madalena.png"
@@ -305,12 +305,12 @@ window.JOGO = {
           "titulo": "A desculpa",
           "texto": [
             "— Use esta noite para escolher com quem gostaria de ter sua primeira vez — disse Madalena.",
-            "“Ninguém”, seria minha resposta, mas era arriscado ser tão combativa."
+            "— Ninguém — seria minha resposta, mas era arriscado ser tão combativa."
           ],
           "pergunta": "Que desculpa me livraria do salão sem levantar suspeitas?",
           "opcoes": [
             {
-              "texto": "Meia-verdade: Levar a mão à boca do estômago: “Estou enjoada. Acho que é do nervosismo.”",
+              "texto": "Meia-verdade: Levar a mão à boca do estômago: — Estou enjoada. Acho que é do nervosismo.",
               "certa": true,
               "resultado": [
                 "A suspeita sumiu do rosto de Madalena.",
@@ -324,7 +324,7 @@ window.JOGO = {
               ]
             },
             {
-              "texto": "Mentira: Fingir cólica: “Estou naqueles dias, mãe”, embora meu fluxo só viesse daqui a 2 semanas.",
+              "texto": "Mentira: Fingir cólica, embora meu fluxo só viesse daqui a 2 semanas: — Estou naqueles dias, mãe.",
               "resultado": [
                 "Madalena ergueu uma sobrancelha. — Naqueles dias? Os seus só vêm daqui a duas semanas.",
                 "*Merda.* Ela sabia o meu calendário melhor do que eu. — Não é isso… — emendei, depressa. — É outra coisa. Aqui, mais em cima."
@@ -666,7 +666,7 @@ window.JOGO = {
           "titulo": "O sortudo",
           "texto": [
             "— Mas e então? — Ela repousou a mão gentilmente no meu antebraço. — Você já escolheu quem será o sortudo?",
-            "“Nenhum deles, pode ter certeza”, era o que eu queria dizer."
+            "— Nenhum deles, pode ter certeza — era o que eu queria dizer."
           ],
           "pergunta": "Dizer o que eu pensava, ou o que ela aguentava ouvir?",
           "opcoes": [
@@ -711,7 +711,9 @@ window.JOGO = {
         {
           "titulo": "A escolha da mãe",
           "texto": [
-            "Abaixei a cabeça e murmurei um “pode ser…”, ciente de que não adiantaria nada discutir. Madalena apoiou o indicador no meu queixo e levantou meu rosto.",
+            "Abaixei a cabeça, ciente de que não adiantaria nada discutir.",
+            "— Pode ser… — murmurei.",
+            "Madalena apoiou o indicador no meu queixo e levantou meu rosto.",
             "— Nós duas sabemos que você não escolherá ninguém. Então deixe a mamãe escolher por você.",
             "A primeira frase gelou minha espinha, porém a segunda acalmou meus nervos."
           ],
@@ -1065,7 +1067,9 @@ window.JOGO = {
             "O problema: os maridos babavam ao me encarar. Entre tapas, beliscões e reprimendas, as esposas desistiram da compra e saíram puxando os homens pelo braço.",
             "— Carmen, você está afastando a clientela! Vá bater as pernas enquanto eu vendo como de costume.",
             "Desci emburrada e caminhei pela feira. Três moças de roupas recatadas me mediram de cima a baixo.",
-            "“Olha só como ela está vestida”, murmurou uma baixinha rechonchuda. “Está querendo chamar atenção”, sussurrou a despeitada. “Deve ser uma mulher da vida”, concluiu a nariguda.",
+            "— Olha só como ela está vestida — murmurou uma baixinha rechonchuda.",
+            "— Está querendo chamar atenção — sussurrou a despeitada.",
+            "— Deve ser uma mulher da vida — concluiu a nariguda.",
             "*Puta, não!*"
           ],
           "pergunta": "Revidar, engolir, ou virar o jogo?",
@@ -1355,7 +1359,7 @@ window.JOGO = {
               "resultado": [
                 "Ela olhou por cima do meu ombro e apontou para a estante.",
                 "— E aquele ali, o que é?",
-                "Saiu da loja batendo a porta. Isolina, descendo a escada, ouviu a última frase da cliente: “mentirosa”. A chave sobressalente voltou para a gaveta dela."
+                "Saiu da loja batendo a porta. Isolina, descendo a escada, ouviu a cliente me chamar de mentirosa. A chave sobressalente voltou para a gaveta dela."
               ]
             }
           ],
@@ -1497,7 +1501,9 @@ window.JOGO = {
                 "performance": 3
               },
               "resultado": [
-                "Peguei o cartão. Minhas mãos tremiam. Mas a voz, quando eu disse “aceito”, saiu firme como nunca."
+                "Peguei o cartão. Minhas mãos tremiam.",
+                "— Aceito.",
+                "A voz saiu firme como nunca."
               ]
             }
           ],
@@ -1524,7 +1530,7 @@ window.JOGO = {
                 "— Está tudo bem — continuei. — Não exigirei que você fique, nem te cobrarei nada por ser meu pai.",
                 "— Eu não mereço ser chamado de pai. Eu não tirei sua mãe do bordel.",
                 "— Quando eu mais precisava, você esteve lá por mim. É por isso que eu te perdoo, pai.",
-                "Ele me esmagou num abraço, repetindo “obrigado” uma centena de vezes."
+                "Ele me esmagou num abraço, me agradecendo uma centena de vezes."
               ],
               "pontos": {
                 "honestidade": 1
@@ -1638,7 +1644,7 @@ window.JOGO = {
               "texto": "Cortar os cabelos na altura dos ombros, como os da mãe.",
               "certa": true,
               "resultado": [
-                "O cabeleireiro perguntou se eu tinha certeza. Engoli em seco e disse “sim”.",
+                "O cabeleireiro perguntou se eu tinha certeza. Engoli em seco e disse que sim.",
                 "Para minha surpresa, sorri diante do resultado. A nuca exposta arrepiou com o ar. Cabelos curtos tinham muita personalidade. E, uma hora, cresceriam de novo.",
                 "Depois, perfume de jasmim e almíscar, vestido azul-ciano, luvas bordadas e pérolas cultivadas idênticas às verdadeiras. Dona Isolina, sem saber de nada, me fez preço de custo."
               ],
