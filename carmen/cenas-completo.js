@@ -262,7 +262,8 @@ window.JOGO = {
             }
           ],
           "quando": "7 dias antes do aniversário",
-          "com": "madalena"
+          "com": "madalena",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "A desculpa",
@@ -313,7 +314,8 @@ window.JOGO = {
             }
           ],
           "quando": "6 dias antes do aniversário",
-          "com": "madalena"
+          "com": "madalena",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "A janela",
@@ -364,7 +366,8 @@ window.JOGO = {
             }
           ],
           "quando": "4 dias antes do aniversário",
-          "com": "armando"
+          "com": "armando",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "A proposta",
@@ -406,7 +409,8 @@ window.JOGO = {
             }
           ],
           "quando": "4 dias antes, fim de tarde",
-          "com": "armando"
+          "com": "armando",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "O segredo",
@@ -448,7 +452,8 @@ window.JOGO = {
             }
           ],
           "quando": "4 dias antes, ao anoitecer",
-          "com": "armando"
+          "com": "armando",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "A mãe",
@@ -486,7 +491,8 @@ window.JOGO = {
             }
           ],
           "quando": "4 dias antes, ao anoitecer",
-          "com": "armando"
+          "com": "armando",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "A pequena canção",
@@ -531,7 +537,8 @@ window.JOGO = {
             }
           ],
           "quando": "4 dias antes, ao anoitecer",
-          "com": "armando"
+          "com": "armando",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "O aceite",
@@ -567,24 +574,9 @@ window.JOGO = {
             }
           ],
           "quando": "4 dias antes, ao anoitecer",
-          "com": "armando"
-        }
-      ],
-      "fecho": [
-        "Armando tinha dito sim. Faltavam quatro dias para o meu aniversário, três para a fuga, e eu tinha que passar por todos eles como se nada tivesse mudado."
-      ],
-      "cenario": "serra-verde",
-      "imagem": {
-        "arquivo": "img/espelho-cor.jpg",
-        "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
-      }
-    },
-    {
-      "titulo": "A véspera",
-      "abertura": [
-        "Dois dias antes do aniversário, Serra Verde acordou como em qualquer outra manhã. Só Carmen sabia que era uma das últimas."
-      ],
-      "cenas": [
+          "com": "armando",
+          "cenario": "serra-verde"
+        },
         {
           "titulo": "A vassoura",
           "texto": [
@@ -631,7 +623,8 @@ window.JOGO = {
             }
           ],
           "quando": "2 dias antes do aniversário, de manhã",
-          "com": "madalena"
+          "com": "madalena",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "O sortudo",
@@ -676,7 +669,8 @@ window.JOGO = {
             }
           ],
           "quando": "2 dias antes do aniversário, de manhã",
-          "com": "madalena"
+          "com": "madalena",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "A escolha da mãe",
@@ -717,8 +711,26 @@ window.JOGO = {
             }
           ],
           "quando": "2 dias antes do aniversário, de manhã",
-          "com": "madalena"
-        },
+          "com": "madalena",
+          "cenario": "serra-verde"
+        }
+      ],
+      "fecho": [
+        "O resto do dia passou como qualquer outro. Madalena apontava defeitos na maneira como eu segurava a faca, no tamanho dos legumes, no sal do frango. Ainda assim, cozinhar com ela me lembrava tempos mais simples.",
+        "Usei aquela manhã como minha despedida silenciosa."
+      ],
+      "cenario": "serra-verde",
+      "imagem": {
+        "arquivo": "img/espelho-cor.jpg",
+        "descricao": "Madalena, de corpete vermelho, arruma Carmen diante do espelho da penteadeira."
+      }
+    },
+    {
+      "titulo": "A fuga",
+      "abertura": [
+        "Na última noite antes da fuga, o bordel de Madalena recebeu uma visita que ninguém esperava."
+      ],
+      "cenas": [
         {
           "titulo": "A chegada",
           "desbloqueia": [
@@ -770,7 +782,8 @@ window.JOGO = {
             }
           ],
           "quando": "2 dias antes, à noite",
-          "com": "jaime"
+          "com": "jaime",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "A fruta madura",
@@ -821,7 +834,8 @@ window.JOGO = {
             }
           ],
           "quando": "2 dias antes, à noite",
-          "com": "madalena"
+          "com": "madalena",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "Os netinhos",
@@ -864,7 +878,8 @@ window.JOGO = {
             }
           ],
           "quando": "2 dias antes, à noite",
-          "com": "madalena"
+          "com": "madalena",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "O pretendente",
@@ -912,7 +927,8 @@ window.JOGO = {
             }
           ],
           "quando": "2 dias antes, à noite",
-          "com": "alexandro"
+          "com": "alexandro",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "O despertar",
@@ -957,7 +973,8 @@ window.JOGO = {
               ]
             }
           ],
-          "quando": "Véspera do aniversário, madrugada"
+          "quando": "Véspera do aniversário, madrugada",
+          "cenario": "serra-verde"
         },
         {
           "titulo": "O balde",
@@ -1000,25 +1017,14 @@ window.JOGO = {
           "quando": "Véspera do aniversário, amanhecer",
           "com": {
             "nome": "Os guardas"
-          }
-        }
-      ],
-      "fecho": [
-        "No horizonte, o sol nascia e tingia o céu de dourado. Desde pequena, eu me imaginava uma princesa resgatada por um príncipe num cavalo branco.",
-        "Nem nos meus dias mais criativos imaginei que sairia de Serra Verde numa loja itinerante, puxada por burros e conduzida por um cinquentão. Mas eu não podia reclamar."
-      ],
-      "cenario": "serra-verde",
-      "metadeDe": "Serra Verde"
-    },
-    {
-      "titulo": "A estrada",
-      "abertura": [
-        "Agora, Carmen era a assistente de um mascate. Restava provar que valia a viagem."
-      ],
-      "cenas": [
+          },
+          "cenario": "serra-verde"
+        },
         {
           "titulo": "A feira",
           "texto": [
+            "No horizonte, o sol nascia e tingia o céu de dourado. Desde pequena, eu me imaginava uma princesa resgatada por um príncipe num cavalo branco.",
+            "Nem nos meus dias mais criativos imaginei que sairia de Serra Verde numa loja itinerante, puxada por burros e conduzida por um cinquentão. Mas eu não podia reclamar.",
             "No primeiro vilarejo, vesti um conjunto roxo glamuroso e me exibi do alto da loja, imóvel e sorridente como um manequim. Uma pequena multidão se reuniu.",
             "O problema: os maridos babavam ao me encarar. Entre tapas, beliscões e reprimendas, as esposas desistiram da compra e saíram puxando os homens pelo braço.",
             "— Carmen, você está afastando a clientela! Vá bater as pernas enquanto eu vendo como de costume.",
@@ -1071,7 +1077,8 @@ window.JOGO = {
           ],
           "com": {
             "nome": "As moças da feira"
-          }
+          },
+          "cenario": "estrada"
         },
         {
           "titulo": "A cabine",
@@ -1115,7 +1122,8 @@ window.JOGO = {
           ],
           "com": {
             "nome": "A nariguda"
-          }
+          },
+          "cenario": "estrada"
         },
         {
           "titulo": "A cantoria",
@@ -1155,7 +1163,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "armando"
+          "com": "armando",
+          "cenario": "estrada"
         },
         {
           "titulo": "A fogueira",
@@ -1208,16 +1217,17 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "armando"
+          "com": "armando",
+          "cenario": "estrada"
         }
       ],
       "fecho": [
         "Juntos, viajamos de vilarejos a cidades maiores, coletando mais moedas do que cobradores de impostos. Na manhã seguinte à fogueira, avistamos Pacentro."
       ],
-      "cenario": "estrada"
+      "cenario": "serra-verde"
     },
     {
-      "titulo": "Pacentro",
+      "titulo": "A Capital",
       "abertura": [
         "A Capital era maior, mais rápida e mais cara do que Carmen sonhava. Ao longe, um borrão branco: o Palácio Real."
       ],
@@ -1281,7 +1291,8 @@ window.JOGO = {
               }
             }
           ],
-          "com": "isolina"
+          "com": "isolina",
+          "cenario": "pacentro"
         },
         {
           "titulo": "A primeira cliente",
@@ -1325,7 +1336,8 @@ window.JOGO = {
           ],
           "com": {
             "nome": "A cliente"
-          }
+          },
+          "cenario": "pacentro"
         },
         {
           "titulo": "A Ilustre de rosa",
@@ -1372,7 +1384,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "rosa"
+          "com": "rosa",
+          "cenario": "pacentro"
         },
         {
           "titulo": "A data",
@@ -1413,7 +1426,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "com": "rosa"
+          "com": "rosa",
+          "cenario": "pacentro"
         },
         {
           "titulo": "A taverna",
@@ -1464,7 +1478,8 @@ window.JOGO = {
           ],
           "com": {
             "nome": "O empresário"
-          }
+          },
+          "cenario": "pacentro"
         },
         {
           "titulo": "A despedida",
@@ -1508,7 +1523,8 @@ window.JOGO = {
           "revela": [
             "armando"
           ],
-          "com": "armando"
+          "com": "armando",
+          "cenario": "pacentro"
         },
         {
           "titulo": "A verdade de Armando",
@@ -1552,25 +1568,15 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "com": "armando"
-        }
-      ],
-      "fecho": [
-        "Cheguei à joalheria atrasada, pingando de suor, e varri a loja enxugando lágrimas tímidas.",
-        "Por que ele não mentiu para mim? Tinha sido bom imaginar que meu pai fosse uma boa pessoa."
-      ],
-      "cenario": "pacentro"
-    },
-    {
-      "titulo": "O Palácio Real",
-      "abertura": [
-        "Domingo. Meio-dia. Uma plebeia de Serra Verde contra a nobreza inteira do reino."
-      ],
-      "cenas": [
+          "com": "armando",
+          "cenario": "pacentro"
+        },
         {
           "titulo": "O mercado",
           "loja": true,
           "texto": [
+            "Cheguei à joalheria atrasada, pingando de suor, e varri a loja enxugando lágrimas tímidas.",
+            "Por que ele não mentiu para mim? Tinha sido bom imaginar que meu pai fosse uma boa pessoa.",
             "Juntei tudo o que tinha e fui ao mercado de Pacentro. Um vestido de seda de segunda mão eu já tinha garantido.",
             "Faltava o resto: os detalhes que separam uma moça bonita de uma Ilustre."
           ],
@@ -1592,7 +1598,8 @@ window.JOGO = {
             "leque",
             "colar",
             "perfume"
-          ]
+          ],
+          "cenario": "palacio"
         },
         {
           "titulo": "O disfarce",
@@ -1630,7 +1637,8 @@ window.JOGO = {
                 "As empregadas trocaram um olhar. Ilustre nenhuma pintava o cabelo com carvão."
               ]
             }
-          ]
+          ],
+          "cenario": "palacio"
         },
         {
           "titulo": "A carruagem",
@@ -1694,7 +1702,8 @@ window.JOGO = {
           ],
           "com": {
             "nome": "O cocheiro"
-          }
+          },
+          "cenario": "palacio"
         },
         {
           "titulo": "O nome",
@@ -1734,7 +1743,8 @@ window.JOGO = {
           ],
           "com": {
             "nome": "O cocheiro"
-          }
+          },
+          "cenario": "palacio"
         },
         {
           "titulo": "O convite",
@@ -1804,7 +1814,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "empregadas"
+          "com": "empregadas",
+          "cenario": "palacio"
         },
         {
           "titulo": "A lista",
@@ -1855,7 +1866,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "empregadas"
+          "com": "empregadas",
+          "cenario": "palacio"
         },
         {
           "titulo": "A menina de rosa",
@@ -1928,14 +1940,15 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "rosa"
+          "com": "rosa",
+          "cenario": "palacio"
         }
       ],
       "fecho": [
         "A entrada no palácio estava garantida.",
         "Agora, só faltava passar na avaliação."
       ],
-      "cenario": "palacio"
+      "cenario": "pacentro"
     },
     {
       "titulo": "Empregada Real",
@@ -1984,7 +1997,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "sebastiana"
+          "com": "sebastiana",
+          "cenario": "empregada"
         },
         {
           "titulo": "A biblioteca",
@@ -2029,7 +2043,8 @@ window.JOGO = {
           "com": {
             "nome": "Uma voz",
             "inicial": "?"
-          }
+          },
+          "cenario": "empregada"
         },
         {
           "titulo": "Os elogios",
@@ -2081,7 +2096,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "empregada"
         },
         {
           "titulo": "O livro caído",
@@ -2120,7 +2136,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "empregada"
         },
         {
           "titulo": "A pergunta de Valéria",
@@ -2158,7 +2175,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "com": "valeria"
+          "com": "valeria",
+          "cenario": "empregada"
         },
         {
           "titulo": "O convite",
@@ -2202,23 +2220,13 @@ window.JOGO = {
               }
             }
           ],
-          "com": "humberto"
-        }
-      ],
-      "fecho": [
-        "“Se emoção é o que quer, emoção é o que terá.” Remoí a frase por dias."
-      ],
-      "cenario": "empregada"
-    },
-    {
-      "titulo": "O duelo",
-      "abertura": [
-        "No dia de folga, Humberto bateu à porta. Não disse aonde iriam."
-      ],
-      "cenas": [
+          "com": "humberto",
+          "cenario": "empregada"
+        },
         {
           "titulo": "A surpresa",
           "texto": [
+            "“Se emoção é o que quer, emoção é o que terá.” Remoí a frase por dias.",
             "— Chegou a hora do primeiro encontro emocionante que lhe prometi. E não direi do que se trata. A surpresa é metade da graça.",
             "Sem saber o plano, eu não podia montar minha estratégia de batalha."
           ],
@@ -2251,7 +2259,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "duelo"
         },
         {
           "titulo": "A facção real",
@@ -2302,7 +2311,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "valeria"
+          "com": "valeria",
+          "cenario": "duelo"
         },
         {
           "titulo": "O duelo",
@@ -2344,7 +2354,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "duelo"
         },
         {
           "titulo": "Os bailes",
@@ -2385,13 +2396,14 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "com": "paloma"
+          "com": "paloma",
+          "cenario": "duelo"
         }
       ],
       "fecho": [
         "Se eu já irritava Paloma sem nenhum esforço, agora lhe dera um assunto para escrever à prima."
       ],
-      "cenario": "duelo"
+      "cenario": "empregada"
     },
     {
       "titulo": "Confissões",
@@ -2438,7 +2450,8 @@ window.JOGO = {
               }
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "confissoes"
         },
         {
           "titulo": "O beijo devido",
@@ -2476,7 +2489,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "confissoes"
         },
         {
           "titulo": "A máscara",
@@ -2515,7 +2529,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "confissoes"
         },
         {
           "titulo": "A prova do vinho",
@@ -2553,7 +2568,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "confissoes"
         },
         {
           "titulo": "A pergunta",
@@ -2595,7 +2611,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "confissoes"
         },
         {
           "titulo": "A valsa",
@@ -2634,23 +2651,13 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
-        }
-      ],
-      "fecho": [
-        "As semanas seguintes foram ótimas. Trabalho, amizade, amor. Só faltava Paloma sumir do mapa."
-      ],
-      "cenario": "confissoes"
-    },
-    {
-      "titulo": "A farsa",
-      "abertura": [
-        "Lá embaixo, no pátio, Paloma entregou a um mensageiro um envelope com lacre vermelho. Uma carta qualquer, disse a mim mesma."
-      ],
-      "cenas": [
+          "com": "humberto",
+          "cenario": "confissoes"
+        },
         {
           "titulo": "A denúncia",
           "texto": [
+            "As semanas seguintes foram ótimas. Trabalho, amizade, amor. Só faltava Paloma sumir do mapa.",
             "Na troca de turno, as cadelinhas de Paloma sussurraram no meu ouvido: “Espero que tenha tido um bom turno. Até porque será seu último.”",
             "No fim dos reportes, Paloma entregou a Sebastiana uma certidão.",
             "— Vivian Barbosa existe e é filha de Jaime Barbosa. Porém, como Vossa Senhoria pode ver pela data de registro, a verdadeira Vivian é uma garotinha de apenas sete anos. Aquela que está entre nós é uma impostora."
@@ -2685,7 +2692,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "sebastiana"
+          "com": "sebastiana",
+          "cenario": "farsa"
         },
         {
           "titulo": "Diante do rei",
@@ -2723,7 +2731,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "farsa"
         },
         {
           "titulo": "Quem é você?",
@@ -2760,7 +2769,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "farsa"
         },
         {
           "titulo": "A pergunta de Humberto",
@@ -2795,7 +2805,8 @@ window.JOGO = {
               "desvio": true
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "farsa"
         },
         {
           "titulo": "A declaração",
@@ -2836,7 +2847,8 @@ window.JOGO = {
               ]
             }
           ],
-          "com": "humberto"
+          "com": "humberto",
+          "cenario": "farsa"
         }
       ],
       "fecho": [
@@ -2845,7 +2857,7 @@ window.JOGO = {
         "— O único problema é que Vivian Barbosa já existe. Então que tal Vivian Macedo?",
         "Sorri tão radiante quanto o sol da manhã."
       ],
-      "cenario": "farsa"
+      "cenario": "confissoes"
     }
   ],
   "vitoria": [
@@ -2962,14 +2974,10 @@ window.JOGO = {
     "link": "./"
   },
   "descontos": [
-    2,
-    4,
+    3,
     6,
-    8,
-    10,
+    9,
     12,
-    13,
-    14,
     15
   ],
   "tituloVitoria": "Carmen virou Vivian Macedo"

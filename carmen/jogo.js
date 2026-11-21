@@ -495,9 +495,9 @@
   function telaCena(i) {
     var a = J.arcos[estado.arco], c = a.cenas[i];
     somPara(somDaCena(c));
-    if (c.loja) { abrirFichas(c.desbloqueia); salvar(); cenarioDoArco(); rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo); return telaLoja(i); }
+    if (c.loja) { abrirFichas(c.desbloqueia); salvar(); cenario(c.cenario || J.arcos[estado.arco].cenario); rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo); return telaLoja(i); }
     abrirFichas(c.desbloqueia);
-    salvar(); cenarioDoArco();
+    salvar(); cenario(c.cenario || J.arcos[estado.arco].cenario);
     rotulo("Arco " + numeral(estado.arco) + " · " + a.titulo);
     var novas = (c.desbloqueia || []).map(function (id) { return J.fichas[id] ? J.fichas[id].nome : ""; }).filter(Boolean);
     var opcoes = ordenar(c.opcoes.map(function (o, k) { return { o: o, k: k }; }).filter(function (x) { return (!x.o.requer || temItem(x.o.requer)) && temAtributo(x.o.requerAtributo); }));
