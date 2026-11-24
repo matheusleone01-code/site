@@ -2,7 +2,8 @@
    Painel: https://omatheusleone.goatcounter.com
    Para trocar a conta, mude só a linha CODIGO abaixo. */
 (function () {
-  var CODIGO = "omatheusleone";
+  var CODIGO = ""; // ex.: "omatheusleone" (vazio = métricas desligadas)
+  if (!CODIGO) return;
 
   // Não conta prévias locais nem páginas fora do domínio oficial.
   if (!/(^|\.)omatheusleone\.com\.br$/.test(location.hostname)) return;
